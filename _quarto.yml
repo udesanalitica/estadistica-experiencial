@@ -28,26 +28,13 @@ book:
     - index.qmd
     - intro.qmd
     - autores.qmd
-
-    - part: "Fundamentos de estadística"
-      chapters:
-        - 01-fundamentos.qmd
-        - 02-preparacion-datos.qmd
-
-    - part: "Organización y visualización de datos"
-      chapters:
-        - 03-tablas-frecuencia.qmd
-        - 04-visualizacion.qmd
-
-    - part: "Medidas descriptivas"
-      chapters:
-        - 05-tendencia-central.qmd
-        - 06-posicion.qmd
-
-    - part: "Relación entre variables"
-      chapters:
-        - 07-analisis-bivariado.qmd
-
+    - 01-fundamentos.qmd
+    - 02-preparacion-datos.qmd
+    - 03-tablas-frecuencia.qmd
+    - 04-visualizacion.qmd
+    - 05-tendencia-central.qmd
+    - 06-posicion.qmd
+    - 07-analisis-bivariado.qmd
     - references.qmd
 
 bibliography: references.bib
