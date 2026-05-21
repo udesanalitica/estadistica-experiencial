@@ -1,0 +1,103 @@
+project:
+  type: book
+  output-dir: docs
+  preview:
+    port: 4200
+    browser: true
+
+book:
+  title: "Estadística Experiencial Aplicada"
+  subtitle: "Aprendizaje práctico de la estadística descriptiva con R"
+  author:
+    - "Francisco Javier León"
+    - "Miguel Oswaldo Pérez Pulido"
+    - "Leonardo Andrés Pinto Guarguatí"
+  date: "2026-03-24"
+  cover-image: cover.png
+
+  site-url: "https://udesanalitica.github.io/estadistica-experiencial/"
+  repo-url: "https://github.com/udesanalitica/estadistica-experiencial"
+  repo-branch: main
+  repo-actions: [edit, issue, source]
+
+  page-navigation: true
+  search: true
+  downloads: [pdf, epub, docx]
+
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - summary.qmd
+    - autores.qmd
+
+    - part: "Parte I. Fundamentos"
+      chapters:
+        - 01-fundamentos.qmd
+        - 02-preparacion-datos.qmd
+
+    - part: "Parte II. Organización y visualización de datos"
+      chapters:
+        - 03-tablas-frecuencia.qmd
+        - 04-visualizacion.qmd
+
+    - part: "Parte III. Medidas descriptivas"
+      chapters:
+        - 05-tendencia-central.qmd
+        - 06-posicion.qmd
+        - 07-dispersion.qmd
+        - 08-forma.qmd
+
+    - part: "Parte IV. Relaciones entre variables"
+      chapters:
+        - 09-analisis-bivariado.qmd
+        - 10-asociacion-correlacion.qmd
+
+    - part: "Parte V. Puente a la inferencia"
+      chapters:
+        - 11-significancia.qmd
+
+    - part: "Parte VI. Aplicación y divulgación"
+      chapters:
+        - 12-publicacion.qmd
+
+    - references.qmd
+
+bibliography: references.bib
+csl: apa.csl
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    number-sections: true
+    code-copy: true
+    smooth-scroll: true
+    toc-depth: 3
+
+  pdf:
+    documentclass: scrreprt
+    pdf-engine: xelatex
+    toc: true
+    number-sections: true
+    mainfont: "Times New Roman"
+    include-in-header:
+      text: |
+        \usepackage{polyglossia}
+        \setmainlanguage{spanish}
+
+  docx:
+    toc: true
+    number-sections: true
+
+  epub:
+    cover-image: cover.png
+
+website:
+  page-footer:
+    left: "© 2026 Autores"
+    right: "Publicado con Quarto y GitHub Pages"
+
+execute:
+  freeze: auto
+
+editor: visual

@@ -1,0 +1,21 @@
+---
+title: "Parte V. Puente a la inferencia"
+---
+
+### Capítulo 10. Introducción a la inferencia (opcional pero recomendado)
+
+-   
+
+-    Hipótesis
+
+-   
+
+-    p-valor
+
+-   
+
+-    significancia estadística
+
+-   
+
+-    chi-cuadrado básico

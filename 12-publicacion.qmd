@@ -1,0 +1,5 @@
+---
+title: "Parte I. Fundamentos"
+bibliography: references.bib
+format: pdf
+---

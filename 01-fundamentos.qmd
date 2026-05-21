@@ -1,0 +1,90 @@
+---
+title: "Parte I. Fundamentos"
+---
+
+# Capítulo 1. Introducción a la estadística descriptiva
+
+## Introducción
+
+Actualmente los datos se han convertido en un activo fundamental para la toma de decisiones en las empresas, la sociedad, la cademémica entre otros y es por eso que la **estadística descriptiva constituye el primer paso para transformar información en conocimiento útil** [@seoane2007estadistica]. Su aplicación permite un mejor entendimiento del mundo que nos rodea, ya que prácticamente cada aspecto de nuestra existencia es una fuente potencial de datos [@obando2021graficos]. Este capítulo introduce los conceptos básicos necesarios para comprender, organizar y analizar datos, utilizando un enfoque experiencial basado en ejemplos reales y herramientas computacionales como R.
+
+## ¿Qué es la estadística descriptiva?
+
+La **estadística descriptiva** es la rama de la estadística encargada de recolectar, organizar, resumir y presentar datos de manera clara y comprensible .
+
+A diferencia de la estadística inferencial, que busca demostrar asociaciones o hacer comparaciones para extrapolar resultados de una muestra a una población, la descriptiva se limita a **sintetizar la información contenida en los datos recogidos** sin realizar inferencias más allá de la información disponible [@posada2016elementos; @bonita2008epidemiologia].
+
+Su propósito fundamental es facilitar la comprensión de grandes volúmenes de información mediante el uso de **tablas, representaciones gráficas y medidas resumen** (como la media o la desviación estándar), permitiendo "hacerse una idea" de la naturaleza de un conjunto de datos sin tener que analizar cada uno de ellos individualmente [@posada2016elementos; @rey2007introduccion; @spiegel2009estadistica].
+
+## Tipos de variables
+
+Las variables representan características, cualidades o rasgos que pueden medirse u observarse en los elementos de una población o muestra.
+
+### Variables cualitativas**(o atributos)**
+
+Describen cualidades, atributos o categorías que no pueden medirse numéricamente, pero sí clasificarse.
+
+-   **Nominales:** Sus categorías no admiten un orden natural (ej: sexo, estado civil).
+
+-   **Ordinales:** Sus categorías indican un orden o jerarquía (ej: nivel socioeconómico, grado académico).
+
+### Variables cuantitativas
+
+Son aquellas que toman valores numéricos y se originan mediante procesos de conteo o medición .
+
+-   **Discretas:** Asociadas a procesos de conteo, asumen valores enteros aislados (ej: número de hijos, número de artículos defectuosos).
+
+-   **Continuas:** Asociadas a procesos de medición, pueden tomar cualquier valor dentro de un intervalo determinado (ej: peso, estatura, edad),.
+
+## Escalas de medición
+
+La naturaleza de las observaciones determina el nivel de medición, lo cual es fundamental para elegir el método estadístico apropiado (Tabla 1)[@armitage2002statistical; @kleinbaum1982epidemiologic].
+
+::: {#tbl-variables tbl-cap="Clasificación de variables"}
+| Escala | Característica | Ejemplo |
+|----|----|----|
+| **Nominal** | Clasificación en categorías mutuamente excluyentes sin orden. | Género, lugar de nacimiento. |
+| **Ordinal** | Existe un orden o jerarquía entre niveles, pero la distancia entre ellos no es constante. | Estrato socioeconómico, grado militar. |
+| **Intervalo** | Orden con distancias iguales entre valores. El cero es arbitrario y no indica ausencia de la propiedad. | Temperatura (Celsius o Fahrenheit). |
+| **Razón** | Posee todas las propiedades anteriores y un **cero absoluto** que indica ausencia total de la característica. | Edad, peso, ingresos, longitud. |
+:::
+
+## Importancia de la identificación de variables
+
+La correcta identificación del tipo de variable es fundamental, ya que determina las técnicas estadísticas que deben utilizarse. Por ejemplo, las **variables cuantitativas permiten calcular medidas de tendencia central** (como la media) y **medidas de dispersión** (como la varianza o desviación típica), mientras que las cualitativas se analizan principalmente mediante tablas de frecuencias y proporciones[@armitage2002statistical].
+
+Un **error frecuente en el análisis estadístico es tratar variables ordinales como si fueran cuantitativas continuas** sin justificación. Asumir que los datos siguen siempre una distribución normal o aplicar pruebas paramétricas a datos que no cumplen los requisitos merman severamente la validez de los resultados y pueden generar interpretaciones erróneas,.
+
+La estadística descriptiva permite transformar datos brutos en información significativa mediante el uso de medidas resumen y representaciones gráficas. Al proporcionar una base sólida para la organización y el análisis de datos, facilita la interpretación y comprensión de los fenómenos analizados, sirviendo como apoyo esencial para la toma de decisiones informadas.
+
+# Caso
+
+A coantinutación se analiza un conjunto de datos de estudiantes de primer ingreso en la universidad, donde se desea identificar características como edad, sexo, estrato socioeconómico y horas de estudio.
+
+**Código en R**
+
+```{r}
+# Crear un dataset simple de datos
+datos <- data.frame(
+  edad = c(18, 19, 20, 18, 21),   
+  sexo = c("F", "M", "F", "F", "M"),
+  estrato = c(2, 3, 2, 1, 3),   
+  horas_estudio = c(2.5, 3, 4, 2, 5) )
+
+# Ver estructura 
+str(datos) 
+```
+
+El conjunto de datos permite identificar diferentes tipos de variables:
+
+-   **Edad:** cuantitativa continua (aunque se registre en años enteros, proviene de un proceso de medición del tiempo).
+
+-   **Sexo:** cualitativa nominal (categorías sin orden intrínseco).
+
+-   **Estrato:** cualitativa ordinal (indica un orden socioeconómico).
+
+-   **Horas de estudio:** cuantitativa continua (admite valores fraccionarios en un intervalo).
+
+## Resumen gráfico
+
+![La figura es una adaptación gráfica realizada por los autores en Napkin a partir del esquema presentado por Derek Rowntree (1981) en Statistics Without Tears. La modificación respeta los criterios de uso justo para fines académicos.](img/variables.jpg)

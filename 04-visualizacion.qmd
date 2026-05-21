@@ -1,0 +1,165 @@
+---
+title: "Parte I. Fundamentos"
+---
+
+# Capítulo 4. Visualización de datos
+
+La visualización de datos es una etapa fundamental en la estadística descriptiva, ya que permite representar la información de forma clara, resumida e interpretable. Los gráficos facilitan la identificación de patrones, tendencias, valores atípicos y diferencias entre grupos, apoyando así la comprensión de los datos y la toma de decisiones.
+
+En este capítulo se presentan algunos de los gráficos más utilizados en el análisis descriptivo: gráficos de barras, histogramas y diagramas de caja (*boxplot*), así como su construcción en R.
+
+## 4.1 Gráficos en R
+
+R es un lenguaje ampliamente utilizado para el análisis estadístico y la visualización de datos. Permite elaborar gráficos tanto con funciones básicas como con paquetes especializados, entre ellos `ggplot2`, que ofrece una sintaxis más flexible y una presentación más profesional.
+
+Para los ejemplos de este capítulo se utilizarán las librerías `readxl` y `ggplot2`.
+
+```{r}
+library(readxl)
+datos <- read_excel("C:/R-Proyectos/estadistica-experiencial/data/bd_antropometricas.xlsx")
+head(datos)
+str(datos)
+```
+
+## 4.2 Gráfico de barras
+
+El gráfico de barras se utiliza principalmente para representar variables cualitativas o categóricas. Su finalidad es mostrar la frecuencia o proporción de cada categoría mediante barras separadas, cuya altura es proporcional a la cantidad observada.
+
+Por ejemplo, si se desea visualizar la distribución de una variable como el género o la clase, puede emplearse un gráfico de barras.
+
+### Ejemplo con funciones básicas de R
+
+```{r}
+barplot(table(datos$Genero),
+        main = "Distribución del Género",
+        xlab = "Género",
+        ylab = "Frecuencia")
+```
+
+Ejemplo con `ggplot2`
+
+```{r}
+library(ggplot2)
+ggplot(datos, aes(x = Genero)) +
+  geom_bar() +
+  labs(
+    title = "Distribución de género",
+    x = "Género",
+    y = "Frecuencia"
+  )
+```
+
+El gráfico de barras permite comparar fácilmente las categorías y detectar cuál presenta mayor o menor frecuencia.
+
+## 4.3 Histograma
+
+El histograma se utiliza para representar la distribución de una variable cuantitativa continua. A diferencia del gráfico de barras, en el histograma las barras se presentan unidas, ya que representan intervalos de clase contiguos.
+
+Este tipo de gráfico es útil para identificar la forma de la distribución, la concentración de valores, posibles asimetrías y presencia de valores extremos.
+
+### Ejemplo con funciones básicas de R
+
+```{r}
+hist(datos$Peso_Kg,
+     main = "Histograma del peso",
+     xlab = "Peso",
+     ylab = "Frecuencia")
+```
+
+### Ejemplo con `ggplot2`
+
+```{r}
+ggplot(datos, aes(x = Peso_Kg)) +
+  geom_histogram(bins = 10) +
+  labs(
+    title = "Histograma del peso",
+    x = "Peso",
+    y = "Frecuencia"
+  )
+```
+
+La elección del número de intervalos puede modificar la apariencia del histograma y, por tanto, la interpretación de la distribución.
+
+## 4.4 Boxplot
+
+El diagrama de caja y bigotes, o *boxplot*, es un gráfico que resume la distribución de una variable cuantitativa a partir de los cuartiles, la mediana y los valores extremos. Es especialmente útil para detectar asimetrías y observaciones atípicas.
+
+El boxplot se basa en el resumen de cinco números:
+
+-   valor mínimo
+
+-   primer cuartil $(Q_1)$
+
+-   mediana $(Q_2)$
+
+-   tercer cuartil $(Q_3)$
+
+-   valor máximo
+
+### Ejemplo con funciones básicas de R
+
+```{r}
+boxplot(datos$Peso_Kg,
+        main = "Boxplot del peso",
+        ylab = "Peso")
+```
+
+### Ejemplo con `ggplot2`
+
+```{r}
+ggplot(datos, aes(x = Genero, y = Peso_Kg)) +
+  geom_boxplot() +
+  labs(
+    title = "Distribución del peso según género",
+    x = "Género",
+    y = "Peso"
+  )
+```
+
+```         
+```
+
+También es posible comparar una variable cuantitativa entre categorías.
+
+### Boxplot por grupo
+
+```{r}
+ggplot(datos, aes(y = Peso_Kg)) +
+  geom_boxplot() +
+  labs(
+    title = "Boxplot del peso",
+    y = "Peso"
+  )
+```
+
+Este tipo de visualización permite comparar la dispersión, la posición central y la presencia de valores atípicos entre grupos.
+
+## 4.5 Interpretación básica de los gráficos
+
+Cada tipo de gráfico aporta información distinta:
+
+-   El **gráfico de barras** permite comparar frecuencias entre categorías.
+
+-   El **histograma** permite analizar la forma de la distribución de una variable cuantitativa.
+
+-   El **boxplot** facilita la identificación de la mediana, la dispersión y los valores atípicos.
+
+Por ello, la selección del gráfico debe hacerse de acuerdo con el tipo de variable y el propósito del análisis.
+
+## 4.6 Recomendaciones para la elaboración de gráficos
+
+Para garantizar una correcta interpretación, los gráficos deben elaborarse siguiendo algunos principios básicos:
+
+-   incluir un título claro y descriptivo;
+
+-   nombrar adecuadamente los ejes;
+
+-   verificar que la variable utilizada corresponda con el tipo de gráfico;
+
+-   evitar sobrecargar la visualización con elementos innecesarios;
+
+-   revisar previamente la calidad y consistencia de los datos.
+
+La visualización de datos constituye un componente esencial del análisis descriptivo. Los gráficos permiten resumir la información, identificar patrones y comunicar resultados de manera clara y comprensible.
+
+En R, tanto las funciones básicas como el paquete `ggplot2` ofrecen múltiples posibilidades para representar datos de forma efectiva, favoreciendo un análisis más sólido y una mejor interpretación de la información.

@@ -1,0 +1,23 @@
+# Preface {.unnumbered}
+
+This is a Quarto book.
+
+-   portada
+
+<!-- -->
+
+-    propósito del libro
+
+<!-- -->
+
+-    público objetivo
+
+<!-- -->
+
+-    competencias a desarrollar
+
+To learn more about Quarto books visit <https://quarto.org/docs/books>.
+
+```{r}
+1 + 1
+```

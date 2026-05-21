@@ -1,0 +1,23 @@
+# Introduction
+
+This is a book created from markdown and executable code.
+
+-   qué es la estadística descriptiva
+
+<!-- -->
+
+-    por qué aprenderla con enfoque experiencial
+
+<!-- -->
+
+-    uso de R y Quarto
+
+<!-- -->
+
+-    estructura del libro
+
+See @knuth84 for additional discussion of literate programming.
+
+```{r}
+1 + 1
+```
