@@ -1,11 +1,10 @@
 ---
-title: "Parte II. Organización y presentación de datos"
+title: " Capítulo 3. Organización y presentación de datos"
 ---
 
-
-# Capítulo 3. Tablas de datos
-
 En este capítulo se presentan los fundamentos para la organización y presentación de la información mediante diferentes tipos de tablas estadísticas. Estas herramientas permiten resumir, ordenar y estructurar los datos de manera que faciliten su análisis e interpretación. Las tablas constituyen un recurso esencial en la estadística descriptiva, ya que permiten transformar datos individuales en información significativa.
+
+# Tablas de datos
 
 ## 3.1 Datos simples
 

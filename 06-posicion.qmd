@@ -1,6 +1,91 @@
 ---
-title: "Parte I. Fundamentos"
+title: "Capítulo 6. Medidas de posición"
 ---
+
+Las medidas de posición permiten ubicar un valor dentro de un conjunto de datos ordenados. A diferencia de las medidas de tendencia central, que resumen la distribución en un punto típico, las medidas de posición responden a preguntas como: ¿qué valor deja por debajo al 25 % de los datos? o ¿en qué punto se encuentra el 90 % de las observaciones?
+En este capítulo se estudian tres familias de medidas de posición: los cuartiles, los deciles y los percentiles. Las tres se construyen con la misma lógica: dividen la distribución de datos ordenados en partes iguales y permiten identificar la posición relativa de cualquier observación dentro del conjunto.
+
+Conjunto de datos de ejemplo. A lo largo del capítulo se utilizará una muestra de n = 30 estudiantes tomada de la base de datos antropométricas de la UDES (semestres 2019-2 a 2025-1). La variable analizada es Altura_cm (estatura en centímetros). Los datos, ya ordenados de menor a mayor, son:
+
+
+i=1	i=2	i=3	i=4	i=5	i=6	i=7	i=8	i=9	i=10
+156	156	156	156	156	158	160	161	162	162
+i=11	i=12	i=13	i=14	i=15	i=16	i=17	i=18	i=19	i=20
+162	163	163	168	168	168	169	172	172	173
+i=21	i=22	i=23	i=24	i=25	i=26	i=27	i=28	i=29	i=30
+173	173	174	175	176	177	177	179	183	192
+
+6.1 Cuartiles
+6.1.1 Definición
+Definición 6.1 — Cuartil
+Los cuartiles son los tres valores que dividen un conjunto de datos ordenados en cuatro partes de igual frecuencia relativa, de modo que cada parte contiene el 25 % de las observaciones.
+Se denotan Q₁, Q₂ y Q₃, donde:
+Q₁ (primer cuartil): el 25 % de los datos es menor o igual a este valor.
+Q₂ (segundo cuartil): coincide con la mediana; el 50 % de los datos queda por debajo.
+Q₃ (tercer cuartil): el 75 % de los datos es menor o igual a este valor.
+
+6.1.2 Fórmula de posición
+Para datos no agrupados ordenados de menor a mayor, la posición del k-ésimo cuartil se calcula como:
+Fórmula 6.1 — Posición del cuartil Qk
+Lₖ = k · n / 4     (k = 1, 2, 3)
+Si Lₖ es entero:    Qₖ = (x[Lₖ] + x[Lₖ+1]) / 2
+Si Lₖ no es entero: Qₖ = x[⌈Lₖ⌉]
+
+donde n es el número de observaciones, x[i] es el i-ésimo dato en la serie ordenada y ⌈Lₖ⌉ denota el entero inmediatamente superior (función techo).
+
+6.1.3 Ejemplo resuelto
+Calcule Q₁, Q₂ y Q₃ para la muestra de estatura de n = 30 estudiantes.
+
+Paso 1. Verificar que los datos estén ordenados. ✓ (ver tabla de datos)
+Paso 2. Calcular las posiciones:
+   L₁ = 1 · 30 / 4 = 7,5  →  no es entero  →  Q₁ = x[8] = 161 cm
+   L₂ = 2 · 30 / 4 = 15,0 →  es entero    →  Q₂ = (x[15] + x[16]) / 2 = (168 + 168) / 2 = 168 cm
+   L₃ = 3 · 30 / 4 = 22,5 →  no es entero  →  Q₃ = x[23] = 174 cm
+
+Cuartil	Posición L	Condición	Valor
+Q₁	7,5	No entero → x[8]	161 cm
+Q₂	15,0	Entero → (x[15]+x[16])/2	168 cm
+Q₃	22,5	No entero → x[23]	174 cm
+
+6.1.4 Interpretación práctica
+Q₁ = 161 cm: el 25 % de los estudiantes de la muestra mide 161 cm o menos. En términos aplicados, si un estudiante mide 160 cm, se ubica en el cuartil inferior de la distribución de estatura.
+Q₂ = 168 cm: la mitad de los estudiantes mide 168 cm o menos. Esta medida coincide con la mediana y constituye el valor central de la distribución.
+Q₃ = 174 cm: el 75 % de los estudiantes mide 174 cm o menos; el 25 % restante supera esta estatura.
+Rango intercuartílico (RIC): Q₃ − Q₁ = 174 − 161 = 13 cm. Este valor indica la dispersión del 50 % central de los datos, sin verse afectado por valores extremos.
+
+6.1.5 Implementación en R
+# Código en R
+# Muestra de estaturas (n = 30), ya ordenada
+estatura <- c(156,156,156,156,156,158,160,161,162,162,
+              162,163,163,168,168,168,169,172,172,173,
+              173,173,174,175,176,177,177,179,183,192)
+
+# Cuartiles con la función quantile() — método 1 (Tukey)
+quantile(estatura, probs = c(0.25, 0.50, 0.75), type = 1)
+
+# Rango intercuartílico
+IQR(estatura, type = 1)
+
+# Diagrama de caja y bigotes
+boxplot(estatura,
+        main = 'Distribución de estatura — muestra UDES (n=30)',
+        ylab = 'Estatura (cm)',
+        col  = '#D6E4F0',
+        border = '#1F4E79')
+
+Nota: R ofrece nueve métodos de interpolación para quantile(). El type = 1 corresponde al método de posición entero que se emplea en este texto. Para datos continuos con interpolación lineal, se suele usar type = 7 (opción predeterminada).
+
+6.1.6 Aplicación disciplinar
+En ergonomía y diseño de puestos de trabajo, los cuartiles de variables antropométricas como la estatura son fundamentales para determinar rangos de ajuste de sillas, escritorios y pantallas. Un puesto de trabajo debe ser ajustable al menos entre Q₁ y Q₃, cubriendo así el 50 % central de la población usuaria. Los extremos (por debajo de Q₁ o por encima de Q₃) requieren soluciones especiales de adaptación.
+En ciencias de la salud, los cuartiles de indicadores como el peso, la talla o el índice de masa corporal (IMC) permiten clasificar pacientes en categorías de riesgo y establecer valores de referencia por grupo etario y sexo (Freund et al., 2010).
+
+6.1.7 Ejercicios propuestos
+Ejercicio 6.1
+Con la misma muestra de estaturas (n = 30): (a) calcule el rango intercuartílico (RIC) e indique qué porcentaje de los datos queda dentro del intervalo [Q₁, Q₃]; (b) determine si el dato 192 cm puede considerarse un valor atípico con el criterio de Tukey (un valor es atípico si supera Q₃ + 1,5 · RIC).
+
+Ejercicio 6.2
+En un grupo de 40 estudiantes de ingeniería se registraron los siguientes pesos en kilogramos (ordenados de menor a mayor): 45, 48, 50, 51, 52, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 78, 79, 80, 82, 84, 85, 87, 90, 92, 95, 98, 105. Calcule Q₁, Q₂ y Q₃, e interprete cada resultado en el contexto del grupo.
+ 
 
 ### Capítulo 6. Medidas de posición
 

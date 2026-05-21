@@ -4,8 +4,6 @@ format: html
 editor: visual
 ---
 
-# Capítulo 5. Medidas de tendencia central y dispersión
-
 Las medidas de tendencia central son herramientas estadísticas utilizadas para resumir un conjunto de datos mediante un valor representativo o típico. Su principal objetivo es describir el comportamiento general de una distribución y facilitar la comparación entre diferentes conjuntos de información.
 
 En términos generales, una medida de tendencia central representa el punto alrededor del cual tienden a agruparse las observaciones. Estas medidas permiten sintetizar grandes volúmenes de datos en un único valor numérico que describe de manera aproximada el comportamiento de la variable analizada.
@@ -157,7 +155,7 @@ ggplot(datos, aes(x = Peso_Kg)) +
   theme_minimal()
 ```
 
-##  Interpretación del gráfico: Distribución del peso
+## Interpretación del gráfico: Distribución del peso
 
 El histograma presenta la distribución de la variable **Peso (kg)** en la muestra analizada, incorporando las tres principales medidas de tendencia central:
 
@@ -225,7 +223,7 @@ Para cada gráfico responda:
 
 4.  ¿Qué medida representa mejor el comportamiento de los datos?
 
-5.   ¿Cuál variable presenta mayor dispersión?
+5.  ¿Cuál variable presenta mayor dispersión?
 
 # 5.2 Medidas de dispersión o variabilidad
 

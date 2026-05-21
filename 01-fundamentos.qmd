@@ -1,8 +1,6 @@
 ---
-title: "Parte I. Fundamentos"
+title: "Capítulo 1. Introducción a la estadística descriptiva"
 ---
-
-# Capítulo 1. Introducción a la estadística descriptiva
 
 ## Introducción
 
@@ -42,7 +40,7 @@ La naturaleza de las observaciones determina el nivel de medición, lo cual es f
 
 ::: {#tbl-variables tbl-cap="Clasificación de variables"}
 | Escala | Característica | Ejemplo |
-|----|----|----|
+|------------------------|------------------------|------------------------|
 | **Nominal** | Clasificación en categorías mutuamente excluyentes sin orden. | Género, lugar de nacimiento. |
 | **Ordinal** | Existe un orden o jerarquía entre niveles, pero la distancia entre ellos no es constante. | Estrato socioeconómico, grado militar. |
 | **Intervalo** | Orden con distancias iguales entre valores. El cero es arbitrario y no indica ausencia de la propiedad. | Temperatura (Celsius o Fahrenheit). |
