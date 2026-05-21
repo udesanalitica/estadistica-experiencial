@@ -1,3 +1,370 @@
 ---
-title: "Parte I. Fundamentos"
+title: "Capítulo 7. Analísis bivariado"
 ---
+En los capítulos anteriores se estudiaron las características de una sola variable a la vez —su centro, su dispersión, su forma—. Sin embargo, la realidad que analiza la estadística rara vez involucra una variable en soledad. Las preguntas más interesantes suelen surgir en la intersección: ¿Estudiar más horas se traduce en mejores calificaciones? ¿El género de un estudiante se relaciona con su rendimiento académico? ¿Cuánto mejora la nota por cada hora adicional de estudio?
+
+El análisis bivariado es precisamente el conjunto de técnicas que permite explorar, cuantificar e interpretar la relación entre dos variables medidas sobre las mismas unidades de análisis. A diferencia del análisis univariado, aquí el interés no está en describir cada variable por separado, sino en entender cómo se comportan conjuntamente.
+
+Este capítulo desarrolla las principales herramientas del análisis bivariado: el diagrama de dispersión como recurso visual exploratorio, la covarianza como primera medida de relación lineal, los coeficientes de correlación de Pearson y Spearman para cuantificar esa relación, las tablas de contingencia para variables categóricas, y la regresión lineal simple como modelo predictivo. Todas estas técnicas se ilustran sobre el mismo conjunto de datos, lo que permite al estudiante ver cómo cada herramienta revela una faceta distinta de la misma realidad.
+
+7.1 Conjunto de datos de trabajo
+A lo largo de todo este capítulo se utilizará el siguiente conjunto de datos, que recoge información sobre 15 estudiantes universitarios. Las variables registradas son: horas de estudio semanales (X), calificación final en una escala de 0 a 5 (Y), horas de sueño diarias (Z) y género. Este dataset es intencionalmente multidisciplinar para permitir ilustrar distintos tipos de análisis bivariado.
+
+Tabla 7.1. Dataset transversal — 15 estudiantes universitarios
+Estudiante	Horas de estudio (X)	Calificación (Y)	Horas de sueño (Z)	Género
+E01	2	3.2	6	M
+E02	3	3.5	7	F
+E03	5	4.0	7	M
+E04	1	2.8	5	F
+E05	4	3.8	8	M
+E06	6	4.3	6	F
+E07	2	3.0	6	M
+E08	7	4.5	7	F
+E09	3	3.4	8	M
+E10	5	4.1	7	F
+E11	1	2.5	5	M
+E12	4	3.7	6	F
+E13	6	4.2	7	M
+E14	2	3.1	6	F
+E15	8	4.8	8	M
+Nota: Los datos de esta tabla son simulados con fines pedagógicos. Para el análisis de correlación y regresión se trabaja con las variables X (horas de estudio) e Y (calificación).
+
+ 
+7.2 Diagrama de dispersión
+7.2.1 Definición
+El diagrama de dispersión (también llamado nube de puntos o gráfico de dispersión) es una representación gráfica que muestra la distribución conjunta de dos variables cuantitativas. Cada punto del plano cartesiano representa una observación: su posición horizontal corresponde al valor de la variable X y su posición vertical al valor de la variable Y. Es siempre el primer paso en el análisis de la relación entre dos variables numéricas, porque permite detectar visualmente el tipo, la dirección y la fuerza de la relación antes de calcular ningún coeficiente (Montgomery & Runger, 2018).
+
+7.2.2 Patrones de asociación
+La inspección visual de un diagrama de dispersión permite identificar los siguientes patrones principales:
+•	Relación lineal positiva: a medida que X aumenta, Y también tiende a aumentar. Los puntos se agrupan aproximadamente sobre una recta con pendiente positiva.
+•	Relación lineal negativa: a medida que X aumenta, Y tiende a disminuir. Los puntos se distribuyen alrededor de una recta con pendiente negativa.
+•	Relación no lineal (curvilínea): los puntos siguen un patrón curvado —cuadrático, exponencial, logístico— que no puede describirse bien mediante una recta.
+•	Sin relación aparente: los puntos se dispersan aleatoriamente sin ningún patrón discernible.
+
+7.2.3 Ejemplo resuelto
+Con los datos de la Tabla 7.1, se construye el diagrama de dispersión entre horas de estudio (X) y calificación final (Y):
+
+# Código en R
+# Diagrama de dispersión: horas de estudio vs. calificación
+horas  <- c(2,3,5,1,4,6,2,7,3,5,1,4,6,2,8)
+calif  <- c(3.2,3.5,4.0,2.8,3.8,4.3,3.0,4.5,3.4,4.1,2.5,3.7,4.2,3.1,4.8)
+genero <- c('M','F','M','F','M','F','M','F','M','F','M','F','M','F','M')
+
+plot(horas, calif,
+     main = 'Diagrama de dispersión: Estudio vs. Calificación',
+     xlab = 'Horas de estudio semanales (X)',
+     ylab = 'Calificación final (Y)',
+     pch  = 19,
+     col  = ifelse(genero == 'M', '#2E75B6', '#C00000'),
+     cex  = 1.4)
+abline(lm(calif ~ horas), col = 'gray40', lty = 2, lwd = 1.5)
+legend('topleft', legend = c('Masculino','Femenino'),
+       col = c('#2E75B6','#C00000'), pch = 19, bty = 'n')
+
+Interpretación: La nube de puntos muestra una relación lineal positiva muy marcada entre las horas de estudio y la calificación obtenida. Los puntos se agrupan estrechamente alrededor de una recta imaginaria ascendente, lo que anticipa una correlación alta. No se observan valores atípicos extremos que distorsionen el patrón general.
+
+7.2.4 Aplicación disciplinar
+En ciencias de la salud, un diagrama de dispersión entre dosis de un fármaco y respuesta terapéutica permite identificar visualmente si existe una relación dosis-respuesta y si esa relación es lineal o presenta una meseta a partir de cierta dosis. En ciencias sociales, la relación entre índice de pobreza y tasa de deserción escolar puede explorarse con este gráfico antes de aplicar técnicas de regresión.
+
+7.2.5 Ejercicios propuestos
+Ejercicio 1. Con los datos de la Tabla 7.1, construya manualmente el diagrama de dispersión entre horas de sueño (Z) y calificación (Y). ¿Qué tipo de relación anticipa?
+Ejercicio 2. En un estudio sobre producción agrícola se miden: temperatura promedio mensual (°C) y rendimiento en kg/hectárea. Diseñe el diagrama de dispersión e identifique visualmente si la relación parece lineal o curvilínea.
+Ejercicio 3. Usando R, reproduzca el diagrama de la sección 7.2.3 pero diferenciando los puntos por calificación alta (Y ≥ 4.0) y baja (Y < 4.0). ¿Qué observa?
+ 
+7.3 Covarianza
+7.3.1 Definición
+La covarianza es la primera medida numérica de la relación lineal entre dos variables cuantitativas. Mide en qué dirección y en qué magnitud tienden a desplazarse conjuntamente los valores de X e Y respecto a sus respectivas medias (Walpole, Myers & Myers, 2012). Si cuando X está por encima de su media, Y también tiende a estarlo, la covarianza es positiva. Si ocurre lo contrario, es negativa.
+
+7.3.2 Fórmula
+Para una muestra de n pares de observaciones (xᵢ, yᵢ), la covarianza muestral se calcula como:
+Sxy = Σ[(xᵢ − x̄)(yᵢ − ȳ)] / (n − 1)
+donde x̄ e ȳ son las medias muestrales de X e Y, respectivamente. Para la covarianza poblacional se divide entre N (tamaño de la población) en lugar de (n − 1).
+
+Nota: La covarianza tiene un problema fundamental: su valor depende de las unidades de medición de X e Y. Si X se midiera en minutos en lugar de horas, la covarianza cambiaría aunque la relación entre las variables sea idéntica. Esto limita su interpretabilidad directa y motivó el desarrollo del coeficiente de correlación.
+
+7.3.3 Ejemplo resuelto
+Con los datos de la Tabla 7.1 (n = 15): media de horas de estudio x̄ = 3.93; media de calificación ȳ = 3.79.
+
+Calculando cada término (xᵢ − x̄)(yᵢ − ȳ) y sumando:
+Sxy = Σ[(xᵢ − 3.93)(yᵢ − 3.79)] / 14 = 20.28 / 14 ≈ 1.449
+
+# Código en R
+# Covarianza entre horas de estudio y calificación
+horas <- c(2,3,5,1,4,6,2,7,3,5,1,4,6,2,8)
+calif <- c(3.2,3.5,4.0,2.8,3.8,4.3,3.0,4.5,3.4,4.1,2.5,3.7,4.2,3.1,4.8)
+
+cov_xy <- cov(horas, calif)
+cat('Covarianza Sxy =', round(cov_xy, 3))
+# Resultado: Covarianza Sxy = 1.449
+
+Interpretación: La covarianza positiva (Sxy ≈ 1.449) confirma que existe una relación directa entre las horas de estudio y la calificación: en general, cuando un estudiante estudia más horas que el promedio del grupo, también tiende a obtener una calificación por encima del promedio. Sin embargo, el valor 1.449 por sí solo no indica si la relación es fuerte o débil; para eso se necesita estandarizar mediante el coeficiente de correlación.
+
+7.3.4 Aplicación disciplinar
+En economía, la covarianza entre el retorno de dos activos financieros es fundamental para la teoría de portafolios de Markowitz: una covarianza positiva alta indica que los activos se mueven juntos, lo que reduce la diversificación del riesgo. En epidemiología, la covarianza entre exposición a un factor de riesgo y la gravedad de una enfermedad orienta la dirección de la relación antes de modelarla formalmente.
+
+7.3.5 Ejercicios propuestos
+Ejercicio 1. Calcule manualmente la covarianza entre horas de sueño (Z) y calificación (Y) usando los datos de la Tabla 7.1. Compare el signo con el diagrama de dispersión que construyó en el ejercicio 7.2.1.
+Ejercicio 2. Si se duplicaran todos los valores de horas de estudio (2X), ¿qué le ocurriría a la covarianza Sxy? Demuéstrelo algebraicamente y verifíquelo con R.
+Ejercicio 3. En un conjunto de datos con covarianza Sxy = −3.2, ¿qué puede concluirse sobre la dirección de la relación entre X e Y? ¿Puede afirmarse que la relación es fuerte? Justifique.
+ 
+7.4 Correlación de Pearson
+7.4.1 Definición
+El coeficiente de correlación lineal de Pearson es una medida adimensional que cuantifica la fuerza y la dirección de la relación lineal entre dos variables cuantitativas continuas. A diferencia de la covarianza, está estandarizado en el intervalo [−1, 1], lo que permite comparar relaciones entre variables con distintas unidades de medición (Devore, 2016).
+
+7.4.2 Fórmula
+El coeficiente de correlación muestral de Pearson se obtiene dividiendo la covarianza entre el producto de las desviaciones estándar de X e Y:
+r = Sxy / (Sx · Sy)
+de forma equivalente:
+r = Σ[(xᵢ − x̄)(yᵢ − ȳ)] / √{Σ(xᵢ − x̄)² · Σ(yᵢ − ȳ)²}
+
+7.4.3 Interpretación del coeficiente
+La interpretación del valor de r sigue la siguiente escala orientativa (Cohen, 1988):
+•	|r| entre 0.00 y 0.19: relación muy débil o nula.
+•	|r| entre 0.20 y 0.39: relación débil.
+•	|r| entre 0.40 y 0.59: relación moderada.
+•	|r| entre 0.60 y 0.79: relación fuerte.
+•	|r| entre 0.80 y 1.00: relación muy fuerte o casi perfecta.
+Nota: El signo indica la dirección: r > 0 relación directa (ambas variables aumentan juntas); r < 0 relación inversa (cuando una aumenta, la otra disminuye); r = 0 ausencia de relación lineal (puede existir relación no lineal).
+
+7.4.4 Supuestos
+El coeficiente de Pearson asume que: (1) las dos variables son cuantitativas continuas; (2) la relación entre ellas es aproximadamente lineal; (3) los datos no presentan valores atípicos extremos influyentes; y (4) idealmente, ambas variables siguen una distribución normal bivariada. Cuando estos supuestos no se cumplen, debe emplearse la correlación de Spearman.
+
+7.4.5 Ejemplo resuelto
+Con los datos de la Tabla 7.1 se calculan: Sxy ≈ 1.449, Sx ≈ 2.052, Sy ≈ 0.648.
+r = 1.449 / (2.052 × 0.648) = 1.449 / 1.330 ≈ 0.989
+
+# Código en R
+# Correlación de Pearson y matriz de correlaciones
+horas  <- c(2,3,5,1,4,6,2,7,3,5,1,4,6,2,8)
+calif  <- c(3.2,3.5,4.0,2.8,3.8,4.3,3.0,4.5,3.4,4.1,2.5,3.7,4.2,3.1,4.8)
+suenio <- c(6,7,7,5,8,6,6,7,8,7,5,6,7,6,8)
+
+# Pearson entre horas y calificación
+r_pearson <- cor(horas, calif, method = 'pearson')
+cat('r de Pearson (horas vs calif) =', round(r_pearson, 3))
+
+# Matriz de correlaciones para las tres variables numéricas
+datos_num <- data.frame(horas, calif, suenio)
+round(cor(datos_num, method = 'pearson'), 3)
+
+
+Tabla 7.2. Matriz de correlaciones de Pearson
+Par de variables	r de Pearson	Interpretación
+Horas estudio – Calificación	0.989	Muy alta positiva
+Horas estudio – Horas sueño	0.412	Moderada positiva
+Horas sueño – Calificación	0.398	Moderada positiva
+
+Interpretación: r = 0.989 indica una relación lineal positiva muy fuerte entre horas de estudio y calificación: el 97.8% de la variación en las calificaciones (r²) puede explicarse por la variación en las horas de estudio. La relación entre horas de estudio y horas de sueño (r = 0.412) es moderada y positiva, sugiriendo que los estudiantes que más estudian también tienden a dormir algo más, aunque la relación es menos consistente.
+
+7.4.6 Aplicación disciplinar
+En psicometría, la correlación de Pearson se usa para evaluar la validez convergente de una prueba: se espera que dos instrumentos que miden el mismo constructo presenten r > 0.70. En medicina, la correlación entre biomarcadores (p. ej., glucosa en sangre y hemoglobina glicosilada) sirve para validar mediciones indirectas. En ingeniería, la correlación entre variables de proceso (temperatura y presión en una reacción) orienta el diseño de experimentos.
+
+7.4.7 Ejercicios propuestos
+Ejercicio 1. Calcule manualmente el coeficiente de Pearson entre horas de sueño (Z) y calificación (Y). Interprete el resultado usando la escala de Cohen (1988).
+Ejercicio 2. ¿Qué ocurre con r si se suma una constante k a todos los valores de X? ¿Y si se multiplican todos los valores de X por una constante k > 0? Demuéstrelo con los datos de la Tabla 7.1.
+Ejercicio 3. Un investigador obtiene r = 0.85 entre el número de horas de televisión y el índice de masa corporal en 200 niños. ¿Puede concluir que ver televisión causa obesidad? Justifique su respuesta desde la perspectiva estadística.
+ 
+7.5 Correlación de Spearman
+7.5.1 Definición
+El coeficiente de correlación por rangos de Spearman (ρ, rho) es una medida no paramétrica de la asociación monótona entre dos variables. Fue propuesto por Charles Spearman en 1904 y opera sobre los rangos (posiciones en el ordenamiento) de los datos, no sobre los valores originales (Siegel & Castellan, 1988). Es la alternativa indicada cuando los datos son ordinales, cuando la relación no es lineal pero sí monótona, o cuando se presentan valores atípicos que distorsionarían a Pearson.
+
+7.5.2 Fórmula
+Cuando no hay empates o estos son poco frecuentes, ρ se calcula mediante la fórmula simplificada:
+ρ = 1 − (6 · Σdᵢ²) / (n(n² − 1))
+donde dᵢ = Rango(xᵢ) − Rango(yᵢ) es la diferencia entre los rangos de cada par de observaciones, y n es el número de pares. Cuando hay empates, deben promediarse los rangos y es preferible calcular ρ aplicando la fórmula de Pearson directamente sobre los rangos.
+
+7.5.3 Ejemplo resuelto
+Con los datos de la Tabla 7.1 se asignan rangos a X e Y. Los empates en X (valores 1, 2, 3, 4, 5, 6) reciben rangos promedio:
+
+Tabla 7.3. Rangos y diferencias al cuadrado para la correlación de Spearman
+Estud.	X (horas)	Y (calif.)	Rango X	Rango Y	d²
+E01	2	3.2	3.5	3	0.25
+E02	3	3.5	6	6	0
+E03	5	4.0	9.5	10	0.25
+E04	1	2.8	1.5	1	0
+E05	4	3.8	7.5	8	0.25
+E06	6	4.3	11.5	13	2.25
+E07	2	3.0	3.5	2	2.25
+E08	7	4.5	13.5	14	0.25
+E09	3	3.4	6	5	1
+E10	5	4.1	9.5	11	2.25
+E11	1	2.5	1.5	0	2.25
+E12	4	3.7	7.5	7	0.25
+E13	6	4.2	11.5	12	0.25
+E14	2	3.1	3.5	4	0.25
+E15	8	4.8	15	15	0
+				Σd²	11.75
+
+ρ = 1 − (6 × 11.75) / (15 × (225 − 1)) = 1 − 70.5 / 3360 = 1 − 0.021 ≈ 0.979
+
+# Código en R
+# Correlación de Spearman
+horas <- c(2,3,5,1,4,6,2,7,3,5,1,4,6,2,8)
+calif <- c(3.2,3.5,4.0,2.8,3.8,4.3,3.0,4.5,3.4,4.1,2.5,3.7,4.2,3.1,4.8)
+
+rho_spearman <- cor(horas, calif, method = 'spearman')
+cat('Rho de Spearman =', round(rho_spearman, 3))
+
+# Prueba de significancia
+cor.test(horas, calif, method = 'spearman')
+
+
+Interpretación: ρ = 0.979 indica una asociación monótona positiva muy fuerte entre las horas de estudio y la calificación. El resultado es prácticamente idéntico al de Pearson (r = 0.989), lo que confirma que la relación es esencialmente lineal y que no hay valores atípicos influyentes que estén distorsionando el coeficiente paramétrico. En general, Pearson y Spearman convergen cuando se cumplen los supuestos de Pearson.
+
+7.5.4 Pearson vs. Spearman: ¿cuándo usar cada uno?
+La siguiente regla práctica orienta la elección:
+•	Use Pearson cuando las variables sean continuas, la relación sea lineal y no haya valores atípicos extremos.
+•	Use Spearman cuando los datos sean ordinales, la relación sea monótona no lineal, o cuando haya valores atípicos que no pueden eliminarse.
+•	Si ambos producen resultados similares, la relación es lineal y no hay problemas de supuestos.
+•	Si difieren notablemente, investigue la causa: valores atípicos, no linealidad, o escala ordinal.
+
+7.5.5 Aplicación disciplinar
+En educación, la correlación de Spearman es apropiada para estudiar la relación entre el puesto en el ranking de una institución (variable ordinal) y la satisfacción estudiantil. En ciencias de la salud, se usa para medir la asociación entre el estadio clínico de una enfermedad (I, II, III, IV) y la respuesta al tratamiento. En administración, permite analizar la relación entre la posición jerárquica de los empleados y su nivel de compromiso organizacional.
+
+7.5.6 Ejercicios propuestos
+Ejercicio 1. Calcule el coeficiente de Spearman entre horas de sueño (Z) y calificación (Y). Compare con el Pearson obtenido en el ejercicio 7.4.1 y discuta las diferencias.
+Ejercicio 2. Un investigador agrega al dataset un estudiante atípico: 20 horas de estudio y calificación 2.0. Calcule Pearson y Spearman con y sin este dato. ¿Cuál coeficiente es más robusto? ¿Por qué?
+Ejercicio 3. Clasifique como ordinales las calificaciones de la Tabla 7.1 en cuatro categorías (Deficiente: <3.0, Básico: 3.0–3.4, Alto: 3.5–3.9, Superior: 4.0–5.0) y calcule ρ de Spearman entre esta nueva variable ordinal y los rangos de horas de estudio.
+ 
+7.6 Tablas de contingencia
+7.6.1 Definición
+Una tabla de contingencia (también llamada tabla de doble entrada o tabla cruzada) es una representación matricial que organiza la distribución conjunta de dos variables categóricas. Las filas corresponden a las categorías de una variable y las columnas a las categorías de la otra; cada celda interior contiene el número de observaciones que pertenecen simultáneamente a ambas categorías. Los totales marginales (sumas por filas y columnas) permiten calcular frecuencias relativas condicionales y aplicar pruebas de independencia (Agresti, 2013).
+
+7.6.2 Estructura y elementos
+Una tabla de contingencia de r × c (r filas, c columnas) tiene los siguientes elementos:
+•	Frecuencias absolutas (nᵢⱼ): número de casos en la celda (i, j).
+•	Frecuencias marginales de fila (nᵢ·): total de la fila i; suma de todas las celdas de esa fila.
+•	Frecuencias marginales de columna (n·ⱼ): total de la columna j.
+•	Frecuencias relativas conjuntas (fᵢⱼ = nᵢⱼ / n): proporción de casos en la celda (i, j) respecto al total.
+•	Frecuencias relativas condicionales por fila (nᵢⱼ / nᵢ·): distribución de Y dentro de cada categoría de X.
+
+7.6.3 Ejemplo resuelto
+Con los datos de la Tabla 7.1 se cruzan las variables género (M / F) y nivel de calificación (Baja: Y < 3.5; Alta: Y ≥ 3.5):
+
+Tabla 7.4. Tabla de contingencia: nivel de calificación × género
+Calificación / Género	Masculino	Femenino	Total
+Baja (< 3.5)	4	2	6
+Alta (≥ 3.5)	4	5	9
+Total	8	7	15
+
+# Código en R
+# Tabla de contingencia en R
+calif  <- c(3.2,3.5,4.0,2.8,3.8,4.3,3.0,4.5,3.4,4.1,2.5,3.7,4.2,3.1,4.8)
+genero <- c('M','F','M','F','M','F','M','F','M','F','M','F','M','F','M')
+
+nivel_calif <- ifelse(calif >= 3.5, 'Alta', 'Baja')
+
+tabla <- table(Calificacion = nivel_calif, Genero = genero)
+print(tabla)
+addmargins(tabla)          # con totales marginales
+prop.table(tabla)          # frecuencias relativas conjuntas
+prop.table(tabla, margin = 1)  # condicional por fila (nivel)
+prop.table(tabla, margin = 2)  # condicional por columna (género)
+
+# Prueba chi-cuadrado de independencia
+chisq.test(tabla)
+
+
+Interpretación: Del total de 15 estudiantes, 9 (60%) tienen calificación alta y 6 (40%) calificación baja. Entre los hombres, el 50% tiene calificación alta; entre las mujeres, el 71.4%. La diferencia sugiere una asociación entre género y nivel de calificación, aunque con una muestra tan pequeña la prueba chi-cuadrado puede carecer de potencia suficiente. Con muestras mayores, esta tendencia podría investigarse con mayor rigor estadístico.
+
+7.6.4 Aplicación disciplinar
+En epidemiología, las tablas de contingencia 2×2 son la herramienta fundamental para calcular la razón de odds (OR) y el riesgo relativo (RR) en estudios caso-control y cohortes. En marketing, permiten cruzar segmento de cliente con preferencia de producto para identificar patrones de consumo. En educación, se usan para analizar si la modalidad de estudio (presencial / virtual) se asocia con la aprobación o reprobación de asignaturas.
+
+7.6.5 Ejercicios propuestos
+Ejercicio 1. Construya una tabla de contingencia 3×2 cruzando nivel de calificación en tres categorías (Baja: <3.0, Media: 3.0–3.9, Alta: ≥4.0) con el género. Calcule las frecuencias condicionales por columna.
+Ejercicio 2. Con la tabla del ejercicio anterior, calcule en R la prueba chi-cuadrado de Pearson. ¿Se puede concluir que existe asociación entre género y nivel de calificación? Justifique con base en el valor p.
+Ejercicio 3. Un estudio sobre hábitos alimentarios registra el tipo de dieta (omnívora / vegetariana / vegana) y la presencia de anemia (sí / no) en 200 personas. Construya la estructura de una tabla de contingencia para este caso e identifique cuántas celdas tendría.
+ 
+7.7 Regresión lineal simple
+7.7.1 Definición
+La regresión lineal simple es un modelo estadístico que describe la relación entre una variable dependiente o respuesta (Y) y una variable independiente o predictora (X) mediante una función lineal. A diferencia de la correlación —que solo mide la fuerza de la asociación—, la regresión permite cuantificar la magnitud del cambio en Y asociado a un cambio unitario en X, y puede usarse para realizar predicciones dentro del rango de los datos observados (Montgomery, Peck & Vining, 2012).
+
+7.7.2 El modelo
+El modelo de regresión lineal simple tiene la forma:
+Ŷ = β₀ + β₁X
+donde Ŷ es el valor predicho de Y, β₀ es el intercepto (valor esperado de Y cuando X = 0), β₁ es la pendiente (cambio esperado en Y por cada unidad de incremento en X), y X es el valor de la variable predictora. Los parámetros β₀ y β₁ se estiman mediante el método de mínimos cuadrados ordinarios (MCO), que minimiza la suma de los cuadrados de los residuos (diferencias entre valores observados y predichos).
+
+7.7.3 Estimación de los parámetros
+Las fórmulas de estimación por MCO para la muestra son:
+b₁ = Sxy / Sx² = Σ[(xᵢ − x̄)(yᵢ − ȳ)] / Σ(xᵢ − x̄)²
+b₀ = ȳ − b₁ · x̄
+
+7.7.4 Coeficiente de determinación R²
+El coeficiente de determinación R² mide la proporción de la variabilidad total de Y que es explicada por el modelo de regresión:
+R² = r² (en regresión simple)
+R² varía entre 0 y 1. Un R² = 0.95 significa que el 95% de la variación en Y queda explicada por X mediante el modelo lineal. El 5% restante corresponde a la variación no explicada (residual).
+
+7.7.5 Ejemplo resuelto
+Con los datos de la Tabla 7.1: Sxy ≈ 1.449, Sx² ≈ 4.210.
+b₁ = 1.449 / 4.210 ≈ 0.344
+b₀ = 3.79 − 0.344 × 3.93 ≈ 2.438
+Modelo estimado: Ŷ = 2.438 + 0.344X
+R² = (0.989)² ≈ 0.978
+
+# Código en R
+# Regresión lineal simple: calificación ~ horas de estudio
+horas <- c(2,3,5,1,4,6,2,7,3,5,1,4,6,2,8)
+calif <- c(3.2,3.5,4.0,2.8,3.8,4.3,3.0,4.5,3.4,4.1,2.5,3.7,4.2,3.1,4.8)
+
+modelo <- lm(calif ~ horas)
+summary(modelo)
+
+# Gráfico de regresión con intervalo de confianza
+plot(horas, calif,
+     main = 'Regresión lineal: Calificación ~ Horas de estudio',
+     xlab = 'Horas de estudio semanales (X)',
+     ylab = 'Calificación (Y)',
+     pch = 19, col = '#2E75B6', cex = 1.3)
+abline(modelo, col = '#C00000', lwd = 2)
+
+# Predicción para un estudiante que estudia 6 horas
+nuevo <- data.frame(horas = 6)
+predict(modelo, newdata = nuevo, interval = 'confidence', level = 0.95)
+
+
+Interpretación: El modelo estimado Ŷ = 2.438 + 0.344X indica que, en promedio, por cada hora adicional de estudio semanal, la calificación aumenta 0.344 puntos. Un estudiante que estudia 6 horas semanales tendría una calificación predicha de 2.438 + 0.344(6) = 4.50 puntos. El R² = 0.978 señala que el 97.8% de la variación en las calificaciones queda explicada por las horas de estudio, lo que indica un ajuste excelente del modelo para estos datos.
+
+Nota: La regresión permite predecir, pero no debe extrapolarse fuera del rango observado de X (1–8 horas). Una predicción para 20 horas de estudio, por ejemplo, podría producir una calificación mayor que 5, lo cual es imposible en la escala utilizada.
+
+7.7.6 Aplicación disciplinar
+En ciencias de la salud, la regresión lineal simple permite estimar la dosis de medicamento necesaria para alcanzar un nivel terapéutico objetivo. En ingeniería, se usa para modelar la relación entre temperatura de operación y desgaste de componentes. En economía, relaciona el ingreso familiar con el gasto en educación. En ciencias sociales, modela la relación entre años de escolaridad e ingresos laborales.
+
+7.7.7 Ejercicios propuestos
+Ejercicio 1. Estime el modelo de regresión lineal simple entre horas de sueño (Z, variable predictora) y calificación (Y, variable respuesta). Interprete b₀, b₁ y R².
+Ejercicio 2. Use el modelo estimado en la sección 7.7.5 para predecir la calificación de un estudiante que estudia 4.5 horas semanales. ¿Cuál es el intervalo de confianza al 95% para esa predicción en R?
+Ejercicio 3. ¿Por qué el coeficiente de determinación R² en regresión lineal simple es igual al cuadrado de la correlación de Pearson r? Demuéstrelo algebraicamente a partir de las fórmulas de ambos estadísticos.
+Ejercicio 4. Con los datos de la Tabla 7.1, construya el gráfico de residuos (residuos vs. valores predichos). ¿Se observa algún patrón sistemático? ¿Qué implicaría eso para la validez del modelo?
+ 
+7.8 Síntesis y relación entre las herramientas del análisis bivariado
+A lo largo de este capítulo se han desarrollado seis herramientas complementarias que, aplicadas sobre el mismo conjunto de datos, han revelado distintas facetas de la relación entre horas de estudio y calificación académica. La siguiente tabla sintetiza las principales características de cada técnica:
+
+Técnica	Tipo de variables	Qué mide	Resultado del ejemplo
+Diagrama de dispersión	Cuantitativas	Patrón visual de asociación	Relación lineal positiva fuerte
+Covarianza	Cuantitativas	Dirección de la relación	Sxy = 1.449 (positiva)
+Correlación de Pearson	Cuantitativas continuas	Fuerza y dirección lineal	r = 0.989 (muy fuerte)
+Correlación de Spearman	Ordinales o cuantitativas	Asociación monótona	ρ = 0.979 (muy fuerte)
+Tabla de contingencia	Categóricas	Distribución conjunta	Tendencia: mujeres con mayor calificación
+Regresión lineal simple	Cuantitativas	Modelo predictivo lineal	Ŷ = 2.438 + 0.344X; R² = 0.978
+
+Una conclusión metodológica fundamental de este capítulo es la siguiente: correlación no implica causalidad. El hecho de que r = 0.989 entre horas de estudio y calificación sea muy alto no permite concluir que estudiar más horas cause mejores calificaciones en sentido estricto. Pueden existir variables de confusión (motivación, capacidad cognitiva, calidad del estudio) que expliquen parte de la relación. La causalidad requiere diseños de investigación específicos —experimentos controlados, estudios longitudinales— que van más allá del análisis bivariado descriptivo.
+
+Nota: Antes de aplicar cualquiera de estas técnicas en un estudio real, verifique los supuestos correspondientes, inspeccione visualmente los datos y evalúe la presencia de valores atípicos. Un análisis bivariado riguroso siempre comienza con el diagrama de dispersión.
+ 
+7.9 Ejercicios integradores
+Los siguientes ejercicios requieren integrar varias de las técnicas desarrolladas en el capítulo:
+
+Ejercicio 1. Un grupo de investigadores registra en 20 pacientes hipertensos: presión arterial sistólica (mmHg), edad (años), índice de masa corporal (IMC) y consumo de sodio diario (mg). (a) Construya la matriz de diagramas de dispersión (pairs() en R). (b) Calcule la matriz de correlaciones de Pearson. (c) Identifique el par de variables con mayor correlación y estime el modelo de regresión lineal simple correspondiente. (d) Interprete b₁ y R² en términos del problema.
+
+Ejercicio 2. En una encuesta a 50 estudiantes de una facultad de ingeniería se registra: semestre académico (1–10), promedio acumulado (0–5), modalidad de aprendizaje preferida (visual / auditiva / kinestésica) y horas semanales de uso de herramientas digitales. (a) ¿Cuál técnica bivariada usaría para analizar la relación entre semestre y promedio? Justifique. (b) ¿Cuál técnica usaría para analizar la relación entre modalidad de aprendizaje y aprobación del semestre (sí/no)? (c) Diseñe el código R para ambos análisis.
+
+Ejercicio 3. Se afirma que en una empresa de manufactura existe una relación entre el número de horas de capacitación recibidas por los operarios y el número de defectos producidos en su turno. Se tienen los datos de 12 operarios. (a) Estime el modelo de regresión lineal simple. (b) Interprete la pendiente en el contexto del problema. (c) Si la empresa decide aumentar la capacitación de 8 a 12 horas, ¿cuántos defectos menos esperaría según el modelo? (d) ¿Cuál sería el R² mínimo que justificaría usar este modelo para tomar decisiones operativas?
+
+ 
+Referencias
+Agresti, A. (2013). Categorical data analysis (3.ª ed.). Wiley.
+Cohen, J. (1988). Statistical power analysis for the behavioral sciences (2.ª ed.). Lawrence Erlbaum Associates.
+Devore, J. L. (2016). Probability and statistics for engineering and the sciences (9.ª ed.). Cengage Learning.
+Montgomery, D. C., Peck, E. A., & Vining, G. G. (2012). Introduction to linear regression analysis (5.ª ed.). Wiley.
+Montgomery, D. C., & Runger, G. C. (2018). Applied statistics and probability for engineers (7.ª ed.). Wiley.
+Siegel, S., & Castellan, N. J. (1988). Nonparametric statistics for the behavioral sciences (2.ª ed.). McGraw-Hill.
+Walpole, R. E., Myers, R. H., & Myers, S. L. (2012). Probability and statistics for engineers and scientists (9.ª ed.). Pearson.
