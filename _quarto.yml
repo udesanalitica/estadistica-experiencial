@@ -27,38 +27,26 @@ book:
   chapters:
     - index.qmd
     - intro.qmd
-    - summary.qmd
     - autores.qmd
 
-    - part: "Parte I. Fundamentos"
+    - part: "Fundamentos de estadística"
       chapters:
         - 01-fundamentos.qmd
         - 02-preparacion-datos.qmd
 
-    - part: "Parte II. Organización y visualización de datos"
+    - part: "Organización y visualización de datos"
       chapters:
         - 03-tablas-frecuencia.qmd
         - 04-visualizacion.qmd
 
-    - part: "Parte III. Medidas descriptivas"
+    - part: "Medidas descriptivas"
       chapters:
         - 05-tendencia-central.qmd
         - 06-posicion.qmd
-        - 07-dispersion.qmd
-        - 08-forma.qmd
 
-    - part: "Parte IV. Relaciones entre variables"
+    - part: "Relación entre variables"
       chapters:
-        - 09-analisis-bivariado.qmd
-        - 10-asociacion-correlacion.qmd
-
-    - part: "Parte V. Puente a la inferencia"
-      chapters:
-        - 11-significancia.qmd
-
-    - part: "Parte VI. Aplicación y divulgación"
-      chapters:
-        - 12-publicacion.qmd
+        - 07-analisis-bivariado.qmd
 
     - references.qmd
 
@@ -75,15 +63,11 @@ format:
     toc-depth: 3
 
   pdf:
-    documentclass: scrreprt
+    documentclass: report
     pdf-engine: xelatex
     toc: true
     number-sections: true
     mainfont: "Times New Roman"
-    include-in-header:
-      text: |
-        \usepackage{polyglossia}
-        \setmainlanguage{spanish}
 
   docx:
     toc: true
