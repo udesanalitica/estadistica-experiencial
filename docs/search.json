@@ -1,123 +1,12 @@
 [
   {
-    "objectID": "05-tendencia-central.html",
-    "href": "05-tendencia-central.html",
-    "title": "8  Capítulo 5. Medidas de tendencia central y dispersión",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Estadística Experiencial Aplicada",
     "section": "",
-    "text": "9 Capítulo 5. Medidas de tendencia central y dispersión\nLas medidas de tendencia central son herramientas estadísticas utilizadas para resumir un conjunto de datos mediante un valor representativo o típico. Su principal objetivo es describir el comportamiento general de una distribución y facilitar la comparación entre diferentes conjuntos de información.\nEn términos generales, una medida de tendencia central representa el punto alrededor del cual tienden a agruparse las observaciones. Estas medidas permiten sintetizar grandes volúmenes de datos en un único valor numérico que describe de manera aproximada el comportamiento de la variable analizada.\nCon frecuencia, estas medidas son denominadas “promedios”; sin embargo, cada una posee características particulares y su uso depende de la naturaleza de los datos y del propósito del análisis.\nLas tres medidas de tendencia central más utilizadas son:\nLa elección de la medida más adecuada depende del tipo de variable, la presencia de valores extremos y la forma de la distribución de los datos. Por ejemplo, la media suele verse afectada por valores atípicos, mientras que la mediana ofrece una medida más robusta en distribuciones asimétricas.\nEstas medidas constituyen una base fundamental para el análisis estadístico descriptivo y son ampliamente utilizadas en áreas como la salud, educación, ingeniería, economía y ciencias sociales, ya que permiten resumir información y apoyar la toma de decisiones basada en datos.\nEn este capítulo se presentan las principales medidas de tendencia central y de dispersión, junto con su formulación matemática y su implementación en R.",
+    "text": "Preface\nThis is a Quarto book.\n\nportada\n\n\n\npropósito del libro\n\n\n\npúblico objetivo\n\n\n\ncompetencias a desarrollar\n\nTo learn more about Quarto books visit https://quarto.org/docs/books.\n\n1 + 1\n\n[1] 2",
     "crumbs": [
-      "Parte III. Medidas descriptivas",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Capítulo 5. Medidas de tendencia central y dispersión</span>"
-    ]
-  },
-  {
-    "objectID": "05-tendencia-central.html#visualización-de-las-medidas-de-tendencia-central",
-    "href": "05-tendencia-central.html#visualización-de-las-medidas-de-tendencia-central",
-    "title": "8  Capítulo 5. Medidas de tendencia central y dispersión",
-    "section": "10.1 Visualización de las medidas de tendencia central",
-    "text": "10.1 Visualización de las medidas de tendencia central\n\nlibrary(readxl)\nlibrary(ggplot2)\n\n# Cargar datos\ndatos &lt;- read_excel(\n  \"C:/R-Proyectos/estadistica-experiencial/data/bd_antropometricas.xlsx\"\n)\n\n# Función para calcular la moda\nmoda &lt;- function(x) {\n  x &lt;- na.omit(x)\n  ux &lt;- unique(x)\n  ux[which.max(tabulate(match(x, ux)))]\n}\n\n# Medidas de tendencia central\nmedia &lt;- mean(datos$Peso_Kg, na.rm = TRUE)\nmediana &lt;- median(datos$Peso_Kg, na.rm = TRUE)\nmoda_val &lt;- moda(datos$Peso_Kg)\n\n# Histograma\nggplot(datos, aes(x = Peso_Kg)) +\n  \n  geom_histogram(\n    bins = 10,\n    fill = \"skyblue\",\n    color = \"black\",\n    alpha = 0.7\n  ) +\n  \n  # Media\n  geom_vline(\n    xintercept = media,\n    color = \"red\",\n    linewidth = 1.2,\n    linetype = \"dashed\"\n  ) +\n  \n  # Mediana\n  geom_vline(\n    xintercept = mediana,\n    color = \"blue\",\n    linewidth = 1.2\n  ) +\n  \n  # Moda\n  geom_vline(\n    xintercept = moda_val,\n    color = \"darkgreen\",\n    linewidth = 1.2,\n    linetype = \"dotdash\"\n  ) +\n  \n  labs(\n    title = \"Distribución del peso\",\n    subtitle = \"Media (rojo), Mediana (azul) y Moda (verde)\",\n    x = \"Peso (kg)\",\n    y = \"Frecuencia\"\n  ) +\n  \n  theme_minimal()",
-    "crumbs": [
-      "Parte III. Medidas descriptivas",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Capítulo 5. Medidas de tendencia central y dispersión</span>"
-    ]
-  },
-  {
-    "objectID": "05-tendencia-central.html#interpretación-del-gráfico-distribución-del-peso",
-    "href": "05-tendencia-central.html#interpretación-del-gráfico-distribución-del-peso",
-    "title": "8  Capítulo 5. Medidas de tendencia central y dispersión",
-    "section": "10.2 Interpretación del gráfico: Distribución del peso",
-    "text": "10.2 Interpretación del gráfico: Distribución del peso\nEl histograma presenta la distribución de la variable Peso (kg) en la muestra analizada, incorporando las tres principales medidas de tendencia central:\n🔴 Media (línea roja) 🔵 Mediana (línea azul) 🟢 Moda (línea verde)\n\n10.2.1 Análisis estadístico\nLa media es mayor que la mediana y la moda\nSe observa que: \\(Media &gt; Mediana&gt;Moda\\). Esto indica una asimetría positiva o sesgo hacia la derecha.\nExistencia de valores extremos\nLa presencia de individuos con pesos altos (aproximadamente entre 140 y 190 kg) desplaza la media hacia valores mayores. Estos datos atípicos afectan principalmente la media, mientras que la mediana permanece más estable.\nConcentración principal de los datos\nLa mayor frecuencia de observaciones se concentra entre aproximadamente 35 y 65 kg, lo que indica que la mayoría de los participantes presentan pesos dentro de ese intervalo.\nComportamiento de la moda\nLa moda se ubica en el intervalo de mayor frecuencia, representando el peso más común dentro de la muestra.",
-    "crumbs": [
-      "Parte III. Medidas descriptivas",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Capítulo 5. Medidas de tendencia central y dispersión</span>"
-    ]
-  },
-  {
-    "objectID": "05-tendencia-central.html#actividad-explorando-las-características-antropométricas",
-    "href": "05-tendencia-central.html#actividad-explorando-las-características-antropométricas",
-    "title": "8  Capítulo 5. Medidas de tendencia central y dispersión",
-    "section": "11.1 Actividad: Explorando las características antropométricas",
-    "text": "11.1 Actividad: Explorando las características antropométricas\n\n11.1.1 Objetivo\nAnalizar diferentes variables antropométricas mediante histogramas y medidas de tendencia central para identificar patrones de distribución, variabilidad y posibles valores atípicos.\n\n\n\nVariable\nInterpretación\n\n\n\n\nAltura_cm\nDistribución de estaturas\n\n\nAnchura_hombros_cm\nVariabilidad corporal\n\n\nLong_Brazo_cm\nProporciones anatómicas\n\n\nLong_Muslo_cm\nLongitud del miembro inferior\n\n\nLong_Antebrazo_cm\nVariabilidad segmentaria",
-    "crumbs": [
-      "Parte III. Medidas descriptivas",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Capítulo 5. Medidas de tendencia central y dispersión</span>"
-    ]
-  },
-  {
-    "objectID": "05-tendencia-central.html#actividad-práctica",
-    "href": "05-tendencia-central.html#actividad-práctica",
-    "title": "8  Capítulo 5. Medidas de tendencia central y dispersión",
-    "section": "11.2 Actividad práctica",
-    "text": "11.2 Actividad práctica",
-    "crumbs": [
-      "Parte III. Medidas descriptivas",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Capítulo 5. Medidas de tendencia central y dispersión</span>"
-    ]
-  },
-  {
-    "objectID": "05-tendencia-central.html#parte-1.-construcción-del-gráfico",
-    "href": "05-tendencia-central.html#parte-1.-construcción-del-gráfico",
-    "title": "8  Capítulo 5. Medidas de tendencia central y dispersión",
-    "section": "11.3 Parte 1. Construcción del gráfico",
-    "text": "11.3 Parte 1. Construcción del gráfico\nConstruya un histograma para cada una de las siguientes variables:\n\nAltura_cm\nAnchura_hombros_cm\nLong_Brazo_cm\n\nIncluya mediante líneas verticales de diferentes colores.\n\nMedia, Mediana, Moda",
-    "crumbs": [
-      "Parte III. Medidas descriptivas",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Capítulo 5. Medidas de tendencia central y dispersión</span>"
-    ]
-  },
-  {
-    "objectID": "05-tendencia-central.html#parte-2.-interpretación",
-    "href": "05-tendencia-central.html#parte-2.-interpretación",
-    "title": "8  Capítulo 5. Medidas de tendencia central y dispersión",
-    "section": "11.4 Parte 2. Interpretación",
-    "text": "11.4 Parte 2. Interpretación\nPara cada gráfico responda:\n\n¿La distribución parece simétrica o asimétrica?\n¿Existen valores extremos?\n¿La media y la mediana son similares?\n¿Qué medida representa mejor el comportamiento de los datos?\n¿Cuál variable presenta mayor dispersión?",
-    "crumbs": [
-      "Parte III. Medidas descriptivas",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Capítulo 5. Medidas de tendencia central y dispersión</span>"
-    ]
-  },
-  {
-    "objectID": "05-tendencia-central.html#resumen-estadístico-en-r",
-    "href": "05-tendencia-central.html#resumen-estadístico-en-r",
-    "title": "8  Capítulo 5. Medidas de tendencia central y dispersión",
-    "section": "12.1 5.3 Resumen estadístico en R",
-    "text": "12.1 5.3 Resumen estadístico en R\nR permite obtener múltiples medidas descriptivas de manera simultánea.\n\nsummary(datos$Peso_Kg)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n  31.00   40.00   50.00   68.15   72.00  184.00 \n\n\nTambién es posible calcular varias medidas en conjunto:\n\nlibrary(summarytools)\n\nWarning: package 'summarytools' was built under R version 4.5.3\n\ndescr(datos,stats=c(\"mean\",\"sd\",\"q1\",\"med\",\"q3\",\"min\",\"max\",\"cv\"))\n\nNon-numerical variable(s) ignored: Clase, Grupo, Genero, Curso\n\n\nDescriptive Statistics  \ndatos  \nN: 260  \n\n                Altura_cm   Ancho_Palma_cm   Anchura_hombros_cm   Lon_Palma_cm   Long_Antebrazo_cm\n------------- ----------- ---------------- -------------------- -------------- -------------------\n         Mean       69.47             8.07                53.83           9.46               27.54\n      Std.Dev       76.49             1.31                15.08           1.37                3.70\n           Q1        1.65             7.00                42.00           9.00               26.00\n       Median        1.85             8.00                49.00          10.00               27.00\n           Q3      162.00             9.00                63.00          10.00               29.00\n          Min        1.50             5.00                36.00           6.00               20.00\n          Max      192.00            13.50               130.00          12.00               50.00\n           CV        1.10             0.16                 0.28           0.14                0.13\n\nTable: Table continues below\n\n \n\n                Long_Brazo_cm   Long_Mano_cm   Long_Muslo_cm   Peso_Kg\n------------- --------------- -------------- --------------- ---------\n         Mean           68.01          17.56           51.11     68.15\n      Std.Dev           12.16           4.38            4.85     42.61\n           Q1           66.00          16.10           48.00     40.00\n       Median           71.00          17.00           51.00     50.00\n           Q3           75.00          18.30           54.00     72.00\n          Min           17.00           7.00           38.00     31.00\n          Max           84.00          83.00           73.00    184.00\n           CV            0.18           0.25            0.09      0.63",
-    "crumbs": [
-      "Parte III. Medidas descriptivas",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Capítulo 5. Medidas de tendencia central y dispersión</span>"
-    ]
-  },
-  {
-    "objectID": "05-tendencia-central.html#histograma-desviación-estándar",
-    "href": "05-tendencia-central.html#histograma-desviación-estándar",
-    "title": "8  Capítulo 5. Medidas de tendencia central y dispersión",
-    "section": "12.2 Histograma + desviación estándar",
-    "text": "12.2 Histograma + desviación estándar\n\nmedia &lt;- mean(datos$Peso_Kg, na.rm = TRUE)\ndesv &lt;- sd(datos$Peso_Kg, na.rm = TRUE)\n\nggplot(datos, aes(x = Peso_Kg)) +\n  \n  geom_histogram(\n    bins = 10,\n    fill = \"skyblue\",\n    color = \"black\"\n  ) +\n  \n  # Media\n  geom_vline(\n    xintercept = media,\n    color = \"red\",\n    linewidth = 1.2\n  ) +\n  \n  # ±1 desviación estándar\n  geom_vline(\n    xintercept = media + desv,\n    color = \"darkgreen\",\n    linetype = \"dashed\",\n    linewidth = 1\n  ) +\n  \n  geom_vline(\n    xintercept = media - desv,\n    color = \"darkgreen\",\n    linetype = \"dashed\",\n    linewidth = 1\n  ) +\n  \n  labs(\n    title = \"Distribución del peso y desviación estándar\",\n    subtitle = \"Línea roja = media | Líneas verdes = ±1 desviación estándar\",\n    x = \"Peso (kg)\",\n    y = \"Frecuencia\"\n  ) +\n  \n  theme_minimal()\n\n\n\n\n\n\n\n\n\n12.2.1 Interpretación\nEl histograma del peso complementado con la media y la desviación estándar permite analizar tanto la tendencia central como la variabilidad de los datos. La línea roja representa la media del peso de los participantes, mientras que las líneas verdes discontinuas indican un intervalo aproximado de una desviación estándar por encima y por debajo de la media. Este intervalo permite identificar el rango donde se concentra gran parte de las observaciones.\nEn la distribución analizada se observa que la mayoría de los individuos presentan pesos cercanos a la media, concentrándose principalmente dentro del intervalo delimitado por las líneas de desviación estándar. Sin embargo, también se identifican algunos valores alejados del centro de la distribución, lo que sugiere la presencia de posibles valores atípicos o una dispersión considerable en ciertos casos. Desde el punto de vista estadístico, una desviación estándar pequeña indica que los datos son más homogéneos y se agrupan cerca de la media; por el contrario, una desviación estándar grande refleja una mayor heterogeneidad y dispersión de los datos.",
-    "crumbs": [
-      "Parte III. Medidas descriptivas",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Capítulo 5. Medidas de tendencia central y dispersión</span>"
-    ]
-  },
-  {
-    "objectID": "05-tendencia-central.html#comparar-dispersión-entre-géneros",
-    "href": "05-tendencia-central.html#comparar-dispersión-entre-géneros",
-    "title": "8  Capítulo 5. Medidas de tendencia central y dispersión",
-    "section": "12.3 Comparar dispersión entre géneros",
-    "text": "12.3 Comparar dispersión entre géneros\n\nggplot(datos, aes(x = Peso_Kg)) +\n  \n  geom_density(\n    fill = \"lightgreen\",\n    alpha = 0.5\n  ) +\n  \n  labs(\n    title = \"Densidad del peso\",\n    subtitle = \"Visualización de la dispersión de los datos\",\n    x = \"Peso (kg)\",\n    y = \"Densidad\"\n  ) +\n  \n  theme_classic()\n\n\n\n\n\n\n\n\n\n12.3.1 Interpretación\nLa curva de densidad representa una versión suavizada de la distribución de los datos y permite visualizar la concentración de observaciones a lo largo de los valores de la variable peso.\nLas zonas más altas de la curva indican intervalos donde existe una mayor concentración de individuos, mientras que las áreas más bajas representan valores menos frecuentes. La forma de la curva permite evaluar características importantes de la distribución, tales como: simetría; presencia de sesgo; concentración de datos; posibles agrupamientos y dispersión general.\nSi la curva presenta una forma aproximadamente simétrica, puede inferirse que los datos tienden a distribuirse de manera equilibrada alrededor de la media. En cambio, una cola más larga hacia alguno de los extremos indica asimetría o sesgo en la distribución.\nAsimismo, una curva más ancha y extendida refleja mayor dispersión de los datos, mientras que una curva más estrecha indica mayor homogeneidad. La curva de densidad constituye una herramienta útil para comprender visualmente la estructura de la distribución y complementar el análisis realizado mediante histogramas y medidas descriptivas.\n\nggplot(datos, aes(x = Genero, y = Peso_Kg, fill = Genero)) +\n  \n  geom_violin(alpha = 0.7) +\n  \n  geom_boxplot(\n    width = 0.1,\n    fill = \"white\"\n  ) +\n  \n  labs(\n    title = \"Distribución y dispersión del peso\",\n    x = \"Género\",\n    y = \"Peso (kg)\"\n  ) +\n  \n  theme_minimal()\n\n\n\n\n\n\n\n\n\n\n12.3.2 Interpretación\nEl boxplot comparativo del peso según género permite evaluar diferencias en la tendencia central y la dispersión entre los grupos analizados. Cada caja representa el rango intercuartílico de los datos, es decir, el intervalo donde se concentra el 50 % central de las observaciones. La línea ubicada dentro de la caja corresponde a la mediana, mientras que los puntos alejados representan posibles valores atípicos.\nA partir de la gráfica es posible identificar: diferencias en la mediana del peso entre géneros; variaciones en la amplitud de las cajas, asociadas al grado de dispersión; presencia de valores extremos; diferencias en la homogeneidad de los grupos.\nUn grupo con cajas más amplias y bigotes más extensos presenta mayor variabilidad, indicando que los valores se encuentran más dispersos. Por el contrario, cajas más compactas sugieren una distribución más homogénea. Este tipo de análisis resulta especialmente útil para comparar poblaciones y explorar patrones de comportamiento de variables antropométricas en distintos grupos.",
-    "crumbs": [
-      "Parte III. Medidas descriptivas",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Capítulo 5. Medidas de tendencia central y dispersión</span>"
-    ]
-  },
-  {
-    "objectID": "05-tendencia-central.html#resumen-gráfico",
-    "href": "05-tendencia-central.html#resumen-gráfico",
-    "title": "8  Capítulo 5. Medidas de tendencia central y dispersión",
-    "section": "12.4 Resumen gráfico",
-    "text": "12.4 Resumen gráfico\nLas medidas de tendencia central y dispersión son esenciales para describir un conjunto de datos. Su correcta interpretación permite comprender la estructura de la información, identificar patrones y apoyar la toma de decisiones basada en evidencia. En R, estas medidas pueden calcularse de forma sencilla, lo que facilita su aplicación en análisis estadísticos tanto exploratorios como inferenciales.\n\n\n\nFuente: Autores",
-    "crumbs": [
-      "Parte III. Medidas descriptivas",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Capítulo 5. Medidas de tendencia central y dispersión</span>"
+      "Preface"
     ]
   },
   {
@@ -465,6 +354,127 @@
     "crumbs": [
       "Parte II. Organización y visualización de datos",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Parte I. Fundamentos</span>"
+    ]
+  },
+  {
+    "objectID": "05-tendencia-central.html",
+    "href": "05-tendencia-central.html",
+    "title": "8  Capítulo 5. Medidas de tendencia central y dispersión",
+    "section": "",
+    "text": "9 Capítulo 5. Medidas de tendencia central y dispersión\nLas medidas de tendencia central son herramientas estadísticas utilizadas para resumir un conjunto de datos mediante un valor representativo o típico. Su principal objetivo es describir el comportamiento general de una distribución y facilitar la comparación entre diferentes conjuntos de información.\nEn términos generales, una medida de tendencia central representa el punto alrededor del cual tienden a agruparse las observaciones. Estas medidas permiten sintetizar grandes volúmenes de datos en un único valor numérico que describe de manera aproximada el comportamiento de la variable analizada.\nCon frecuencia, estas medidas son denominadas “promedios”; sin embargo, cada una posee características particulares y su uso depende de la naturaleza de los datos y del propósito del análisis.\nLas tres medidas de tendencia central más utilizadas son:\nLa elección de la medida más adecuada depende del tipo de variable, la presencia de valores extremos y la forma de la distribución de los datos. Por ejemplo, la media suele verse afectada por valores atípicos, mientras que la mediana ofrece una medida más robusta en distribuciones asimétricas.\nEstas medidas constituyen una base fundamental para el análisis estadístico descriptivo y son ampliamente utilizadas en áreas como la salud, educación, ingeniería, economía y ciencias sociales, ya que permiten resumir información y apoyar la toma de decisiones basada en datos.\nEn este capítulo se presentan las principales medidas de tendencia central y de dispersión, junto con su formulación matemática y su implementación en R.",
+    "crumbs": [
+      "Parte III. Medidas descriptivas",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Capítulo 5. Medidas de tendencia central y dispersión</span>"
+    ]
+  },
+  {
+    "objectID": "05-tendencia-central.html#visualización-de-las-medidas-de-tendencia-central",
+    "href": "05-tendencia-central.html#visualización-de-las-medidas-de-tendencia-central",
+    "title": "8  Capítulo 5. Medidas de tendencia central y dispersión",
+    "section": "10.1 Visualización de las medidas de tendencia central",
+    "text": "10.1 Visualización de las medidas de tendencia central\n\nlibrary(readxl)\nlibrary(ggplot2)\n\n# Cargar datos\ndatos &lt;- read_excel(\n  \"C:/R-Proyectos/estadistica-experiencial/data/bd_antropometricas.xlsx\"\n)\n\n# Función para calcular la moda\nmoda &lt;- function(x) {\n  x &lt;- na.omit(x)\n  ux &lt;- unique(x)\n  ux[which.max(tabulate(match(x, ux)))]\n}\n\n# Medidas de tendencia central\nmedia &lt;- mean(datos$Peso_Kg, na.rm = TRUE)\nmediana &lt;- median(datos$Peso_Kg, na.rm = TRUE)\nmoda_val &lt;- moda(datos$Peso_Kg)\n\n# Histograma\nggplot(datos, aes(x = Peso_Kg)) +\n  \n  geom_histogram(\n    bins = 10,\n    fill = \"skyblue\",\n    color = \"black\",\n    alpha = 0.7\n  ) +\n  \n  # Media\n  geom_vline(\n    xintercept = media,\n    color = \"red\",\n    linewidth = 1.2,\n    linetype = \"dashed\"\n  ) +\n  \n  # Mediana\n  geom_vline(\n    xintercept = mediana,\n    color = \"blue\",\n    linewidth = 1.2\n  ) +\n  \n  # Moda\n  geom_vline(\n    xintercept = moda_val,\n    color = \"darkgreen\",\n    linewidth = 1.2,\n    linetype = \"dotdash\"\n  ) +\n  \n  labs(\n    title = \"Distribución del peso\",\n    subtitle = \"Media (rojo), Mediana (azul) y Moda (verde)\",\n    x = \"Peso (kg)\",\n    y = \"Frecuencia\"\n  ) +\n  \n  theme_minimal()",
+    "crumbs": [
+      "Parte III. Medidas descriptivas",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Capítulo 5. Medidas de tendencia central y dispersión</span>"
+    ]
+  },
+  {
+    "objectID": "05-tendencia-central.html#interpretación-del-gráfico-distribución-del-peso",
+    "href": "05-tendencia-central.html#interpretación-del-gráfico-distribución-del-peso",
+    "title": "8  Capítulo 5. Medidas de tendencia central y dispersión",
+    "section": "10.2 Interpretación del gráfico: Distribución del peso",
+    "text": "10.2 Interpretación del gráfico: Distribución del peso\nEl histograma presenta la distribución de la variable Peso (kg) en la muestra analizada, incorporando las tres principales medidas de tendencia central:\n🔴 Media (línea roja) 🔵 Mediana (línea azul) 🟢 Moda (línea verde)\n\n10.2.1 Análisis estadístico\nLa media es mayor que la mediana y la moda\nSe observa que: \\(Media &gt; Mediana&gt;Moda\\). Esto indica una asimetría positiva o sesgo hacia la derecha.\nExistencia de valores extremos\nLa presencia de individuos con pesos altos (aproximadamente entre 140 y 190 kg) desplaza la media hacia valores mayores. Estos datos atípicos afectan principalmente la media, mientras que la mediana permanece más estable.\nConcentración principal de los datos\nLa mayor frecuencia de observaciones se concentra entre aproximadamente 35 y 65 kg, lo que indica que la mayoría de los participantes presentan pesos dentro de ese intervalo.\nComportamiento de la moda\nLa moda se ubica en el intervalo de mayor frecuencia, representando el peso más común dentro de la muestra.",
+    "crumbs": [
+      "Parte III. Medidas descriptivas",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Capítulo 5. Medidas de tendencia central y dispersión</span>"
+    ]
+  },
+  {
+    "objectID": "05-tendencia-central.html#actividad-explorando-las-características-antropométricas",
+    "href": "05-tendencia-central.html#actividad-explorando-las-características-antropométricas",
+    "title": "8  Capítulo 5. Medidas de tendencia central y dispersión",
+    "section": "11.1 Actividad: Explorando las características antropométricas",
+    "text": "11.1 Actividad: Explorando las características antropométricas\n\n11.1.1 Objetivo\nAnalizar diferentes variables antropométricas mediante histogramas y medidas de tendencia central para identificar patrones de distribución, variabilidad y posibles valores atípicos.\n\n\n\nVariable\nInterpretación\n\n\n\n\nAltura_cm\nDistribución de estaturas\n\n\nAnchura_hombros_cm\nVariabilidad corporal\n\n\nLong_Brazo_cm\nProporciones anatómicas\n\n\nLong_Muslo_cm\nLongitud del miembro inferior\n\n\nLong_Antebrazo_cm\nVariabilidad segmentaria",
+    "crumbs": [
+      "Parte III. Medidas descriptivas",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Capítulo 5. Medidas de tendencia central y dispersión</span>"
+    ]
+  },
+  {
+    "objectID": "05-tendencia-central.html#actividad-práctica",
+    "href": "05-tendencia-central.html#actividad-práctica",
+    "title": "8  Capítulo 5. Medidas de tendencia central y dispersión",
+    "section": "11.2 Actividad práctica",
+    "text": "11.2 Actividad práctica",
+    "crumbs": [
+      "Parte III. Medidas descriptivas",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Capítulo 5. Medidas de tendencia central y dispersión</span>"
+    ]
+  },
+  {
+    "objectID": "05-tendencia-central.html#parte-1.-construcción-del-gráfico",
+    "href": "05-tendencia-central.html#parte-1.-construcción-del-gráfico",
+    "title": "8  Capítulo 5. Medidas de tendencia central y dispersión",
+    "section": "11.3 Parte 1. Construcción del gráfico",
+    "text": "11.3 Parte 1. Construcción del gráfico\nConstruya un histograma para cada una de las siguientes variables:\n\nAltura_cm\nAnchura_hombros_cm\nLong_Brazo_cm\n\nIncluya mediante líneas verticales de diferentes colores.\n\nMedia, Mediana, Moda",
+    "crumbs": [
+      "Parte III. Medidas descriptivas",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Capítulo 5. Medidas de tendencia central y dispersión</span>"
+    ]
+  },
+  {
+    "objectID": "05-tendencia-central.html#parte-2.-interpretación",
+    "href": "05-tendencia-central.html#parte-2.-interpretación",
+    "title": "8  Capítulo 5. Medidas de tendencia central y dispersión",
+    "section": "11.4 Parte 2. Interpretación",
+    "text": "11.4 Parte 2. Interpretación\nPara cada gráfico responda:\n\n¿La distribución parece simétrica o asimétrica?\n¿Existen valores extremos?\n¿La media y la mediana son similares?\n¿Qué medida representa mejor el comportamiento de los datos?\n¿Cuál variable presenta mayor dispersión?",
+    "crumbs": [
+      "Parte III. Medidas descriptivas",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Capítulo 5. Medidas de tendencia central y dispersión</span>"
+    ]
+  },
+  {
+    "objectID": "05-tendencia-central.html#resumen-estadístico-en-r",
+    "href": "05-tendencia-central.html#resumen-estadístico-en-r",
+    "title": "8  Capítulo 5. Medidas de tendencia central y dispersión",
+    "section": "12.1 5.3 Resumen estadístico en R",
+    "text": "12.1 5.3 Resumen estadístico en R\nR permite obtener múltiples medidas descriptivas de manera simultánea.\n\nsummary(datos$Peso_Kg)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n  31.00   40.00   50.00   68.15   72.00  184.00 \n\n\nTambién es posible calcular varias medidas en conjunto:\n\nlibrary(summarytools)\n\nWarning: package 'summarytools' was built under R version 4.5.3\n\ndescr(datos,stats=c(\"mean\",\"sd\",\"q1\",\"med\",\"q3\",\"min\",\"max\",\"cv\"))\n\nNon-numerical variable(s) ignored: Clase, Grupo, Genero, Curso\n\n\nDescriptive Statistics  \ndatos  \nN: 260  \n\n                Altura_cm   Ancho_Palma_cm   Anchura_hombros_cm   Lon_Palma_cm   Long_Antebrazo_cm\n------------- ----------- ---------------- -------------------- -------------- -------------------\n         Mean       69.47             8.07                53.83           9.46               27.54\n      Std.Dev       76.49             1.31                15.08           1.37                3.70\n           Q1        1.65             7.00                42.00           9.00               26.00\n       Median        1.85             8.00                49.00          10.00               27.00\n           Q3      162.00             9.00                63.00          10.00               29.00\n          Min        1.50             5.00                36.00           6.00               20.00\n          Max      192.00            13.50               130.00          12.00               50.00\n           CV        1.10             0.16                 0.28           0.14                0.13\n\nTable: Table continues below\n\n \n\n                Long_Brazo_cm   Long_Mano_cm   Long_Muslo_cm   Peso_Kg\n------------- --------------- -------------- --------------- ---------\n         Mean           68.01          17.56           51.11     68.15\n      Std.Dev           12.16           4.38            4.85     42.61\n           Q1           66.00          16.10           48.00     40.00\n       Median           71.00          17.00           51.00     50.00\n           Q3           75.00          18.30           54.00     72.00\n          Min           17.00           7.00           38.00     31.00\n          Max           84.00          83.00           73.00    184.00\n           CV            0.18           0.25            0.09      0.63",
+    "crumbs": [
+      "Parte III. Medidas descriptivas",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Capítulo 5. Medidas de tendencia central y dispersión</span>"
+    ]
+  },
+  {
+    "objectID": "05-tendencia-central.html#histograma-desviación-estándar",
+    "href": "05-tendencia-central.html#histograma-desviación-estándar",
+    "title": "8  Capítulo 5. Medidas de tendencia central y dispersión",
+    "section": "12.2 Histograma + desviación estándar",
+    "text": "12.2 Histograma + desviación estándar\n\nmedia &lt;- mean(datos$Peso_Kg, na.rm = TRUE)\ndesv &lt;- sd(datos$Peso_Kg, na.rm = TRUE)\n\nggplot(datos, aes(x = Peso_Kg)) +\n  \n  geom_histogram(\n    bins = 10,\n    fill = \"skyblue\",\n    color = \"black\"\n  ) +\n  \n  # Media\n  geom_vline(\n    xintercept = media,\n    color = \"red\",\n    linewidth = 1.2\n  ) +\n  \n  # ±1 desviación estándar\n  geom_vline(\n    xintercept = media + desv,\n    color = \"darkgreen\",\n    linetype = \"dashed\",\n    linewidth = 1\n  ) +\n  \n  geom_vline(\n    xintercept = media - desv,\n    color = \"darkgreen\",\n    linetype = \"dashed\",\n    linewidth = 1\n  ) +\n  \n  labs(\n    title = \"Distribución del peso y desviación estándar\",\n    subtitle = \"Línea roja = media | Líneas verdes = ±1 desviación estándar\",\n    x = \"Peso (kg)\",\n    y = \"Frecuencia\"\n  ) +\n  \n  theme_minimal()\n\n\n\n\n\n\n\n\n\n12.2.1 Interpretación\nEl histograma del peso complementado con la media y la desviación estándar permite analizar tanto la tendencia central como la variabilidad de los datos. La línea roja representa la media del peso de los participantes, mientras que las líneas verdes discontinuas indican un intervalo aproximado de una desviación estándar por encima y por debajo de la media. Este intervalo permite identificar el rango donde se concentra gran parte de las observaciones.\nEn la distribución analizada se observa que la mayoría de los individuos presentan pesos cercanos a la media, concentrándose principalmente dentro del intervalo delimitado por las líneas de desviación estándar. Sin embargo, también se identifican algunos valores alejados del centro de la distribución, lo que sugiere la presencia de posibles valores atípicos o una dispersión considerable en ciertos casos. Desde el punto de vista estadístico, una desviación estándar pequeña indica que los datos son más homogéneos y se agrupan cerca de la media; por el contrario, una desviación estándar grande refleja una mayor heterogeneidad y dispersión de los datos.",
+    "crumbs": [
+      "Parte III. Medidas descriptivas",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Capítulo 5. Medidas de tendencia central y dispersión</span>"
+    ]
+  },
+  {
+    "objectID": "05-tendencia-central.html#comparar-dispersión-entre-géneros",
+    "href": "05-tendencia-central.html#comparar-dispersión-entre-géneros",
+    "title": "8  Capítulo 5. Medidas de tendencia central y dispersión",
+    "section": "12.3 Comparar dispersión entre géneros",
+    "text": "12.3 Comparar dispersión entre géneros\n\nggplot(datos, aes(x = Peso_Kg)) +\n  \n  geom_density(\n    fill = \"lightgreen\",\n    alpha = 0.5\n  ) +\n  \n  labs(\n    title = \"Densidad del peso\",\n    subtitle = \"Visualización de la dispersión de los datos\",\n    x = \"Peso (kg)\",\n    y = \"Densidad\"\n  ) +\n  \n  theme_classic()\n\n\n\n\n\n\n\n\n\n12.3.1 Interpretación\nLa curva de densidad representa una versión suavizada de la distribución de los datos y permite visualizar la concentración de observaciones a lo largo de los valores de la variable peso.\nLas zonas más altas de la curva indican intervalos donde existe una mayor concentración de individuos, mientras que las áreas más bajas representan valores menos frecuentes. La forma de la curva permite evaluar características importantes de la distribución, tales como: simetría; presencia de sesgo; concentración de datos; posibles agrupamientos y dispersión general.\nSi la curva presenta una forma aproximadamente simétrica, puede inferirse que los datos tienden a distribuirse de manera equilibrada alrededor de la media. En cambio, una cola más larga hacia alguno de los extremos indica asimetría o sesgo en la distribución.\nAsimismo, una curva más ancha y extendida refleja mayor dispersión de los datos, mientras que una curva más estrecha indica mayor homogeneidad. La curva de densidad constituye una herramienta útil para comprender visualmente la estructura de la distribución y complementar el análisis realizado mediante histogramas y medidas descriptivas.\n\nggplot(datos, aes(x = Genero, y = Peso_Kg, fill = Genero)) +\n  \n  geom_violin(alpha = 0.7) +\n  \n  geom_boxplot(\n    width = 0.1,\n    fill = \"white\"\n  ) +\n  \n  labs(\n    title = \"Distribución y dispersión del peso\",\n    x = \"Género\",\n    y = \"Peso (kg)\"\n  ) +\n  \n  theme_minimal()\n\n\n\n\n\n\n\n\n\n\n12.3.2 Interpretación\nEl boxplot comparativo del peso según género permite evaluar diferencias en la tendencia central y la dispersión entre los grupos analizados. Cada caja representa el rango intercuartílico de los datos, es decir, el intervalo donde se concentra el 50 % central de las observaciones. La línea ubicada dentro de la caja corresponde a la mediana, mientras que los puntos alejados representan posibles valores atípicos.\nA partir de la gráfica es posible identificar: diferencias en la mediana del peso entre géneros; variaciones en la amplitud de las cajas, asociadas al grado de dispersión; presencia de valores extremos; diferencias en la homogeneidad de los grupos.\nUn grupo con cajas más amplias y bigotes más extensos presenta mayor variabilidad, indicando que los valores se encuentran más dispersos. Por el contrario, cajas más compactas sugieren una distribución más homogénea. Este tipo de análisis resulta especialmente útil para comparar poblaciones y explorar patrones de comportamiento de variables antropométricas en distintos grupos.",
+    "crumbs": [
+      "Parte III. Medidas descriptivas",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Capítulo 5. Medidas de tendencia central y dispersión</span>"
+    ]
+  },
+  {
+    "objectID": "05-tendencia-central.html#resumen-gráfico",
+    "href": "05-tendencia-central.html#resumen-gráfico",
+    "title": "8  Capítulo 5. Medidas de tendencia central y dispersión",
+    "section": "12.4 Resumen gráfico",
+    "text": "12.4 Resumen gráfico\nLas medidas de tendencia central y dispersión son esenciales para describir un conjunto de datos. Su correcta interpretación permite comprender la estructura de la información, identificar patrones y apoyar la toma de decisiones basada en evidencia. En R, estas medidas pueden calcularse de forma sencilla, lo que facilita su aplicación en análisis estadísticos tanto exploratorios como inferenciales.\n\n\n\nFuente: Autores",
+    "crumbs": [
+      "Parte III. Medidas descriptivas",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Capítulo 5. Medidas de tendencia central y dispersión</span>"
     ]
   },
   {

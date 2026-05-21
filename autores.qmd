@@ -1,7 +1,7 @@
 # Autores
 
 ::: callout-tip
-![](img/autores/FJL.jpg)
+![](img/autores/FJL.jpg){width="100"}
 
 ## Francisco Javier León
 
@@ -9,7 +9,7 @@ Bacteriólogo y laboratorista clínico, con formación avanzada como magíster e
 :::
 
 ::: callout-tip
-![](img/autores/MOPP.jpg)
+![](img/autores/MOPP.jpg){width="100"}
 
 ## Miguel Oswaldo Pérez Pulido
 
@@ -17,7 +17,7 @@ Licenciado en matemáticas y magíster en estadística. Actualmente se desempeñ
 :::
 
 ::: callout-tip
-![](img/autores/LAPGjpg.jpg)
+![](img/autores/LAPGjpg.jpg){width="100"}
 
 ## Leonardo Andrés Pinto Guarguati
 

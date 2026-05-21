@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://udesanalitica.github.io/estadistica-experiencial/05-tendencia-central.html</loc>
-    <lastmod>2026-05-21T19:20:11.233Z</lastmod>
+    <loc>https://udesanalitica.github.io/estadistica-experiencial/index.html</loc>
+    <lastmod>2026-03-24T13:10:58.675Z</lastmod>
   </url>
   <url>
     <loc>https://udesanalitica.github.io/estadistica-experiencial/intro.html</loc>
@@ -14,7 +14,7 @@
   </url>
   <url>
     <loc>https://udesanalitica.github.io/estadistica-experiencial/autores.html</loc>
-    <lastmod>2026-05-21T16:50:55.598Z</lastmod>
+    <lastmod>2026-05-21T20:05:48.460Z</lastmod>
   </url>
   <url>
     <loc>https://udesanalitica.github.io/estadistica-experiencial/01-fundamentos.html</loc>
@@ -31,6 +31,10 @@
   <url>
     <loc>https://udesanalitica.github.io/estadistica-experiencial/04-visualizacion.html</loc>
     <lastmod>2026-03-26T11:58:43.354Z</lastmod>
+  </url>
+  <url>
+    <loc>https://udesanalitica.github.io/estadistica-experiencial/05-tendencia-central.html</loc>
+    <lastmod>2026-05-21T19:20:11.233Z</lastmod>
   </url>
   <url>
     <loc>https://udesanalitica.github.io/estadistica-experiencial/06-posicion.html</loc>
@@ -63,5 +67,17 @@
   <url>
     <loc>https://udesanalitica.github.io/estadistica-experiencial/references.html</loc>
     <lastmod>2026-03-24T12:39:10.232Z</lastmod>
+  </url>
+  <url>
+    <loc>https://udesanalitica.github.io/estadistica-experiencial/Estadística-Experiencial-Aplicada.pdf</loc>
+    <lastmod>2026-05-21T20:13:11.949Z</lastmod>
+  </url>
+  <url>
+    <loc>https://udesanalitica.github.io/estadistica-experiencial/Estadística-Experiencial-Aplicada.docx</loc>
+    <lastmod>2026-05-21T20:13:16.599Z</lastmod>
+  </url>
+  <url>
+    <loc>https://udesanalitica.github.io/estadistica-experiencial/Estadística-Experiencial-Aplicada.epub</loc>
+    <lastmod>2026-05-21T20:13:20.995Z</lastmod>
   </url>
 </urlset>
