@@ -18,36 +18,11 @@ Su propósito fundamental es facilitar la comprensión de grandes volúmenes de 
 
 Las variables representan características, cualidades o rasgos que pueden medirse u observarse en los elementos de una población o muestra.
 
-### Variables cualitativas**(o atributos)**
+![La figura es una adaptación gráfica realizada por los autores en Napkin a partir del esquema presentado por Derek Rowntree (1981) en Statistics Without Tears. La modificación respeta los criterios de uso justo para fines académicos.](img/variables.jpg)
 
-Describen cualidades, atributos o categorías que no pueden medirse numéricamente, pero sí clasificarse.
+### Importancia de la identificación de variables esatdísticas y escalas de medición
 
--   **Nominales:** Sus categorías no admiten un orden natural (ej: sexo, estado civil).
-
--   **Ordinales:** Sus categorías indican un orden o jerarquía (ej: nivel socioeconómico, grado académico).
-
-### Variables cuantitativas
-
-Son aquellas que toman valores numéricos y se originan mediante procesos de conteo o medición .
-
--   **Discretas:** Asociadas a procesos de conteo, asumen valores enteros aislados (ej: número de hijos, número de artículos defectuosos).
-
--   **Continuas:** Asociadas a procesos de medición, pueden tomar cualquier valor dentro de un intervalo determinado (ej: peso, estatura, edad),.
-
-## Escalas de medición
-
-La naturaleza de las observaciones determina el nivel de medición, lo cual es fundamental para elegir el método estadístico apropiado (Tabla 1)[@armitage2002statistical; @kleinbaum1982epidemiologic].
-
-::: {#tbl-variables tbl-cap="Clasificación de variables"}
-| Escala | Característica | Ejemplo |
-|------------------------|------------------------|------------------------|
-| **Nominal** | Clasificación en categorías mutuamente excluyentes sin orden. | Género, lugar de nacimiento. |
-| **Ordinal** | Existe un orden o jerarquía entre niveles, pero la distancia entre ellos no es constante. | Estrato socioeconómico, grado militar. |
-| **Intervalo** | Orden con distancias iguales entre valores. El cero es arbitrario y no indica ausencia de la propiedad. | Temperatura (Celsius o Fahrenheit). |
-| **Razón** | Posee todas las propiedades anteriores y un **cero absoluto** que indica ausencia total de la característica. | Edad, peso, ingresos, longitud. |
-:::
-
-## Importancia de la identificación de variables
+![Fuente: Autores](img/escalas.jpg)
 
 La correcta identificación del tipo de variable es fundamental, ya que determina las técnicas estadísticas que deben utilizarse. Por ejemplo, las **variables cuantitativas permiten calcular medidas de tendencia central** (como la media) y **medidas de dispersión** (como la varianza o desviación típica), mientras que las cualitativas se analizan principalmente mediante tablas de frecuencias y proporciones[@armitage2002statistical].
 
@@ -57,7 +32,7 @@ La estadística descriptiva permite transformar datos brutos en información sig
 
 # Caso
 
-A coantinutación se analiza un conjunto de datos de estudiantes de primer ingreso en la universidad, donde se desea identificar características como edad, sexo, estrato socioeconómico y horas de estudio.
+A continuación se analiza un conjunto de datos de estudiantes de primer ingreso en la universidad, donde se desea identificar características como edad, sexo, estrato socioeconómico y horas de estudio.
 
 **Código en R**
 
@@ -82,7 +57,3 @@ El conjunto de datos permite identificar diferentes tipos de variables:
 -   **Estrato:** cualitativa ordinal (indica un orden socioeconómico).
 
 -   **Horas de estudio:** cuantitativa continua (admite valores fraccionarios en un intervalo).
-
-## Resumen gráfico
-
-![La figura es una adaptación gráfica realizada por los autores en Napkin a partir del esquema presentado por Derek Rowntree (1981) en Statistics Without Tears. La modificación respeta los criterios de uso justo para fines académicos.](img/variables.jpg)
