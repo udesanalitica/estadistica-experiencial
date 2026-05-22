@@ -20,11 +20,13 @@ Las variables representan características, cualidades o rasgos que pueden medir
 
 ![La figura es una adaptación gráfica realizada por los autores en Napkin a partir del esquema presentado por Derek Rowntree (1981) en Statistics Without Tears. La modificación respeta los criterios de uso justo para fines académicos.](img/variables.jpg)
 
-### Importancia de la identificación de variables esatdísticas y escalas de medición
+### Importancia de la identificación de variables estadísticas y escalas de medición
 
-![Fuente: Autores](img/escalas.jpg)
+![Fuente: autores](img/variablesmedidas.jpg)
 
 La correcta identificación del tipo de variable es fundamental, ya que determina las técnicas estadísticas que deben utilizarse. Por ejemplo, las **variables cuantitativas permiten calcular medidas de tendencia central** (como la media) y **medidas de dispersión** (como la varianza o desviación típica), mientras que las cualitativas se analizan principalmente mediante tablas de frecuencias y proporciones[@armitage2002statistical].
+
+![Fuente: autores](img/escalas.jpg)
 
 Un **error frecuente en el análisis estadístico es tratar variables ordinales como si fueran cuantitativas continuas** sin justificación. Asumir que los datos siguen siempre una distribución normal o aplicar pruebas paramétricas a datos que no cumplen los requisitos merman severamente la validez de los resultados y pueden generar interpretaciones erróneas,.
 
