@@ -24,41 +24,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -181,7 +146,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -205,7 +170,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./03-tablas-frecuencia.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Capítulo 3. Organización y presentación de datos</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Capítulo 3. Organización de datos y tablas estadísticas</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -292,29 +257,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="preface" class="level1 unnumbered">
 <h1 class="unnumbered">Preface</h1><p><img src="cover.png" title="Estadística Experiencial Aplicada" class="quarto-cover-image nolightbox img-fluid"></p>
-<p>This is a Quarto book.</p>
-<ul>
-<li>portada</li>
-</ul>
-<!-- -->
-<ul>
-<li>propósito del libro</li>
-</ul>
-<!-- -->
-<ul>
-<li>público objetivo</li>
-</ul>
-<!-- -->
-<ul>
-<li>competencias a desarrollar</li>
-</ul>
-<p>To learn more about Quarto books visit <a href="https://quarto.org/docs/books" class="uri">https://quarto.org/docs/books</a>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
-</div>
-</div>
+<p>La estadística constituye una herramienta fundamental para comprender, interpretar y transformar la realidad a partir de los datos. En un contexto caracterizado por el crecimiento exponencial de la información, el análisis estadístico se ha consolidado como una competencia esencial en múltiples disciplinas, especialmente en escenarios académicos, científicos, sociales y organizacionales.</p>
+<p>Este libro surge como una propuesta orientada al aprendizaje experiencial de la estadística descriptiva mediante el uso del lenguaje <span style="color:#276DC3;font-weight:bold;">R</span> y el entorno de publicación científica Quarto. Su propósito principal es acercar al estudiante a situaciones reales de análisis de datos, promoviendo no solo el cálculo de medidas estadísticas, sino también la interpretación crítica de la información y la toma de decisiones basadas en evidencia.</p>
+<p>A lo largo de los capítulos se integran ejemplos aplicados, visualizaciones estadísticas, actividades experienciales y bases de datos reales provenientes de contextos académicos y oficiales, permitiendo que el lector comprenda cómo la estadística trasciende los ejercicios mecánicos y se convierte en una herramienta para explorar fenómenos del mundo real.</p>
+<p>El uso de <span style="color:#276DC3;font-weight:bold;">R</span> permite desarrollar habilidades contemporáneas asociadas al análisis reproducible, la programación estadística y la ciencia de datos, fortaleciendo competencias analíticas cada vez más demandadas en la educación superior y en el ámbito profesional.</p>
 
 
 </section>
@@ -723,8 +669,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="nav-page nav-page-previous">
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./intro.html" class="pagination-link" aria-label="Introduction">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./intro.html" class="pagination-link" aria-label="Introducción">
+        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -163,7 +163,7 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -187,7 +187,7 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./03-tablas-frecuencia.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Capítulo 3. Organización y presentación de datos</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Capítulo 3. Organización de datos y tablas estadísticas</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -257,11 +257,11 @@ div.csl-indent {
 </header>
 
 
-<p>La preparación de datos constituye una etapa crítica dentro del análisis estadístico, ya que implica el proceso sistemático de depuración, organización, clasificación y transformación de la información recolectada, con el fin de convertirla en un insumo adecuado para su análisis <span class="citation" data-cites="kleinbaum2012survival wickham2017r">(<a href="references.html#ref-kleinbaum2012survival" role="doc-biblioref">Kleinbaum &amp; Klein, 2012</a>; <a href="references.html#ref-wickham2017r" role="doc-biblioref">Wickham &amp; Grolemund, 2017</a>)</span>.</p>
-<p>En esta fase, el estudiante - el investigador debe garantizar la calidad de los datos mediante procesos de validación y verificación, conocidos como crítica de datos, cuyo objetivo es identificar y corregir errores, inconsistencias u omisiones generadas durante la recolección de la información <span class="citation" data-cites="hair2019multivariate">(<a href="references.html#ref-hair2019multivariate" role="doc-biblioref">Hair et al., 2019</a>)</span>.</p>
+<p>La preparación de datos constituye una etapa crítica dentro del análisis estadístico, ya que implica el proceso sistemático de depuración, organización, clasificación y transformación de la información recolectada, con el fin de convertirla en un insumo adecuado para su análisis <span class="citation" data-cites="kleinbaum2012survival wickham2017r">(<a href="#ref-kleinbaum2012survival" role="doc-biblioref">Kleinbaum &amp; Klein, 2012</a>; <a href="#ref-wickham2017r" role="doc-biblioref">Wickham &amp; Grolemund, 2017</a>)</span>.</p>
+<p>En esta fase, el estudiante - el investigador debe garantizar la calidad de los datos mediante procesos de validación y verificación, conocidos como crítica de datos, cuyo objetivo es identificar y corregir errores, inconsistencias u omisiones generadas durante la recolección de la información <span class="citation" data-cites="hair2019multivariate">(<a href="#ref-hair2019multivariate" role="doc-biblioref">Hair et al., 2019</a>)</span>.</p>
 <section id="carga-de-datos-en-r" class="level2" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="carga-de-datos-en-r"><span class="header-section-number">4.1</span> Carga de datos en R</h2>
-<p>Para iniciar el trabajo en R, el primer paso fundamental consiste en definir el directorio de trabajo, es decir, la ubicación donde se encuentran los archivos de datos y donde se almacenarán los resultados del análisis. Esto puede realizarse mediante la función <code>setwd()</code> o a través de herramientas gráficas del entorno de desarrollo (RStudio) <span class="citation" data-cites="wickham2017r">(<a href="references.html#ref-wickham2017r" role="doc-biblioref">Wickham &amp; Grolemund, 2017</a>)</span>. Existen múltiples métodos para cargar datos dependiendo de su formato:</p>
+<p>Para iniciar el trabajo en R, el primer paso fundamental consiste en definir el directorio de trabajo, es decir, la ubicación donde se encuentran los archivos de datos y donde se almacenarán los resultados del análisis. Esto puede realizarse mediante la función <code>setwd()</code> o a través de herramientas gráficas del entorno de desarrollo (RStudio) <span class="citation" data-cites="wickham2017r">(<a href="#ref-wickham2017r" role="doc-biblioref">Wickham &amp; Grolemund, 2017</a>)</span>. Existen múltiples métodos para cargar datos dependiendo de su formato:</p>
 <div id="tbl-variables" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-variables-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -305,7 +305,7 @@ Table&nbsp;4.1: Métodos de carga de datos en R
 </section>
 <section id="limpieza-de-datos" class="level2" data-number="4.2">
 <h2 data-number="4.2" class="anchored" data-anchor-id="limpieza-de-datos"><span class="header-section-number">4.2</span> Limpieza de datos</h2>
-<p>La limpieza de datos consiste en detectar, corregir o eliminar inconsistencias que puedan afectar la validez del análisis estadístico <span class="citation" data-cites="vandenbroeck2005datacleaning">(<a href="references.html#ref-vandenbroeck2005datacleaning" role="doc-biblioref">Van den Broeck et al., 2005</a>)</span>. Un paso inicial es la inspección visual del conjunto de datos para identificar registros incompletos, errores de digitación o valores atípicos. Por ejemplo, líneas que contienen exclusivamente valores faltantes (<code>NA</code>) deben ser evaluadas antes de su inclusión en el análisis.</p>
+<p>La limpieza de datos consiste en detectar, corregir o eliminar inconsistencias que puedan afectar la validez del análisis estadístico <span class="citation" data-cites="vandenbroeck2005datacleaning">(<a href="#ref-vandenbroeck2005datacleaning" role="doc-biblioref">Van den Broeck et al., 2005</a>)</span>. Un paso inicial es la inspección visual del conjunto de datos para identificar registros incompletos, errores de digitación o valores atípicos. Por ejemplo, líneas que contienen exclusivamente valores faltantes (<code>NA</code>) deben ser evaluadas antes de su inclusión en el análisis.</p>
 <div id="tbl-preparacion-datos" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-preparacion-datos-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -332,13 +332,13 @@ Table&nbsp;4.2: Aspectos clave en la preparación de datos
 <td><strong>Limpieza de datos</strong></td>
 <td>Valores extremos (Outliers)</td>
 <td>Identificación y tratamiento de datos atípicos que pueden distorsionar resultados. Se recomienda corregir o eliminar errores evidentes.</td>
-<td>Diagramas de caja (<em>boxplot</em>) <span class="citation" data-cites="tukey1977eda">(<a href="references.html#ref-tukey1977eda" role="doc-biblioref">Tukey, 1977</a>)</span></td>
+<td>Diagramas de caja (<em>boxplot</em>) <span class="citation" data-cites="tukey1977eda">(<a href="#ref-tukey1977eda" role="doc-biblioref">Tukey, 1977</a>)</span></td>
 </tr>
 <tr class="even">
 <td></td>
 <td>Consistencia de totales</td>
 <td>Verificación de coherencia entre frecuencias, totales y porcentajes acumulados.</td>
-<td>Validación de sumas <span class="citation" data-cites="agresti2018statistical">(<a href="references.html#ref-agresti2018statistical" role="doc-biblioref">Agresti, 2018</a>)</span></td>
+<td>Validación de sumas <span class="citation" data-cites="agresti2018statistical">(<a href="#ref-agresti2018statistical" role="doc-biblioref">Agresti, 2018</a>)</span></td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -368,7 +368,7 @@ Table&nbsp;4.2: Aspectos clave en la preparación de datos
 <td></td>
 <td>Análisis de censura</td>
 <td>Tratamiento de datos incompletos en estudios de supervivencia.</td>
-<td><span class="citation" data-cites="kleinbaum2012survival">(<a href="references.html#ref-kleinbaum2012survival" role="doc-biblioref">Kleinbaum &amp; Klein, 2012</a>)</span></td>
+<td><span class="citation" data-cites="kleinbaum2012survival">(<a href="#ref-kleinbaum2012survival" role="doc-biblioref">Kleinbaum &amp; Klein, 2012</a>)</span></td>
 </tr>
 <tr class="even">
 <td><strong>Recodificación</strong></td>
@@ -386,7 +386,7 @@ Table&nbsp;4.2: Aspectos clave en la preparación de datos
 <td></td>
 <td>Variables dummy</td>
 <td>Conversión de variables categóricas en variables binarias.</td>
-<td><span class="citation" data-cites="wooldridge2016econometrics">(<a href="references.html#ref-wooldridge2016econometrics" role="doc-biblioref">Wooldridge, 2016</a>)</span></td>
+<td><span class="citation" data-cites="wooldridge2016econometrics">(<a href="#ref-wooldridge2016econometrics" role="doc-biblioref">Wooldridge, 2016</a>)</span></td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -402,7 +402,7 @@ Table&nbsp;4.2: Aspectos clave en la preparación de datos
 <p>La preparación de datos es una fase fundamental que garantiza la calidad y confiabilidad del análisis estadístico. Un manejo adecuado de la limpieza, los valores faltantes y la recodificación permite transformar datos brutos en información estructurada y útil, fortaleciendo la validez de los resultados y la toma de decisiones basada en evidencia (Wickham &amp; Grolemund, 2017; Hair et al., 2019).</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
 <div id="ref-agresti2018statistical" class="csl-entry" role="listitem">
 Agresti, A. (2018). <em>Statistical methods for the social sciences</em> (5th ed.). Pearson.
 </div>
@@ -834,8 +834,8 @@ Wooldridge, J. M. (2016). <em>Introductory econometrics: A modern approach</em> 
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./03-tablas-frecuencia.html" class="pagination-link" aria-label="Capítulo 3. Organización y presentación de datos">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Capítulo 3. Organización y presentación de datos</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./03-tablas-frecuencia.html" class="pagination-link" aria-label="Capítulo 3. Organización de datos y tablas estadísticas">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Capítulo 3. Organización de datos y tablas estadísticas</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

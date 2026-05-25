@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.33">
+<head>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta charset="utf-8" />
+<meta name="generator" content="quarto-1.7.33" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
 
 
-<title>5&nbsp; Capítulo 3. Organización y presentación de datos – Estadística Experiencial Aplicada</title>
+<title>5  Capítulo 3. Organización de datos y tablas estadísticas – Estadística Experiencial Aplicada</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -57,26 +59,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
-
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./04-visualizacion.html" rel="next">
-<link href="./02-preparacion-datos.html" rel="prev">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-806c95bdecf85540f7beab145150c922.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<!-- htmldependencies:E3FAD763 -->
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -105,6 +88,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -138,17 +123,22 @@ window.Quarto = {
 
 </head>
 
-<body class="nav-sidebar floating quarto-light">
+<body>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn"
+      data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" 
+      aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation"
+      onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./03-tablas-frecuencia.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Capítulo 3. Organización y presentación de datos</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <h1 class="quarto-secondary-nav-title no-breadcrumbs"></h1>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" role="link"
+        aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation"
+        onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -162,26 +152,28 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Estadística Experiencial Aplicada</a> 
+      <a href="/">
+      Estadística Experiencial Aplicada
+      </a> 
         <div class="sidebar-tools-main">
-    <a href="https://github.com/udesanalitica/estadistica-experiencial" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/udesanalitica/estadistica-experiencial"  title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
       <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
           <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="./Estadística-Experiencial-Aplicada.pdf">
+            <a class="dropdown-item sidebar-tools-main-item" href="/Estadística-Experiencial-Aplicada.pdf">
               <i class="bi bi-file-pdf pe-1"></i>
             Download PDF
             </a>
           </li>
           <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="./Estadística-Experiencial-Aplicada.epub">
+            <a class="dropdown-item sidebar-tools-main-item" href="/Estadística-Experiencial-Aplicada.epub">
               <i class="bi bi-journal pe-1"></i>
             Download ePub
             </a>
           </li>
           <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="./Estadística-Experiencial-Aplicada.docx">
+            <a class="dropdown-item sidebar-tools-main-item" href="/Estadística-Experiencial-Aplicada.docx">
               <i class="bi bi-file-word pe-1"></i>
             Download Docx
             </a>
@@ -200,107 +192,84 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
+  <a href="/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  <a href="/intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class='chapter-number'>1</span>  <span class='chapter-title'>Introducción</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./autores.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Autores</span></span></a>
+  <a href="/autores.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class='chapter-number'>2</span>  <span class='chapter-title'>Autores</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01-fundamentos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Capítulo 1. Introducción a la estadística descriptiva</span></span></a>
+  <a href="/01-fundamentos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class='chapter-number'>3</span>  <span class='chapter-title'>Capítulo 1. Introducción a la estadística descriptiva</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02-preparacion-datos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Capítulo 2. Preparación de datos</span></span></a>
+  <a href="/02-preparacion-datos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class='chapter-number'>4</span>  <span class='chapter-title'>Capítulo 2. Preparación de datos</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03-tablas-frecuencia.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Capítulo 3. Organización y presentación de datos</span></span></a>
+  <a href="/03-tablas-frecuencia.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class='chapter-number'>5</span>  <span class='chapter-title'>Capítulo 3. Organización de datos y tablas estadísticas</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04-visualizacion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Capítulo 4. Visualización de datos</span></span></a>
+  <a href="/04-visualizacion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class='chapter-number'>6</span>  <span class='chapter-title'>Capítulo 4. Visualización de datos</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05-tendencia-central.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Capítulo 5. Medidas de tendencia central y dispersión</span></span></a>
+  <a href="/05-tendencia-central.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class='chapter-number'>7</span>  <span class='chapter-title'>Capítulo 5. Medidas de tendencia central y dispersión</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06-posicion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Capítulo 6. Medidas de posición</span></span></a>
+  <a href="/06-posicion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class='chapter-number'>8</span>  <span class='chapter-title'>Capítulo 6. Medidas de posición</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07-analisis-bivariado.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Capítulo 7. Analísis bivariado</span></span></a>
+  <a href="/07-analisis-bivariado.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class='chapter-number'>9</span>  <span class='chapter-title'>Capítulo 7. Analísis bivariado</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
+  <a href="/references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
 </li>
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" ></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#tablas-de-datos" id="toc-tablas-de-datos" class="nav-link active" data-scroll-target="#tablas-de-datos"><span class="header-section-number">6</span> Tablas de datos</a>
-  <ul class="collapse">
-  <li><a href="#datos-simples" id="toc-datos-simples" class="nav-link" data-scroll-target="#datos-simples"><span class="header-section-number">6.1</span> 3.1 Datos simples</a></li>
-  <li><a href="#datos-agrupados" id="toc-datos-agrupados" class="nav-link" data-scroll-target="#datos-agrupados"><span class="header-section-number">6.2</span> 3.2 Datos agrupados</a></li>
-  <li><a href="#tablas-de-frecuencia" id="toc-tablas-de-frecuencia" class="nav-link" data-scroll-target="#tablas-de-frecuencia"><span class="header-section-number">6.3</span> 3.3 Tablas de frecuencia</a>
-  <ul class="collapse">
-  <li><a href="#frecuencia-absoluta" id="toc-frecuencia-absoluta" class="nav-link" data-scroll-target="#frecuencia-absoluta"><span class="header-section-number">6.3.1</span> Frecuencia absoluta</a></li>
-  <li><a href="#frecuencia-relativa" id="toc-frecuencia-relativa" class="nav-link" data-scroll-target="#frecuencia-relativa"><span class="header-section-number">6.3.2</span> Frecuencia relativa</a></li>
-  <li><a href="#frecuencia-acumulada" id="toc-frecuencia-acumulada" class="nav-link" data-scroll-target="#frecuencia-acumulada"><span class="header-section-number">6.3.3</span> Frecuencia acumulada</a></li>
-  <li><a href="#frecuencia-relativa-acumulada" id="toc-frecuencia-relativa-acumulada" class="nav-link" data-scroll-target="#frecuencia-relativa-acumulada"><span class="header-section-number">6.3.4</span> Frecuencia relativa acumulada</a></li>
-  </ul></li>
-  <li><a href="#ejemplo-de-tabla-de-frecuencia-variable-p_s7p97" id="toc-ejemplo-de-tabla-de-frecuencia-variable-p_s7p97" class="nav-link" data-scroll-target="#ejemplo-de-tabla-de-frecuencia-variable-p_s7p97"><span class="header-section-number">6.4</span> Ejemplo de tabla de frecuencia: Variable <code>P_S7P97</code></a></li>
-  <li><a href="#estructura-general-de-una-tabla-de-frecuencia" id="toc-estructura-general-de-una-tabla-de-frecuencia" class="nav-link" data-scroll-target="#estructura-general-de-una-tabla-de-frecuencia"><span class="header-section-number">6.5</span> 3.4 Estructura general de una tabla de frecuencia</a></li>
-  <li><a href="#marca-de-clase" id="toc-marca-de-clase" class="nav-link" data-scroll-target="#marca-de-clase"><span class="header-section-number">6.6</span> Marca de clase</a></li>
-  <li><a href="#ejemplo-en-r" id="toc-ejemplo-en-r" class="nav-link" data-scroll-target="#ejemplo-en-r"><span class="header-section-number">6.7</span> 3.6 Ejemplo en R</a></li>
-  <li><a href="#tabla-de-frecuencias-empleando-la-libreria-summarytools-para-exploración-de-datos" id="toc-tabla-de-frecuencias-empleando-la-libreria-summarytools-para-exploración-de-datos" class="nav-link" data-scroll-target="#tabla-de-frecuencias-empleando-la-libreria-summarytools-para-exploración-de-datos"><span class="header-section-number">6.8</span> <strong>Tabla de Frecuencias empleando la libreria summarytools para exploración de datos</strong></a></li>
-  <li><a href="#tablas-de-frecuencias-publicables-usando-librerias-dplyr-gt" id="toc-tablas-de-frecuencias-publicables-usando-librerias-dplyr-gt" class="nav-link" data-scroll-target="#tablas-de-frecuencias-publicables-usando-librerias-dplyr-gt"><span class="header-section-number">6.9</span> Tablas de frecuencias publicables usando librerias dplyr + gt</a></li>
-  </ul></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/udesanalitica/estadistica-experiencial/edit/main/03-tablas-frecuencia.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/udesanalitica/estadistica-experiencial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/udesanalitica/estadistica-experiencial/blob/main/03-tablas-frecuencia.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
+        <div id="quarto-toc-target"></div>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Capítulo 3. Organización y presentación de datos</span></h1>
+<h1 class="title"><span class="chapter-number">5</span>  <span class="chapter-title">Capítulo 3. Organización de datos y tablas estadísticas</span></h1>
 </div>
 
 
@@ -316,12 +285,55 @@ window.Quarto = {
 
 </header>
 
-
+<nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#tablas-de-datos" id="toc-tablas-de-datos"><span class="header-section-number">6</span> Tablas de datos</a>
+  <ul>
+  <li><a href="#datos-simples" id="toc-datos-simples"><span class="header-section-number">6.1</span> Datos simples</a></li>
+  <li><a href="#datos-agrupados" id="toc-datos-agrupados"><span class="header-section-number">6.2</span> Datos agrupados</a></li>
+  <li><a href="#tablas-de-frecuencia" id="toc-tablas-de-frecuencia"><span class="header-section-number">6.3</span> Tablas de frecuencia</a>
+  <ul>
+  <li><a href="#frecuencia-absoluta" id="toc-frecuencia-absoluta"><span class="header-section-number">6.3.1</span> Frecuencia absoluta</a></li>
+  <li><a href="#frecuencia-relativa" id="toc-frecuencia-relativa"><span class="header-section-number">6.3.2</span> Frecuencia relativa</a></li>
+  <li><a href="#frecuencia-acumulada" id="toc-frecuencia-acumulada"><span class="header-section-number">6.3.3</span> Frecuencia acumulada</a></li>
+  <li><a href="#frecuencia-relativa-acumulada" id="toc-frecuencia-relativa-acumulada"><span class="header-section-number">6.3.4</span> Frecuencia relativa acumulada</a></li>
+  </ul></li>
+  <li><a href="#ejemplo-de-tabla-de-frecuencia-variable-p_s7p97" id="toc-ejemplo-de-tabla-de-frecuencia-variable-p_s7p97"><span class="header-section-number">6.4</span> Ejemplo de tabla de frecuencia: Variable <code>P_S7P97</code></a></li>
+  <li><a href="#estructura-general-de-una-tabla-de-frecuencia" id="toc-estructura-general-de-una-tabla-de-frecuencia"><span class="header-section-number">6.5</span> Estructura general de una tabla de frecuencia</a></li>
+  <li><a href="#marca-de-clase" id="toc-marca-de-clase"><span class="header-section-number">6.6</span> Marca de clase</a></li>
+  </ul></li>
+  <li><a href="#organización-de-datos-en-contextos-reales" id="toc-organización-de-datos-en-contextos-reales"><span class="header-section-number">7</span> Organización de datos en contextos reales</a>
+  <ul>
+  <li><a href="#actividad-experencial" id="toc-actividad-experencial"><span class="header-section-number">7.1</span> Actividad Experencial</a>
+  <ul>
+  <li><a href="#situación-problema" id="toc-situación-problema"><span class="header-section-number">7.1.1</span> Situación problema</a></li>
+  <li><a href="#ejemplo-género" id="toc-ejemplo-género"><span class="header-section-number">7.1.2</span> <strong>Ejemplo: Género</strong></a></li>
+  <li><a href="#ejemplo-peso-corporal" id="toc-ejemplo-peso-corporal"><span class="header-section-number">7.1.3</span> Ejemplo: Peso corporal</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#actividad-experiencial-organización-de-datos-y-tablas-estadísticas" id="toc-actividad-experiencial-organización-de-datos-y-tablas-estadísticas"><span class="header-section-number">8</span> Actividad experiencial: Organización de datos y tablas estadísticas</a></li>
+  <li><a href="#objetivos-de-aprendizaje" id="toc-objetivos-de-aprendizaje"><span class="header-section-number">9</span> Objetivos de aprendizaje</a></li>
+  <li><a href="#desarrollo-de-la-actividad" id="toc-desarrollo-de-la-actividad"><span class="header-section-number">10</span> Desarrollo de la actividad</a>
+  <ul>
+  <li><a href="#parte-1.-exploración-inicial-de-los-datos" id="toc-parte-1.-exploración-inicial-de-los-datos"><span class="header-section-number">10.0.1</span> Parte 1. Exploración inicial de los datos</a></li>
+  <li><a href="#parte-2.-identificación-de-variables" id="toc-parte-2.-identificación-de-variables"><span class="header-section-number">10.0.2</span> Parte 2. Identificación de variables</a></li>
+  <li><a href="#parte-3.-organización-y-análisis-del-peso-corporal" id="toc-parte-3.-organización-y-análisis-del-peso-corporal"><span class="header-section-number">10.0.3</span> Parte 3. Organización y análisis del peso corporal</a></li>
+  <li><a href="#situación-problema-1" id="toc-situación-problema-1"><span class="header-section-number">10.0.4</span> Situación problema</a></li>
+  <li><a href="#parte-4.-preguntas-orientadoras" id="toc-parte-4.-preguntas-orientadoras"><span class="header-section-number">10.0.5</span> Parte 4. Preguntas orientadoras</a></li>
+  <li><a href="#parte-5.-construcción-de-tablas-agrupadas" id="toc-parte-5.-construcción-de-tablas-agrupadas"><span class="header-section-number">10.0.6</span> Parte 5. Construcción de tablas agrupadas</a></li>
+  <li><a href="#parte-6.-visualización-gráfica" id="toc-parte-6.-visualización-gráfica"><span class="header-section-number">10.0.7</span> Parte 6. Visualización gráfica</a></li>
+  <li><a href="#recomendación-metodológica" id="toc-recomendación-metodológica"><span class="header-section-number">10.0.8</span> Recomendación metodológica</a></li>
+  <li><a href="#reflexión-final" id="toc-reflexión-final"><span class="header-section-number">10.0.9</span> Reflexión final</a></li>
+  </ul></li>
+  </ul>
+</nav>
 <p>En este capítulo se presentan los fundamentos para la organización y presentación de la información mediante diferentes tipos de tablas estadísticas. Estas herramientas permiten resumir, ordenar y estructurar los datos de manera que faciliten su análisis e interpretación. Las tablas constituyen un recurso esencial en la estadística descriptiva, ya que permiten transformar datos individuales en información significativa.</p>
 <section id="tablas-de-datos" class="level1" data-number="6">
 <h1 data-number="6"><span class="header-section-number">6</span> Tablas de datos</h1>
 <section id="datos-simples" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="datos-simples"><span class="header-section-number">6.1</span> 3.1 Datos simples</h2>
+<h2 data-number="6.1"><span class="header-section-number">6.1</span> Datos simples</h2>
 <p>Los <strong>datos simples</strong> corresponden al registro directo, individual y no agrupado de cada observación obtenida en un estudio. En este formato, cada valor se conserva tal como fue recolectado, lo que permite identificar con facilidad observaciones particulares, posibles errores de registro, valores extremos y patrones preliminares.</p>
 <p>Si se tiene una variable cuantitativa <span class="math inline">\(X\)</span> observada en <span class="math inline">\(n\)</span> individuos, los datos simples pueden representarse como: <span class="math display">\[
 X = \{x_1, x_2, x_3, \dots, x_n\}
@@ -334,7 +346,7 @@ X = \{x_1, x_2, x_3, \dots, x_n\}
 <p>Este tipo de presentación es especialmente útil en etapas iniciales del análisis, cuando interesa inspeccionar la información en bruto antes de resumirla. Sin embargo, cuando el número de observaciones es grande, los datos simples se vuelven poco prácticos para interpretar tendencias generales.</p>
 </section>
 <section id="datos-agrupados" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="datos-agrupados"><span class="header-section-number">6.2</span> 3.2 Datos agrupados</h2>
+<h2 data-number="6.2"><span class="header-section-number">6.2</span> Datos agrupados</h2>
 <p>Los <strong>datos agrupados</strong> se obtienen cuando los valores individuales se organizan en categorías o intervalos de clase. Esta forma de organización permite resumir grandes volúmenes de información y facilita la identificación de concentraciones, patrones de distribución y tendencias generales.</p>
 <p>Cuando la variable es cuantitativa continua, los intervalos suelen construirse a partir del rango de los datos. El rango de los datos se define como:</p>
 <p><span class="math display">\[
@@ -362,16 +374,16 @@ k = 1 + 3.322 \log_{10}(n)
 <p>Esta expresión proporciona un valor de referencia para construir tablas de frecuencias agrupadas cuando el tamaño muestral es moderado.</p>
 </section>
 <section id="tablas-de-frecuencia" class="level2" data-number="6.3">
-<h2 data-number="6.3" class="anchored" data-anchor-id="tablas-de-frecuencia"><span class="header-section-number">6.3</span> 3.3 Tablas de frecuencia</h2>
+<h2 data-number="6.3"><span class="header-section-number">6.3</span> Tablas de frecuencia</h2>
 <p>Las <strong>tablas de frecuencia</strong> permiten resumir la distribución de los datos, indicando cuántas veces aparece cada valor, categoría o intervalo. Son una herramienta central de la estadística descriptiva y constituyen la base para la construcción de histogramas, polígonos de frecuencia, diagramas de barras y otros gráficos.</p>
 <p>Una tabla de frecuencia puede incluir los siguientes componentes:</p>
 <section id="frecuencia-absoluta" class="level3" data-number="6.3.1">
-<h3 data-number="6.3.1" class="anchored" data-anchor-id="frecuencia-absoluta"><span class="header-section-number">6.3.1</span> Frecuencia absoluta</h3>
+<h3 data-number="6.3.1"><span class="header-section-number">6.3.1</span> Frecuencia absoluta</h3>
 <p>La <strong>frecuencia absoluta</strong> de una categoría o clase corresponde al número de veces que dicha categoría aparece en el conjunto de datos. Se denota por <span class="math inline">\(f_i\)</span>​.</p>
 <p><span class="math inline">\(f_i =\text{número de observaciones en la categoría o clase }i\)</span></p>
 </section>
 <section id="frecuencia-relativa" class="level3" data-number="6.3.2">
-<h3 data-number="6.3.2" class="anchored" data-anchor-id="frecuencia-relativa"><span class="header-section-number">6.3.2</span> Frecuencia relativa</h3>
+<h3 data-number="6.3.2"><span class="header-section-number">6.3.2</span> Frecuencia relativa</h3>
 <p>La <strong>frecuencia relativa</strong> expresa la proporción de observaciones que pertenecen a una categoría respecto al total. Se denota por <span class="math inline">\(h_i\)</span>​ y se calcula como:</p>
 <p><span class="math display">\[
 h_i = \frac{f_i}{n}
@@ -382,237 +394,230 @@ h_i (\%) = \frac{f_i}{n} \times 100
 \]</span></p>
 </section>
 <section id="frecuencia-acumulada" class="level3" data-number="6.3.3">
-<h3 data-number="6.3.3" class="anchored" data-anchor-id="frecuencia-acumulada"><span class="header-section-number">6.3.3</span> Frecuencia acumulada</h3>
-<p>La <strong>frecuencia acumulada</strong> representa la suma progresiva de las frecuencias absolutas hasta la clase <span class="math inline">\(i\)</span>. Se denota por <span class="math inline">\(H_i\)</span>​:</p>
-<p><span class="math display">\[
-F_i = \sum_{j=1}^{i} f_j
-\]</span></p>
+<h3 data-number="6.3.3"><span class="header-section-number">6.3.3</span> Frecuencia acumulada</h3>
+<p>La <strong>frecuencia acumulada</strong> representa la suma progresiva de las frecuencias absolutas hasta la clase <span class="math inline">\(i\)</span>. Se denota por <span class="math inline">\(F_i\)</span>​:</p>
+<p><span class="math display">\[ F_i = \sum_{j=1}^{i} f_j \]</span></p>
 </section>
 <section id="frecuencia-relativa-acumulada" class="level3" data-number="6.3.4">
-<h3 data-number="6.3.4" class="anchored" data-anchor-id="frecuencia-relativa-acumulada"><span class="header-section-number">6.3.4</span> Frecuencia relativa acumulada</h3>
+<h3 data-number="6.3.4"><span class="header-section-number">6.3.4</span> Frecuencia relativa acumulada</h3>
 <p>La <strong>frecuencia relativa acumulada</strong> corresponde a la suma progresiva de las frecuencias relativas. Se denota por <span class="math inline">\(H_i\)</span>​:</p>
 <p><span class="math display">\[
-H_i = \sum_{j=1}^{i} h_j = \frac{f_i}{n}
+H_i = \sum_{j=1}^{i} h_j = \frac{F_i}{n}
 \]</span></p>
+<p>donde:</p>
+<ul>
+<li><p><span class="math inline">\(H_i\)</span>​ es la frecuencia relativa acumulada,</p></li>
+<li><p><span class="math inline">\(F_i\)</span> es la frecuencia absoluta acumulada,</p></li>
+<li><p><span class="math inline">\(n\)</span> es el número total de observaciones.</p></li>
+</ul>
 <p>Estas medidas permiten conocer no solo la cantidad de datos en cada categoría, sino también la proporción acumulada de observaciones hasta determinado punto de la distribución.</p>
 </section>
 </section>
 <section id="ejemplo-de-tabla-de-frecuencia-variable-p_s7p97" class="level2" data-number="6.4">
-<h2 data-number="6.4" class="anchored" data-anchor-id="ejemplo-de-tabla-de-frecuencia-variable-p_s7p97"><span class="header-section-number">6.4</span> Ejemplo de tabla de frecuencia: Variable <code>P_S7P97</code></h2>
+<h2 data-number="6.4"><span class="header-section-number">6.4</span> Ejemplo de tabla de frecuencia: Variable <code>P_S7P97</code></h2>
 <p>La variable <code>P_S7P97</code> corresponde al <strong>número de cosechas realizadas durante el año</strong>, por lo que se clasifica como una <strong>variable cuantitativa discreta</strong>, ya que proviene de un proceso de conteo y solo admite valores enteros. La tabla de frecuencia permite resumir la distribución de esta variable, identificando: cuántas veces aparece cada valor, su porcentaje, y la frecuencia acumulada.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Adjuntando el paquete: 'dplyr'</code></pre>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Cargar base de datos de Acuicultura</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>acuicultura <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;C:/R-Proyectos/estadistica-experiencial/data/S07D_Acuicultura.csv&quot;</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">#acuicultura &lt;- read_csv(</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;D:/estadistica-experiencial/data/S07D_Acuicultura.csv&quot;</span></span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] &quot;D:/estadistica-experiencial/data/S07D_Acuicultura.csv&quot;</code></pre>
 </div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following objects are masked from 'package:stats':
-
-    filter, lag</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following objects are masked from 'package:base':
-
-    intersect, setdiff, setequal, union</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'janitor' was built under R version 4.5.3</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Adjuntando el paquete: 'janitor'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following objects are masked from 'package:stats':
-
-    chisq.test, fisher.test</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Cargar base de datos de Acuicultura</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>acuicultura <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">"C:/R-Proyectos/estadistica-experiencial/data/S07D_Acuicultura.csv"</span></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>New names:
-• `` -&gt; `...1`</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Rows: 3447 Columns: 14
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr  (2): UC_UO, ENCUESTA
-dbl (12): ...1, TIPO_REG, PAIS, P_DEPTO, P_MUNIC, COD_VEREDA, P_S7PNUMPEZ, P...
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tabla de frecuencia</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>tabla_frecuencia <span class="ot">&lt;-</span> acuicultura <span class="sc">%&gt;%</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(P_S7P97) <span class="sc">%&gt;%</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">Frecuencia_relativa =</span> <span class="fu">round</span>(n <span class="sc">/</span> <span class="fu">sum</span>(n), <span class="dv">4</span>),</span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">Porcentaje =</span> <span class="fu">round</span>((n <span class="sc">/</span> <span class="fu">sum</span>(n)) <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">2</span>),</span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">Frecuencia_acumulada =</span> <span class="fu">cumsum</span>(n),</span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">Porcentaje_acumulado =</span> <span class="fu">round</span>(<span class="fu">cumsum</span>(Porcentaje), <span class="dv">2</span>)</span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualizar tabla</span></span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(</span>
-<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>  tabla_frecuencia,</span>
-<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">"Tabla de frecuencia del número de cosechas"</span></span>
-<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#)</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Tabla de frecuencia</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>tabla_frecuencia <span class="ot">&lt;-</span> acuicultura <span class="sc">%&gt;%</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(P_S7P97) <span class="sc">%&gt;%</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">Frecuencia_relativa =</span> <span class="fu">round</span>(n <span class="sc">/</span> <span class="fu">sum</span>(n), <span class="dv">4</span>),</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">Porcentaje =</span> <span class="fu">round</span>((n <span class="sc">/</span> <span class="fu">sum</span>(n)) <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">2</span>),</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">Frecuencia_acumulada =</span> <span class="fu">cumsum</span>(n),</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">Porcentaje_acumulado =</span> <span class="fu">round</span>(<span class="fu">cumsum</span>(Porcentaje), <span class="dv">2</span>)</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Cambiar nombres de columnas</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(tabla_frecuencia) <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Número de cosechas&quot;</span>,</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;f_i&quot;</span>,</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;h_i&quot;</span>,</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Porcentaje (%)&quot;</span>,</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;F_i&quot;</span>,</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;H_i&quot;</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualizar tabla</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>tabla_frecuencia <span class="sc">%&gt;%</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">&quot;Tabla de frecuencia del número de cosechas&quot;</span>,</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">escape =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">align =</span> <span class="st">&quot;c&quot;</span>,</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">digits =</span> <span class="dv">3</span></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>    <span class="at">bootstrap_options =</span> <span class="fu">c</span>(</span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;striped&quot;</span>,</span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;hover&quot;</span>,</span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;condensed&quot;</span>,</span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;responsive&quot;</span></span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>    <span class="at">full_width =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>    <span class="at">position =</span> <span class="st">&quot;center&quot;</span></span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
 <div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
+<div class="table-responsive">
+<table class="table table-striped table-hover table-condensed caption-top" data-quarto-postprocess="true" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>Tabla de frecuencia del número de cosechas</caption>
-<colgroup>
-<col style="width: 9%">
-<col style="width: 5%">
-<col style="width: 23%">
-<col style="width: 12%">
-<col style="width: 24%">
-<col style="width: 24%">
-</colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: right;">P_S7P97</th>
-<th style="text-align: right;">n</th>
-<th style="text-align: right;">Frecuencia_relativa</th>
-<th style="text-align: right;">Porcentaje</th>
-<th style="text-align: right;">Frecuencia_acumulada</th>
-<th style="text-align: right;">Porcentaje_acumulado</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">Número de cosechas</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">f_i</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">h_i</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">Porcentaje (%)</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">F_i</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">H_i</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">620</td>
-<td style="text-align: right;">0.1799</td>
-<td style="text-align: right;">17.99</td>
-<td style="text-align: right;">620</td>
-<td style="text-align: right;">17.99</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">620</td>
+<td style="text-align: center;">0.180</td>
+<td style="text-align: center;">17.99</td>
+<td style="text-align: center;">620</td>
+<td style="text-align: center;">17.99</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">1778</td>
-<td style="text-align: right;">0.5158</td>
-<td style="text-align: right;">51.58</td>
-<td style="text-align: right;">2398</td>
-<td style="text-align: right;">69.57</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1778</td>
+<td style="text-align: center;">0.516</td>
+<td style="text-align: center;">51.58</td>
+<td style="text-align: center;">2398</td>
+<td style="text-align: center;">69.57</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">678</td>
-<td style="text-align: right;">0.1967</td>
-<td style="text-align: right;">19.67</td>
-<td style="text-align: right;">3076</td>
-<td style="text-align: right;">89.24</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">678</td>
+<td style="text-align: center;">0.197</td>
+<td style="text-align: center;">19.67</td>
+<td style="text-align: center;">3076</td>
+<td style="text-align: center;">89.24</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">83</td>
-<td style="text-align: right;">0.0241</td>
-<td style="text-align: right;">2.41</td>
-<td style="text-align: right;">3159</td>
-<td style="text-align: right;">91.65</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">83</td>
+<td style="text-align: center;">0.024</td>
+<td style="text-align: center;">2.41</td>
+<td style="text-align: center;">3159</td>
+<td style="text-align: center;">91.65</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">42</td>
-<td style="text-align: right;">0.0122</td>
-<td style="text-align: right;">1.22</td>
-<td style="text-align: right;">3201</td>
-<td style="text-align: right;">92.87</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">42</td>
+<td style="text-align: center;">0.012</td>
+<td style="text-align: center;">1.22</td>
+<td style="text-align: center;">3201</td>
+<td style="text-align: center;">92.87</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">31</td>
-<td style="text-align: right;">0.0090</td>
-<td style="text-align: right;">0.90</td>
-<td style="text-align: right;">3232</td>
-<td style="text-align: right;">93.77</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">31</td>
+<td style="text-align: center;">0.009</td>
+<td style="text-align: center;">0.90</td>
+<td style="text-align: center;">3232</td>
+<td style="text-align: center;">93.77</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">49</td>
-<td style="text-align: right;">0.0142</td>
-<td style="text-align: right;">1.42</td>
-<td style="text-align: right;">3281</td>
-<td style="text-align: right;">95.19</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">49</td>
+<td style="text-align: center;">0.014</td>
+<td style="text-align: center;">1.42</td>
+<td style="text-align: center;">3281</td>
+<td style="text-align: center;">95.19</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">7</td>
-<td style="text-align: right;">24</td>
-<td style="text-align: right;">0.0070</td>
-<td style="text-align: right;">0.70</td>
-<td style="text-align: right;">3305</td>
-<td style="text-align: right;">95.89</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">24</td>
+<td style="text-align: center;">0.007</td>
+<td style="text-align: center;">0.70</td>
+<td style="text-align: center;">3305</td>
+<td style="text-align: center;">95.89</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">23</td>
-<td style="text-align: right;">0.0067</td>
-<td style="text-align: right;">0.67</td>
-<td style="text-align: right;">3328</td>
-<td style="text-align: right;">96.56</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">23</td>
+<td style="text-align: center;">0.007</td>
+<td style="text-align: center;">0.67</td>
+<td style="text-align: center;">3328</td>
+<td style="text-align: center;">96.56</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">9</td>
-<td style="text-align: right;">32</td>
-<td style="text-align: right;">0.0093</td>
-<td style="text-align: right;">0.93</td>
-<td style="text-align: right;">3360</td>
-<td style="text-align: right;">97.49</td>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">32</td>
+<td style="text-align: center;">0.009</td>
+<td style="text-align: center;">0.93</td>
+<td style="text-align: center;">3360</td>
+<td style="text-align: center;">97.49</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">10</td>
-<td style="text-align: right;">33</td>
-<td style="text-align: right;">0.0096</td>
-<td style="text-align: right;">0.96</td>
-<td style="text-align: right;">3393</td>
-<td style="text-align: right;">98.45</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">33</td>
+<td style="text-align: center;">0.010</td>
+<td style="text-align: center;">0.96</td>
+<td style="text-align: center;">3393</td>
+<td style="text-align: center;">98.45</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">11</td>
-<td style="text-align: right;">28</td>
-<td style="text-align: right;">0.0081</td>
-<td style="text-align: right;">0.81</td>
-<td style="text-align: right;">3421</td>
-<td style="text-align: right;">99.26</td>
+<td style="text-align: center;">11</td>
+<td style="text-align: center;">28</td>
+<td style="text-align: center;">0.008</td>
+<td style="text-align: center;">0.81</td>
+<td style="text-align: center;">3421</td>
+<td style="text-align: center;">99.26</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">12</td>
-<td style="text-align: right;">26</td>
-<td style="text-align: right;">0.0075</td>
-<td style="text-align: right;">0.75</td>
-<td style="text-align: right;">3447</td>
-<td style="text-align: right;">100.01</td>
+<td style="text-align: center;">12</td>
+<td style="text-align: center;">26</td>
+<td style="text-align: center;">0.007</td>
+<td style="text-align: center;">0.75</td>
+<td style="text-align: center;">3447</td>
+<td style="text-align: center;">100.01</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
+</div>
 <p><strong>Interpretación:</strong> La tabla de frecuencia permite identificar cuáles son los números de cosechas más frecuentes entre las unidades productivas analizadas. Asimismo, facilita reconocer la concentración de observaciones, la dispersión de los datos y posibles patrones de comportamiento en la actividad acuícola. Cuando la mayoría de las observaciones se concentra en pocos valores, puede inferirse una baja variabilidad en el número de cosechas. Por el contrario, una distribución amplia sugiere heterogeneidad en los sistemas productivos.</p>
 </section>
 <section id="estructura-general-de-una-tabla-de-frecuencia" class="level2" data-number="6.5">
-<h2 data-number="6.5" class="anchored" data-anchor-id="estructura-general-de-una-tabla-de-frecuencia"><span class="header-section-number">6.5</span> 3.4 Estructura general de una tabla de frecuencia</h2>
-<p>De manera general, una tabla de frecuencia para una variable cuantitativa agrupada puede organizarse con las siguientes columnas:</p>
+<h2 data-number="6.5"><span class="header-section-number">6.5</span> Estructura general de una tabla de frecuencia</h2>
+<p>De manera general, una tabla de distribución de frecuencias para una variable cuantitativa agrupada permite resumir y organizar los datos en intervalos o clases, facilitando la interpretación de la distribución de los valores observados. Este tipo de tabla incluye frecuencias absolutas, relativas y acumuladas, así como la marca de clase, la cual representa el valor central de cada intervalo.</p>
 <ul>
-<li><p>Clase o intervalo</p></li>
-<li><p>Marca de clase</p></li>
-<li><p>Frecuencia absoluta <span class="math inline">\((f_i)\)</span></p></li>
-<li><p>Frecuencia relativa <span class="math inline">\((h_i)\)</span></p></li>
-<li><p>Frecuencia acumulada <span class="math inline">\((F_i)\)</span></p></li>
-<li><p>Frecuencia relativa acumulada <span class="math inline">\((H_i)\)</span></p></li>
+<li><p><strong>Clase o intervalo:</strong> agrupa los datos en rangos numéricos para facilitar el análisis.</p></li>
+<li><p><strong>Marca de clase:</strong> corresponde al punto medio de cada intervalo y representa el valor central de la clase.</p></li>
+<li><p><strong>Frecuencia absoluta</strong> <span class="math inline">\((f_i)\)</span><strong>:</strong> número de observaciones que pertenecen a cada intervalo.</p></li>
+<li><p><strong>Frecuencia relativa</strong> <span class="math inline">\((h_i)\)</span><strong>:</strong> proporción de observaciones respecto al total.</p></li>
+<li><p><strong>Frecuencia acumulada</strong> <span class="math inline">\((F_i)\)</span><strong>:</strong> suma progresiva de las frecuencias absolutas.</p></li>
+<li><p><strong>Frecuencia relativa acumulada</strong> <span class="math inline">\((H_i)\)</span><strong>:</strong> acumulación progresiva de las frecuencias relativas.</p></li>
 </ul>
 </section>
 <section id="marca-de-clase" class="level2" data-number="6.6">
-<h2 data-number="6.6" class="anchored" data-anchor-id="marca-de-clase"><span class="header-section-number">6.6</span> Marca de clase</h2>
+<h2 data-number="6.6"><span class="header-section-number">6.6</span> Marca de clase</h2>
 <p>La marca de clase corresponde al punto medio de cada intervalo:</p>
 <p><span class="math display">\[ x_i^{*} = \frac{L_i + U_i}{2} \]</span></p>
 <p>donde:</p>
@@ -622,14 +627,133 @@ dbl (12): ...1, TIPO_REG, PAIS, P_DEPTO, P_MUNIC, COD_VEREDA, P_S7PNUMPEZ, P...
 <li><p><span class="math inline">\((U_i)\)</span>​ es el límite superior del intervalo</p></li>
 </ul>
 <p>La marca de clase resulta útil para representar la distribución mediante gráficos o para calcular medidas resumen aproximadas cuando los datos están agrupados.</p>
-</section>
-<section id="ejemplo-en-r" class="level2" data-number="6.7">
-<h2 data-number="6.7" class="anchored" data-anchor-id="ejemplo-en-r"><span class="header-section-number">6.7</span> 3.6 Ejemplo en R</h2>
-<p>Tomando como referencia la base <strong>bd_antropometricas.xlsx</strong>, puede construirse una tabla de frecuencia para una variable cualitativa, por ejemplo <strong>Grupo</strong> o <strong>Clase</strong>, o para una variable cuantitativa, como <strong>Peso</strong>, una vez se haya verificado la consistencia de las unidades registradas.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"C:/R-Proyectos/estadistica-experiencial/data/bd_antropometricas.xlsx"</span>)</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(datos)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Cargar base de datos</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>acuicultura <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;C:/R-Proyectos/estadistica-experiencial/data/S07D_Acuicultura.csv&quot;</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear tabla agrupada</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>tabla_freq <span class="ot">&lt;-</span> acuicultura <span class="sc">%&gt;%</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(P_S7P97)) <span class="sc">%&gt;%</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">Clase =</span> <span class="fu">cut</span>(</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>      P_S7P97,</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>      <span class="at">breaks =</span> <span class="dv">5</span>,</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>      <span class="at">include.lowest =</span> <span class="cn">TRUE</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(Clase, <span class="at">name =</span> <span class="st">&quot;fi&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">hi =</span> fi <span class="sc">/</span> <span class="fu">sum</span>(fi),</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">Fi =</span> <span class="fu">cumsum</span>(fi),</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">Hi =</span> <span class="fu">cumsum</span>(hi)</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Cambiar nombres de columnas</span></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(tabla_freq) <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Clase&quot;</span>,</span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;f_i&quot;</span>,</span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;h_i&quot;</span>,</span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;F_i&quot;</span>,</span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;H_i&quot;</span></span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostrar tabla</span></span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>tabla_freq <span class="sc">%&gt;%</span></span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(</span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">&quot;Distribución de frecuencias agrupadas&quot;</span>,</span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a>    <span class="at">escape =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a>    <span class="at">align =</span> <span class="st">&quot;c&quot;</span>,</span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a>    <span class="at">digits =</span> <span class="dv">3</span></span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(</span>
+<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a>    <span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>, <span class="st">&quot;condensed&quot;</span>),</span>
+<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a>    <span class="at">full_width =</span> <span class="cn">FALSE</span></span>
+<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="cell-output-display">
+<table class="table table-striped table-hover table-condensed caption-top" data-quarto-postprocess="true" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>Distribución de frecuencias agrupadas</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;" data-quarto-table-cell-role="th">Clase</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">f_i</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">h_i</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">F_i</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">H_i</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">[-0.012,2.4]</td>
+<td style="text-align: center;">3076</td>
+<td style="text-align: center;">0.892</td>
+<td style="text-align: center;">3076</td>
+<td style="text-align: center;">0.892</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">(2.4,4.8]</td>
+<td style="text-align: center;">125</td>
+<td style="text-align: center;">0.036</td>
+<td style="text-align: center;">3201</td>
+<td style="text-align: center;">0.929</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">(4.8,7.2]</td>
+<td style="text-align: center;">104</td>
+<td style="text-align: center;">0.030</td>
+<td style="text-align: center;">3305</td>
+<td style="text-align: center;">0.959</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">(7.2,9.6]</td>
+<td style="text-align: center;">55</td>
+<td style="text-align: center;">0.016</td>
+<td style="text-align: center;">3360</td>
+<td style="text-align: center;">0.975</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">(9.6,12]</td>
+<td style="text-align: center;">87</td>
+<td style="text-align: center;">0.025</td>
+<td style="text-align: center;">3447</td>
+<td style="text-align: center;">1.000</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+</section>
+<section id="organización-de-datos-en-contextos-reales" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Organización de datos en contextos reales</h1>
+<p>En estadística aplicada, las tablas de frecuencia permiten transformar grandes volúmenes de datos en información interpretable. A través de ellas es posible identificar patrones, concentraciones, categorías predominantes y características generales de una población.</p>
+<p>Para ilustrar estos conceptos, se utilizará una base de datos antropométrica que contiene mediciones corporales de estudiantes, incluyendo variables cualitativas y cuantitativas como género, grupo, peso y estatura.</p>
+<p>El objetivo no será únicamente construir tablas estadísticas, sino interpretar cómo se distribuyen los datos y qué información aportan sobre la población estudiada.</p>
+<section id="actividad-experencial" class="level2" data-number="7.1">
+<h2 data-number="7.1"><span class="header-section-number">7.1</span> Actividad Experencial</h2>
+<section id="situación-problema" class="level3" data-number="7.1.1">
+<h3 data-number="7.1.1"><span class="header-section-number">7.1.1</span> Situación problema</h3>
+<p>Usted hace parte de un equipo de analítica académica encargado de caracterizar físicamente a un grupo de estudiantes para apoyar estudios de ergonomía, salud ocupacional y diseño de espacios educativos. A partir de la base de datos: identifique patrones, organice la información, construya tablas estadísticas, e interprete los resultados.</p>
+<section id="exploración-inicial" class="level4" data-number="7.1.1.1">
+<h4 data-number="7.1.1.1"><span class="header-section-number">7.1.1.1</span> 1. Exploración inicial</h4>
+<div class="cell">
+<div class="sourceCode" id="cb5"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;C:/R-Proyectos/estadistica-experiencial/data/bd_antropometricas.xlsx&quot;</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">#datos &lt;- read_excel(</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;D:/estadistica-experiencial/data/bd_antropometricas.xlsx&quot;</span></span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] &quot;D:/estadistica-experiencial/data/bd_antropometricas.xlsx&quot;</code></pre>
+</div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#)</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(datos)</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 13
   Clase Grupo Genero Altura_cm Peso_Kg Anchura_hombros_cm Long_Mano_cm
@@ -644,115 +768,81 @@ dbl (12): ...1, TIPO_REG, PAIS, P_DEPTO, P_MUNIC, COD_VEREDA, P_S7PNUMPEZ, P...
 #   Long_Brazo_cm &lt;dbl&gt;, Long_Muslo_cm &lt;dbl&gt;, Long_Antebrazo_cm &lt;dbl&gt;,
 #   Curso &lt;chr&gt;</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(datos)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(datos)</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] "Clase"              "Grupo"              "Genero"            
- [4] "Altura_cm"          "Peso_Kg"            "Anchura_hombros_cm"
- [7] "Long_Mano_cm"       "Lon_Palma_cm"       "Ancho_Palma_cm"    
-[10] "Long_Brazo_cm"      "Long_Muslo_cm"      "Long_Antebrazo_cm" 
-[13] "Curso"             </code></pre>
+<pre><code> [1] &quot;Clase&quot;              &quot;Grupo&quot;              &quot;Genero&quot;            
+ [4] &quot;Altura_cm&quot;          &quot;Peso_Kg&quot;            &quot;Anchura_hombros_cm&quot;
+ [7] &quot;Long_Mano_cm&quot;       &quot;Lon_Palma_cm&quot;       &quot;Ancho_Palma_cm&quot;    
+[10] &quot;Long_Brazo_cm&quot;      &quot;Long_Muslo_cm&quot;      &quot;Long_Antebrazo_cm&quot; 
+[13] &quot;Curso&quot;             </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">#View (datos)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(datos)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 260
+Columns: 13
+$ Clase              &lt;chr&gt; &quot;D&quot;, &quot;D&quot;, &quot;D&quot;, &quot;D&quot;, &quot;D&quot;, &quot;D&quot;, &quot;D&quot;, &quot;D&quot;, &quot;D&quot;, &quot;D&quot;, &quot;…
+$ Grupo              &lt;chr&gt; &quot;A&quot;, &quot;A&quot;, &quot;A&quot;, &quot;A&quot;, &quot;A&quot;, &quot;B&quot;, &quot;B&quot;, &quot;B&quot;, &quot;B&quot;, &quot;B&quot;, &quot;…
+$ Genero             &lt;chr&gt; &quot;M&quot;, &quot;M&quot;, &quot;F&quot;, &quot;F&quot;, &quot;F&quot;, &quot;M&quot;, &quot;M&quot;, &quot;F&quot;, &quot;F&quot;, &quot;F&quot;, &quot;…
+$ Altura_cm          &lt;dbl&gt; 177, 177, 160, 159, 174, 186, 174, 172, 156, 165, 1…
+$ Peso_Kg            &lt;dbl&gt; 73, 86, 52, 53, 78, 68, 115, 50, 62, 64, 94, 60, 63…
+$ Anchura_hombros_cm &lt;dbl&gt; 49, 45, 37, 38, 41, 44, 49, 42, 42, 44, 48, 45, 36,…
+$ Long_Mano_cm       &lt;dbl&gt; 19, 19, 16, 16, 18, 19, 21, 19, 19, 18, 19, 18, 17,…
+$ Lon_Palma_cm       &lt;dbl&gt; 11.0, 10.0, 8.0, 9.0, 10.0, 11.0, 11.4, 10.1, 10.0,…
+$ Ancho_Palma_cm     &lt;dbl&gt; 9.0, 9.0, 8.0, 8.0, 8.5, 8.0, 9.0, 7.0, 8.0, 8.0, 9…
+$ Long_Brazo_cm      &lt;dbl&gt; 62.0, 59.0, 54.0, 52.0, 59.0, 74.0, 80.0, 76.0, 69.…
+$ Long_Muslo_cm      &lt;dbl&gt; 55, 52, 51, 50, 52, 52, 47, 51, 52, 53, 57, 46, 50,…
+$ Long_Antebrazo_cm  &lt;dbl&gt; 31.0, 31.0, 27.0, 27.0, 29.0, 29.0, 28.0, 26.0, 26.…
+$ Curso              &lt;chr&gt; &quot;2020-1&quot;, &quot;2020-1&quot;, &quot;2020-1&quot;, &quot;2020-1&quot;, &quot;2020-1&quot;, &quot;…</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class='callout-icon'></i>
+</div>
+<div class="callout-title-container flex-fill">
+2. Preguntas para el estudiante
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>¿Qué variables son cualitativas?</li>
+<li>¿Qué variables son cuantitativas?</li>
+<li>¿Qué variables corresponden a medición?</li>
+<li>¿Qué variables podrían agruparse?</li>
+<li>¿Qué información sería relevante para caracterizar a los estudiantes?</li>
+</ol>
+</div>
 </div>
 </section>
-<section id="tabla-de-frecuencias-empleando-la-libreria-summarytools-para-exploración-de-datos" class="level2" data-number="6.8">
-<h2 data-number="6.8" class="anchored" data-anchor-id="tabla-de-frecuencias-empleando-la-libreria-summarytools-para-exploración-de-datos"><span class="header-section-number">6.8</span> <strong>Tabla de Frecuencias empleando la libreria summarytools para exploración de datos</strong></h2>
+<section id="tablas-de-frecuencia-cualitativas" class="level4" data-number="7.1.1.2">
+<h4 data-number="7.1.1.2"><span class="header-section-number">7.1.1.2</span> 3. Tablas de frecuencia cualitativas</h4>
+</section>
+</section>
+<section id="ejemplo-género" class="level3" data-number="7.1.2">
+<h3 data-number="7.1.2"><span class="header-section-number">7.1.2</span> <strong>Ejemplo: Género</strong></h3>
+<p>La variable <code>Genero</code> corresponde a una variable cualitativa nominal, ya que clasifica a los individuos en categorías mutuamente excluyentes sin un orden natural. Para este tipo de variables, las tablas de frecuencia permiten identificar la proporción y distribución de las categorías observadas.</p>
+<section id="tratamiento-de-valores-faltantes" class="level5" data-number="7.1.2.0.1">
+<h5 data-number="7.1.2.0.1"><span class="header-section-number">7.1.2.0.1</span> Tratamiento de valores faltantes</h5>
+<p>En bases de datos reales es común encontrar valores faltantes (NA). Antes de realizar análisis estadísticos, es importante identificar y evaluar la presencia de datos ausentes, ya que estos pueden afectar la interpretación de los resultados y la validez de los análisis.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(summarytools)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'summarytools' was built under R version 4.5.3</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>tabla1 <span class="ot">&lt;-</span> <span class="fu">freq</span>(datos<span class="sc">$</span>Peso_Kg)</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>tabla1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">#\| message: false </span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co">#\| warning: false</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;C:/R-Proyectos/estadistica-experiencial/data/bd_antropometricas.xlsx&quot;</span>)</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co">#datos &lt;- read_excel(</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;D:/estadistica-experiencial/data/bd_antropometricas.xlsx&quot;</span></span></code></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Frequencies  
-datos$Peso_Kg  
-Type: Numeric  
-
-              Freq   % Valid   % Valid Cum.   % Total   % Total Cum.
------------ ------ --------- -------------- --------- --------------
-         31      3      1.15           1.15      1.15           1.15
-         32      3      1.15           2.31      1.15           2.31
-         34      1      0.38           2.69      0.38           2.69
-         35      5      1.92           4.62      1.92           4.62
-         36      9      3.46           8.08      3.46           8.08
-         37      8      3.08          11.15      3.08          11.15
-         38     13      5.00          16.15      5.00          16.15
-         39      8      3.08          19.23      3.08          19.23
-       39.5      1      0.38          19.62      0.38          19.62
-         40     17      6.54          26.15      6.54          26.15
-       40.5      2      0.77          26.92      0.77          26.92
-         41      6      2.31          29.23      2.31          29.23
-         42     12      4.62          33.85      4.62          33.85
-       42.5      1      0.38          34.23      0.38          34.23
-         43      3      1.15          35.38      1.15          35.38
-       43.5      2      0.77          36.15      0.77          36.15
-         44      3      1.15          37.31      1.15          37.31
-         45      4      1.54          38.85      1.54          38.85
-       45.5      1      0.38          39.23      0.38          39.23
-         46      8      3.08          42.31      3.08          42.31
-         47      6      2.31          44.62      2.31          44.62
-         48      7      2.69          47.31      2.69          47.31
-         49      3      1.15          48.46      1.15          48.46
-         50      5      1.92          50.38      1.92          50.38
-         51      4      1.54          51.92      1.54          51.92
-         52      6      2.31          54.23      2.31          54.23
-         53      7      2.69          56.92      2.69          56.92
-         55      6      2.31          59.23      2.31          59.23
-         56      2      0.77          60.00      0.77          60.00
-         57      3      1.15          61.15      1.15          61.15
-         59      4      1.54          62.69      1.54          62.69
-         60      6      2.31          65.00      2.31          65.00
-         62      5      1.92          66.92      1.92          66.92
-         63      4      1.54          68.46      1.54          68.46
-         64      4      1.54          70.00      1.54          70.00
-         66      2      0.77          70.77      0.77          70.77
-         68      4      1.54          72.31      1.54          72.31
-         69      2      0.77          73.08      0.77          73.08
-         70      2      0.77          73.85      0.77          73.85
-         72      4      1.54          75.38      1.54          75.38
-         73      2      0.77          76.15      0.77          76.15
-         75      2      0.77          76.92      0.77          76.92
-         76      2      0.77          77.69      0.77          77.69
-         78      2      0.77          78.46      0.77          78.46
-         79      2      0.77          79.23      0.77          79.23
-         80      2      0.77          80.00      0.77          80.00
-         83      2      0.77          80.77      0.77          80.77
-         86      4      1.54          82.31      1.54          82.31
-         88      2      0.77          83.08      0.77          83.08
-         94      2      0.77          83.85      0.77          83.85
-        100      2      0.77          84.62      0.77          84.62
-        115      2      0.77          85.38      0.77          85.38
-        151      1      0.38          85.77      0.38          85.77
-        152      3      1.15          86.92      1.15          86.92
-        154      2      0.77          87.69      0.77          87.69
-        155      1      0.38          88.08      0.38          88.08
-        156      1      0.38          88.46      0.38          88.46
-        158      3      1.15          89.62      1.15          89.62
-        159      1      0.38          90.00      0.38          90.00
-        160      4      1.54          91.54      1.54          91.54
-        161      1      0.38          91.92      0.38          91.92
-        162      1      0.38          92.31      0.38          92.31
-        163      1      0.38          92.69      0.38          92.69
-        164      2      0.77          93.46      0.77          93.46
-        165      2      0.77          94.23      0.77          94.23
-        166      2      0.77          95.00      0.77          95.00
-        168      1      0.38          95.38      0.38          95.38
-        169      1      0.38          95.77      0.38          95.77
-        170      3      1.15          96.92      1.15          96.92
-        171      2      0.77          97.69      0.77          97.69
-        172      1      0.38          98.08      0.38          98.08
-        176      1      0.38          98.46      0.38          98.46
-        179      1      0.38          98.85      0.38          98.85
-        180      2      0.77          99.62      0.77          99.62
-        184      1      0.38         100.00      0.38         100.00
-       &lt;NA&gt;      0                               0.00         100.00
-      Total    260    100.00         100.00    100.00         100.00</code></pre>
+<pre><code>[1] &quot;D:/estadistica-experiencial/data/bd_antropometricas.xlsx&quot;</code></pre>
 </div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">#)</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(summarytools)</span></code></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package &#39;summarytools&#39; was built under R version 4.5.3</code></pre>
 </div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>tabla2 <span class="ot">&lt;-</span> <span class="fu">freq</span>(datos<span class="sc">$</span>Genero)</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>tabla2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">freq</span>(datos<span class="sc">$</span>Genero)</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Frequencies  
 datos$Genero  
@@ -765,1045 +855,382 @@ Type: Character
        &lt;NA&gt;      0                               0.00         100.00
       Total    260    100.00         100.00    100.00         100.00</code></pre>
 </div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Verificar si realmente existen NA</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(datos<span class="sc">$</span>Genero))</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0</code></pre>
+</div>
+</div>
+<p>En este caso, la variable <code>Genero</code> no presenta valores faltantes; sin embargo, la función de resumen estadístico muestra automáticamente la categoría NA. Mediante el argumento report.nas = FALSE es posible ocultar esta categoría y presentar la tabla de frecuencias de forma más clara y limpia.</p>
+<div class="cell">
+<div class="sourceCode" id="cb21"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">freq</span>(</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  datos<span class="sc">$</span>Genero,</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">report.nas =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Frequencies  
+datos$Genero  
+Type: Character  
+
+              Freq        %   % Cum.
+----------- ------ -------- --------
+          F    208    80.00    80.00
+          M     52    20.00   100.00
+      Total    260   100.00   100.00</code></pre>
+</div>
+</div>
+<hr />
+</section>
+<section id="preguntas-de-análisis" class="level4" data-number="7.1.2.1">
+<h4 data-number="7.1.2.1"><span class="header-section-number">7.1.2.1</span> 4. Preguntas de análisis</h4>
+<ol type="1">
+<li>¿Qué género presenta mayor frecuencia?</li>
+<li>¿La distribución parece equilibrada?</li>
+<li>¿Qué implicaciones tendría esto para un estudio antropométrico?</li>
+<li>¿La muestra parece representativa?</li>
+</ol>
+<hr />
+<div class="cell">
+<div class="sourceCode" id="cb23"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;C:/R-Proyectos/estadistica-experiencial/data/bd_antropometricas.xlsx&quot;</span>)</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="co">#datos &lt;- read_excel(</span></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;D:/estadistica-experiencial/data/bd_antropometricas.xlsx&quot;</span></span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] &quot;D:/estadistica-experiencial/data/bd_antropometricas.xlsx&quot;</code></pre>
+</div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co">#)</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Tabla de frecuencia para la variable Género</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>tabla_genero <span class="ot">&lt;-</span> datos <span class="sc">%&gt;%</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(Genero, <span class="at">name =</span> <span class="st">&quot;fi&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">hi =</span> <span class="fu">round</span>(fi <span class="sc">/</span> <span class="fu">sum</span>(fi), <span class="dv">3</span>),</span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">Fi =</span> <span class="fu">cumsum</span>(fi),</span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">Hi =</span> <span class="fu">round</span>(<span class="fu">cumsum</span>(hi), <span class="dv">3</span>)</span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(tabla_genero) <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Categoría&quot;</span>,</span>
+<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;$f_i$&quot;</span>,</span>
+<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;$h_i$&quot;</span>,</span>
+<span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;$F_i$&quot;</span>,</span>
+<span id="cb25-17"><a href="#cb25-17" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;$H_i$&quot;</span></span>
+<span id="cb25-18"><a href="#cb25-18" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb25-19"><a href="#cb25-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-20"><a href="#cb25-20" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(</span>
+<span id="cb25-21"><a href="#cb25-21" aria-hidden="true" tabindex="-1"></a>  tabla_genero,</span>
+<span id="cb25-22"><a href="#cb25-22" aria-hidden="true" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">&quot;Tabla de frecuencia para la variable género&quot;</span>,</span>
+<span id="cb25-23"><a href="#cb25-23" aria-hidden="true" tabindex="-1"></a>  <span class="at">escape =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb25-24"><a href="#cb25-24" aria-hidden="true" tabindex="-1"></a>  <span class="at">align =</span> <span class="st">&quot;c&quot;</span></span>
+<span id="cb25-25"><a href="#cb25-25" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<div class="cell-output-display">
+<table class="caption-top">
+<caption>Tabla de frecuencia para la variable género</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Categoría</th>
+<th style="text-align: center;"><span class="math inline">\(f_i\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(h_i\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(F_i\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(H_i\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">208</td>
+<td style="text-align: center;">0.8</td>
+<td style="text-align: center;">208</td>
+<td style="text-align: center;">0.8</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">M</td>
+<td style="text-align: center;">52</td>
+<td style="text-align: center;">0.2</td>
+<td style="text-align: center;">260</td>
+<td style="text-align: center;">1.0</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </section>
-<section id="tablas-de-frecuencias-publicables-usando-librerias-dplyr-gt" class="level2" data-number="6.9">
-<h2 data-number="6.9" class="anchored" data-anchor-id="tablas-de-frecuencias-publicables-usando-librerias-dplyr-gt"><span class="header-section-number">6.9</span> Tablas de frecuencias publicables usando librerias dplyr + gt</h2>
+</section>
+<section id="ejemplo-peso-corporal" class="level3" data-number="7.1.3">
+<h3 data-number="7.1.3"><span class="header-section-number">7.1.3</span> Ejemplo: Peso corporal</h3>
+<p>La variable <code>Peso_Kg</code> corresponde a una variable cuantitativa continua obtenida mediante procesos de medición. Debido a que puede asumir múltiples valores dentro de un intervalo, resulta necesario organizar la información mediante intervalos de clase.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'gt' was built under R version 4.5.3</code></pre>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(summarytools)</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;C:/R-Proyectos/estadistica-experiencial/data/bd_antropometricas.xlsx&quot;</span>)</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="co">#datos &lt;- read_excel(</span></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;D:/estadistica-experiencial/data/bd_antropometricas.xlsx&quot;</span></span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] &quot;D:/estadistica-experiencial/data/bd_antropometricas.xlsx&quot;</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tabla de frecuencia para variable (ej: Genero)</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>tabla <span class="ot">&lt;-</span> datos <span class="sc">%&gt;%</span></span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(Genero, <span class="at">name =</span> <span class="st">"fi"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">hi =</span> fi <span class="sc">/</span> <span class="fu">sum</span>(fi),</span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">Fi =</span> <span class="fu">cumsum</span>(fi),</span>
-<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">Hi =</span> <span class="fu">cumsum</span>(hi)</span>
-<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostrar tabla bonita</span></span>
-<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>tabla <span class="sc">%&gt;%</span></span>
-<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(</span>
-<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">Genero =</span> <span class="st">"Categoría"</span>,</span>
-<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">fi =</span> <span class="st">"fᵢ"</span>,</span>
-<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">hi =</span> <span class="st">"hᵢ"</span>,</span>
-<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">Fi =</span> <span class="st">"Fᵢ"</span>,</span>
-<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">Hi =</span> <span class="st">"Hᵢ"</span></span>
-<span id="cb26-18"><a href="#cb26-18" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div id="zoipvjldff" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#zoipvjldff table {
-  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-#zoipvjldff thead, #zoipvjldff tbody, #zoipvjldff tfoot, #zoipvjldff tr, #zoipvjldff td, #zoipvjldff th {
-  border-style: none;
-}
-
-#zoipvjldff p {
-  margin: 0;
-  padding: 0;
-}
-
-#zoipvjldff .gt_table {
-  display: table;
-  border-collapse: collapse;
-  line-height: normal;
-  margin-left: auto;
-  margin-right: auto;
-  color: #333333;
-  font-size: 16px;
-  font-weight: normal;
-  font-style: normal;
-  background-color: #FFFFFF;
-  width: auto;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #A8A8A8;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #A8A8A8;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-}
-
-#zoipvjldff .gt_caption {
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-#zoipvjldff .gt_title {
-  color: #333333;
-  font-size: 125%;
-  font-weight: initial;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-color: #FFFFFF;
-  border-bottom-width: 0;
-}
-
-#zoipvjldff .gt_subtitle {
-  color: #333333;
-  font-size: 85%;
-  font-weight: initial;
-  padding-top: 3px;
-  padding-bottom: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-color: #FFFFFF;
-  border-top-width: 0;
-}
-
-#zoipvjldff .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#zoipvjldff .gt_bottom_border {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#zoipvjldff .gt_col_headings {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#zoipvjldff .gt_col_heading {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
-  overflow-x: hidden;
-}
-
-#zoipvjldff .gt_column_spanner_outer {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-#zoipvjldff .gt_column_spanner_outer:first-child {
-  padding-left: 0;
-}
-
-#zoipvjldff .gt_column_spanner_outer:last-child {
-  padding-right: 0;
-}
-
-#zoipvjldff .gt_column_spanner {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  overflow-x: hidden;
-  display: inline-block;
-  width: 100%;
-}
-
-#zoipvjldff .gt_spanner_row {
-  border-bottom-style: hidden;
-}
-
-#zoipvjldff .gt_group_heading {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  text-align: left;
-}
-
-#zoipvjldff .gt_empty_group_heading {
-  padding: 0.5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: middle;
-}
-
-#zoipvjldff .gt_from_md > :first-child {
-  margin-top: 0;
-}
-
-#zoipvjldff .gt_from_md > :last-child {
-  margin-bottom: 0;
-}
-
-#zoipvjldff .gt_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin: 10px;
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  overflow-x: hidden;
-}
-
-#zoipvjldff .gt_stub {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#zoipvjldff .gt_stub_row_group {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-  vertical-align: top;
-}
-
-#zoipvjldff .gt_row_group_first td {
-  border-top-width: 2px;
-}
-
-#zoipvjldff .gt_row_group_first th {
-  border-top-width: 2px;
-}
-
-#zoipvjldff .gt_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#zoipvjldff .gt_first_summary_row {
-  border-top-style: solid;
-  border-top-color: #D3D3D3;
-}
-
-#zoipvjldff .gt_first_summary_row.thick {
-  border-top-width: 2px;
-}
-
-#zoipvjldff .gt_last_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#zoipvjldff .gt_grand_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#zoipvjldff .gt_first_grand_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-style: double;
-  border-top-width: 6px;
-  border-top-color: #D3D3D3;
-}
-
-#zoipvjldff .gt_last_grand_summary_row_top {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: double;
-  border-bottom-width: 6px;
-  border-bottom-color: #D3D3D3;
-}
-
-#zoipvjldff .gt_striped {
-  background-color: rgba(128, 128, 128, 0.05);
-}
-
-#zoipvjldff .gt_table_body {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#zoipvjldff .gt_footnotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#zoipvjldff .gt_footnote {
-  margin: 0px;
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#zoipvjldff .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#zoipvjldff .gt_sourcenote {
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#zoipvjldff .gt_left {
-  text-align: left;
-}
-
-#zoipvjldff .gt_center {
-  text-align: center;
-}
-
-#zoipvjldff .gt_right {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-#zoipvjldff .gt_font_normal {
-  font-weight: normal;
-}
-
-#zoipvjldff .gt_font_bold {
-  font-weight: bold;
-}
-
-#zoipvjldff .gt_font_italic {
-  font-style: italic;
-}
-
-#zoipvjldff .gt_super {
-  font-size: 65%;
-}
-
-#zoipvjldff .gt_footnote_marks {
-  font-size: 75%;
-  vertical-align: 0.4em;
-  position: initial;
-}
-
-#zoipvjldff .gt_asterisk {
-  font-size: 100%;
-  vertical-align: 0;
-}
-
-#zoipvjldff .gt_indent_1 {
-  text-indent: 5px;
-}
-
-#zoipvjldff .gt_indent_2 {
-  text-indent: 10px;
-}
-
-#zoipvjldff .gt_indent_3 {
-  text-indent: 15px;
-}
-
-#zoipvjldff .gt_indent_4 {
-  text-indent: 20px;
-}
-
-#zoipvjldff .gt_indent_5 {
-  text-indent: 25px;
-}
-
-#zoipvjldff .katex-display {
-  display: inline-flex !important;
-  margin-bottom: 0.75em !important;
-}
-
-#zoipvjldff div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
-  height: 0px !important;
-}
-</style>
-
-<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<div class="sourceCode" id="cb28"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co">#)</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Tabla de frecuencias</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>tabla_peso <span class="ot">&lt;-</span> <span class="fu">freq</span>(</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>  datos<span class="sc">$</span>Peso_Kg,</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">report.nas =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">plain.ascii =</span> <span class="cn">FALSE</span></span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(tabla_peso, <span class="dv">10</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     Freq   % Valid % Valid Cum.   % Total % Total Cum.
+31      3 1.1538462     1.153846 1.1538462     1.153846
+32      3 1.1538462     2.307692 1.1538462     2.307692
+34      1 0.3846154     2.692308 0.3846154     2.692308
+35      5 1.9230769     4.615385 1.9230769     4.615385
+36      9 3.4615385     8.076923 3.4615385     8.076923
+37      8 3.0769231    11.153846 3.0769231    11.153846
+38     13 5.0000000    16.153846 5.0000000    16.153846
+39      8 3.0769231    19.230769 3.0769231    19.230769
+39.5    1 0.3846154    19.615385 0.3846154    19.615385
+40     17 6.5384615    26.153846 6.5384615    26.153846</code></pre>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="actividad-experiencial-organización-de-datos-y-tablas-estadísticas" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Actividad experiencial: Organización de datos y tablas estadísticas</h1>
+<p>Un grupo de diseñadores y especialistas en ergonomía universitaria necesita analizar las características antropométricas de los estudiantes con el fin de adaptar el mobiliario de las aulas, mejorar la comodidad durante las jornadas académicas y reducir posibles riesgos asociados a malas posturas.</p>
+<p>Para ello, se utilizará la base de datos <code>bd_antropometricas.xlsx</code>, la cual contiene información relacionada con peso corporal, estatura y otras medidas físicas de los estudiantes.</p>
+<p>El objetivo de esta actividad es transformar datos individuales en información organizada mediante tablas estadísticas y representaciones gráficas que permitan apoyar la toma de decisiones.</p>
+</section>
+<section id="objetivos-de-aprendizaje" class="level1" data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span> Objetivos de aprendizaje</h1>
+<p>Al finalizar la actividad, el estudiante estará en capacidad de:</p>
+<ul>
+<li><p>Identificar el tipo de variable y su escala de medición.</p></li>
+<li><p>Organizar datos mediante tablas de frecuencia.</p></li>
+<li><p>Construir tablas agrupadas para variables cuantitativas continuas.</p></li>
+<li><p>Interpretar distribuciones estadísticas.</p></li>
+<li><p>Analizar patrones, dispersión y posibles valores extremos.</p></li>
+<li><p>Relacionar la estadística descriptiva con problemas reales de análisis de datos.</p></li>
+</ul>
+</section>
+<section id="desarrollo-de-la-actividad" class="level1" data-number="10">
+<h1 data-number="10"><span class="header-section-number">10</span> Desarrollo de la actividad</h1>
+<section id="parte-1.-exploración-inicial-de-los-datos" class="level3" data-number="10.0.1">
+<h3 data-number="10.0.1"><span class="header-section-number">10.0.1</span> Parte 1. Exploración inicial de los datos</h3>
+<p>Cargue la base de datos y explore las variables disponibles.</p>
+<div class="cell">
+<div class="sourceCode" id="cb30"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;C:/R-Proyectos/estadistica-experiencial/data/bd_antropometricas.xlsx&quot;</span>)</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="co">#datos &lt;- read_excel(</span></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;D:/estadistica-experiencial/data/bd_antropometricas.xlsx&quot;</span></span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] &quot;D:/estadistica-experiencial/data/bd_antropometricas.xlsx&quot;</code></pre>
+</div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co">#)</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(datos)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 13
+  Clase Grupo Genero Altura_cm Peso_Kg Anchura_hombros_cm Long_Mano_cm
+  &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;      &lt;dbl&gt;   &lt;dbl&gt;              &lt;dbl&gt;        &lt;dbl&gt;
+1 D     A     M            177      73                 49           19
+2 D     A     M            177      86                 45           19
+3 D     A     F            160      52                 37           16
+4 D     A     F            159      53                 38           16
+5 D     A     F            174      78                 41           18
+6 D     B     M            186      68                 44           19
+# ℹ 6 more variables: Lon_Palma_cm &lt;dbl&gt;, Ancho_Palma_cm &lt;dbl&gt;,
+#   Long_Brazo_cm &lt;dbl&gt;, Long_Muslo_cm &lt;dbl&gt;, Long_Antebrazo_cm &lt;dbl&gt;,
+#   Curso &lt;chr&gt;</code></pre>
+</div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(datos)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] &quot;Clase&quot;              &quot;Grupo&quot;              &quot;Genero&quot;            
+ [4] &quot;Altura_cm&quot;          &quot;Peso_Kg&quot;            &quot;Anchura_hombros_cm&quot;
+ [7] &quot;Long_Mano_cm&quot;       &quot;Lon_Palma_cm&quot;       &quot;Ancho_Palma_cm&quot;    
+[10] &quot;Long_Brazo_cm&quot;      &quot;Long_Muslo_cm&quot;      &quot;Long_Antebrazo_cm&quot; 
+[13] &quot;Curso&quot;             </code></pre>
+</div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(datos)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 260
+Columns: 13
+$ Clase              &lt;chr&gt; &quot;D&quot;, &quot;D&quot;, &quot;D&quot;, &quot;D&quot;, &quot;D&quot;, &quot;D&quot;, &quot;D&quot;, &quot;D&quot;, &quot;D&quot;, &quot;D&quot;, &quot;…
+$ Grupo              &lt;chr&gt; &quot;A&quot;, &quot;A&quot;, &quot;A&quot;, &quot;A&quot;, &quot;A&quot;, &quot;B&quot;, &quot;B&quot;, &quot;B&quot;, &quot;B&quot;, &quot;B&quot;, &quot;…
+$ Genero             &lt;chr&gt; &quot;M&quot;, &quot;M&quot;, &quot;F&quot;, &quot;F&quot;, &quot;F&quot;, &quot;M&quot;, &quot;M&quot;, &quot;F&quot;, &quot;F&quot;, &quot;F&quot;, &quot;…
+$ Altura_cm          &lt;dbl&gt; 177, 177, 160, 159, 174, 186, 174, 172, 156, 165, 1…
+$ Peso_Kg            &lt;dbl&gt; 73, 86, 52, 53, 78, 68, 115, 50, 62, 64, 94, 60, 63…
+$ Anchura_hombros_cm &lt;dbl&gt; 49, 45, 37, 38, 41, 44, 49, 42, 42, 44, 48, 45, 36,…
+$ Long_Mano_cm       &lt;dbl&gt; 19, 19, 16, 16, 18, 19, 21, 19, 19, 18, 19, 18, 17,…
+$ Lon_Palma_cm       &lt;dbl&gt; 11.0, 10.0, 8.0, 9.0, 10.0, 11.0, 11.4, 10.1, 10.0,…
+$ Ancho_Palma_cm     &lt;dbl&gt; 9.0, 9.0, 8.0, 8.0, 8.5, 8.0, 9.0, 7.0, 8.0, 8.0, 9…
+$ Long_Brazo_cm      &lt;dbl&gt; 62.0, 59.0, 54.0, 52.0, 59.0, 74.0, 80.0, 76.0, 69.…
+$ Long_Muslo_cm      &lt;dbl&gt; 55, 52, 51, 50, 52, 52, 47, 51, 52, 53, 57, 46, 50,…
+$ Long_Antebrazo_cm  &lt;dbl&gt; 31.0, 31.0, 27.0, 27.0, 29.0, 29.0, 28.0, 26.0, 26.…
+$ Curso              &lt;chr&gt; &quot;2020-1&quot;, &quot;2020-1&quot;, &quot;2020-1&quot;, &quot;2020-1&quot;, &quot;2020-1&quot;, &quot;…</code></pre>
+</div>
+</div>
+<hr />
+</section>
+<section id="parte-2.-identificación-de-variables" class="level3" data-number="10.0.2">
+<h3 data-number="10.0.2"><span class="header-section-number">10.0.2</span> Parte 2. Identificación de variables</h3>
+<p>Complete la siguiente tabla para las variables seleccionadas:</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
 <thead>
-<tr class="gt_col_headings header">
-<th id="Genero" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Categoría</th>
-<th id="fi" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">fᵢ</th>
-<th id="hi" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">hᵢ</th>
-<th id="Fi" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Fᵢ</th>
-<th id="Hi" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Hᵢ</th>
+<tr class="header">
+<th>Variable</th>
+<th>Tipo de variable</th>
+<th>Escala de medición</th>
+<th>Unidad de medida</th>
+<th>Herramienta estadística sugerida</th>
 </tr>
 </thead>
-<tbody class="gt_table_body">
+<tbody>
 <tr class="odd">
-<td class="gt_row gt_left" headers="Genero">F</td>
-<td class="gt_row gt_right" headers="fi">208</td>
-<td class="gt_row gt_right" headers="hi">0.8</td>
-<td class="gt_row gt_right" headers="Fi">208</td>
-<td class="gt_row gt_right" headers="Hi">0.8</td>
+<td>Genero</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_left" headers="Genero">M</td>
-<td class="gt_row gt_right" headers="fi">52</td>
-<td class="gt_row gt_right" headers="hi">0.2</td>
-<td class="gt_row gt_right" headers="Fi">260</td>
-<td class="gt_row gt_right" headers="Hi">1.0</td>
+<td>Grupo</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Peso_Kg</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Altura_cm</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
-
-</div>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tabla de frecuencia para variable (ej: Genero)</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>tabla <span class="ot">&lt;-</span> datos <span class="sc">%&gt;%</span></span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(Grupo, <span class="at">name =</span> <span class="st">"fi"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">hi =</span> fi <span class="sc">/</span> <span class="fu">sum</span>(fi),</span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">Fi =</span> <span class="fu">cumsum</span>(fi),</span>
-<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">Hi =</span> <span class="fu">cumsum</span>(hi)</span>
-<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostrar tabla bonita</span></span>
-<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>tabla <span class="sc">%&gt;%</span></span>
-<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(</span>
-<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">Grupo =</span> <span class="st">"Categoría"</span>,</span>
-<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">fi =</span> <span class="st">"fᵢ"</span>,</span>
-<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">hi =</span> <span class="st">"hᵢ"</span>,</span>
-<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">Fi =</span> <span class="st">"Fᵢ"</span>,</span>
-<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">Hi =</span> <span class="st">"Hᵢ"</span></span>
-<span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div id="wjxdnymqlt" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#wjxdnymqlt table {
-  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-#wjxdnymqlt thead, #wjxdnymqlt tbody, #wjxdnymqlt tfoot, #wjxdnymqlt tr, #wjxdnymqlt td, #wjxdnymqlt th {
-  border-style: none;
-}
-
-#wjxdnymqlt p {
-  margin: 0;
-  padding: 0;
-}
-
-#wjxdnymqlt .gt_table {
-  display: table;
-  border-collapse: collapse;
-  line-height: normal;
-  margin-left: auto;
-  margin-right: auto;
-  color: #333333;
-  font-size: 16px;
-  font-weight: normal;
-  font-style: normal;
-  background-color: #FFFFFF;
-  width: auto;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #A8A8A8;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #A8A8A8;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-}
-
-#wjxdnymqlt .gt_caption {
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-#wjxdnymqlt .gt_title {
-  color: #333333;
-  font-size: 125%;
-  font-weight: initial;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-color: #FFFFFF;
-  border-bottom-width: 0;
-}
-
-#wjxdnymqlt .gt_subtitle {
-  color: #333333;
-  font-size: 85%;
-  font-weight: initial;
-  padding-top: 3px;
-  padding-bottom: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-color: #FFFFFF;
-  border-top-width: 0;
-}
-
-#wjxdnymqlt .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#wjxdnymqlt .gt_bottom_border {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#wjxdnymqlt .gt_col_headings {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#wjxdnymqlt .gt_col_heading {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
-  overflow-x: hidden;
-}
-
-#wjxdnymqlt .gt_column_spanner_outer {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-#wjxdnymqlt .gt_column_spanner_outer:first-child {
-  padding-left: 0;
-}
-
-#wjxdnymqlt .gt_column_spanner_outer:last-child {
-  padding-right: 0;
-}
-
-#wjxdnymqlt .gt_column_spanner {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  overflow-x: hidden;
-  display: inline-block;
-  width: 100%;
-}
-
-#wjxdnymqlt .gt_spanner_row {
-  border-bottom-style: hidden;
-}
-
-#wjxdnymqlt .gt_group_heading {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  text-align: left;
-}
-
-#wjxdnymqlt .gt_empty_group_heading {
-  padding: 0.5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: middle;
-}
-
-#wjxdnymqlt .gt_from_md > :first-child {
-  margin-top: 0;
-}
-
-#wjxdnymqlt .gt_from_md > :last-child {
-  margin-bottom: 0;
-}
-
-#wjxdnymqlt .gt_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin: 10px;
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  overflow-x: hidden;
-}
-
-#wjxdnymqlt .gt_stub {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#wjxdnymqlt .gt_stub_row_group {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-  vertical-align: top;
-}
-
-#wjxdnymqlt .gt_row_group_first td {
-  border-top-width: 2px;
-}
-
-#wjxdnymqlt .gt_row_group_first th {
-  border-top-width: 2px;
-}
-
-#wjxdnymqlt .gt_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#wjxdnymqlt .gt_first_summary_row {
-  border-top-style: solid;
-  border-top-color: #D3D3D3;
-}
-
-#wjxdnymqlt .gt_first_summary_row.thick {
-  border-top-width: 2px;
-}
-
-#wjxdnymqlt .gt_last_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#wjxdnymqlt .gt_grand_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#wjxdnymqlt .gt_first_grand_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-style: double;
-  border-top-width: 6px;
-  border-top-color: #D3D3D3;
-}
-
-#wjxdnymqlt .gt_last_grand_summary_row_top {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: double;
-  border-bottom-width: 6px;
-  border-bottom-color: #D3D3D3;
-}
-
-#wjxdnymqlt .gt_striped {
-  background-color: rgba(128, 128, 128, 0.05);
-}
-
-#wjxdnymqlt .gt_table_body {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#wjxdnymqlt .gt_footnotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#wjxdnymqlt .gt_footnote {
-  margin: 0px;
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#wjxdnymqlt .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#wjxdnymqlt .gt_sourcenote {
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#wjxdnymqlt .gt_left {
-  text-align: left;
-}
-
-#wjxdnymqlt .gt_center {
-  text-align: center;
-}
-
-#wjxdnymqlt .gt_right {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-#wjxdnymqlt .gt_font_normal {
-  font-weight: normal;
-}
-
-#wjxdnymqlt .gt_font_bold {
-  font-weight: bold;
-}
-
-#wjxdnymqlt .gt_font_italic {
-  font-style: italic;
-}
-
-#wjxdnymqlt .gt_super {
-  font-size: 65%;
-}
-
-#wjxdnymqlt .gt_footnote_marks {
-  font-size: 75%;
-  vertical-align: 0.4em;
-  position: initial;
-}
-
-#wjxdnymqlt .gt_asterisk {
-  font-size: 100%;
-  vertical-align: 0;
-}
-
-#wjxdnymqlt .gt_indent_1 {
-  text-indent: 5px;
-}
-
-#wjxdnymqlt .gt_indent_2 {
-  text-indent: 10px;
-}
-
-#wjxdnymqlt .gt_indent_3 {
-  text-indent: 15px;
-}
-
-#wjxdnymqlt .gt_indent_4 {
-  text-indent: 20px;
-}
-
-#wjxdnymqlt .gt_indent_5 {
-  text-indent: 25px;
-}
-
-#wjxdnymqlt .katex-display {
-  display: inline-flex !important;
-  margin-bottom: 0.75em !important;
-}
-
-#wjxdnymqlt div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
-  height: 0px !important;
-}
-</style>
-
-<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<hr />
+</section>
+<section id="parte-3.-organización-y-análisis-del-peso-corporal" class="level3" data-number="10.0.3">
+<h3 data-number="10.0.3"><span class="header-section-number">10.0.3</span> Parte 3. Organización y análisis del peso corporal</h3>
+<p>La variable <code>Peso_Kg</code> corresponde a una variable cuantitativa continua obtenida mediante procesos de medición. Debido a que puede asumir múltiples valores dentro de un intervalo, resulta conveniente organizar la información mediante tablas agrupadas y representaciones gráficas.</p>
+</section>
+<section id="situación-problema-1" class="level3" data-number="10.0.4">
+<h3 data-number="10.0.4"><span class="header-section-number">10.0.4</span> Situación problema</h3>
+<p>Los diseñadores requieren conocer:</p>
+<ul>
+<li>el rango de peso predominante,</li>
+<li>la dispersión de los datos,</li>
+<li>la presencia de valores extremos,</li>
+<li>y la homogeneidad de la muestra,</li>
+</ul>
+<p>con el propósito de definir especificaciones ergonómicas adecuadas para las aulas universitarias.</p>
+</section>
+<section id="parte-4.-preguntas-orientadoras" class="level3" data-number="10.0.5">
+<h3 data-number="10.0.5"><span class="header-section-number">10.0.5</span> Parte 4. Preguntas orientadoras</h3>
+<p>A partir del análisis de la variable <code>Peso_Kg</code>, responda:</p>
+<ol type="1">
+<li>¿Dónde se concentra la mayor parte de los estudiantes?</li>
+<li>¿Existen valores extremos o atípicos?</li>
+<li>¿La distribución parece simétrica o presenta sesgo?</li>
+<li>¿Qué tan homogénea es la muestra?</li>
+<li>¿Sería recomendable agrupar los datos?</li>
+<li>¿Qué utilidad tendría esta información para el diseño del mobiliario universitario?</li>
+</ol>
+</section>
+<section id="parte-5.-construcción-de-tablas-agrupadas" class="level3" data-number="10.0.6">
+<h3 data-number="10.0.6"><span class="header-section-number">10.0.6</span> Parte 5. Construcción de tablas agrupadas</h3>
+<p>Utilice la regla de Sturges para estimar el número de clases y construya una tabla de distribución de frecuencias agrupadas.</p>
+<p>La tabla debe incluir:</p>
+<ul>
+<li>Clase o intervalo</li>
+<li>Marca de clase</li>
+<li>Frecuencia absoluta <span class="math inline">\((f_i)\)</span></li>
+<li>Frecuencia relativa <span class="math inline">\((h_i)\)</span></li>
+<li>Frecuencia acumulada <span class="math inline">\((F_i)\)</span></li>
+<li>Frecuencia relativa acumulada <span class="math inline">\((H_i)\)</span></li>
+</ul>
+</section>
+<section id="parte-6.-visualización-gráfica" class="level3" data-number="10.0.7">
+<h3 data-number="10.0.7"><span class="header-section-number">10.0.7</span> Parte 6. Visualización gráfica</h3>
+<p>Construya:</p>
+<ul>
+<li>Histograma</li>
+<li>Curva de densidad</li>
+<li>Boxplot</li>
+</ul>
+<p>e interprete los resultados obtenidos.</p>
+</section>
+<section id="recomendación-metodológica" class="level3" data-number="10.0.8">
+<h3 data-number="10.0.8"><span class="header-section-number">10.0.8</span> Recomendación metodológica</h3>
+<p>La selección de la herramienta estadística depende del tipo de variable analizada:</p>
+<table class="caption-top">
 <thead>
-<tr class="gt_col_headings header">
-<th id="Grupo" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Categoría</th>
-<th id="fi" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">fᵢ</th>
-<th id="hi" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">hᵢ</th>
-<th id="Fi" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Fᵢ</th>
-<th id="Hi" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Hᵢ</th>
+<tr class="header">
+<th>Tipo de variable</th>
+<th>Herramienta recomendada</th>
 </tr>
 </thead>
-<tbody class="gt_table_body">
+<tbody>
 <tr class="odd">
-<td class="gt_row gt_left" headers="Grupo">A</td>
-<td class="gt_row gt_right" headers="fi">40</td>
-<td class="gt_row gt_right" headers="hi">0.1538462</td>
-<td class="gt_row gt_right" headers="Fi">40</td>
-<td class="gt_row gt_right" headers="Hi">0.1538462</td>
+<td>Cualitativa</td>
+<td>Tablas de frecuencia (<code>freq()</code>)</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_left" headers="Grupo">B</td>
-<td class="gt_row gt_right" headers="fi">51</td>
-<td class="gt_row gt_right" headers="hi">0.1961538</td>
-<td class="gt_row gt_right" headers="Fi">91</td>
-<td class="gt_row gt_right" headers="Hi">0.3500000</td>
+<td>Cuantitativa discreta</td>
+<td>Tablas de frecuencia (<code>freq()</code>)</td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_left" headers="Grupo">C</td>
-<td class="gt_row gt_right" headers="fi">41</td>
-<td class="gt_row gt_right" headers="hi">0.1576923</td>
-<td class="gt_row gt_right" headers="Fi">132</td>
-<td class="gt_row gt_right" headers="Hi">0.5076923</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Grupo">D</td>
-<td class="gt_row gt_right" headers="fi">94</td>
-<td class="gt_row gt_right" headers="hi">0.3615385</td>
-<td class="gt_row gt_right" headers="Fi">226</td>
-<td class="gt_row gt_right" headers="Hi">0.8692308</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="Grupo">E</td>
-<td class="gt_row gt_right" headers="fi">34</td>
-<td class="gt_row gt_right" headers="hi">0.1307692</td>
-<td class="gt_row gt_right" headers="Fi">260</td>
-<td class="gt_row gt_right" headers="Hi">1.0000000</td>
+<td>Cuantitativa continua</td>
+<td>Histogramas y tablas agrupadas</td>
 </tr>
 </tbody>
 </table>
-
+<hr />
+</section>
+<section id="reflexión-final" class="level3" data-number="10.0.9">
+<h3 data-number="10.0.9"><span class="header-section-number">10.0.9</span> Reflexión final</h3>
+<p>La organización de datos constituye una etapa fundamental del análisis estadístico. Las tablas de frecuencia permiten transformar datos aislados en información estructurada, facilitando la identificación de patrones, tendencias y características generales de una población.</p>
+<p>En contextos reales, estas herramientas son esenciales para apoyar procesos de investigación, caracterización poblacional y toma de decisiones basadas en evidencia. El análisis estadístico no consiste únicamente en calcular indicadores, sino en interpretar los datos y convertirlos en información útil para resolver problemas reales.</p>
+<div id="quarto-navigation-envelope" class="hidden">
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyLXRpdGxl">Estadística Experiencial Aplicada</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXItdGl0bGU=">Estadística Experiencial Aplicada</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uZXh0"><span class="chapter-number">6</span>  <span class="chapter-title">Capítulo 4. Visualización de datos</span></span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1wcmV2"><span class="chapter-number">4</span>  <span class="chapter-title">Capítulo 2. Preparación de datos</span></span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9pbmRleC5odG1sUHJlZmFjZQ==">Preface</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9pbnRyby5odG1sPHNwYW4tY2xhc3M9J2NoYXB0ZXItbnVtYmVyJz4xPC9zcGFuPi0tPHNwYW4tY2xhc3M9J2NoYXB0ZXItdGl0bGUnPkludHJvZHVjY2nDs248L3NwYW4+"><span class="chapter-number">1</span>  <span class="chapter-title">Introducción</span></span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9hdXRvcmVzLmh0bWw8c3Bhbi1jbGFzcz0nY2hhcHRlci1udW1iZXInPjI8L3NwYW4+LS08c3Bhbi1jbGFzcz0nY2hhcHRlci10aXRsZSc+QXV0b3Jlczwvc3Bhbj4="><span class="chapter-number">2</span>  <span class="chapter-title">Autores</span></span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi8wMS1mdW5kYW1lbnRvcy5odG1sPHNwYW4tY2xhc3M9J2NoYXB0ZXItbnVtYmVyJz4zPC9zcGFuPi0tPHNwYW4tY2xhc3M9J2NoYXB0ZXItdGl0bGUnPkNhcMOtdHVsby0xLi1JbnRyb2R1Y2Npw7NuLWEtbGEtZXN0YWTDrXN0aWNhLWRlc2NyaXB0aXZhPC9zcGFuPg=="><span class="chapter-number">3</span>  <span class="chapter-title">Capítulo 1. Introducción a la estadística descriptiva</span></span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi8wMi1wcmVwYXJhY2lvbi1kYXRvcy5odG1sPHNwYW4tY2xhc3M9J2NoYXB0ZXItbnVtYmVyJz40PC9zcGFuPi0tPHNwYW4tY2xhc3M9J2NoYXB0ZXItdGl0bGUnPkNhcMOtdHVsby0yLi1QcmVwYXJhY2nDs24tZGUtZGF0b3M8L3NwYW4+"><span class="chapter-number">4</span>  <span class="chapter-title">Capítulo 2. Preparación de datos</span></span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi8wMy10YWJsYXMtZnJlY3VlbmNpYS5odG1sPHNwYW4tY2xhc3M9J2NoYXB0ZXItbnVtYmVyJz41PC9zcGFuPi0tPHNwYW4tY2xhc3M9J2NoYXB0ZXItdGl0bGUnPkNhcMOtdHVsby0zLi1Pcmdhbml6YWNpw7NuLWRlLWRhdG9zLXktdGFibGFzLWVzdGFkw61zdGljYXM8L3NwYW4+"><span class="chapter-number">5</span>  <span class="chapter-title">Capítulo 3. Organización de datos y tablas estadísticas</span></span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi8wNC12aXN1YWxpemFjaW9uLmh0bWw8c3Bhbi1jbGFzcz0nY2hhcHRlci1udW1iZXInPjY8L3NwYW4+LS08c3Bhbi1jbGFzcz0nY2hhcHRlci10aXRsZSc+Q2Fww610dWxvLTQuLVZpc3VhbGl6YWNpw7NuLWRlLWRhdG9zPC9zcGFuPg=="><span class="chapter-number">6</span>  <span class="chapter-title">Capítulo 4. Visualización de datos</span></span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi8wNS10ZW5kZW5jaWEtY2VudHJhbC5odG1sPHNwYW4tY2xhc3M9J2NoYXB0ZXItbnVtYmVyJz43PC9zcGFuPi0tPHNwYW4tY2xhc3M9J2NoYXB0ZXItdGl0bGUnPkNhcMOtdHVsby01Li1NZWRpZGFzLWRlLXRlbmRlbmNpYS1jZW50cmFsLXktZGlzcGVyc2nDs248L3NwYW4+"><span class="chapter-number">7</span>  <span class="chapter-title">Capítulo 5. Medidas de tendencia central y dispersión</span></span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi8wNi1wb3NpY2lvbi5odG1sPHNwYW4tY2xhc3M9J2NoYXB0ZXItbnVtYmVyJz44PC9zcGFuPi0tPHNwYW4tY2xhc3M9J2NoYXB0ZXItdGl0bGUnPkNhcMOtdHVsby02Li1NZWRpZGFzLWRlLXBvc2ljacOzbjwvc3Bhbj4="><span class="chapter-number">8</span>  <span class="chapter-title">Capítulo 6. Medidas de posición</span></span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi8wNy1hbmFsaXNpcy1iaXZhcmlhZG8uaHRtbDxzcGFuLWNsYXNzPSdjaGFwdGVyLW51bWJlcic+OTwvc3Bhbj4tLTxzcGFuLWNsYXNzPSdjaGFwdGVyLXRpdGxlJz5DYXDDrXR1bG8tNy4tQW5hbMOtc2lzLWJpdmFyaWFkbzwvc3Bhbj4="><span class="chapter-number">9</span>  <span class="chapter-title">Capítulo 7. Analísis bivariado</span></span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9yZWZlcmVuY2VzLmh0bWxSZWZlcmVuY2Vz">References</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWJyZWFkY3J1bWJzLTxzcGFuLWNsYXNzPSdjaGFwdGVyLW51bWJlcic+NTwvc3Bhbj4tLTxzcGFuLWNsYXNzPSdjaGFwdGVyLXRpdGxlJz5DYXDDrXR1bG8tMy4tT3JnYW5pemFjacOzbi1kZS1kYXRvcy15LXRhYmxhcy1lc3RhZMOtc3RpY2FzPC9zcGFuPg=="><span class="chapter-number">5</span>  <span class="chapter-title">Capítulo 3. Organización de datos y tablas estadísticas</span></span></p>
+<div class="hidden quarto-markdown-envelope-contents" data-render-id="Zm9vdGVyLWxlZnQ=">
+<p>© 2026 Autores</p>
+</div>
+<div class="hidden quarto-markdown-envelope-contents" data-render-id="Zm9vdGVyLXJpZ2h0">
+<p>Publicado con Quarto y GitHub Pages</p>
 </div>
 </div>
+<div id="quarto-meta-markdown" class="hidden">
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLW1ldGF0aXRsZQ=="><span class="chapter-number">5</span>  <span class="chapter-title">Capítulo 3. Organización de datos y tablas estadísticas</span> – Estadística Experiencial Aplicada</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLXR3aXR0ZXJjYXJkdGl0bGU="><span class="chapter-number">5</span>  <span class="chapter-title">Capítulo 3. Organización de datos y tablas estadísticas</span> – Estadística Experiencial Aplicada</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLW9nY2FyZHRpdGxl"><span class="chapter-number">5</span>  <span class="chapter-title">Capítulo 3. Organización de datos y tablas estadísticas</span> – Estadística Experiencial Aplicada</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLW1ldGFzaXRlbmFtZQ==">Estadística Experiencial Aplicada</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLXR3aXR0ZXJjYXJkZGVzYw=="></span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLW9nY2FyZGRkZXNj"></span></p>
 </div>
-
-
 </section>
 </section>
 
 </main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+<script id = "quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
     const anchorJS = new window.AnchorJS();
@@ -2204,13 +1631,13 @@ Type: Character
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./02-preparacion-datos.html" class="pagination-link" aria-label="Capítulo 2. Preparación de datos">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Capítulo 2. Preparación de datos</span></span>
+      <a  href="/02-preparacion-datos.html" class="pagination-link" aria-label="Capítulo 2. Preparación de datos">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class='chapter-number'>4</span>  <span class='chapter-title'>Capítulo 2. Preparación de datos</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./04-visualizacion.html" class="pagination-link" aria-label="Capítulo 4. Visualización de datos">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Capítulo 4. Visualización de datos</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a  href="/04-visualizacion.html" class="pagination-link" aria-label="Capítulo 4. Visualización de datos">
+        <span class="nav-page-text"><span class='chapter-number'>6</span>  <span class='chapter-title'>Capítulo 4. Visualización de datos</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -2218,19 +1645,17 @@ Type: Character
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>© 2026 Autores</p>
-</div>   
+      <div class='footer-contents'>© 2026 Autores</div>  
+    </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/udesanalitica/estadistica-experiencial/edit/main/03-tablas-frecuencia.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/udesanalitica/estadistica-experiencial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/udesanalitica/estadistica-experiencial/blob/main/03-tablas-frecuencia.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div>
+    </div>
     <div class="nav-footer-right">
-<p>Publicado con Quarto y GitHub Pages</p>
-</div>
+      <div class='footer-contents'>Publicado con Quarto y GitHub Pages</div>  
+    </div>
   </div>
 </footer>
 
+</body>
 
-
-
-<script src="site_libs/quarto-html/zenscroll-min.js"></script>
-</body></html>
+</html>
