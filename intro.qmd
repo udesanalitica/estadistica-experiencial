@@ -1,23 +1,11 @@
-# Introduction
+# Introducción
 
-This is a book created from markdown and executable code.
+La estadística descriptiva representa el punto de partida para el análisis de datos. A través de técnicas de organización, resumen y visualización, es posible transformar grandes volúmenes de información en conocimiento útil para comprender fenómenos, identificar patrones y apoyar procesos de investigación y toma de decisiones.
 
--   qué es la estadística descriptiva
+Este libro ha sido diseñado bajo un enfoque práctico y aplicado, integrando herramientas computacionales modernas mediante el lenguaje [R]{style="color:#276DC3;font-weight:bold;"}, uno de los entornos más utilizados en estadística, ciencia de datos e investigación científica a nivel mundial.
 
-<!-- -->
+Cada capítulo combina fundamentos conceptuales con ejercicios desarrollados sobre bases de datos reales, favoreciendo un aprendizaje activo y experiencial. El lector encontrará actividades orientadas a:
 
--    por qué aprenderla con enfoque experiencial
+organizar datos, construir tablas de frecuencia, interpretar gráficos estadísticos, analizar medidas descriptivas, identificar patrones y valores atípicos, y comunicar resultados mediante visualizaciones claras y reproducibles.
 
-<!-- -->
-
--    uso de R y Quarto
-
-<!-- -->
-
--    estructura del libro
-
-See @knuth84 for additional discussion of literate programming.
-
-```{r}
-1 + 1
-```
+Además de fortalecer las competencias estadísticas básicas, este texto busca fomentar el pensamiento crítico frente a los datos y promover una cultura de análisis basada en evidencia.

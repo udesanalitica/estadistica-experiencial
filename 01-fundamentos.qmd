@@ -46,30 +46,240 @@ Las escalas ordinales permiten incorporar análisis basados en orden y posición
 
 La estadística descriptiva permite transformar datos brutos en información significativa mediante el uso de tablas, representaciones gráficas y medidas resumen. Este proceso facilita la organización, interpretación y comprensión de los fenómenos analizados, constituyéndose en una herramienta fundamental para la toma de decisiones basadas en evidencia. Asimismo, la correcta identificación del tipo de variable y de la escala de medición resulta esencial para seleccionar las técnicas estadísticas apropiadas. Un error frecuente consiste en analizar variables ordinales como si fueran cuantitativas continuas o asumir que los datos siguen distribuciones normales sin verificar los supuestos requeridos, lo cual puede afectar la validez de los resultados y conducir a interpretaciones erróneas.
 
-# Caso
-
-A continuación se analiza un conjunto de datos de estudiantes de primer ingreso en la universidad, donde se desea identificar características como edad, sexo, estrato socioeconómico y horas de estudio.
-
-**Código en R**
-
 ```{r}
-# Crear un dataset simple de datos
-datos <- data.frame(
-  edad = c(18, 19, 20, 18, 21),   
-  sexo = c("F", "M", "F", "F", "M"),
-  estrato = c(2, 3, 2, 1, 3),   
-  horas_estudio = c(2.5, 3, 4, 2, 5) )
 
-# Ver estructura 
-str(datos) 
+#| message: false
+#| warning: false
+
+library(readr)
+library(dplyr)
+
+# Cargar base de datos de Acuicultura
+acuicultura <- read_csv(
+  "C:/R-Proyectos/estadistica-experiencial/data/S07D_Acuicultura.csv")
+
+#acuicultura <- read_csv("D:/estadistica-experiencial/data/S07D_Acuicultura.csv")
+
+# Visualizar primeras filas
+head(acuicultura)
+
+# Mostrar nombres de variables
+names(acuicultura)
+
+# Explorar estructura de la base
+glimpse(acuicultura)
+
+# Ver la base completa en RStudio
+View(acuicultura)
 ```
 
-El conjunto de datos permite identificar diferentes tipos de variables:
+```{r}
+#| message: false
+#| warning: false
 
--   **Edad:** cuantitativa continua (aunque se registre en años enteros, proviene de un proceso de medición del tiempo).
+library(readr)
+library(dplyr)
+library(janitor)
 
--   **Sexo:** cualitativa nominal (categorías sin orden intrínseco).
+# Cargar base
+acuicultura <- read_csv("data/S07D_Acuicultura.csv")
 
--   **Estrato:** cualitativa ordinal (indica un orden socioeconómico).
+# Ver nombres de variables
+names(acuicultura)
 
--   **Horas de estudio:** cuantitativa continua (admite valores fraccionarios en un intervalo).
+# Crear estructura inicial del diccionario
+diccionario <- tibble(
+  variable = names(acuicultura),
+  tipo_dato = sapply(acuicultura, class),
+  valores_unicos = sapply(acuicultura, n_distinct),
+  missing = sapply(acuicultura, function(x) sum(is.na(x)))
+)
+
+# Ver diccionario
+diccionario
+```
+
+### Ver diccionario de variables en sitio web del DANE [Dicccionario_S07D_Acuicultura](https://microdatos.dane.gov.co/index.php/catalog/513/data-dictionary/F4?file_name=S07D(Acuicultura))
+
+Para exportar el diccionario
+
+```{r}
+library(writexl)
+
+write_xlsx(diccionario,
+           "data/diccionario_acuicultura.xlsx")
+```
+
+Está instrucción permite ver el libro en quarto.
+
+```{r}
+#| message: false
+#| warning: false
+library(gt)
+
+diccionario_acuicultura <- tibble(
+  variable = c(
+    "TIPO_REG", "PAIS", "P_DEPTO", "P_MUNIC", "UC_UO",
+    "ENCUESTA", "COD_VEREDA", "P_S7PNUMPEZ", "P_S7P96",
+    "P_S7P97", "P_S7P98", "P_S7P99", "P_S7P100"
+  ),
+  descripcion = c(
+    "Tipo de región",
+    "País",
+    "Departamento",
+    "Municipio",
+    "Unidad de cobertura y unidad de observación",
+    "Encuesta",
+    "Código de vereda",
+    "Orden de pez",
+    "Nombre de la especie cultivada",
+    "Número de cosechas en el año",
+    "Número de animales por cosecha",
+    "Peso promedio por animal en gramos",
+    "Producción total durante 2013 en kilogramos"
+  )
+)
+
+diccionario_acuicultura |>
+  gt()
+```
+
+## Actividad experiencial: Explorando una base de datos del DANE
+
+### **Identificación y clasificación de variables estadísticas utilizando datos reales de acuicultura del DANE**
+
+Reconocer y clasificar variables estadísticas presentes en una base de datos del DANE, identificando su naturaleza, escala de medición y posibles análisis estadísticos asociados.
+
+## Contexto de la actividad
+
+En estadística aplicada, antes de realizar cualquier análisis es fundamental comprender las características de las variables contenidas en una base de datos. Para ello, se utilizará una base oficial del Departamento Administrativo Nacional de Estadística (DANE) correspondiente al módulo de acuicultura.
+
+Los estudiantes actuarán como analistas de datos, explorando información real utilizada en estudios productivos y socioeconómicos.
+
+Fuente oficial:
+
+[DANE – Diccionario S07D Acuicultura](https://microdatos.dane.gov.co/index.php/catalog/513/data-dictionary/F4?file_name=S07D(Acuicultura)&utm_source=chatgpt.com)
+
+# Desarrollo de la actividad
+
+## Parte 1. Exploración de la base de datos
+
+### Instrucciones
+
+1.  Cargar la base de datos en R.
+
+2.  Revisar los nombres de las variables.
+
+3.  Consultar el diccionario oficial del DANE.
+
+4.  Identificar:
+
+```         
+-   significado de cada variable,
+
+-   tipo de variable,
+
+-   escala de medición,
+
+-   unidad de medida,
+
+-   posible representación gráfica,
+
+-   medidas estadísticas aplicables.
+```
+
+```{r}
+library(readr)
+library(dplyr)
+
+# Cargar base de datos
+acuicultura <- read_csv(
+  "data/S07D_Acuicultura.csv"
+)
+
+# Explorar estructura
+names(acuicultura)
+
+glimpse(acuicultura)
+
+head(acuicultura)
+```
+
+## Parte 2. Completar la tabla de clasificación
+
+### Instrucciones para el estudiante
+
+Complete la siguiente tabla utilizando:
+
+-   la exploración en R,
+
+-   el diccionario del DANE,
+
+-   los conceptos vistos en clase sobre variables y escalas de medición.
+
+| Variable | Descripción | Tipo de variable | Escala de medición | Unidad de medida | Ejemplo de gráfico | Medidas estadísticas sugeridas |
+|-----------|-----------|-----------|-----------|-----------|-----------|-----------|
+| `TIPO_REG` |  |  |  |  |  |  |
+| `PAIS` |  |  |  |  |  |  |
+| `P_DEPTO` |  |  |  |  |  |  |
+| `P_MUNIC` |  |  |  |  |  |  |
+| `UC_UO` |  |  |  |  |  |  |
+| `ENCUESTA` |  |  |  |  |  |  |
+| `COD_VEREDA` |  |  |  |  |  |  |
+| `P_S7PNUMPEZ` |  |  |  |  |  |  |
+| `P_S7P96` |  |  |  |  |  |  |
+| `P_S7P97` |  |  |  |  |  |  |
+| `P_S7P98` |  |  |  |  |  |  |
+| `P_S7P99` |  |  |  |  |  |  |
+| `P_S7P100` |  |  |  |  |  |  |
+
+## Parte 3. Interpretación estadística
+
+Responda las siguientes preguntas:
+
+1.  ¿Qué variables son cualitativas y cuáles cuantitativas?
+
+2.  ¿Qué variables corresponden a procesos de conteo?
+
+3.  ¿Qué variables corresponden a procesos de medición?
+
+4.  ¿Cuál variable podría analizarse mediante:
+
+```         
+-    histogramas?
+
+-    diagramas de barras?
+
+-   boxplots?
+```
+
+5.  ¿Qué variable considera más importante para analizar la producción acuícola y por qué?
+
+Ejemplo de una variable estudiada Curva de densidad de la producción acuícola.
+
+```{r}
+#| message: false
+#| warning: false
+library(ggplot2)
+
+ggplot(
+  acuicultura,
+  aes(x = log10(P_S7P100 + 1))
+) +
+
+  geom_density(
+    fill = "skyblue",
+    alpha = 0.5,
+    color = "blue",
+    linewidth = 1
+  ) +
+
+  labs(
+    title = "Curva de densidad de la producción acuícola",
+    subtitle = "Escala logarítmica",
+    x = "Log10 Producción total (kg)",
+    y = "Densidad"
+  ) +
+
+  theme_minimal()
+```

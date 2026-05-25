@@ -1,23 +1,9 @@
 # Preface {.unnumbered}
 
-This is a Quarto book.
+La estadística constituye una herramienta fundamental para comprender, interpretar y transformar la realidad a partir de los datos. En un contexto caracterizado por el crecimiento exponencial de la información, el análisis estadístico se ha consolidado como una competencia esencial en múltiples disciplinas, especialmente en escenarios académicos, científicos, sociales y organizacionales.
 
--   portada
+Este libro surge como una propuesta orientada al aprendizaje experiencial de la estadística descriptiva mediante el uso del lenguaje [R]{style="color:#276DC3;font-weight:bold;"} y el entorno de publicación científica Quarto. Su propósito principal es acercar al estudiante a situaciones reales de análisis de datos, promoviendo no solo el cálculo de medidas estadísticas, sino también la interpretación crítica de la información y la toma de decisiones basadas en evidencia.
 
-<!-- -->
+A lo largo de los capítulos se integran ejemplos aplicados, visualizaciones estadísticas, actividades experienciales y bases de datos reales provenientes de contextos académicos y oficiales, permitiendo que el lector comprenda cómo la estadística trasciende los ejercicios mecánicos y se convierte en una herramienta para explorar fenómenos del mundo real.
 
--    propósito del libro
-
-<!-- -->
-
--    público objetivo
-
-<!-- -->
-
--    competencias a desarrollar
-
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
-
-```{r}
-1 + 1
-```
+El uso de [R]{style="color:#276DC3;font-weight:bold;"} permite desarrollar habilidades contemporáneas asociadas al análisis reproducible, la programación estadística y la ciencia de datos, fortaleciendo competencias analíticas cada vez más demandadas en la educación superior y en el ámbito profesional.
