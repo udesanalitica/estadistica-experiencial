@@ -1,5 +1,5 @@
 ---
-title: "Capítulo 4. Visualización de datos"
+title: "Visualización de datos"
 ---
 
 La visualización de datos es una etapa fundamental en la estadística descriptiva, ya que permite representar la información de forma clara, resumida e interpretable. Los gráficos facilitan la identificación de patrones, tendencias, valores atípicos y diferencias entre grupos, apoyando así la comprensión de los datos y la toma de decisiones.

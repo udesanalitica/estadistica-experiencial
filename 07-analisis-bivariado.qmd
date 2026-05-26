@@ -1,5 +1,5 @@
 ---
-title: "Capítulo 7. Analísis bivariado"
+title: "Analísis bivariado"
 ---
 En los capítulos anteriores se estudiaron las características de una sola variable a la vez —su centro, su dispersión, su forma—. Sin embargo, la realidad que analiza la estadística rara vez involucra una variable en soledad. Las preguntas más interesantes suelen surgir en la intersección: ¿Estudiar más horas se traduce en mejores calificaciones? ¿El género de un estudiante se relaciona con su rendimiento académico? ¿Cuánto mejora la nota por cada hora adicional de estudio?
 
