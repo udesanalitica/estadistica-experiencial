@@ -218,7 +218,7 @@ Complete la siguiente tabla utilizando:
 -   los conceptos vistos en clase sobre variables y escalas de medición.
 
 | Variable | Descripción | Tipo de variable | Escala de medición | Unidad de medida | Ejemplo de gráfico | Medidas estadísticas sugeridas |
-|-----------|-----------|-----------|-----------|-----------|-----------|-----------|
+|----|----|----|----|----|----|----|
 | `TIPO_REG` |  |  |  |  |  |  |
 | `PAIS` |  |  |  |  |  |  |
 | `P_DEPTO` |  |  |  |  |  |  |

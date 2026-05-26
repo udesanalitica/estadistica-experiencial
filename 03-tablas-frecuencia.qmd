@@ -119,7 +119,6 @@ La variable `P_S7P97` corresponde al **número de cosechas realizadas durante el
 #| warning: false
 
 library(dplyr)
-library(janitor)
 library(knitr)
 library(readr)
 library(kableExtra)
@@ -128,52 +127,37 @@ library(kableExtra)
 acuicultura <- read_csv(
   "C:/R-Proyectos/estadistica-experiencial/data/S07D_Acuicultura.csv"
 )
-#acuicultura <- read_csv(
-  "D:/estadistica-experiencial/data/S07D_Acuicultura.csv"
-#)
 
 # Tabla de frecuencia
 tabla_frecuencia <- acuicultura %>%
-  
-  count(P_S7P97) %>%
-  
+  count(P_S7P97, name = "fi") %>%
   mutate(
-    Frecuencia_relativa = round(n / sum(n), 4),
-    Porcentaje = round((n / sum(n)) * 100, 2),
-    Frecuencia_acumulada = cumsum(n),
-    Porcentaje_acumulado = round(cumsum(Porcentaje), 2)
+    hi = round(fi / sum(fi), 4),
+    Porcentaje = round(hi * 100, 2),
+    Fi = cumsum(fi),
+    Hi = round(cumsum(hi), 4)
   )
 
 # Cambiar nombres de columnas
 colnames(tabla_frecuencia) <- c(
   "Número de cosechas",
-  "f_i",
-  "h_i",
+  "fᵢ",
+  "hᵢ",
   "Porcentaje (%)",
-  "F_i",
-  "H_i"
+  "Fᵢ",
+  "Hᵢ"
 )
 
 # Visualizar tabla
 tabla_frecuencia %>%
-  
   kable(
     caption = "Tabla de frecuencia del número de cosechas",
-    escape = FALSE,
     align = "c",
     digits = 3
   ) %>%
-  
   kable_styling(
-    bootstrap_options = c(
-      "striped",
-      "hover",
-      "condensed",
-      "responsive"
-    ),
-    
+    bootstrap_options = c("striped", "hover", "condensed"),
     full_width = FALSE,
-    
     position = "center"
   )
 ```
@@ -482,7 +466,7 @@ glimpse(datos)
 Complete la siguiente tabla para las variables seleccionadas:
 
 | Variable | Tipo de variable | Escala de medición | Unidad de medida | Herramienta estadística sugerida |
-|---------------|---------------|---------------|---------------|---------------|
+|----|----|----|----|----|
 | Genero |  |  |  |  |
 | Grupo |  |  |  |  |
 | Peso_Kg |  |  |  |  |

@@ -22,7 +22,7 @@ book:
 
   page-navigation: true
   search: true
-  downloads: [pdf, epub, docx]
+  downloads: [pdf, epub]
 
   chapters:
     - index.qmd
@@ -55,10 +55,11 @@ format:
     toc: true
     number-sections: true
     mainfont: "Times New Roman"
-
-  docx:
-    toc: true
-    number-sections: true
+    geometry:
+    - top=2.54cm
+    - bottom=2.54cm
+    - left=2.54cm
+    - right=2.54cm
 
   epub:
     cover-image: cover.png
