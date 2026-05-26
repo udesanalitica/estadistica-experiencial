@@ -1,370 +1,863 @@
 ---
 title: "Analísis bivariado"
+editor: 
+  markdown: 
+    wrap: 72
 ---
-En los capítulos anteriores se estudiaron las características de una sola variable a la vez —su centro, su dispersión, su forma—. Sin embargo, la realidad que analiza la estadística rara vez involucra una variable en soledad. Las preguntas más interesantes suelen surgir en la intersección: ¿Estudiar más horas se traduce en mejores calificaciones? ¿El género de un estudiante se relaciona con su rendimiento académico? ¿Cuánto mejora la nota por cada hora adicional de estudio?
-
-El análisis bivariado es precisamente el conjunto de técnicas que permite explorar, cuantificar e interpretar la relación entre dos variables medidas sobre las mismas unidades de análisis. A diferencia del análisis univariado, aquí el interés no está en describir cada variable por separado, sino en entender cómo se comportan conjuntamente.
-
-Este capítulo desarrolla las principales herramientas del análisis bivariado: el diagrama de dispersión como recurso visual exploratorio, la covarianza como primera medida de relación lineal, los coeficientes de correlación de Pearson y Spearman para cuantificar esa relación, las tablas de contingencia para variables categóricas, y la regresión lineal simple como modelo predictivo. Todas estas técnicas se ilustran sobre el mismo conjunto de datos, lo que permite al estudiante ver cómo cada herramienta revela una faceta distinta de la misma realidad.
-
-7.1 Conjunto de datos de trabajo
-A lo largo de todo este capítulo se utilizará el siguiente conjunto de datos, que recoge información sobre 15 estudiantes universitarios. Las variables registradas son: horas de estudio semanales (X), calificación final en una escala de 0 a 5 (Y), horas de sueño diarias (Z) y género. Este dataset es intencionalmente multidisciplinar para permitir ilustrar distintos tipos de análisis bivariado.
-
-Tabla 7.1. Dataset transversal — 15 estudiantes universitarios
-Estudiante	Horas de estudio (X)	Calificación (Y)	Horas de sueño (Z)	Género
-E01	2	3.2	6	M
-E02	3	3.5	7	F
-E03	5	4.0	7	M
-E04	1	2.8	5	F
-E05	4	3.8	8	M
-E06	6	4.3	6	F
-E07	2	3.0	6	M
-E08	7	4.5	7	F
-E09	3	3.4	8	M
-E10	5	4.1	7	F
-E11	1	2.5	5	M
-E12	4	3.7	6	F
-E13	6	4.2	7	M
-E14	2	3.1	6	F
-E15	8	4.8	8	M
-Nota: Los datos de esta tabla son simulados con fines pedagógicos. Para el análisis de correlación y regresión se trabaja con las variables X (horas de estudio) e Y (calificación).
-
- 
-7.2 Diagrama de dispersión
-7.2.1 Definición
-El diagrama de dispersión (también llamado nube de puntos o gráfico de dispersión) es una representación gráfica que muestra la distribución conjunta de dos variables cuantitativas. Cada punto del plano cartesiano representa una observación: su posición horizontal corresponde al valor de la variable X y su posición vertical al valor de la variable Y. Es siempre el primer paso en el análisis de la relación entre dos variables numéricas, porque permite detectar visualmente el tipo, la dirección y la fuerza de la relación antes de calcular ningún coeficiente (Montgomery & Runger, 2018).
-
-7.2.2 Patrones de asociación
-La inspección visual de un diagrama de dispersión permite identificar los siguientes patrones principales:
-•	Relación lineal positiva: a medida que X aumenta, Y también tiende a aumentar. Los puntos se agrupan aproximadamente sobre una recta con pendiente positiva.
-•	Relación lineal negativa: a medida que X aumenta, Y tiende a disminuir. Los puntos se distribuyen alrededor de una recta con pendiente negativa.
-•	Relación no lineal (curvilínea): los puntos siguen un patrón curvado —cuadrático, exponencial, logístico— que no puede describirse bien mediante una recta.
-•	Sin relación aparente: los puntos se dispersan aleatoriamente sin ningún patrón discernible.
-
-7.2.3 Ejemplo resuelto
-Con los datos de la Tabla 7.1, se construye el diagrama de dispersión entre horas de estudio (X) y calificación final (Y):
-
-# Código en R
-# Diagrama de dispersión: horas de estudio vs. calificación
-horas  <- c(2,3,5,1,4,6,2,7,3,5,1,4,6,2,8)
-calif  <- c(3.2,3.5,4.0,2.8,3.8,4.3,3.0,4.5,3.4,4.1,2.5,3.7,4.2,3.1,4.8)
-genero <- c('M','F','M','F','M','F','M','F','M','F','M','F','M','F','M')
-
-plot(horas, calif,
-     main = 'Diagrama de dispersión: Estudio vs. Calificación',
-     xlab = 'Horas de estudio semanales (X)',
-     ylab = 'Calificación final (Y)',
-     pch  = 19,
-     col  = ifelse(genero == 'M', '#2E75B6', '#C00000'),
-     cex  = 1.4)
-abline(lm(calif ~ horas), col = 'gray40', lty = 2, lwd = 1.5)
-legend('topleft', legend = c('Masculino','Femenino'),
-       col = c('#2E75B6','#C00000'), pch = 19, bty = 'n')
-
-Interpretación: La nube de puntos muestra una relación lineal positiva muy marcada entre las horas de estudio y la calificación obtenida. Los puntos se agrupan estrechamente alrededor de una recta imaginaria ascendente, lo que anticipa una correlación alta. No se observan valores atípicos extremos que distorsionen el patrón general.
-
-7.2.4 Aplicación disciplinar
-En ciencias de la salud, un diagrama de dispersión entre dosis de un fármaco y respuesta terapéutica permite identificar visualmente si existe una relación dosis-respuesta y si esa relación es lineal o presenta una meseta a partir de cierta dosis. En ciencias sociales, la relación entre índice de pobreza y tasa de deserción escolar puede explorarse con este gráfico antes de aplicar técnicas de regresión.
-
-7.2.5 Ejercicios propuestos
-Ejercicio 1. Con los datos de la Tabla 7.1, construya manualmente el diagrama de dispersión entre horas de sueño (Z) y calificación (Y). ¿Qué tipo de relación anticipa?
-Ejercicio 2. En un estudio sobre producción agrícola se miden: temperatura promedio mensual (°C) y rendimiento en kg/hectárea. Diseñe el diagrama de dispersión e identifique visualmente si la relación parece lineal o curvilínea.
-Ejercicio 3. Usando R, reproduzca el diagrama de la sección 7.2.3 pero diferenciando los puntos por calificación alta (Y ≥ 4.0) y baja (Y < 4.0). ¿Qué observa?
- 
-7.3 Covarianza
-7.3.1 Definición
-La covarianza es la primera medida numérica de la relación lineal entre dos variables cuantitativas. Mide en qué dirección y en qué magnitud tienden a desplazarse conjuntamente los valores de X e Y respecto a sus respectivas medias (Walpole, Myers & Myers, 2012). Si cuando X está por encima de su media, Y también tiende a estarlo, la covarianza es positiva. Si ocurre lo contrario, es negativa.
-
-7.3.2 Fórmula
-Para una muestra de n pares de observaciones (xᵢ, yᵢ), la covarianza muestral se calcula como:
-Sxy = Σ[(xᵢ − x̄)(yᵢ − ȳ)] / (n − 1)
-donde x̄ e ȳ son las medias muestrales de X e Y, respectivamente. Para la covarianza poblacional se divide entre N (tamaño de la población) en lugar de (n − 1).
-
-Nota: La covarianza tiene un problema fundamental: su valor depende de las unidades de medición de X e Y. Si X se midiera en minutos en lugar de horas, la covarianza cambiaría aunque la relación entre las variables sea idéntica. Esto limita su interpretabilidad directa y motivó el desarrollo del coeficiente de correlación.
-
-7.3.3 Ejemplo resuelto
-Con los datos de la Tabla 7.1 (n = 15): media de horas de estudio x̄ = 3.93; media de calificación ȳ = 3.79.
-
-Calculando cada término (xᵢ − x̄)(yᵢ − ȳ) y sumando:
-Sxy = Σ[(xᵢ − 3.93)(yᵢ − 3.79)] / 14 = 20.28 / 14 ≈ 1.449
-
-# Código en R
-# Covarianza entre horas de estudio y calificación
-horas <- c(2,3,5,1,4,6,2,7,3,5,1,4,6,2,8)
-calif <- c(3.2,3.5,4.0,2.8,3.8,4.3,3.0,4.5,3.4,4.1,2.5,3.7,4.2,3.1,4.8)
-
-cov_xy <- cov(horas, calif)
-cat('Covarianza Sxy =', round(cov_xy, 3))
-# Resultado: Covarianza Sxy = 1.449
-
-Interpretación: La covarianza positiva (Sxy ≈ 1.449) confirma que existe una relación directa entre las horas de estudio y la calificación: en general, cuando un estudiante estudia más horas que el promedio del grupo, también tiende a obtener una calificación por encima del promedio. Sin embargo, el valor 1.449 por sí solo no indica si la relación es fuerte o débil; para eso se necesita estandarizar mediante el coeficiente de correlación.
-
-7.3.4 Aplicación disciplinar
-En economía, la covarianza entre el retorno de dos activos financieros es fundamental para la teoría de portafolios de Markowitz: una covarianza positiva alta indica que los activos se mueven juntos, lo que reduce la diversificación del riesgo. En epidemiología, la covarianza entre exposición a un factor de riesgo y la gravedad de una enfermedad orienta la dirección de la relación antes de modelarla formalmente.
-
-7.3.5 Ejercicios propuestos
-Ejercicio 1. Calcule manualmente la covarianza entre horas de sueño (Z) y calificación (Y) usando los datos de la Tabla 7.1. Compare el signo con el diagrama de dispersión que construyó en el ejercicio 7.2.1.
-Ejercicio 2. Si se duplicaran todos los valores de horas de estudio (2X), ¿qué le ocurriría a la covarianza Sxy? Demuéstrelo algebraicamente y verifíquelo con R.
-Ejercicio 3. En un conjunto de datos con covarianza Sxy = −3.2, ¿qué puede concluirse sobre la dirección de la relación entre X e Y? ¿Puede afirmarse que la relación es fuerte? Justifique.
- 
-7.4 Correlación de Pearson
-7.4.1 Definición
-El coeficiente de correlación lineal de Pearson es una medida adimensional que cuantifica la fuerza y la dirección de la relación lineal entre dos variables cuantitativas continuas. A diferencia de la covarianza, está estandarizado en el intervalo [−1, 1], lo que permite comparar relaciones entre variables con distintas unidades de medición (Devore, 2016).
-
-7.4.2 Fórmula
-El coeficiente de correlación muestral de Pearson se obtiene dividiendo la covarianza entre el producto de las desviaciones estándar de X e Y:
-r = Sxy / (Sx · Sy)
-de forma equivalente:
-r = Σ[(xᵢ − x̄)(yᵢ − ȳ)] / √{Σ(xᵢ − x̄)² · Σ(yᵢ − ȳ)²}
-
-7.4.3 Interpretación del coeficiente
-La interpretación del valor de r sigue la siguiente escala orientativa (Cohen, 1988):
-•	|r| entre 0.00 y 0.19: relación muy débil o nula.
-•	|r| entre 0.20 y 0.39: relación débil.
-•	|r| entre 0.40 y 0.59: relación moderada.
-•	|r| entre 0.60 y 0.79: relación fuerte.
-•	|r| entre 0.80 y 1.00: relación muy fuerte o casi perfecta.
-Nota: El signo indica la dirección: r > 0 relación directa (ambas variables aumentan juntas); r < 0 relación inversa (cuando una aumenta, la otra disminuye); r = 0 ausencia de relación lineal (puede existir relación no lineal).
-
-7.4.4 Supuestos
-El coeficiente de Pearson asume que: (1) las dos variables son cuantitativas continuas; (2) la relación entre ellas es aproximadamente lineal; (3) los datos no presentan valores atípicos extremos influyentes; y (4) idealmente, ambas variables siguen una distribución normal bivariada. Cuando estos supuestos no se cumplen, debe emplearse la correlación de Spearman.
-
-7.4.5 Ejemplo resuelto
-Con los datos de la Tabla 7.1 se calculan: Sxy ≈ 1.449, Sx ≈ 2.052, Sy ≈ 0.648.
-r = 1.449 / (2.052 × 0.648) = 1.449 / 1.330 ≈ 0.989
-
-# Código en R
-# Correlación de Pearson y matriz de correlaciones
-horas  <- c(2,3,5,1,4,6,2,7,3,5,1,4,6,2,8)
-calif  <- c(3.2,3.5,4.0,2.8,3.8,4.3,3.0,4.5,3.4,4.1,2.5,3.7,4.2,3.1,4.8)
-suenio <- c(6,7,7,5,8,6,6,7,8,7,5,6,7,6,8)
-
-# Pearson entre horas y calificación
-r_pearson <- cor(horas, calif, method = 'pearson')
-cat('r de Pearson (horas vs calif) =', round(r_pearson, 3))
-
-# Matriz de correlaciones para las tres variables numéricas
-datos_num <- data.frame(horas, calif, suenio)
-round(cor(datos_num, method = 'pearson'), 3)
-
-
-Tabla 7.2. Matriz de correlaciones de Pearson
-Par de variables	r de Pearson	Interpretación
-Horas estudio – Calificación	0.989	Muy alta positiva
-Horas estudio – Horas sueño	0.412	Moderada positiva
-Horas sueño – Calificación	0.398	Moderada positiva
-
-Interpretación: r = 0.989 indica una relación lineal positiva muy fuerte entre horas de estudio y calificación: el 97.8% de la variación en las calificaciones (r²) puede explicarse por la variación en las horas de estudio. La relación entre horas de estudio y horas de sueño (r = 0.412) es moderada y positiva, sugiriendo que los estudiantes que más estudian también tienden a dormir algo más, aunque la relación es menos consistente.
-
-7.4.6 Aplicación disciplinar
-En psicometría, la correlación de Pearson se usa para evaluar la validez convergente de una prueba: se espera que dos instrumentos que miden el mismo constructo presenten r > 0.70. En medicina, la correlación entre biomarcadores (p. ej., glucosa en sangre y hemoglobina glicosilada) sirve para validar mediciones indirectas. En ingeniería, la correlación entre variables de proceso (temperatura y presión en una reacción) orienta el diseño de experimentos.
-
-7.4.7 Ejercicios propuestos
-Ejercicio 1. Calcule manualmente el coeficiente de Pearson entre horas de sueño (Z) y calificación (Y). Interprete el resultado usando la escala de Cohen (1988).
-Ejercicio 2. ¿Qué ocurre con r si se suma una constante k a todos los valores de X? ¿Y si se multiplican todos los valores de X por una constante k > 0? Demuéstrelo con los datos de la Tabla 7.1.
-Ejercicio 3. Un investigador obtiene r = 0.85 entre el número de horas de televisión y el índice de masa corporal en 200 niños. ¿Puede concluir que ver televisión causa obesidad? Justifique su respuesta desde la perspectiva estadística.
- 
-7.5 Correlación de Spearman
-7.5.1 Definición
-El coeficiente de correlación por rangos de Spearman (ρ, rho) es una medida no paramétrica de la asociación monótona entre dos variables. Fue propuesto por Charles Spearman en 1904 y opera sobre los rangos (posiciones en el ordenamiento) de los datos, no sobre los valores originales (Siegel & Castellan, 1988). Es la alternativa indicada cuando los datos son ordinales, cuando la relación no es lineal pero sí monótona, o cuando se presentan valores atípicos que distorsionarían a Pearson.
-
-7.5.2 Fórmula
-Cuando no hay empates o estos son poco frecuentes, ρ se calcula mediante la fórmula simplificada:
-ρ = 1 − (6 · Σdᵢ²) / (n(n² − 1))
-donde dᵢ = Rango(xᵢ) − Rango(yᵢ) es la diferencia entre los rangos de cada par de observaciones, y n es el número de pares. Cuando hay empates, deben promediarse los rangos y es preferible calcular ρ aplicando la fórmula de Pearson directamente sobre los rangos.
-
-7.5.3 Ejemplo resuelto
-Con los datos de la Tabla 7.1 se asignan rangos a X e Y. Los empates en X (valores 1, 2, 3, 4, 5, 6) reciben rangos promedio:
-
-Tabla 7.3. Rangos y diferencias al cuadrado para la correlación de Spearman
-Estud.	X (horas)	Y (calif.)	Rango X	Rango Y	d²
-E01	2	3.2	3.5	3	0.25
-E02	3	3.5	6	6	0
-E03	5	4.0	9.5	10	0.25
-E04	1	2.8	1.5	1	0
-E05	4	3.8	7.5	8	0.25
-E06	6	4.3	11.5	13	2.25
-E07	2	3.0	3.5	2	2.25
-E08	7	4.5	13.5	14	0.25
-E09	3	3.4	6	5	1
-E10	5	4.1	9.5	11	2.25
-E11	1	2.5	1.5	0	2.25
-E12	4	3.7	7.5	7	0.25
-E13	6	4.2	11.5	12	0.25
-E14	2	3.1	3.5	4	0.25
-E15	8	4.8	15	15	0
-				Σd²	11.75
-
-ρ = 1 − (6 × 11.75) / (15 × (225 − 1)) = 1 − 70.5 / 3360 = 1 − 0.021 ≈ 0.979
-
-# Código en R
-# Correlación de Spearman
-horas <- c(2,3,5,1,4,6,2,7,3,5,1,4,6,2,8)
-calif <- c(3.2,3.5,4.0,2.8,3.8,4.3,3.0,4.5,3.4,4.1,2.5,3.7,4.2,3.1,4.8)
-
-rho_spearman <- cor(horas, calif, method = 'spearman')
-cat('Rho de Spearman =', round(rho_spearman, 3))
-
-# Prueba de significancia
-cor.test(horas, calif, method = 'spearman')
-
-
-Interpretación: ρ = 0.979 indica una asociación monótona positiva muy fuerte entre las horas de estudio y la calificación. El resultado es prácticamente idéntico al de Pearson (r = 0.989), lo que confirma que la relación es esencialmente lineal y que no hay valores atípicos influyentes que estén distorsionando el coeficiente paramétrico. En general, Pearson y Spearman convergen cuando se cumplen los supuestos de Pearson.
-
-7.5.4 Pearson vs. Spearman: ¿cuándo usar cada uno?
-La siguiente regla práctica orienta la elección:
-•	Use Pearson cuando las variables sean continuas, la relación sea lineal y no haya valores atípicos extremos.
-•	Use Spearman cuando los datos sean ordinales, la relación sea monótona no lineal, o cuando haya valores atípicos que no pueden eliminarse.
-•	Si ambos producen resultados similares, la relación es lineal y no hay problemas de supuestos.
-•	Si difieren notablemente, investigue la causa: valores atípicos, no linealidad, o escala ordinal.
-
-7.5.5 Aplicación disciplinar
-En educación, la correlación de Spearman es apropiada para estudiar la relación entre el puesto en el ranking de una institución (variable ordinal) y la satisfacción estudiantil. En ciencias de la salud, se usa para medir la asociación entre el estadio clínico de una enfermedad (I, II, III, IV) y la respuesta al tratamiento. En administración, permite analizar la relación entre la posición jerárquica de los empleados y su nivel de compromiso organizacional.
-
-7.5.6 Ejercicios propuestos
-Ejercicio 1. Calcule el coeficiente de Spearman entre horas de sueño (Z) y calificación (Y). Compare con el Pearson obtenido en el ejercicio 7.4.1 y discuta las diferencias.
-Ejercicio 2. Un investigador agrega al dataset un estudiante atípico: 20 horas de estudio y calificación 2.0. Calcule Pearson y Spearman con y sin este dato. ¿Cuál coeficiente es más robusto? ¿Por qué?
-Ejercicio 3. Clasifique como ordinales las calificaciones de la Tabla 7.1 en cuatro categorías (Deficiente: <3.0, Básico: 3.0–3.4, Alto: 3.5–3.9, Superior: 4.0–5.0) y calcule ρ de Spearman entre esta nueva variable ordinal y los rangos de horas de estudio.
- 
-7.6 Tablas de contingencia
-7.6.1 Definición
-Una tabla de contingencia (también llamada tabla de doble entrada o tabla cruzada) es una representación matricial que organiza la distribución conjunta de dos variables categóricas. Las filas corresponden a las categorías de una variable y las columnas a las categorías de la otra; cada celda interior contiene el número de observaciones que pertenecen simultáneamente a ambas categorías. Los totales marginales (sumas por filas y columnas) permiten calcular frecuencias relativas condicionales y aplicar pruebas de independencia (Agresti, 2013).
-
-7.6.2 Estructura y elementos
-Una tabla de contingencia de r × c (r filas, c columnas) tiene los siguientes elementos:
-•	Frecuencias absolutas (nᵢⱼ): número de casos en la celda (i, j).
-•	Frecuencias marginales de fila (nᵢ·): total de la fila i; suma de todas las celdas de esa fila.
-•	Frecuencias marginales de columna (n·ⱼ): total de la columna j.
-•	Frecuencias relativas conjuntas (fᵢⱼ = nᵢⱼ / n): proporción de casos en la celda (i, j) respecto al total.
-•	Frecuencias relativas condicionales por fila (nᵢⱼ / nᵢ·): distribución de Y dentro de cada categoría de X.
-
-7.6.3 Ejemplo resuelto
-Con los datos de la Tabla 7.1 se cruzan las variables género (M / F) y nivel de calificación (Baja: Y < 3.5; Alta: Y ≥ 3.5):
-
-Tabla 7.4. Tabla de contingencia: nivel de calificación × género
-Calificación / Género	Masculino	Femenino	Total
-Baja (< 3.5)	4	2	6
-Alta (≥ 3.5)	4	5	9
-Total	8	7	15
-
-# Código en R
-# Tabla de contingencia en R
-calif  <- c(3.2,3.5,4.0,2.8,3.8,4.3,3.0,4.5,3.4,4.1,2.5,3.7,4.2,3.1,4.8)
-genero <- c('M','F','M','F','M','F','M','F','M','F','M','F','M','F','M')
-
-nivel_calif <- ifelse(calif >= 3.5, 'Alta', 'Baja')
-
-tabla <- table(Calificacion = nivel_calif, Genero = genero)
-print(tabla)
-addmargins(tabla)          # con totales marginales
-prop.table(tabla)          # frecuencias relativas conjuntas
-prop.table(tabla, margin = 1)  # condicional por fila (nivel)
-prop.table(tabla, margin = 2)  # condicional por columna (género)
-
-# Prueba chi-cuadrado de independencia
-chisq.test(tabla)
-
-
-Interpretación: Del total de 15 estudiantes, 9 (60%) tienen calificación alta y 6 (40%) calificación baja. Entre los hombres, el 50% tiene calificación alta; entre las mujeres, el 71.4%. La diferencia sugiere una asociación entre género y nivel de calificación, aunque con una muestra tan pequeña la prueba chi-cuadrado puede carecer de potencia suficiente. Con muestras mayores, esta tendencia podría investigarse con mayor rigor estadístico.
-
-7.6.4 Aplicación disciplinar
-En epidemiología, las tablas de contingencia 2×2 son la herramienta fundamental para calcular la razón de odds (OR) y el riesgo relativo (RR) en estudios caso-control y cohortes. En marketing, permiten cruzar segmento de cliente con preferencia de producto para identificar patrones de consumo. En educación, se usan para analizar si la modalidad de estudio (presencial / virtual) se asocia con la aprobación o reprobación de asignaturas.
-
-7.6.5 Ejercicios propuestos
-Ejercicio 1. Construya una tabla de contingencia 3×2 cruzando nivel de calificación en tres categorías (Baja: <3.0, Media: 3.0–3.9, Alta: ≥4.0) con el género. Calcule las frecuencias condicionales por columna.
-Ejercicio 2. Con la tabla del ejercicio anterior, calcule en R la prueba chi-cuadrado de Pearson. ¿Se puede concluir que existe asociación entre género y nivel de calificación? Justifique con base en el valor p.
-Ejercicio 3. Un estudio sobre hábitos alimentarios registra el tipo de dieta (omnívora / vegetariana / vegana) y la presencia de anemia (sí / no) en 200 personas. Construya la estructura de una tabla de contingencia para este caso e identifique cuántas celdas tendría.
- 
-7.7 Regresión lineal simple
-7.7.1 Definición
-La regresión lineal simple es un modelo estadístico que describe la relación entre una variable dependiente o respuesta (Y) y una variable independiente o predictora (X) mediante una función lineal. A diferencia de la correlación —que solo mide la fuerza de la asociación—, la regresión permite cuantificar la magnitud del cambio en Y asociado a un cambio unitario en X, y puede usarse para realizar predicciones dentro del rango de los datos observados (Montgomery, Peck & Vining, 2012).
-
-7.7.2 El modelo
-El modelo de regresión lineal simple tiene la forma:
-Ŷ = β₀ + β₁X
-donde Ŷ es el valor predicho de Y, β₀ es el intercepto (valor esperado de Y cuando X = 0), β₁ es la pendiente (cambio esperado en Y por cada unidad de incremento en X), y X es el valor de la variable predictora. Los parámetros β₀ y β₁ se estiman mediante el método de mínimos cuadrados ordinarios (MCO), que minimiza la suma de los cuadrados de los residuos (diferencias entre valores observados y predichos).
-
-7.7.3 Estimación de los parámetros
-Las fórmulas de estimación por MCO para la muestra son:
-b₁ = Sxy / Sx² = Σ[(xᵢ − x̄)(yᵢ − ȳ)] / Σ(xᵢ − x̄)²
-b₀ = ȳ − b₁ · x̄
-
-7.7.4 Coeficiente de determinación R²
-El coeficiente de determinación R² mide la proporción de la variabilidad total de Y que es explicada por el modelo de regresión:
-R² = r² (en regresión simple)
-R² varía entre 0 y 1. Un R² = 0.95 significa que el 95% de la variación en Y queda explicada por X mediante el modelo lineal. El 5% restante corresponde a la variación no explicada (residual).
-
-7.7.5 Ejemplo resuelto
-Con los datos de la Tabla 7.1: Sxy ≈ 1.449, Sx² ≈ 4.210.
-b₁ = 1.449 / 4.210 ≈ 0.344
-b₀ = 3.79 − 0.344 × 3.93 ≈ 2.438
-Modelo estimado: Ŷ = 2.438 + 0.344X
-R² = (0.989)² ≈ 0.978
-
-# Código en R
-# Regresión lineal simple: calificación ~ horas de estudio
-horas <- c(2,3,5,1,4,6,2,7,3,5,1,4,6,2,8)
-calif <- c(3.2,3.5,4.0,2.8,3.8,4.3,3.0,4.5,3.4,4.1,2.5,3.7,4.2,3.1,4.8)
-
-modelo <- lm(calif ~ horas)
-summary(modelo)
-
-# Gráfico de regresión con intervalo de confianza
-plot(horas, calif,
-     main = 'Regresión lineal: Calificación ~ Horas de estudio',
-     xlab = 'Horas de estudio semanales (X)',
-     ylab = 'Calificación (Y)',
-     pch = 19, col = '#2E75B6', cex = 1.3)
-abline(modelo, col = '#C00000', lwd = 2)
-
-# Predicción para un estudiante que estudia 6 horas
-nuevo <- data.frame(horas = 6)
-predict(modelo, newdata = nuevo, interval = 'confidence', level = 0.95)
-
-
-Interpretación: El modelo estimado Ŷ = 2.438 + 0.344X indica que, en promedio, por cada hora adicional de estudio semanal, la calificación aumenta 0.344 puntos. Un estudiante que estudia 6 horas semanales tendría una calificación predicha de 2.438 + 0.344(6) = 4.50 puntos. El R² = 0.978 señala que el 97.8% de la variación en las calificaciones queda explicada por las horas de estudio, lo que indica un ajuste excelente del modelo para estos datos.
-
-Nota: La regresión permite predecir, pero no debe extrapolarse fuera del rango observado de X (1–8 horas). Una predicción para 20 horas de estudio, por ejemplo, podría producir una calificación mayor que 5, lo cual es imposible en la escala utilizada.
-
-7.7.6 Aplicación disciplinar
-En ciencias de la salud, la regresión lineal simple permite estimar la dosis de medicamento necesaria para alcanzar un nivel terapéutico objetivo. En ingeniería, se usa para modelar la relación entre temperatura de operación y desgaste de componentes. En economía, relaciona el ingreso familiar con el gasto en educación. En ciencias sociales, modela la relación entre años de escolaridad e ingresos laborales.
-
-7.7.7 Ejercicios propuestos
-Ejercicio 1. Estime el modelo de regresión lineal simple entre horas de sueño (Z, variable predictora) y calificación (Y, variable respuesta). Interprete b₀, b₁ y R².
-Ejercicio 2. Use el modelo estimado en la sección 7.7.5 para predecir la calificación de un estudiante que estudia 4.5 horas semanales. ¿Cuál es el intervalo de confianza al 95% para esa predicción en R?
-Ejercicio 3. ¿Por qué el coeficiente de determinación R² en regresión lineal simple es igual al cuadrado de la correlación de Pearson r? Demuéstrelo algebraicamente a partir de las fórmulas de ambos estadísticos.
-Ejercicio 4. Con los datos de la Tabla 7.1, construya el gráfico de residuos (residuos vs. valores predichos). ¿Se observa algún patrón sistemático? ¿Qué implicaría eso para la validez del modelo?
- 
-7.8 Síntesis y relación entre las herramientas del análisis bivariado
-A lo largo de este capítulo se han desarrollado seis herramientas complementarias que, aplicadas sobre el mismo conjunto de datos, han revelado distintas facetas de la relación entre horas de estudio y calificación académica. La siguiente tabla sintetiza las principales características de cada técnica:
-
-Técnica	Tipo de variables	Qué mide	Resultado del ejemplo
-Diagrama de dispersión	Cuantitativas	Patrón visual de asociación	Relación lineal positiva fuerte
-Covarianza	Cuantitativas	Dirección de la relación	Sxy = 1.449 (positiva)
-Correlación de Pearson	Cuantitativas continuas	Fuerza y dirección lineal	r = 0.989 (muy fuerte)
-Correlación de Spearman	Ordinales o cuantitativas	Asociación monótona	ρ = 0.979 (muy fuerte)
-Tabla de contingencia	Categóricas	Distribución conjunta	Tendencia: mujeres con mayor calificación
-Regresión lineal simple	Cuantitativas	Modelo predictivo lineal	Ŷ = 2.438 + 0.344X; R² = 0.978
-
-Una conclusión metodológica fundamental de este capítulo es la siguiente: correlación no implica causalidad. El hecho de que r = 0.989 entre horas de estudio y calificación sea muy alto no permite concluir que estudiar más horas cause mejores calificaciones en sentido estricto. Pueden existir variables de confusión (motivación, capacidad cognitiva, calidad del estudio) que expliquen parte de la relación. La causalidad requiere diseños de investigación específicos —experimentos controlados, estudios longitudinales— que van más allá del análisis bivariado descriptivo.
-
-Nota: Antes de aplicar cualquiera de estas técnicas en un estudio real, verifique los supuestos correspondientes, inspeccione visualmente los datos y evalúe la presencia de valores atípicos. Un análisis bivariado riguroso siempre comienza con el diagrama de dispersión.
- 
-7.9 Ejercicios integradores
-Los siguientes ejercicios requieren integrar varias de las técnicas desarrolladas en el capítulo:
-
-Ejercicio 1. Un grupo de investigadores registra en 20 pacientes hipertensos: presión arterial sistólica (mmHg), edad (años), índice de masa corporal (IMC) y consumo de sodio diario (mg). (a) Construya la matriz de diagramas de dispersión (pairs() en R). (b) Calcule la matriz de correlaciones de Pearson. (c) Identifique el par de variables con mayor correlación y estime el modelo de regresión lineal simple correspondiente. (d) Interprete b₁ y R² en términos del problema.
-
-Ejercicio 2. En una encuesta a 50 estudiantes de una facultad de ingeniería se registra: semestre académico (1–10), promedio acumulado (0–5), modalidad de aprendizaje preferida (visual / auditiva / kinestésica) y horas semanales de uso de herramientas digitales. (a) ¿Cuál técnica bivariada usaría para analizar la relación entre semestre y promedio? Justifique. (b) ¿Cuál técnica usaría para analizar la relación entre modalidad de aprendizaje y aprobación del semestre (sí/no)? (c) Diseñe el código R para ambos análisis.
-
-Ejercicio 3. Se afirma que en una empresa de manufactura existe una relación entre el número de horas de capacitación recibidas por los operarios y el número de defectos producidos en su turno. Se tienen los datos de 12 operarios. (a) Estime el modelo de regresión lineal simple. (b) Interprete la pendiente en el contexto del problema. (c) Si la empresa decide aumentar la capacitación de 8 a 12 horas, ¿cuántos defectos menos esperaría según el modelo? (d) ¿Cuál sería el R² mínimo que justificaría usar este modelo para tomar decisiones operativas?
-
- 
-Referencias
-Agresti, A. (2013). Categorical data analysis (3.ª ed.). Wiley.
-Cohen, J. (1988). Statistical power analysis for the behavioral sciences (2.ª ed.). Lawrence Erlbaum Associates.
-Devore, J. L. (2016). Probability and statistics for engineering and the sciences (9.ª ed.). Cengage Learning.
-Montgomery, D. C., Peck, E. A., & Vining, G. G. (2012). Introduction to linear regression analysis (5.ª ed.). Wiley.
-Montgomery, D. C., & Runger, G. C. (2018). Applied statistics and probability for engineers (7.ª ed.). Wiley.
-Siegel, S., & Castellan, N. J. (1988). Nonparametric statistics for the behavioral sciences (2.ª ed.). McGraw-Hill.
-Walpole, R. E., Myers, R. H., & Myers, S. L. (2012). Probability and statistics for engineers and scientists (9.ª ed.). Pearson.
+
+En los capítulos anteriores se estudiaron las características de una
+sola variable a la vez, analizando aspectos como la tendencia central,
+la dispersión, la posición y la forma de los datos. Sin embargo, en los
+problemas reales rara vez las variables actúan de manera aislada. En la
+práctica, los fenómenos sociales, económicos, educativos, biológicos y
+administrativos suelen depender de la interacción entre múltiples
+variables.
+
+Por ejemplo, en educación puede surgir la pregunta de si un mayor número
+de horas de estudio se relaciona con mejores calificaciones; en salud,
+si existe asociación entre el índice de masa corporal y la presión
+arterial; o en economía, si el nivel de ingresos influye sobre el gasto
+familiar. Todas estas situaciones requieren estudiar simultáneamente dos
+variables y comprender cómo se comportan conjuntamente.
+
+El análisis bivariado corresponde precisamente al conjunto de técnicas
+estadísticas utilizadas para explorar, describir, cuantificar e
+interpretar la relación entre dos variables medidas sobre las mismas
+unidades de análisis. A diferencia del análisis univariado, cuyo
+propósito es describir individualmente una variable, el análisis
+bivariado busca identificar patrones de asociación, dependencia o
+predicción entre variables.
+
+Dependiendo de la naturaleza de las variables involucradas, el análisis
+bivariado puede abordar diferentes situaciones:
+
+relaciones entre variables cuantitativas; asociaciones entre variables
+categóricas; comparación de una variable cuantitativa entre categorías.
+
+En este capítulo se desarrollan las principales herramientas del
+análisis bivariado, incluyendo:
+
+diagramas de dispersión, covarianza, correlación de Pearson, correlación
+de Spearman, tablas de contingencia, y regresión lineal simple.
+
+Cada técnica será presentada desde una perspectiva teórica y
+posteriormente aplicada mediante ejemplos desarrollados en R utilizando
+un mismo conjunto de datos, con el propósito de facilitar la comprensión
+progresiva del análisis estadístico y fortalecer el aprendizaje
+experiencial. Es importante destacar que el análisis bivariado
+constituye la base de técnicas estadísticas más avanzadas, como la
+regresión múltiple, el análisis multivariado y los modelos predictivos
+utilizados actualmente en ciencia de datos, inteligencia artificial y
+analítica aplicada.
+
+## **Tipos de análisis bivariado**
+
+El tipo de análisis bivariado que puede realizarse depende de la
+naturaleza de las variables estudiadas. En estadística, las variables
+pueden ser cuantitativas o categóricas, y cada combinación requiere
+herramientas específicas de exploración, visualización e interpretación.
+
+Cuando ambas variables son cuantitativas, el interés suele centrarse en
+evaluar si existe asociación, dependencia o relación funcional entre
+ellas. En estos casos se utilizan herramientas como diagramas de
+dispersión, covarianza, correlación y regresión lineal. Por ejemplo,
+puede analizarse la relación entre horas de estudio y calificación
+final, o entre peso corporal y estatura.
+
+Si ambas variables son categóricas, el objetivo principal consiste en
+estudiar asociaciones entre categorías o grupos. Para ello se emplean
+tablas de contingencia y medidas de asociación categórica. Un ejemplo
+frecuente corresponde al análisis de la relación entre género y nivel de
+satisfacción académica.
+
+También existen situaciones donde una variable es cuantitativa y la otra
+categórica. En estos casos, el interés radica en comparar el
+comportamiento de la variable numérica entre diferentes grupos o
+categorías. Por ejemplo, comparar las calificaciones promedio entre
+hombres y mujeres, o analizar diferencias salariales entre regiones.
+
+La siguiente tabla resume las principales combinaciones posibles en el
+análisis bivariado:
+
+| Tipo de variable 1 | Tipo de variable 2 | Objetivo principal | Técnicas utilizadas |
+|------------------|------------------|-------------------|-------------------|
+| C uantitativa | C uantitativa | Evaluar asociación o predicción | Correlación, regresión, dispersión |
+| Categórica | Categórica | Analizar asociación entre categorías | Tablas de contingencia |
+| C uantitativa | Categórica | Comparar grupos | Boxplot, medias, comparación gráfica |
+
+Comprender el tipo de variables involucradas constituye un paso
+fundamental antes de seleccionar cualquier técnica estadística, ya que
+una elección incorrecta puede conducir a interpretaciones inadecuadas o
+resultados inconsistentes.
+
+En este capítulo se abordarán ejemplos correspondientes a cada una de
+estas situaciones, integrando representaciones gráficas, medidas
+estadísticas y modelos básicos de análisis bivariado mediante
+implementaciones desarrolladas en R.
+
+## Conjunto de datos de trabajo
+
+A lo largo de este capítulo se utilizará un mismo conjunto de datos con
+el propósito de ilustrar las diferentes técnicas de análisis bivariado
+de manera integrada y progresiva. El uso de un único dataset facilita la
+comparación de resultados y permite comprender cómo distintas
+herramientas estadísticas pueden analizar una misma realidad desde
+perspectivas complementarias.
+
+La base de datos contiene información correspondiente a estudiantes
+universitarios e incluye variables cuantitativas y categóricas, entre
+ellas:
+
+horas de estudio semanales, calificación final, horas de sueño, y
+género.
+
+Estas variables permiten desarrollar ejemplos relacionados con:
+
+relaciones entre variables cuantitativas, asociaciones entre variables
+categóricas, y comparación de grupos.
+
+En términos pedagógicos, este enfoque favorece el aprendizaje
+experiencial, ya que el estudiante puede observar cómo los conceptos
+teóricos se aplican directamente sobre datos reales mediante análisis
+reproducibles en R.
+
+### Carga de datos en R
+
+```{r}
+#| message: false
+#| warning: false
+
+library(readxl)
+library(dplyr)
+
+datos <- read_excel(
+  "C:/R-Proyectos/estadistica-experiencial/data/bd_antropometricas.xlsx"
+)
+
+head(datos)
+```
+
+### Exploración inicial de variables
+
+```{r}
+names(datos)
+
+str(datos)
+```
+
+## Diagrama de dispersión
+
+El diagrama de dispersión, también conocido como nube de puntos, es una
+representación gráfica utilizada para explorar la relación entre dos
+variables cuantitativas. Cada punto del gráfico representa una
+observación y su posición en el plano cartesiano depende de los valores
+registrados para las variables $X$ y $Y$.
+
+Esta herramienta constituye generalmente el primer paso del análisis
+bivariado, ya que permite identificar visualmente patrones de
+asociación, tendencias, agrupamientos y posibles valores atípicos antes
+de aplicar medidas numéricas de correlación o modelos de regresión. A
+partir de un diagrama de dispersión pueden identificarse diferentes
+comportamientos entre las variables:
+
+![Fuente: Autores](img/dispersion.jpg)
+
+#### Ejemplo en R
+
+En el siguiente ejemplo se utiliza la base de datos antropométrica para
+analizar la relación entre la estatura de los estudiantes y su peso
+corporal. El objetivo consiste en explorar visualmente si existe
+asociación entre ambas variables mediante un diagrama de dispersión.
+
+```{r}
+#| message: false
+#| warning: false
+
+# Librerías
+library(readxl)
+library(ggplot2)
+
+# Cargar base de datos
+datos <- read_excel(
+  "C:/R-Proyectos/estadistica-experiencial/data/bd_antropometricas.xlsx"
+)
+
+# Diagrama de dispersión
+ggplot(
+  datos,
+  
+  aes(
+    x = Altura_cm,
+    y = Peso_Kg,
+    color = Genero
+  )
+) +
+  
+  geom_point(
+    size = 3,
+    alpha = 0.75
+  ) +
+  
+  scale_color_manual(
+    values = c(
+      "F" = "#D95F02",
+      "M" = "#1B9E77"
+    )
+  ) +
+  
+  labs(
+    title = "Relación entre altura y peso corporal",
+    
+    subtitle = "Distribución según género",
+    
+    x = "Altura (cm)",
+    
+    y = "Peso (kg)",
+    
+    color = "Género",
+    
+    caption = "Fuente: Base antropométrica prof. Miguel Pérez"
+  ) +
+  
+  theme_minimal(base_size = 12) +
+  
+  theme(
+    plot.title = element_text(
+      face = "bold",
+      size = 15
+    ),
+    
+    plot.subtitle = element_text(
+      size = 11
+    ),
+    
+    legend.position = "right"
+  )
+```
+
+**Interpretación:** El diagrama de dispersión permite explorar
+visualmente la relación entre la altura y el peso corporal de los
+estudiantes, diferenciando las observaciones según el género. En
+general, se observa una tendencia positiva entre ambas variables,
+indicando que a mayores valores de altura tienden a presentarse mayores
+valores de peso corporal.
+
+La diferenciación por color facilita identificar posibles agrupamientos
+entre hombres y mujeres, evidenciando patrones distintos en la
+distribución de las observaciones. Este tipo de visualización resulta
+útil para detectar comportamientos particulares dentro de subgrupos
+poblacionales y constituye una herramienta exploratoria fundamental
+antes de aplicar medidas numéricas de asociación o modelos estadísticos
+más complejos.
+
+::: callout-warning
+El **diagrama de dispersión** es principalmente una herramienta de
+análisis exploratorio y visualización bivariada. NO es todavía una
+correlación numérica.
+:::
+
+## Prueba de normalidad Shapiro-Wilk
+
+La prueba de Shapiro-Wilk permite evaluar si una variable cuantitativa
+presenta una distribución aproximadamente normal. En este caso, se
+analizan las variables altura y peso corporal de los estudiantes.
+
+La hipótesis nula ($H_0$​) establece que los datos siguen una
+distribución normal, mientras que la hipótesis alternativa ($H_1$​)
+plantea que la distribución no es normal.
+
+La decisión se toma a partir del valor $p$:
+
+-   si $p > 0.05$, no se rechaza la normalidad;
+
+-   si $p \leq 0.05$, se concluye que la variable no presenta
+    distribución normal.
+
+Estas pruebas son importantes porque muchas técnicas estadísticas
+paramétricas, como la correlación de Pearson y la regresión lineal,
+asumen normalidad en los datos.
+
+```{r}
+#| message: false
+#| warning: false
+
+# Librerías
+library(readxl)
+library(dplyr)
+library(purrr)
+
+# Cargar base de datos
+datos <- read_excel(
+  "C:/R-Proyectos/estadistica-experiencial/data/bd_antropometricas.xlsx"
+)
+
+# Seleccionar variables numéricas
+variables_numericas <- datos %>%
+  
+  select(where(is.numeric))
+
+# Aplicar Shapiro-Wilk a cada variable
+normalidad <- map_df(
+  
+  names(variables_numericas),
+  
+  ~{
+    
+    prueba <- shapiro.test(
+      na.omit(variables_numericas[[.x]])
+    )
+    
+    data.frame(
+      Variable = .x,
+      W = round(prueba$statistic, 4),
+      p_value = round(prueba$p.value, 6),
+      
+      Normalidad = ifelse(
+        prueba$p.value > 0.05,
+        "Sí presenta normalidad",
+        "No presenta normalidad"
+      )
+    )
+  }
+)
+
+# Mostrar resultados
+normalidad
+```
+
+## Cuando la variable presenta distribución normal 
+
+**Interpretación:** Las variables **Long_Pierna_cm** y **Long_Pie_cm**
+presentan un comportamiento compatible con una distribución normal según
+la prueba de Shapiro-Wilk.
+
+Para la variable **Long_Pierna_cm**, se obtuvo un estadístico
+$W = 0.9950$ y un valor $p = 0.564763$. Debido a que el valor $p$ es
+mayor que $0.05$, no se rechaza la hipótesis nula de normalidad. Esto
+indica que la distribución de la longitud de la pierna no presenta
+diferencias significativas respecto a una distribución normal.
+
+De manera similar, la variable **Long_Pie_cm** presentó un estadístico
+$W = 0.9914$ y un valor $p = 0.134404$. Al ser también mayor que $0.05$,
+se concluye que la longitud del pie presenta una distribución
+aproximadamente normal.
+
+En términos prácticos, estos resultados sugieren que ambas variables
+antropométricas poseen distribuciones relativamente simétricas y sin
+desviaciones extremas importantes, lo cual favorece la aplicación de
+técnicas estadísticas paramétricas, como: correlación de Pearson,
+pruebas t, análisis de regresión lineal e intervalos de confianza
+basados en normalidad.
+
+Asimismo, el comportamiento normal de estas variables es coherente con
+muchas mediciones biológicas y antropométricas, donde las
+características físicas de una población suelen distribuirse alrededor
+de un valor promedio central.
+
+### Correlación de Pearson
+
+La correlación es una medida estadística utilizada para cuantificar la
+fuerza y la dirección de la relación entre dos variables cuantitativas.
+A diferencia del diagrama de dispersión, que permite explorar
+visualmente el comportamiento conjunto de las variables, la correlación
+resume dicha relación mediante un valor numérico.
+
+El coeficiente de correlación de Pearson se calcula como:
+
+$$
+r = \frac{\sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y})}
+{\sqrt{\sum_{i=1}^{n}(x_i-\bar{x})^2 \sum_{i=1}^{n}(y_i-\bar{y})^2}}
+$$
+
+El coeficiente de correlación indica qué tan estrechamente se relacionan
+dos variables y si dicha relación es positiva, negativa o inexistente.
+
+![Fuente: autores](img/correlacion.jpg)
+
+#### Ejemplo en R
+
+En el siguiente ejemplo se calcula la correlación entre altura y peso
+corporal utilizando la base de datos antropométrica.
+
+```{r}
+#| message: false
+#| warning: false
+
+# Librerías
+library(readxl)
+library(ggplot2)
+
+# Cargar base de datos
+datos <- read_excel(
+  "C:/R-Proyectos/estadistica-experiencial/data/bd_antropometricas.xlsx"
+)
+
+# Calcular correlación
+r <- cor(
+  datos$Long_Pierna_cm,
+  datos$Long_Pie_cm,
+  
+  method = "pearson",
+  
+  use = "complete.obs"
+)
+
+# Gráfico
+ggplot(
+  datos,
+  
+  aes(
+    x = Long_Pierna_cm,
+    y = Long_Pie_cm,
+    color = Genero
+  )
+) +
+  
+  geom_point(
+    size = 3,
+    alpha = 0.75
+  ) +
+  
+  scale_color_manual(
+    values = c(
+      "F" = "#D95F02",
+      "M" = "#1B9E77"
+    )
+  ) +
+  
+  geom_smooth(
+    method = "lm",
+    se = FALSE,
+    color = "black",
+    linewidth = 1
+  ) +
+  
+  annotate(
+    "text",
+    
+    x = min(datos$Long_Pierna_cm) + 5,
+    
+    y = max(datos$Long_Pie_cm) - 5,
+    
+    label = paste0(
+      "r = ",
+      round(r, 3)
+    ),
+    
+    size = 5,
+    
+    fontface = "bold",
+    
+    color = "black"
+  ) +
+  
+  labs(
+    title = "Relación entre Longitud Pierna y Longitud pie",
+    
+    subtitle = "Diagrama de dispersión y correlación de Pearson",
+    
+    x = "Longitud Pierna (cm)",
+    
+    y = "Longitud pie (cm)",
+    
+    color = "Género",
+    
+    caption = "Fuente: Base antropométrica Prof. Miguel Pérez"
+  ) +
+  
+  theme_minimal(base_size = 12)
+```
+
+**Interpretación:** El diagrama de dispersión permite explorar la
+relación entre la longitud de la pierna y la longitud del pie en los
+estudiantes, diferenciando las observaciones según el género.
+Visualmente, los puntos se encuentran ampliamente dispersos y no
+muestran una tendencia lineal clara entre ambas variables.
+
+El **coeficiente de correlación de Pearson** obtenido ($r = 0.012$)
+indica una **asociación lineal prácticamente nula entre la longitud de
+la pierna y la longitud del pie**. Este valor, al encontrarse muy
+cercano a cero, sugiere que el aumento en una de las variables no se
+relaciona de manera consistente con cambios en la otra dentro de la
+muestra analizada.
+
+Asimismo, la línea de tendencia horizontal observada en el gráfico
+confirma la ausencia de una relación lineal significativa. Aunque
+existen diferencias naturales entre hombres y mujeres en la distribución
+de las observaciones, dichas variaciones no generan un patrón de
+asociación fuerte entre las variables estudiadas.
+
+En términos prácticos, estos resultados indican que la longitud de la
+pierna no constituye un buen predictor lineal de la longitud del pie en
+esta población específica. Este tipo de análisis es importante porque
+demuestra que no todas las variables antropométricas presentan
+relaciones lineales fuertes, incluso cuando pertenecen a una misma
+dimensión biológica..
+
+## Cuando la variable no presenta distribución normal 
+
+**Interpretación Altura_cm y Peso_Kg:** La prueba de Shapiro-Wilk indica
+que ninguna de las dos variables presenta una distribución normal al
+nivel de significancia del 5 %.
+
+Para la variable **Altura_cm**, se obtuvo un estadístico $W = 0.9752$ y
+un valor $p = 0.000171$. Debido a que el valor $p$ es menor que $0.05$,
+se rechaza la hipótesis nula de normalidad, concluyendo que la
+distribución de la altura difiere significativamente de una distribución
+normal.
+
+De manera similar, para la variable **Peso_Kg**, el estadístico obtenido
+fue $W = 0.9040$ con un valor $p = 7.916 \times 10^{-12}$, valor
+extremadamente pequeño que también conduce al rechazo de la hipótesis de
+normalidad. Esto indica que la distribución del peso corporal presenta
+desviaciones importantes respecto a la normalidad.
+
+En términos prácticos, estos resultados sugieren que las variables
+antropométricas analizadas no cumplen completamente el supuesto de
+normalidad requerido por algunas técnicas paramétricas. Por esta razón,
+en determinados contextos podría ser recomendable complementar el
+análisis utilizando métodos no paramétricos, como la correlación de
+Spearman, especialmente si existen valores extremos o distribuciones
+asimétricas.
+
+### Correlación de Spearman
+
+La correlación de Spearman es una medida estadística utilizada para
+evaluar la asociación entre dos variables ordinales o cuantitativas
+cuando no se cumplen los supuestos de normalidad o linealidad requeridos
+por la correlación de Pearson.
+
+A diferencia de Pearson, Spearman no trabaja directamente con los
+valores originales de las variables, sino con sus rangos o posiciones
+dentro de la distribución. Por esta razón, se considera una medida no
+paramétrica de asociación.
+
+![Fuente: autores](img/cor-spearman.jpg)
+
+```{r}
+#| message: false
+#| warning: false
+
+# Librerías
+library(readxl)
+library(ggplot2)
+library(dplyr)
+
+# Cargar base de datos
+datos <- read_excel(
+  "C:/R-Proyectos/estadistica-experiencial/data/bd_antropometricas.xlsx"
+)
+
+# Correlación por género
+datos %>%
+  
+  group_by(Genero) %>%
+  
+  summarise(
+    Correlacion = cor(
+      Altura_cm,
+      Peso_Kg,
+      
+      method = "spearman",
+      
+      use = "complete.obs"
+    )
+  )
+
+# Diagrama de dispersión por género
+ggplot(
+  datos,
+  
+  aes(
+    x = Altura_cm,
+    y = Peso_Kg,
+    color = Genero
+  )
+) +
+  
+  geom_point(
+    size = 3,
+    alpha = 0.75
+  ) +
+  
+  geom_smooth(
+    method = "lm",
+    se = FALSE,
+    linewidth = 1
+  ) +
+  
+  scale_color_manual(
+    values = c(
+      "F" = "#D95F02",
+      "M" = "#1B9E77"
+    )
+  ) +
+  
+  labs(
+    title = "Relación entre altura y peso corporal según género",
+    
+    subtitle = "Comparación de patrones de asociación",
+    
+    x = "Altura (cm)",
+    
+    y = "Peso (kg)",
+    
+    color = "Género",
+    
+    caption = "Fuente: Base antropométrica"
+  ) +
+  
+  theme_minimal(base_size = 12) +
+  
+  theme(
+    plot.title = element_text(
+      face = "bold",
+      size = 15
+    ),
+    
+    plot.subtitle = element_text(
+      size = 11
+    )
+  )
+```
+
+### Covarianza
+
+La covarianza es una medida estadística utilizada para evaluar cómo
+varían conjuntamente dos variables cuantitativas respecto a sus medias.
+Esta medida permite identificar si ambas variables tienden a aumentar
+simultáneamente, disminuir conjuntamente o comportarse de manera
+independiente.
+
+La covarianza constituye uno de los fundamentos matemáticos de la
+correlación lineal y de la regresión.
+
+![Fuente: autores](img/covarianza.jpg)
+
+Ejercicio en R
+
+```{r}
+#| message: false
+#| warning: false
+
+library(readxl)
+
+# Cargar base de datos
+datos <- read_excel(
+  "C:/R-Proyectos/estadistica-experiencial/data/bd_antropometricas.xlsx"
+)
+
+# Covarianza
+cov(
+  datos$Long_Pierna_cm,
+  datos$Long_Pie_cm,
+  
+  use = "complete.obs"
+)
+```
+
+**Interpetación:** La covarianza calculada ($r = 0.062$) entre la
+longitud de la pierna y la longitud del pie presenta un valor cercano a
+cero, indicando que ambas variables no muestran una variación conjunta
+importante dentro de la muestra analizada.
+
+Este resultado coincide con el **análisis de correlación de Pearson**
+previamente realizado ($r = 0.012$), donde también se evidenció una
+relación lineal prácticamente nula entre las variables. En términos
+prácticos, los cambios en la longitud de la pierna no se asocian de
+manera consistente con cambios en la longitud del pie en los estudiantes
+evaluados.
+
+Asimismo, este ejemplo permite comprender que no todas las variables
+antropométricas presentan asociaciones lineales fuertes, incluso cuando
+pertenecen a dimensiones corporales relacionadas.
+
+### Tablas de contingencia
+
+Las tablas de contingencia son herramientas estadísticas utilizadas para
+resumir y analizar la relación entre dos variables categóricas. Estas
+tablas permiten organizar las frecuencias observadas según las
+diferentes combinaciones de categorías presentes en las variables
+estudiadas.
+
+También son conocidas como: tablas cruzadas, tablas de doble entrada o
+tablas de asociación.
+
+Su principal objetivo consiste en identificar posibles patrones de
+relación o dependencia entre categorías.
+
+## Estructura general
+
+Una tabla de contingencia distribuye las observaciones en filas y
+columnas:
+
+|              | Categoría B1 | Categoría B2 | Total        |
+|--------------|--------------|--------------|--------------|
+| Categoría A1 | $f_{11}$​     | $f_{12}$​     | $f_{1\cdot}$​ |
+| Categoría A2 | $f_{21}$​     | $f_{22}$​     | $f_{2\cdot}$​ |
+| Total        | $f_{\cdot1}$​ | $f_{\cdot2}$​ | $n$          |
+
+donde:
+
+-   las filas representan categorías de una variable;
+
+-   las columnas representan categorías de la otra variable;
+
+-   cada celda contiene la frecuencia observada.
+
+## Interpretación
+
+Las tablas de contingencia permiten comparar frecuencias entre grupos;
+identificar asociaciones entre categorías; calcular porcentajes
+conjuntos; analizar patrones poblacionales; servir como base para
+pruebas como Chi-cuadrado. Cuando las proporciones observadas son
+similares entre categorías, puede inferirse independencia entre las
+variables. En cambio, diferencias importantes sugieren posibles
+asociaciones.
+
+## Ejemplo contextual
+
+En estudios educativos puede analizarse la relación entre género y
+aprobación académica; modalidad de estudio y rendimiento o nivel
+socioeconómico y acceso tecnológico. En salud tabaquismo y enfermedad;
+clasificación nutricional y actividad física.
+
+## Ejemplo en R
+
+En el siguiente ejemplo se construye una tabla de contingencia entre
+género y grupo académico utilizando la base antropométrica.
+
+```{r}
+#| message: false
+#| warning: false
+
+library(readxl)
+library(dplyr)
+library(janitor)
+library(knitr)
+library(kableExtra)
+
+# Cargar base de datos
+datos <- read_excel(
+  "C:/R-Proyectos/estadistica-experiencial/data/bd_antropometricas.xlsx"
+)
+
+#====================================================
+# 1. Género vs Talla dicotómica
+#====================================================
+
+datos %>%
+  
+  tabyl(
+    Genero,
+    Talla_Dicotica
+  ) %>%
+  
+  adorn_totals(c("row", "col")) %>%
+  
+  adorn_percentages("row") %>%
+  
+  adorn_pct_formatting(digits = 1) %>%
+  
+  adorn_ns(position = "front") %>%
+  
+  kable(
+    caption = "Tabla de contingencia: Género y talla dicotómica",
+    align = "c"
+  ) %>%
+  
+  kable_styling(
+    full_width = FALSE,
+    bootstrap_options = c(
+      "striped",
+      "hover",
+      "condensed"
+    )
+  )
+
+#====================================================
+# 2. Género vs IMC dicotómico
+#====================================================
+
+datos %>%
+  
+  tabyl(
+    Genero,
+    IMC_Dicotico
+  ) %>%
+  
+  adorn_totals(c("row", "col")) %>%
+  
+  adorn_percentages("row") %>%
+  
+  adorn_pct_formatting(digits = 1) %>%
+  
+  adorn_ns(position = "front") %>%
+  
+  kable(
+    caption = "Tabla de contingencia: Género e IMC dicotómico",
+    align = "c"
+  ) %>%
+  
+  kable_styling(
+    full_width = FALSE,
+    bootstrap_options = c(
+      "striped",
+      "hover",
+      "condensed"
+    )
+  )
+
+#====================================================
+# 3. Género vs Tamaño de mano
+#====================================================
+
+datos %>%
+  
+  tabyl(
+    Genero,
+    Mano_Dicotica
+  ) %>%
+  
+  adorn_totals(c("row", "col")) %>%
+  
+  adorn_percentages("row") %>%
+  
+  adorn_pct_formatting(digits = 1) %>%
+  
+  adorn_ns(position = "front") %>%
+  
+  kable(
+    caption = "Tabla de contingencia: Género y tamaño de mano",
+    align = "c"
+  ) %>%
+  
+  kable_styling(
+    full_width = FALSE,
+    bootstrap_options = c(
+      "striped",
+      "hover",
+      "condensed"
+    )
+  )
+```
+
+**Interpretación:** En términos generales, el 88.9 % de las mujeres se
+clasifican dentro del rango normal de IMC y el 11.1 % presenta sobrepeso
+u obesidad. En contraste, entre los hombres solo el 48.1 % presenta IMC
+normal, mientras que el 51.9 % se ubica en la categoría de
+sobrepeso-obesidad. Considerando el total de la muestra, el 80.8 % de
+los estudiantes presenta un IMC normal y el 19.2 % presenta sobrepeso u
+obesidad.
+
+Estos resultados sugieren una posible asociación entre el género y la
+clasificación del IMC, evidenciando una mayor proporción de
+sobrepeso-obesidad en los hombres respecto a las mujeres dentro de la
+población analizada. Las tablas de contingencia permiten identificar
+este tipo de patrones descriptivos y constituyen la base para
+posteriores análisis inferenciales, como la prueba Chi-cuadrado de
+independencia.
+
+### Síntesis integradora
+
+### Ejercicios integradores
