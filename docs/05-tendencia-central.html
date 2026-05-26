@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>7&nbsp; Capítulo 5. Medidas de tendencia central y dispersión – Estadística Experiencial Aplicada</title>
+<title>7&nbsp; Medidas de tendencia central y dispersión – Estadística Experiencial Aplicada</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -147,7 +147,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05-tendencia-central.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Capítulo 5. Medidas de tendencia central y dispersión</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05-tendencia-central.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Medidas de tendencia central y dispersión</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -219,7 +219,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./02-preparacion-datos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Capítulo 2. Preparación de datos</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Preparación de datos</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -237,13 +237,13 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./05-tendencia-central.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Capítulo 5. Medidas de tendencia central y dispersión</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Medidas de tendencia central y dispersión</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./06-posicion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Capítulo 6. Medidas de posición</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Medidas de posición y forma</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -268,13 +268,13 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#medidas-de-tendencia-central" id="toc-medidas-de-tendencia-central" class="nav-link active" data-scroll-target="#medidas-de-tendencia-central"><span class="header-section-number">8</span> 5.1 Medidas de tendencia central</a>
+  <li><a href="#medidas-de-tendencia-central" id="toc-medidas-de-tendencia-central" class="nav-link active" data-scroll-target="#medidas-de-tendencia-central"><span class="header-section-number">8</span> Medidas de tendencia central</a>
   <ul class="collapse">
-  <li><a href="#media-aritmética" id="toc-media-aritmética" class="nav-link" data-scroll-target="#media-aritmética"><span class="header-section-number">8.0.1</span> 5.1.1 Media aritmética</a></li>
+  <li><a href="#media-aritmética" id="toc-media-aritmética" class="nav-link" data-scroll-target="#media-aritmética"><span class="header-section-number">8.0.1</span> Media aritmética</a></li>
   <li><a href="#cálculo-en-r" id="toc-cálculo-en-r" class="nav-link" data-scroll-target="#cálculo-en-r"><span class="header-section-number">8.0.2</span> Cálculo en R</a></li>
-  <li><a href="#mediana" id="toc-mediana" class="nav-link" data-scroll-target="#mediana"><span class="header-section-number">8.0.3</span> 5.1.2 Mediana</a></li>
+  <li><a href="#mediana" id="toc-mediana" class="nav-link" data-scroll-target="#mediana"><span class="header-section-number">8.0.3</span> Mediana</a></li>
   <li><a href="#cálculo-en-r-1" id="toc-cálculo-en-r-1" class="nav-link" data-scroll-target="#cálculo-en-r-1"><span class="header-section-number">8.0.4</span> Cálculo en R</a></li>
-  <li><a href="#moda" id="toc-moda" class="nav-link" data-scroll-target="#moda"><span class="header-section-number">8.0.5</span> 5.1.3 Moda</a></li>
+  <li><a href="#moda" id="toc-moda" class="nav-link" data-scroll-target="#moda"><span class="header-section-number">8.0.5</span> Moda</a></li>
   <li><a href="#cálculo-en-r-2" id="toc-cálculo-en-r-2" class="nav-link" data-scroll-target="#cálculo-en-r-2"><span class="header-section-number">8.0.6</span> Cálculo en R</a></li>
   <li><a href="#visualización-de-las-medidas-de-tendencia-central" id="toc-visualización-de-las-medidas-de-tendencia-central" class="nav-link" data-scroll-target="#visualización-de-las-medidas-de-tendencia-central"><span class="header-section-number">8.1</span> Visualización de las medidas de tendencia central</a></li>
   <li><a href="#interpretación-del-gráfico-distribución-del-peso" id="toc-interpretación-del-gráfico-distribución-del-peso" class="nav-link" data-scroll-target="#interpretación-del-gráfico-distribución-del-peso"><span class="header-section-number">8.2</span> Interpretación del gráfico: Distribución del peso</a>
@@ -292,19 +292,19 @@ window.Quarto = {
   <li><a href="#parte-1.-construcción-del-gráfico" id="toc-parte-1.-construcción-del-gráfico" class="nav-link" data-scroll-target="#parte-1.-construcción-del-gráfico"><span class="header-section-number">9.3</span> Parte 1. Construcción del gráfico</a></li>
   <li><a href="#parte-2.-interpretación" id="toc-parte-2.-interpretación" class="nav-link" data-scroll-target="#parte-2.-interpretación"><span class="header-section-number">9.4</span> Parte 2. Interpretación</a></li>
   </ul></li>
-  <li><a href="#medidas-de-dispersión-o-variabilidad" id="toc-medidas-de-dispersión-o-variabilidad" class="nav-link" data-scroll-target="#medidas-de-dispersión-o-variabilidad"><span class="header-section-number">10</span> 5.2 Medidas de dispersión o variabilidad</a>
+  <li><a href="#medidas-de-dispersión-o-variabilidad" id="toc-medidas-de-dispersión-o-variabilidad" class="nav-link" data-scroll-target="#medidas-de-dispersión-o-variabilidad"><span class="header-section-number">10</span> Medidas de dispersión o variabilidad</a>
   <ul class="collapse">
-  <li><a href="#rango" id="toc-rango" class="nav-link" data-scroll-target="#rango"><span class="header-section-number">10.0.1</span> 5.2.1 Rango</a></li>
+  <li><a href="#rango" id="toc-rango" class="nav-link" data-scroll-target="#rango"><span class="header-section-number">10.0.1</span> Rango</a></li>
   <li><a href="#cálculo-en-r-3" id="toc-cálculo-en-r-3" class="nav-link" data-scroll-target="#cálculo-en-r-3"><span class="header-section-number">10.0.2</span> Cálculo en R</a></li>
-  <li><a href="#varianza-muestral" id="toc-varianza-muestral" class="nav-link" data-scroll-target="#varianza-muestral"><span class="header-section-number">10.0.3</span> 5.2.2 Varianza muestral</a></li>
+  <li><a href="#varianza-muestral" id="toc-varianza-muestral" class="nav-link" data-scroll-target="#varianza-muestral"><span class="header-section-number">10.0.3</span> Varianza muestral</a></li>
   <li><a href="#cálculo-en-r-4" id="toc-cálculo-en-r-4" class="nav-link" data-scroll-target="#cálculo-en-r-4"><span class="header-section-number">10.0.4</span> Cálculo en R</a></li>
   <li><a href="#varianza-poblacional" id="toc-varianza-poblacional" class="nav-link" data-scroll-target="#varianza-poblacional"><span class="header-section-number">10.0.5</span> Varianza poblacional</a></li>
-  <li><a href="#desviación-estándar-muestral" id="toc-desviación-estándar-muestral" class="nav-link" data-scroll-target="#desviación-estándar-muestral"><span class="header-section-number">10.0.6</span> 5.2.3 Desviación estándar muestral</a></li>
+  <li><a href="#desviación-estándar-muestral" id="toc-desviación-estándar-muestral" class="nav-link" data-scroll-target="#desviación-estándar-muestral"><span class="header-section-number">10.0.6</span> Desviación estándar muestral</a></li>
   <li><a href="#cálculo-en-r-5" id="toc-cálculo-en-r-5" class="nav-link" data-scroll-target="#cálculo-en-r-5"><span class="header-section-number">10.0.7</span> Cálculo en R</a></li>
   <li><a href="#desviación-estándar-poblacional" id="toc-desviación-estándar-poblacional" class="nav-link" data-scroll-target="#desviación-estándar-poblacional"><span class="header-section-number">10.0.8</span> Desviación estándar poblacional</a></li>
-  <li><a href="#coeficiente-de-variación" id="toc-coeficiente-de-variación" class="nav-link" data-scroll-target="#coeficiente-de-variación"><span class="header-section-number">10.0.9</span> 5.2.4 Coeficiente de variación</a></li>
+  <li><a href="#coeficiente-de-variación" id="toc-coeficiente-de-variación" class="nav-link" data-scroll-target="#coeficiente-de-variación"><span class="header-section-number">10.0.9</span> Coeficiente de variación</a></li>
   <li><a href="#cálculo-en-r-6" id="toc-cálculo-en-r-6" class="nav-link" data-scroll-target="#cálculo-en-r-6"><span class="header-section-number">10.0.10</span> Cálculo en R</a></li>
-  <li><a href="#resumen-estadístico-en-r" id="toc-resumen-estadístico-en-r" class="nav-link" data-scroll-target="#resumen-estadístico-en-r"><span class="header-section-number">10.1</span> 5.3 Resumen estadístico en R</a></li>
+  <li><a href="#resumen-estadístico-en-r" id="toc-resumen-estadístico-en-r" class="nav-link" data-scroll-target="#resumen-estadístico-en-r"><span class="header-section-number">10.1</span> Resumen estadístico en R</a></li>
   <li><a href="#histograma-desviación-estándar" id="toc-histograma-desviación-estándar" class="nav-link" data-scroll-target="#histograma-desviación-estándar"><span class="header-section-number">10.2</span> Histograma + desviación estándar</a>
   <ul class="collapse">
   <li><a href="#interpretación" id="toc-interpretación" class="nav-link" data-scroll-target="#interpretación"><span class="header-section-number">10.2.1</span> Interpretación</a></li>
@@ -324,7 +324,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Capítulo 5. Medidas de tendencia central y dispersión</span></h1>
+<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Medidas de tendencia central y dispersión</span></h1>
 </div>
 
 
@@ -354,9 +354,9 @@ window.Quarto = {
 <p>Estas medidas constituyen una base fundamental para el análisis estadístico descriptivo y son ampliamente utilizadas en áreas como la salud, educación, ingeniería, economía y ciencias sociales, ya que permiten resumir información y apoyar la toma de decisiones basada en datos.</p>
 <p>En este capítulo se presentan las principales medidas de tendencia central y de dispersión, junto con su formulación matemática y su implementación en R.</p>
 <section id="medidas-de-tendencia-central" class="level1" data-number="8">
-<h1 data-number="8"><span class="header-section-number">8</span> 5.1 Medidas de tendencia central</h1>
+<h1 data-number="8"><span class="header-section-number">8</span> Medidas de tendencia central</h1>
 <section id="media-aritmética" class="level3" data-number="8.0.1">
-<h3 data-number="8.0.1" class="anchored" data-anchor-id="media-aritmética"><span class="header-section-number">8.0.1</span> 5.1.1 Media aritmética</h3>
+<h3 data-number="8.0.1" class="anchored" data-anchor-id="media-aritmética"><span class="header-section-number">8.0.1</span> Media aritmética</h3>
 <p>La media aritmética es el promedio de los datos y se calcula como la suma de todas las observaciones dividida entre el número total de datos.</p>
 <p><span class="math display">\[
 \bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i
@@ -418,7 +418,7 @@ window.Quarto = {
 </div>
 </section>
 <section id="mediana" class="level3" data-number="8.0.3">
-<h3 data-number="8.0.3" class="anchored" data-anchor-id="mediana"><span class="header-section-number">8.0.3</span> 5.1.2 Mediana</h3>
+<h3 data-number="8.0.3" class="anchored" data-anchor-id="mediana"><span class="header-section-number">8.0.3</span> Mediana</h3>
 <p>La mediana es el valor que divide el conjunto de datos ordenados en dos partes iguales, de modo que el 50% de las observaciones queda por debajo y el otro 50% por encima.</p>
 <p><span class="math display">\[
 \tilde{x} =
@@ -439,7 +439,7 @@ x_{\frac{n+1}{2}}, &amp; n \text{ impar} \\
 </div>
 </section>
 <section id="moda" class="level3" data-number="8.0.5">
-<h3 data-number="8.0.5" class="anchored" data-anchor-id="moda"><span class="header-section-number">8.0.5</span> 5.1.3 Moda</h3>
+<h3 data-number="8.0.5" class="anchored" data-anchor-id="moda"><span class="header-section-number">8.0.5</span> Moda</h3>
 <p>La moda es el valor que aparece con mayor frecuencia en el conjunto de datos.</p>
 <p><span class="math display">\[
 \text{Moda} = \arg\max (f_i)
@@ -617,13 +617,13 @@ x_{\frac{n+1}{2}}, &amp; n \text{ impar} \\
 </section>
 </section>
 <section id="medidas-de-dispersión-o-variabilidad" class="level1" data-number="10">
-<h1 data-number="10"><span class="header-section-number">10</span> 5.2 Medidas de dispersión o variabilidad</h1>
+<h1 data-number="10"><span class="header-section-number">10</span> Medidas de dispersión o variabilidad</h1>
 <p>Las medidas de dispersión o variabilidad complementan a las medidas de tendencia central, ya que permiten describir qué tan agrupados o dispersos se encuentran los datos respecto a un valor representativo, como la media o la mediana.</p>
 <p>Mientras que las medidas de tendencia central resumen la distribución mediante un único valor típico, las medidas de dispersión indican el grado de heterogeneidad presente en los datos. En consecuencia, dos conjuntos de datos pueden tener la misma media, pero comportamientos muy diferentes en cuanto a su variabilidad.</p>
 <p>Por ejemplo, un grupo de observaciones puede presentar valores muy cercanos entre sí y concentrados alrededor de la media, mientras que otro grupo puede mostrar valores mucho más dispersos. Aunque ambos conjuntos tengan el mismo promedio, el segundo exhibirá mayor variabilidad.</p>
 <p>La variabilidad constituye un aspecto fundamental en el análisis estadístico, ya que permite evaluar la estabilidad, consistencia y homogeneidad de los datos. En muchos contextos aplicados, comprender la dispersión resulta tan importante como conocer el promedio.</p>
 <section id="rango" class="level3" data-number="10.0.1">
-<h3 data-number="10.0.1" class="anchored" data-anchor-id="rango"><span class="header-section-number">10.0.1</span> 5.2.1 Rango</h3>
+<h3 data-number="10.0.1" class="anchored" data-anchor-id="rango"><span class="header-section-number">10.0.1</span> Rango</h3>
 <p>El rango es la diferencia entre el valor máximo y el mínimo.</p>
 <p><span class="math display">\[
 R = X_{\max} - X_{\min}
@@ -639,7 +639,7 @@ R = X_{\max} - X_{\min}
 </div>
 </section>
 <section id="varianza-muestral" class="level3" data-number="10.0.3">
-<h3 data-number="10.0.3" class="anchored" data-anchor-id="varianza-muestral"><span class="header-section-number">10.0.3</span> 5.2.2 Varianza muestral</h3>
+<h3 data-number="10.0.3" class="anchored" data-anchor-id="varianza-muestral"><span class="header-section-number">10.0.3</span> Varianza muestral</h3>
 <p>La varianza mide la dispersión promedio de los datos respecto a la media.</p>
 <p><span class="math display">\[
 s^2 = \frac{1}{n - 1} \sum_{i=1}^{n} (x_i - \bar{x})^2
@@ -661,7 +661,7 @@ s^2 = \frac{1}{n - 1} \sum_{i=1}^{n} (x_i - \bar{x})^2
 \]</span></p>
 </section>
 <section id="desviación-estándar-muestral" class="level3" data-number="10.0.6">
-<h3 data-number="10.0.6" class="anchored" data-anchor-id="desviación-estándar-muestral"><span class="header-section-number">10.0.6</span> 5.2.3 Desviación estándar muestral</h3>
+<h3 data-number="10.0.6" class="anchored" data-anchor-id="desviación-estándar-muestral"><span class="header-section-number">10.0.6</span> Desviación estándar muestral</h3>
 <p>La desviación estándar es la raíz cuadrada de la varianza y expresa la dispersión en las mismas unidades de los datos.</p>
 <p><span class="math display">\[
 s = \sqrt{s^2}
@@ -683,7 +683,7 @@ s = \sqrt{s^2}
 \]</span></p>
 </section>
 <section id="coeficiente-de-variación" class="level3" data-number="10.0.9">
-<h3 data-number="10.0.9" class="anchored" data-anchor-id="coeficiente-de-variación"><span class="header-section-number">10.0.9</span> 5.2.4 Coeficiente de variación</h3>
+<h3 data-number="10.0.9" class="anchored" data-anchor-id="coeficiente-de-variación"><span class="header-section-number">10.0.9</span> Coeficiente de variación</h3>
 <p>El coeficiente de variación permite comparar la dispersión relativa respecto a la media.</p>
 <p><span class="math display">\[
 CV = \frac{s}{\bar{x}} \times 100
@@ -699,7 +699,7 @@ CV = \frac{s}{\bar{x}} \times 100
 </div>
 </section>
 <section id="resumen-estadístico-en-r" class="level2" data-number="10.1">
-<h2 data-number="10.1" class="anchored" data-anchor-id="resumen-estadístico-en-r"><span class="header-section-number">10.1</span> 5.3 Resumen estadístico en R</h2>
+<h2 data-number="10.1" class="anchored" data-anchor-id="resumen-estadístico-en-r"><span class="header-section-number">10.1</span> Resumen estadístico en R</h2>
 <p>R permite obtener múltiples medidas descriptivas de manera simultánea.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(datos<span class="sc">$</span>Peso_Kg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1295,8 +1295,8 @@ Table: Table continues below
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./06-posicion.html" class="pagination-link" aria-label="Capítulo 6. Medidas de posición">
-        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Capítulo 6. Medidas de posición</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./06-posicion.html" class="pagination-link" aria-label="Medidas de posición y forma">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Medidas de posición y forma</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

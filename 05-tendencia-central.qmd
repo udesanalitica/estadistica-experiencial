@@ -1,5 +1,5 @@
 ---
-title: "Capítulo 5. Medidas de tendencia central y dispersión"
+title: "Medidas de tendencia central y dispersión"
 format: html
 editor: visual
 ---
@@ -24,9 +24,9 @@ Estas medidas constituyen una base fundamental para el análisis estadístico de
 
 En este capítulo se presentan las principales medidas de tendencia central y de dispersión, junto con su formulación matemática y su implementación en R.
 
-# 5.1 Medidas de tendencia central
+# Medidas de tendencia central
 
-### 5.1.1 Media aritmética
+### Media aritmética
 
 La media aritmética es el promedio de los datos y se calcula como la suma de todas las observaciones dividida entre el número total de datos.
 
@@ -50,7 +50,7 @@ names(datos)
 mean(datos$Peso_Kg, na.rm = TRUE)
 ```
 
-### 5.1.2 Mediana
+### Mediana
 
 La mediana es el valor que divide el conjunto de datos ordenados en dos partes iguales, de modo que el 50% de las observaciones queda por debajo y el otro 50% por encima.
 
@@ -70,7 +70,7 @@ La mediana es una medida robusta frente a valores extremos.
 median(datos$Peso_Kg, na.rm = TRUE)
 ```
 
-### 5.1.3 Moda
+### Moda
 
 La moda es el valor que aparece con mayor frecuencia en el conjunto de datos.
 
@@ -225,7 +225,7 @@ Para cada gráfico responda:
 
 5.  ¿Cuál variable presenta mayor dispersión?
 
-# 5.2 Medidas de dispersión o variabilidad
+# Medidas de dispersión o variabilidad
 
 Las medidas de dispersión o variabilidad complementan a las medidas de tendencia central, ya que permiten describir qué tan agrupados o dispersos se encuentran los datos respecto a un valor representativo, como la media o la mediana.
 
@@ -235,7 +235,7 @@ Por ejemplo, un grupo de observaciones puede presentar valores muy cercanos entr
 
 La variabilidad constituye un aspecto fundamental en el análisis estadístico, ya que permite evaluar la estabilidad, consistencia y homogeneidad de los datos. En muchos contextos aplicados, comprender la dispersión resulta tan importante como conocer el promedio.
 
-### 5.2.1 Rango
+### Rango
 
 El rango es la diferencia entre el valor máximo y el mínimo.
 
@@ -249,7 +249,7 @@ $$
 max(datos$Peso_Kg, na.rm = TRUE) - min(datos$Peso_Kg, na.rm = TRUE)
 ```
 
-### 5.2.2 Varianza muestral
+### Varianza muestral
 
 La varianza mide la dispersión promedio de los datos respecto a la media.
 
@@ -269,7 +269,7 @@ $$
 \sigma^2 = \frac{1}{N} \sum_{i=1}^{N} (x_i - \mu)^2
 $$
 
-### 5.2.3 Desviación estándar muestral
+### Desviación estándar muestral
 
 La desviación estándar es la raíz cuadrada de la varianza y expresa la dispersión en las mismas unidades de los datos.
 
@@ -289,7 +289,7 @@ $$
 \sigma = \sqrt{\sigma^2}
 $$
 
-### 5.2.4 Coeficiente de variación
+### Coeficiente de variación
 
 El coeficiente de variación permite comparar la dispersión relativa respecto a la media.
 
@@ -303,7 +303,7 @@ $$
 (sd(datos$Peso_Kg, na.rm = TRUE) / mean(datos$Peso_Kg, na.rm = TRUE)) * 100
 ```
 
-## 5.3 Resumen estadístico en R
+## Resumen estadístico en R
 
 R permite obtener múltiples medidas descriptivas de manera simultánea.
 

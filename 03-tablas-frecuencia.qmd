@@ -466,7 +466,7 @@ glimpse(datos)
 Complete la siguiente tabla para las variables seleccionadas:
 
 | Variable | Tipo de variable | Escala de medición | Unidad de medida | Herramienta estadística sugerida |
-|---------------|---------------|---------------|---------------|---------------|
+|----|----|----|----|----|
 | Genero |  |  |  |  |
 | Grupo |  |  |  |  |
 | Peso_Kg |  |  |  |  |

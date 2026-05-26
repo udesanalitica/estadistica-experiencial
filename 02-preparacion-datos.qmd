@@ -1,5 +1,5 @@
 ---
-title: "Capítulo 2. Preparación de datos"
+title: "Preparación de datos"
 ---
 
 La preparación de datos constituye una etapa crítica dentro del análisis estadístico, ya que implica el proceso sistemático de depuración, organización, clasificación y transformación de la información recolectada, con el fin de convertirla en un insumo adecuado para su análisis [@kleinbaum2012survival; @wickham2017r].
@@ -12,7 +12,7 @@ Para iniciar el trabajo en R, el primer paso fundamental consiste en definir el 
 
 ::: {#tbl-variables tbl-cap="Métodos de carga de datos en R"}
 | Método | Característica | Ejemplo |
-|----|----|----|
+|------------------------|------------------------|------------------------|
 | Archivos de texto y CSV | Uso de funciones como `read.csv()` o `read.csv2()`, especificando encabezados y codificación | Importación de archivos `.csv` |
 | Interfaces gráficas (GUI) | Herramientas como R Commander permiten importar datos sin necesidad de programación | Importación desde Excel, SPSS, STATA |
 | Minería de datos | Paquetes como `rattle` permiten cargar datos mediante interfaces visuales configurables | Definición de separadores y decimales |
@@ -24,7 +24,7 @@ La limpieza de datos consiste en detectar, corregir o eliminar inconsistencias q
 
 ::: {#tbl-preparacion-datos tbl-cap="Aspectos clave en la preparación de datos"}
 | Proceso | Subproceso | Descripción | Herramienta / Ejemplo |
-|----|----|----|----|
+|------------------|------------------|------------------|------------------|
 | **Limpieza de datos** | Valores extremos (Outliers) | Identificación y tratamiento de datos atípicos que pueden distorsionar resultados. Se recomienda corregir o eliminar errores evidentes. | Diagramas de caja (*boxplot*) [@tukey1977eda] |
 |  | Consistencia de totales | Verificación de coherencia entre frecuencias, totales y porcentajes acumulados. | Validación de sumas [@agresti2018statistical] |
 |  | Filtrado de datos | Selección de subconjuntos de datos según criterios específicos para análisis focalizado. | Filtrado en R (`subset`, `filter`) |

@@ -1,231 +1,217 @@
 ---
-title: "Capítulo 6. Medidas de posición"
+title: "Medidas de posición y forma"
+editor: 
+  markdown: 
+    wrap: 72
 ---
 
-Las medidas de posición permiten ubicar un valor dentro de un conjunto de datos ordenados. A diferencia de las medidas de tendencia central, que resumen la distribución en un punto típico, las medidas de posición responden a preguntas como: ¿qué valor deja por debajo al 25 % de los datos? o ¿en qué punto se encuentra el 90 % de las observaciones?
-En este capítulo se estudian tres familias de medidas de posición: los cuartiles, los deciles y los percentiles. Las tres se construyen con la misma lógica: dividen la distribución de datos ordenados en partes iguales y permiten identificar la posición relativa de cualquier observación dentro del conjunto.
+Las medidas de posición y forma constituyen herramientas fundamentales
+de la estadística descriptiva, ya que permiten profundizar en la
+comprensión del comportamiento de una distribución de datos más allá de
+los valores centrales. Mientras las medidas de posición, como los
+cuartiles, deciles y percentiles, permiten determinar la ubicación
+relativa de una observación dentro de un conjunto ordenado de datos, las
+medidas de forma describen características estructurales de la
+distribución, tales como la simetría y el grado de concentración de las
+observaciones alrededor de la media.
 
-Conjunto de datos de ejemplo. A lo largo del capítulo se utilizará una muestra de n = 30 estudiantes tomada de la base de datos antropométricas de la UDES (semestres 2019-2 a 2025-1). La variable analizada es Altura_cm (estatura en centímetros). Los datos, ya ordenados de menor a mayor, son:
+El estudio conjunto de estas medidas facilita una interpretación más
+completa de los fenómenos analizados, permitiendo identificar patrones,
+desigualdades, concentraciones, sesgos y posibles valores extremos.
+Asimismo, conceptos asociados como el rango intercuartílico, los
+diagramas de caja y bigotes (boxplots), las curvas percentilares y los
+histogramas complementan el análisis estadístico mediante
+representaciones visuales que favorecen la interpretación de los datos.
 
+Estas herramientas poseen amplias aplicaciones en contextos reales como
+el análisis del rendimiento académico, la clasificación de riesgo, la
+distribución salarial, los estudios antropométricos y las evaluaciones
+en salud pública, donde resulta esencial comprender no solo el valor
+promedio de una variable, sino también la posición relativa y la forma
+general de su distribución.
 
-i=1	i=2	i=3	i=4	i=5	i=6	i=7	i=8	i=9	i=10
-156	156	156	156	156	158	160	161	162	162
-i=11	i=12	i=13	i=14	i=15	i=16	i=17	i=18	i=19	i=20
-162	163	163	168	168	168	169	172	172	173
-i=21	i=22	i=23	i=24	i=25	i=26	i=27	i=28	i=29	i=30
-173	173	174	175	176	177	177	179	183	192
+# Medidas de posición
 
-6.1 Cuartiles
-6.1.1 Definición
-Definición 6.1 — Cuartil
-Los cuartiles son los tres valores que dividen un conjunto de datos ordenados en cuatro partes de igual frecuencia relativa, de modo que cada parte contiene el 25 % de las observaciones.
-Se denotan Q₁, Q₂ y Q₃, donde:
-Q₁ (primer cuartil): el 25 % de los datos es menor o igual a este valor.
-Q₂ (segundo cuartil): coincide con la mediana; el 50 % de los datos queda por debajo.
-Q₃ (tercer cuartil): el 75 % de los datos es menor o igual a este valor.
+Las medidas de posición son indicadores estadísticos que permiten
+determinar la ubicación relativa de un valor dentro de un conjunto de
+datos ordenados. Estas medidas dividen la distribución en partes iguales
+y permiten identificar qué proporción de las observaciones se encuentra
+por debajo o por encima de un determinado valor.
 
-6.1.2 Fórmula de posición
-Para datos no agrupados ordenados de menor a mayor, la posición del k-ésimo cuartil se calcula como:
-Fórmula 6.1 — Posición del cuartil Qk
-Lₖ = k · n / 4     (k = 1, 2, 3)
-Si Lₖ es entero:    Qₖ = (x[Lₖ] + x[Lₖ+1]) / 2
-Si Lₖ no es entero: Qₖ = x[⌈Lₖ⌉]
+A diferencia de las medidas de tendencia central, cuyo propósito es
+resumir el comportamiento típico de los datos mediante un único valor
+representativo, las medidas de posición permiten describir la
+distribución desde una perspectiva relativa o acumulativa.
 
-donde n es el número de observaciones, x[i] es el i-ésimo dato en la serie ordenada y ⌈Lₖ⌉ denota el entero inmediatamente superior (función techo).
+Por ejemplo:
 
-6.1.3 Ejemplo resuelto
-Calcule Q₁, Q₂ y Q₃ para la muestra de estatura de n = 30 estudiantes.
+-   ¿Qué valor deja por debajo al 25 % de las observaciones?
 
-Paso 1. Verificar que los datos estén ordenados. ✓ (ver tabla de datos)
-Paso 2. Calcular las posiciones:
-   L₁ = 1 · 30 / 4 = 7,5  →  no es entero  →  Q₁ = x[8] = 161 cm
-   L₂ = 2 · 30 / 4 = 15,0 →  es entero    →  Q₂ = (x[15] + x[16]) / 2 = (168 + 168) / 2 = 168 cm
-   L₃ = 3 · 30 / 4 = 22,5 →  no es entero  →  Q₃ = x[23] = 174 cm
+-   ¿Cuál es el punto que supera el 90 % de la población?
 
-Cuartil	Posición L	Condición	Valor
-Q₁	7,5	No entero → x[8]	161 cm
-Q₂	15,0	Entero → (x[15]+x[16])/2	168 cm
-Q₃	22,5	No entero → x[23]	174 cm
+-   ¿En qué posición relativa se encuentra un estudiante respecto a sus
+    compañeros?
 
-6.1.4 Interpretación práctica
-Q₁ = 161 cm: el 25 % de los estudiantes de la muestra mide 161 cm o menos. En términos aplicados, si un estudiante mide 160 cm, se ubica en el cuartil inferior de la distribución de estatura.
-Q₂ = 168 cm: la mitad de los estudiantes mide 168 cm o menos. Esta medida coincide con la mediana y constituye el valor central de la distribución.
-Q₃ = 174 cm: el 75 % de los estudiantes mide 174 cm o menos; el 25 % restante supera esta estatura.
-Rango intercuartílico (RIC): Q₃ − Q₁ = 174 − 161 = 13 cm. Este valor indica la dispersión del 50 % central de los datos, sin verse afectado por valores extremos.
+    Estas preguntas pueden responderse mediante cuartiles, deciles y
+    percentiles.
 
-6.1.5 Implementación en R
-# Código en R
-# Muestra de estaturas (n = 30), ya ordenada
-estatura <- c(156,156,156,156,156,158,160,161,162,162,
-              162,163,163,168,168,168,169,172,172,173,
-              173,173,174,175,176,177,177,179,183,192)
+## Clasificación de las medidas de posición
 
-# Cuartiles con la función quantile() — método 1 (Tukey)
-quantile(estatura, probs = c(0.25, 0.50, 0.75), type = 1)
+Las principales medidas de posición son:
 
-# Rango intercuartílico
-IQR(estatura, type = 1)
+| Medida      | División de los datos |
+|-------------|-----------------------|
+| Cuartiles   | 4 partes iguales      |
+| Deciles     | 10 partes iguales     |
+| Percentiles | 100 partes iguales    |
 
-# Diagrama de caja y bigotes
-boxplot(estatura,
-        main = 'Distribución de estatura — muestra UDES (n=30)',
-        ylab = 'Estatura (cm)',
-        col  = '#D6E4F0',
-        border = '#1F4E79')
+Todas comparten la misma lógica matemática:
 
-Nota: R ofrece nueve métodos de interpolación para quantile(). El type = 1 corresponde al método de posición entero que se emplea en este texto. Para datos continuos con interpolación lineal, se suele usar type = 7 (opción predeterminada).
+1.  ordenar los datos;
 
-6.1.6 Aplicación disciplinar
-En ergonomía y diseño de puestos de trabajo, los cuartiles de variables antropométricas como la estatura son fundamentales para determinar rangos de ajuste de sillas, escritorios y pantallas. Un puesto de trabajo debe ser ajustable al menos entre Q₁ y Q₃, cubriendo así el 50 % central de la población usuaria. Los extremos (por debajo de Q₁ o por encima de Q₃) requieren soluciones especiales de adaptación.
-En ciencias de la salud, los cuartiles de indicadores como el peso, la talla o el índice de masa corporal (IMC) permiten clasificar pacientes en categorías de riesgo y establecer valores de referencia por grupo etario y sexo (Freund et al., 2010).
+2.  calcular una posición;
 
-6.1.7 Ejercicios propuestos
-Ejercicio 6.1
-Con la misma muestra de estaturas (n = 30): (a) calcule el rango intercuartílico (RIC) e indique qué porcentaje de los datos queda dentro del intervalo [Q₁, Q₃]; (b) determine si el dato 192 cm puede considerarse un valor atípico con el criterio de Tukey (un valor es atípico si supera Q₃ + 1,5 · RIC).
+3.  identificar el valor correspondiente dentro de la distribución.
 
-Ejercicio 6.2
-En un grupo de 40 estudiantes de ingeniería se registraron los siguientes pesos en kilogramos (ordenados de menor a mayor): 45, 48, 50, 51, 52, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 78, 79, 80, 82, 84, 85, 87, 90, 92, 95, 98, 105. Calcule Q₁, Q₂ y Q₃, e interprete cada resultado en el contexto del grupo.
- 
-6.2 Deciles
-6.2.1 Definición
-Definición 6.2 — Decil
-Los deciles son los nueve valores que dividen un conjunto de datos ordenados en diez partes de igual frecuencia relativa, de modo que cada parte contiene el 10 % de las observaciones.
-Se denotan D₁, D₂, …, D₉, donde D₅ coincide con la mediana y D₂₅ = Q₁, D₅₀ = Q₂, D₇₅ = Q₃.
+# Cuartiles
 
-6.2.2 Fórmula de posición
-La posición del k-ésimo decil en una serie de datos no agrupados se obtiene con:
-Fórmula 6.2 — Posición del decil Dk
-Lₖ = k · n / 10     (k = 1, 2, …, 9)
-Si Lₖ es entero:    Dₖ = (x[Lₖ] + x[Lₖ+1]) / 2
-Si Lₖ no es entero: Dₖ = x[⌈Lₖ⌉]
+Los cuartiles son medidas de posición que dividen un conjunto de datos
+ordenados en cuatro partes iguales, de tal manera que cada grupo
+contiene aproximadamente el 25 % de las observaciones. Se representan
+mediante:
 
-6.2.3 Ejemplo resuelto
-Calcule D₁, D₃, D₅, D₇ y D₉ para la muestra de estaturas (n = 30).
+| Cuartil | Interpretación |
+|------------------|------------------------------------------------------|
+| $Q_1$: primer cuartil | El 25 % de los datos es menor o igual a este valor |
+| $Q_2$: segundo cuartil | Corresponde a la mediana; el 50 % de los datos queda por debajo |
+| $Q_3$: tercer cuartil | El 75 % de los datos es menor o igual a este valor |
 
-Decil	Posición Lk = k·30/10	Condición	Índice	Valor
-D₁	3,0	Entero → (x[3]+x[4])/2	(156+156)/2	156 cm
-D₃	9,0	Entero → (x[9]+x[10])/2	(162+162)/2	162 cm
-D₅	15,0	Entero → (x[15]+x[16])/2	(168+168)/2	168 cm
-D₇	21,0	Entero → (x[21]+x[22])/2	(173+173)/2	173 cm
-D₉	27,0	Entero → (x[27]+x[28])/2	(177+179)/2	178 cm
+## Fórmula de posición
 
-6.2.4 Interpretación práctica
-D₁ = 156 cm: el 10 % de los estudiantes mide 156 cm o menos.
-D₃ = 162 cm: el 30 % de los estudiantes mide 162 cm o menos.
-D₅ = 168 cm: el 50 % de los estudiantes mide 168 cm o menos (coincide con la mediana y Q₂).
-D₇ = 173 cm: el 70 % de los estudiantes mide 173 cm o menos.
-D₉ = 178 cm: el 90 % de los estudiantes mide 178 cm o menos; solo el 10 % supera esta estatura.
+La posición del cuartil se calcula mediante:
 
-6.2.5 Implementación en R
-# Código en R
-# Deciles sobre el vector 'estatura'
-quantile(estatura,
-         probs = seq(0.1, 0.9, by = 0.1),
-         type  = 1)
+$L_k = \frac{k\cdot n}{4}$​
 
-# Visualización: histograma con líneas de deciles
-hist(estatura,
-     main   = 'Histograma de estatura con deciles',
-     xlab   = 'Estatura (cm)',
-     col    = '#D6E4F0',
-     border = '#1F4E79')
-abline(v = quantile(estatura, probs = seq(0.1,0.9,0.1), type=1),
-       col = '#E74C3C', lty = 2)
+donde:
 
-6.2.6 Aplicación disciplinar
-En educación y psicometría, los deciles se utilizan frecuentemente para reportar el desempeño en pruebas estandarizadas. Afirmar que un estudiante se ubica en el octavo decil (D₈) equivale a decir que supera al 80 % de sus compañeros. El ICFES, en Colombia, utiliza una escala de percentiles que puede agruparse en deciles para comunicar resultados a los establecimientos educativos (Instituto Colombiano para la Evaluación de la Educación [ICFES], 2023).
-En economía, los deciles de ingreso son la herramienta estándar para medir la desigualdad económica. El DANE emplea los deciles de gasto e ingreso en la Encuesta Nacional de Presupuesto de los Hogares (ENPH) para identificar los grupos de mayor vulnerabilidad y diseñar políticas de focalización social (Departamento Administrativo Nacional de Estadística [DANE], 2022).
+-   $L_k$: posición del cuartil,
 
-6.2.7 Ejercicios propuestos
-Ejercicio 6.3
-Con los datos de peso de 40 estudiantes del Ejercicio 6.2: (a) calcule D₂, D₄, D₆ y D₈; (b) construya la tabla completa de deciles; (c) compare D₅ con la media aritmética e indique qué dice esta comparación sobre la simetría de la distribución.
+-   $k$: número del cuartil,
 
-Ejercicio 6.4
-En un informe de salud pública se reportan los siguientes deciles de IMC para adultos colombianos de 20 a 40 años: D₁ = 19,8; D₃ = 22,4; D₅ = 24,7; D₇ = 27,3; D₉ = 32,1. (a) ¿Qué porcentaje de la población tiene un IMC entre 22,4 y 27,3? (b) ¿En qué decil se ubica una persona con IMC = 25,0?
- 
-6.3 Percentiles
-6.3.1 Definición
-Definición 6.3 — Percentil
-Los percentiles son los 99 valores que dividen un conjunto de datos ordenados en cien partes de igual frecuencia relativa, de modo que cada parte contiene el 1 % de las observaciones.
-El percentil Pₖ indica que el k % de las observaciones tiene un valor menor o igual a Pₖ.
-Los cuartiles y deciles son casos particulares de los percentiles: Q₁ = P₂₅, Q₂ = P₅₀, Q₃ = P₇₅; D₁ = P₁₀, D₂ = P₂₀, …, D₉ = P₉₀.
+-   $n$: número total de observaciones.
 
-6.3.2 Fórmula de posición
-La posición del k-ésimo percentil en datos no agrupados es:
-Fórmula 6.3 — Posición del percentil Pk
-Lₖ = k · n / 100     (k = 1, 2, …, 99)
-Si Lₖ es entero:    Pₖ = (x[Lₖ] + x[Lₖ+1]) / 2
-Si Lₖ no es entero: Pₖ = x[⌈Lₖ⌉]
+Los cuartiles poseen amplias aplicaciones en diferentes áreas del
+conocimiento, debido a que permiten dividir una distribución de datos en
+cuatro partes iguales y analizar la posición relativa de las
+observaciones dentro de un conjunto ordenado. En estudios
+antropométricos y ergonómicos, por ejemplo, los cuartiles se utilizan
+para diseñar mobiliario y espacios adaptados a las características
+físicas de la población. De igual manera, en evaluación nutricional
+permiten clasificar individuos según variables como peso, talla o índice
+de masa corporal.
 
-6.3.3 Ejemplo resuelto
-Calcule P₁₀, P₂₅, P₅₀, P₇₅ y P₉₀ para la muestra de estaturas (n = 30).
+En el ámbito educativo, los cuartiles facilitan la clasificación
+académica y la comparación del desempeño relativo de los estudiantes
+dentro de un grupo. Asimismo, en economía y ciencias sociales son
+empleados para estudiar la distribución salarial y analizar
+desigualdades entre diferentes segmentos de la población.
 
-Percentil	Posición Lk = k·30/100	Condición	Índice	Valor
-P₁₀	3,0	Entero → (x[3]+x[4])/2	(156+156)/2	156 cm
-P₂₅	7,5	No entero → x[8]	x[8]	161 cm
-P₅₀	15,0	Entero → (x[15]+x[16])/2	(168+168)/2	168 cm
-P₇₅	22,5	No entero → x[23]	x[23]	174 cm
-P₉₀	27,0	Entero → (x[27]+x[28])/2	(177+179)/2	178 cm
+Los cuartiles también constituyen la base de los diagramas de caja y
+bigotes (boxplots), una representación gráfica ampliamente utilizada
+para visualizar la distribución de los datos, identificar valores
+extremos y evaluar la variabilidad de una muestra.
 
-6.3.4 Interpretación práctica
-P₁₀ = 156 cm: el 10 % de los estudiantes mide 156 cm o menos. Nótese que P₁₀ = D₁, lo que confirma la equivalencia entre deciles y percentiles múltiplos de 10.
-P₂₅ = 161 cm: el 25 % de los estudiantes mide 161 cm o menos. Este valor coincide con Q₁.
-P₅₀ = 168 cm: el 50 % de los estudiantes mide 168 cm o menos. Corresponde a la mediana, Q₂ y D₅.
-P₇₅ = 174 cm: el 75 % de los estudiantes mide 174 cm o menos. Coincide con Q₃.
-P₉₀ = 178 cm: el 90 % de los estudiantes mide 178 cm o menos.
+A partir de los cuartiles puede calcularse el rango intercuartílico
+(RIC), definido como la diferencia entre el tercer y el primer cuartil:
 
-6.3.5 Implementación en R
-# Código en R
-# Percentiles específicos
-quantile(estatura,
-         probs = c(0.10, 0.25, 0.50, 0.75, 0.90),
-         type  = 1)
+$RIC = Q_3 - Q_1$​
 
-# Función para calcular el rango percentil de un valor observado
-rango_percentil <- function(dato, x) {
-  round(mean(x <= dato) * 100, 1)
-}
+Esta medida representa la dispersión del 50 % central de los datos y
+resulta especialmente útil porque no se ve afectada significativamente
+por valores atípicos o extremos.
 
-# ¿En qué percentil se ubica un estudiante de 170 cm?
-rango_percentil(170, estatura)
+# Deciles
 
-# Perfil completo de percentiles (1 a 99)
-cuantiles_completos <- quantile(estatura,
-                               probs = 1:99/100,
-                               type  = 1)
-plot(1:99, cuantiles_completos, type='l',
-     xlab='Percentil', ylab='Estatura (cm)',
-     main='Curva de percentiles — estatura UDES',
-     col='#2E75B6', lwd=2)
+Los deciles son medidas de posición que dividen un conjunto de datos
+ordenados en diez partes iguales, de manera que cada grupo representa el
+10 % de las observaciones. Se denotan como:
 
-6.3.6 Aplicación disciplinar
-En pediatría y nutrición, las curvas de crecimiento se construyen a partir de percentiles de peso, talla y perímetro cefálico según edad y sexo. La Organización Mundial de la Salud (OMS) utiliza los percentiles 3, 15, 50, 85 y 97 como valores de referencia para clasificar el estado nutricional de los niños. Un niño cuya estatura se ubica por debajo de P₃ puede presentar talla baja, mientras que uno por encima de Pₙ₇ puede presentar talla alta (World Health Organization [WHO], 2006).
-En pruebas estandarizadas, el percentil es la escala de reporte más utilizada. Cuando un estudiante obtiene P₈₈ en las Pruebas Saber Pro, significa que superó al 88 % de los examinados en esa misma prueba. Esta interpretación es directa e intuitiva para cualquier audiencia no especializada en estadística.
+| Decil | Interpretación                                     |
+|-------|----------------------------------------------------|
+| $D_1$​ | El 10 % de los datos es menor o igual a este valor |
+| $D_5$ | Coincide con la mediana                            |
+| $D_9$ | El 90 % de los datos queda por debajo              |
 
-6.3.7 Ejercicios propuestos
-Ejercicio 6.5
-Un estudiante de la muestra mide 169 cm. (a) Calcule su rango percentil (es decir, determine en qué percentil se ubica). (b) ¿Qué porcentaje de estudiantes supera su estatura?
+## Fórmula de posición
 
-Ejercicio 6.6
-En una evaluación de 50 estudiantes se obtuvieron las siguientes notas ordenadas: 2,1; 2,3; 2,4; 2,5; 2,6; 2,7; 2,8; 2,9; 3,0; 3,0; 3,1; 3,2; 3,2; 3,3; 3,4; 3,4; 3,5; 3,5; 3,6; 3,6; 3,7; 3,7; 3,8; 3,8; 3,9; 3,9; 4,0; 4,0; 4,0; 4,1; 4,1; 4,2; 4,2; 4,3; 4,3; 4,4; 4,5; 4,5; 4,6; 4,7; 4,7; 4,8; 4,8; 4,9; 4,9; 5,0; 5,0; 5,0; 5,0; 5,0. Calcule P₂₀, P⁄⁠₆⁠₀ y P₉₅, e interprete cada resultado. Luego, identifique en qué percentil se ubica la nota mínima aprobatoria (3,0 en la escala UDES).
- 
-6.4 Síntesis: relación entre cuartiles, deciles y percentiles
-Las tres familias de medidas de posición comparten la misma lógica de cálculo y se relacionan entre sí de la siguiente manera:
+$L_k = \frac{k\cdot n}{10}$​
 
-Medida	Símbolo	k posible	Fórmula de posición	Interpreta como...
-Cuartil	Qk	1, 2, 3	Lk = k·n / 4	Divide los datos en 4 partes iguales (25 % cada una)
-Decil	Dk	1, 2, ..., 9	Lk = k·n / 10	Divide los datos en 10 partes iguales (10 % cada una)
-Percentil	Pk	1, 2, ..., 99	Lk = k·n / 100	Posición relativa dentro de 100 partes iguales (1 % cada una)
+## Aplicaciones de los deciles
 
-Desde el punto de vista computacional, las tres medidas se calculan con la misma función quantile() de R, variando únicamente el argumento probs. La elección entre cuartiles, deciles o percentiles depende del nivel de detalle requerido: los cuartiles son suficientes para una descripción general de la distribución, mientras que los percentiles son necesarios cuando se requiere ubicar con precisión a un individuo dentro del grupo.
+Los deciles se utilizan frecuentemente en:
 
-Referencias
-Departamento Administrativo Nacional de Estadística. (2022). Encuesta Nacional de Presupuesto de los Hogares — ENPH 2021-2022: Resultados generales. DANE. https://www.dane.gov.co/index.php/estadisticas-por-tema/pobreza-y-condiciones-de-vida/encuesta-nacional-de-presupuesto-de-los-hogares-enph
+-   pruebas estandarizadas,
 
-Freund, R. J., Wilson, W. J., & Mohr, D. L. (2010). Statistical methods (3.ª ed.). Academic Press.
+-   análisis socioeconómico,
 
-Instituto Colombiano para la Evaluación de la Educación. (2023). Guía de interpretación y uso de resultados de las Pruebas Saber Pro 2022. ICFES. https://www.icfes.gov.co
+-   estudios de desigualdad,
 
-Moore, D. S., McCabe, G. P., & Craig, B. A. (2021). Introduction to the practice of statistics (10.ª ed.). W. H. Freeman.
+-   distribución de ingresos,
 
-World Health Organization. (2006). WHO child growth standards: Length/height-for-age, weight-for-age, weight-for-length, weight-for-height and body mass index-for-age. WHO Press. https://www.who.int/publications/i/item/924154693X
+-   clasificación poblacional.
+
+# Percentiles
+
+Los percentiles son medidas de posición que dividen un conjunto de datos
+ordenados en cien partes iguales, donde cada parte representa el 1 % de
+las observaciones. Se representan mediante:
+$P_1, P_2, P_3, \dots, P_{99}$. El percentil$P_k$ indica que el $k\%$ de
+las observaciones es menor o igual a dicho valor. Por ejemplo:
+
+-   $P_{25} = Q_1$
+
+-   $P_{50} = Q_2$
+
+-   $P_{75} = Q_3$
+
+## Fórmula de posición
+
+$L_k = \frac{k\cdot n}{100}$
+
+## Aplicaciones de los percentiles
+
+Los percentiles son fundamentales en curvas de crecimiento infantil,
+evaluación médica, pruebas académicas, clasificación nutricional,
+análisis de desempeño, entre otras.
+
+![Fuente: autores](img/posicion.jpg)
+
+# Medidas de forma
+
+Las medidas de forma permiten describir la estructura general de una
+distribución estadística, evaluando características como: simetría,
+concentración, colas extremas, comportamiento alrededor de la media. Las
+principales medidas de forma son: asimetría y curtosis.
+
+## Asimetría
+
+La asimetría evalúa el grado de sesgo de una distribución.
+
+| Tipo               | Característica            |
+|--------------------|---------------------------|
+| Simétrica          | Ambos lados son similares |
+| Asimetría positiva | Cola hacia la derecha     |
+| Asimetría negativa | Cola hacia la izquierda   |
+
+## Curtosis
+
+La curtosis describe el grado de concentración de los datos alrededor de
+la media.
+
+| Tipo         | Característica                  |
+|--------------|---------------------------------|
+| Leptocúrtica | Distribución alta y concentrada |
+| Mesocúrtica  | Similar a distribución normal   |
+| Platicúrtica | Distribución achatada           |
+
+![Fuente: autores](img/forma.png)
