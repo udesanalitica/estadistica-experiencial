@@ -80,7 +80,7 @@ La siguiente tabla resume las principales combinaciones posibles en el
 análisis bivariado:
 
 | Tipo de variable 1 | Tipo de variable 2 | Objetivo principal | Técnicas utilizadas |
-|------------------|------------------|-------------------|-------------------|
+|------------------|------------------|------------------|------------------|
 | C uantitativa | C uantitativa | Evaluar asociación o predicción | Correlación, regresión, dispersión |
 | Categórica | Categórica | Analizar asociación entre categorías | Tablas de contingencia |
 | C uantitativa | Categórica | Comparar grupos | Boxplot, medias, comparación gráfica |
@@ -325,7 +325,7 @@ normalidad <- map_df(
 normalidad
 ```
 
-## Cuando la variable presenta distribución normal 
+## Cuando la variable presenta distribución normal
 
 **Interpretación:** Las variables **Long_Pierna_cm** y **Long_Pie_cm**
 presentan un comportamiento compatible con una distribución normal según
@@ -372,7 +372,7 @@ $$
 El coeficiente de correlación indica qué tan estrechamente se relacionan
 dos variables y si dicha relación es positiva, negativa o inexistente.
 
-![Fuente: autores](img/correlacion.jpg)
+![Fuente: autores](img/correlacion.png)
 
 #### Ejemplo en R
 
@@ -494,7 +494,7 @@ demuestra que no todas las variables antropométricas presentan
 relaciones lineales fuertes, incluso cuando pertenecen a una misma
 dimensión biológica..
 
-## Cuando la variable no presenta distribución normal 
+## Cuando la variable no presenta distribución normal
 
 **Interpretación Altura_cm y Peso_Kg:** La prueba de Shapiro-Wilk indica
 que ninguna de las dos variables presenta una distribución normal al
@@ -532,7 +532,7 @@ valores originales de las variables, sino con sus rangos o posiciones
 dentro de la distribución. Por esta razón, se considera una medida no
 paramétrica de asociación.
 
-![Fuente: autores](img/cor-spearman.jpg)
+![Fuente: autores](img/cor-spearman.png)
 
 ```{r}
 #| message: false
@@ -632,7 +632,7 @@ independiente.
 La covarianza constituye uno de los fundamentos matemáticos de la
 correlación lineal y de la regresión.
 
-![Fuente: autores](img/covarianza.jpg)
+![Fuente: autores](img/covarianza.png)
 
 Ejercicio en R
 
@@ -858,6 +858,52 @@ este tipo de patrones descriptivos y constituyen la base para
 posteriores análisis inferenciales, como la prueba Chi-cuadrado de
 independencia.
 
-### Síntesis integradora
+### Laboratorio experiencial:
 
-### Ejercicios integradores
+**¿Existe relación entre la altura y el peso corporal?**
+
+**Situación problema:** Un grupo de estudiantes de fisioterapia desea
+analizar si la altura corporal se relaciona con el peso de los
+estudiantes universitarios. Para ello, se recolectó información
+antropométrica de hombres y mujeres de diferentes semestres académicos.
+
+**Objetivo del análisis**
+
+Determinar: si existe relación entre altura y peso; la dirección de la
+relación; la fuerza de la asociación y si el género modifica visualmente
+el comportamiento de los datos.
+
+### Actividades del estudiante
+
+Parte 1 — Exploración visual
+
+Preguntas
+
+¿Qué tipo de relación observa en el diagrama? positiva, negativa, nula,
+urvilínea. \
+¿La relación parece fuerte o débil? \
+¿Existen valores atípicos?\
+¿Se observan diferencias entre hombres y mujeres?
+
+Parte 2 — Correlación
+
+Calcule: correlación de Pearson y correlación de Spearman.
+
+Preguntas
+
+¿Los coeficientes son similares? \
+¿Cuál considera más apropiado según la distribución de los datos? \
+¿Puede afirmarse causalidad?
+
+Parte 3 — Interpretación aplicada
+
+Un investigador afirma que “Los estudiantes más altos necesariamente
+pesan más”.
+
+Preguntas críticas
+
+¿La correlación encontrada permite afirmar eso?
+
+¿Qué limitaciones tiene el análisis?
+
+¿Qué otras variables podrían influir?

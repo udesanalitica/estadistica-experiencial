@@ -295,8 +295,8 @@ window.Quarto = {
   <li><a href="#ejemplo-contextual" id="toc-ejemplo-contextual" class="nav-link" data-scroll-target="#ejemplo-contextual"><span class="header-section-number">9.9</span> Ejemplo contextual</a></li>
   <li><a href="#ejemplo-en-r-2" id="toc-ejemplo-en-r-2" class="nav-link" data-scroll-target="#ejemplo-en-r-2"><span class="header-section-number">9.10</span> Ejemplo en R</a>
   <ul class="collapse">
-  <li><a href="#síntesis-integradora" id="toc-síntesis-integradora" class="nav-link" data-scroll-target="#síntesis-integradora"><span class="header-section-number">9.10.1</span> Síntesis integradora</a></li>
-  <li><a href="#ejercicios-integradores" id="toc-ejercicios-integradores" class="nav-link" data-scroll-target="#ejercicios-integradores"><span class="header-section-number">9.10.2</span> Ejercicios integradores</a></li>
+  <li><a href="#laboratorio-experiencial" id="toc-laboratorio-experiencial" class="nav-link" data-scroll-target="#laboratorio-experiencial"><span class="header-section-number">9.10.1</span> Laboratorio experiencial:</a></li>
+  <li><a href="#actividades-del-estudiante" id="toc-actividades-del-estudiante" class="nav-link" data-scroll-target="#actividades-del-estudiante"><span class="header-section-number">9.10.2</span> Actividades del estudiante</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/udesanalitica/estadistica-experiencial/edit/main/07-analisis-bivariado.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/udesanalitica/estadistica-experiencial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/udesanalitica/estadistica-experiencial/blob/main/07-analisis-bivariado.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
@@ -340,8 +340,8 @@ window.Quarto = {
 <p>La siguiente tabla resume las principales combinaciones posibles en el análisis bivariado:</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 24%">
-<col style="width: 24%">
+<col style="width: 25%">
+<col style="width: 25%">
 <col style="width: 25%">
 <col style="width: 25%">
 </colgroup>
@@ -634,7 +634,7 @@ r = \frac{\sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y})}
 <p>El coeficiente de correlación indica qué tan estrechamente se relacionan dos variables y si dicha relación es positiva, negativa o inexistente.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="img/correlacion.jpg" class="img-fluid figure-img"></p>
+<p><img src="img/correlacion.png" class="img-fluid figure-img"></p>
 <figcaption>Fuente: autores</figcaption>
 </figure>
 </div>
@@ -752,7 +752,7 @@ r = \frac{\sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y})}
 <p>A diferencia de Pearson, Spearman no trabaja directamente con los valores originales de las variables, sino con sus rangos o posiciones dentro de la distribución. Por esta razón, se considera una medida no paramétrica de asociación.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="img/cor-spearman.jpg" class="img-fluid figure-img"></p>
+<p><img src="img/cor-spearman.png" class="img-fluid figure-img"></p>
 <figcaption>Fuente: autores</figcaption>
 </figure>
 </div>
@@ -859,7 +859,7 @@ r = \frac{\sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y})}
 <p>La covarianza constituye uno de los fundamentos matemáticos de la correlación lineal y de la regresión.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="img/covarianza.jpg" class="img-fluid figure-img"></p>
+<p><img src="img/covarianza.png" class="img-fluid figure-img"></p>
 <figcaption>Fuente: autores</figcaption>
 </figure>
 </div>
@@ -1155,11 +1155,33 @@ r = \frac{\sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y})}
 </div>
 <p><strong>Interpretación:</strong> En términos generales, el 88.9 % de las mujeres se clasifican dentro del rango normal de IMC y el 11.1 % presenta sobrepeso u obesidad. En contraste, entre los hombres solo el 48.1 % presenta IMC normal, mientras que el 51.9 % se ubica en la categoría de sobrepeso-obesidad. Considerando el total de la muestra, el 80.8 % de los estudiantes presenta un IMC normal y el 19.2 % presenta sobrepeso u obesidad.</p>
 <p>Estos resultados sugieren una posible asociación entre el género y la clasificación del IMC, evidenciando una mayor proporción de sobrepeso-obesidad en los hombres respecto a las mujeres dentro de la población analizada. Las tablas de contingencia permiten identificar este tipo de patrones descriptivos y constituyen la base para posteriores análisis inferenciales, como la prueba Chi-cuadrado de independencia.</p>
-<section id="síntesis-integradora" class="level3" data-number="9.10.1">
-<h3 data-number="9.10.1" class="anchored" data-anchor-id="síntesis-integradora"><span class="header-section-number">9.10.1</span> Síntesis integradora</h3>
+<section id="laboratorio-experiencial" class="level3" data-number="9.10.1">
+<h3 data-number="9.10.1" class="anchored" data-anchor-id="laboratorio-experiencial"><span class="header-section-number">9.10.1</span> Laboratorio experiencial:</h3>
+<p><strong>¿Existe relación entre la altura y el peso corporal?</strong></p>
+<p><strong>Situación problema:</strong> Un grupo de estudiantes de fisioterapia desea analizar si la altura corporal se relaciona con el peso de los estudiantes universitarios. Para ello, se recolectó información antropométrica de hombres y mujeres de diferentes semestres académicos.</p>
+<p><strong>Objetivo del análisis</strong></p>
+<p>Determinar: si existe relación entre altura y peso; la dirección de la relación; la fuerza de la asociación y si el género modifica visualmente el comportamiento de los datos.</p>
 </section>
-<section id="ejercicios-integradores" class="level3" data-number="9.10.2">
-<h3 data-number="9.10.2" class="anchored" data-anchor-id="ejercicios-integradores"><span class="header-section-number">9.10.2</span> Ejercicios integradores</h3>
+<section id="actividades-del-estudiante" class="level3" data-number="9.10.2">
+<h3 data-number="9.10.2" class="anchored" data-anchor-id="actividades-del-estudiante"><span class="header-section-number">9.10.2</span> Actividades del estudiante</h3>
+<p>Parte 1 — Exploración visual</p>
+<p>Preguntas</p>
+<p>¿Qué tipo de relación observa en el diagrama? positiva, negativa, nula, urvilínea.<br>
+¿La relación parece fuerte o débil?<br>
+¿Existen valores atípicos?<br>
+¿Se observan diferencias entre hombres y mujeres?</p>
+<p>Parte 2 — Correlación</p>
+<p>Calcule: correlación de Pearson y correlación de Spearman.</p>
+<p>Preguntas</p>
+<p>¿Los coeficientes son similares?<br>
+¿Cuál considera más apropiado según la distribución de los datos?<br>
+¿Puede afirmarse causalidad?</p>
+<p>Parte 3 — Interpretación aplicada</p>
+<p>Un investigador afirma que “Los estudiantes más altos necesariamente pesan más”.</p>
+<p>Preguntas críticas</p>
+<p>¿La correlación encontrada permite afirmar eso?</p>
+<p>¿Qué limitaciones tiene el análisis?</p>
+<p>¿Qué otras variables podrían influir?</p>
 
 
 </section>
