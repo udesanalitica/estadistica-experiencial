@@ -48,6 +48,7 @@ format:
     code-copy: true
     smooth-scroll: true
     toc-depth: 3
+    css: styles.css
 
   pdf:
     documentclass: report

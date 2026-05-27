@@ -81,7 +81,7 @@ contiene aproximadamente el 25 % de las observaciones. Se representan
 mediante:
 
 | Cuartil | Interpretación |
-|------------------|------------------------------------------------------|
+|----|----|
 | $Q_1$: primer cuartil | El 25 % de los datos es menor o igual a este valor |
 | $Q_2$: segundo cuartil | Corresponde a la mediana; el 50 % de los datos queda por debajo |
 | $Q_3$: tercer cuartil | El 75 % de los datos es menor o igual a este valor |

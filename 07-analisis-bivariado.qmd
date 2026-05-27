@@ -372,7 +372,7 @@ $$
 El coeficiente de correlación indica qué tan estrechamente se relacionan
 dos variables y si dicha relación es positiva, negativa o inexistente.
 
-![Fuente: autores](img/correlacion.png)
+![Fuente: autores](img/correlacion.jpg)
 
 #### Ejemplo en R
 
@@ -532,7 +532,7 @@ valores originales de las variables, sino con sus rangos o posiciones
 dentro de la distribución. Por esta razón, se considera una medida no
 paramétrica de asociación.
 
-![Fuente: autores](img/cor-spearman.png)
+![Fuente: autores](img/corspearman.jpg)
 
 ```{r}
 #| message: false

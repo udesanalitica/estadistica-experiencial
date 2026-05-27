@@ -1,4 +1,4 @@
-# Preface {.unnumbered}
+# Prefacio {.unnumbered}
 
 La estadística constituye una herramienta fundamental para comprender, interpretar y transformar la realidad a partir de los datos. En un contexto caracterizado por el crecimiento exponencial de la información, el análisis estadístico se ha consolidado como una competencia esencial en múltiples disciplinas, especialmente en escenarios académicos, científicos, sociales y organizacionales.
 
