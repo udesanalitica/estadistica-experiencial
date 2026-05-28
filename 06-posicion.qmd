@@ -30,7 +30,7 @@ en salud pública, donde resulta esencial comprender no solo el valor
 promedio de una variable, sino también la posición relativa y la forma
 general de su distribución.
 
-# Medidas de posición
+## Medidas de posición
 
 Las medidas de posición son indicadores estadísticos que permiten
 determinar la ubicación relativa de un valor dentro de un conjunto de
@@ -73,7 +73,7 @@ Todas comparten la misma lógica matemática:
 
 3.  identificar el valor correspondiente dentro de la distribución.
 
-# Cuartiles
+## Cuartiles
 
 Los cuartiles son medidas de posición que dividen un conjunto de datos
 ordenados en cuatro partes iguales, de tal manera que cada grupo
@@ -86,7 +86,7 @@ mediante:
 | $Q_2$: segundo cuartil | Corresponde a la mediana; el 50 % de los datos queda por debajo |
 | $Q_3$: tercer cuartil | El 75 % de los datos es menor o igual a este valor |
 
-## Fórmula de posición
+### Fórmula de posición
 
 La posición del cuartil se calcula mediante:
 
@@ -130,7 +130,7 @@ Esta medida representa la dispersión del 50 % central de los datos y
 resulta especialmente útil porque no se ve afectada significativamente
 por valores atípicos o extremos.
 
-# Deciles
+## Deciles
 
 Los deciles son medidas de posición que dividen un conjunto de datos
 ordenados en diez partes iguales, de manera que cada grupo representa el
@@ -142,7 +142,7 @@ ordenados en diez partes iguales, de manera que cada grupo representa el
 | $D_5$ | Coincide con la mediana                            |
 | $D_9$ | El 90 % de los datos queda por debajo              |
 
-## Fórmula de posición
+### Fórmula de posición
 
 $L_k = \frac{k\cdot n}{10}$​
 
@@ -160,7 +160,7 @@ Los deciles se utilizan frecuentemente en:
 
 -   clasificación poblacional.
 
-# Percentiles
+## Percentiles
 
 Los percentiles son medidas de posición que dividen un conjunto de datos
 ordenados en cien partes iguales, donde cada parte representa el 1 % de
@@ -174,11 +174,11 @@ las observaciones es menor o igual a dicho valor. Por ejemplo:
 
 -   $P_{75} = Q_3$
 
-## Fórmula de posición
+### Fórmula de posición
 
 $L_k = \frac{k\cdot n}{100}$
 
-## Aplicaciones de los percentiles
+### Aplicaciones de los percentiles
 
 Los percentiles son fundamentales en curvas de crecimiento infantil,
 evaluación médica, pruebas académicas, clasificación nutricional,
@@ -186,14 +186,14 @@ análisis de desempeño, entre otras.
 
 ![Fuente: autores](img/posicion.jpg)
 
-# Medidas de forma
+## Medidas de forma
 
 Las medidas de forma permiten describir la estructura general de una
 distribución estadística, evaluando características como: simetría,
 concentración, colas extremas, comportamiento alrededor de la media. Las
 principales medidas de forma son: asimetría y curtosis.
 
-## Asimetría
+### Asimetría
 
 La asimetría evalúa el grado de sesgo de una distribución.
 
@@ -203,7 +203,7 @@ La asimetría evalúa el grado de sesgo de una distribución.
 | Asimetría positiva | Cola hacia la derecha     |
 | Asimetría negativa | Cola hacia la izquierda   |
 
-## Curtosis
+### Curtosis
 
 La curtosis describe el grado de concentración de los datos alrededor de
 la media.

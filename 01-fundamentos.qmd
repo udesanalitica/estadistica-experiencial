@@ -14,68 +14,103 @@ Su propósito fundamental es facilitar la comprensión de grandes volúmenes de 
 
 ## Tipos de variables
 
-Las variables constituyen las características, cualidades o atributos que pueden observarse, clasificarse o medirse en los individuos, objetos o fenómenos de una población o muestra.
+Las **variables** son los **atributos, cualidades** o **características** que pueden ser observadas, clasificadas o medidas en las personas, objetos o fenómenos de una población o muestra. En estadística, su identificación es esencial porque posibilita la descripción, el análisis y la interpretación de la información recopilada. Las variables se dividen en cualitativas y cuantitativas, tal como se muestra en la figura1.
 
-Su identificación es fundamental en estadística, ya que permiten describir, analizar e interpretar la información recolectada. Como se observa en la figura, las variables se clasifican en cualitativas y cuantitativas.
+Las variables cualitativas, que son nominales u ordinales, describen atributos o categorías; por otro lado, las variables cuantitativas, que se dividen en discretas y continuas dependiendo si surgen de procesos de conteo o de medición, ilustran cantidades numéricas. Esta clasificación es esencial porque determina el tipo de análisis estadístico, representación gráfica y medidas descriptivas que pueden aplicarse a los datos.
 
-Las variables cualitativas describen categorías o atributos y pueden ser nominales u ordinales, mientras que las variables cuantitativas representan cantidades numéricas y se dividen en discretas y continuas según provengan de procesos de conteo o medición. Esta clasificación es esencial porque determina el tipo de análisis estadístico, representación gráfica y medidas descriptivas que pueden aplicarse a los datos.
-
-![La figura es una adaptación gráfica realizada por los autores en Napkin a partir del esquema presentado por Derek Rowntree (1981) en Statistics Without Tears. La modificación respeta los criterios de uso justo para fines académicos.](img/variables.jpg)
+![La figura 1 es una adaptación gráfica realizada por los autores en Napkin a partir del esquema presentado por Derek Rowntree (1981) en Statistics Without Tears. La modificación respeta los criterios de uso justo para fines académicos.](img/variables.jpg)
 
 ## Importancia de la identificación de variables estadísticas y escalas de medición
 
-La clasificación de las variables constituye un aspecto esencial en el análisis estadístico, ya que de ella depende la selección de los métodos, procedimientos y representaciones gráficas más adecuados para el tratamiento de los datos. Como se muestra en la figura, las variables cualitativas describen atributos o categorías y suelen analizarse mediante frecuencias, porcentajes y medidas como la moda o la mediana en el caso de variables ordinales.
+Una parte fundamental del análisis estadístico es la clasificación de las variables, porque a partir de esta se determina qué métodos, procedimientos y representaciones gráficas son los más idóneos para tratar los datos. Las variables cualitativas, como se ilustra en la figura 2, delinean categorías o características y habitualmente se examinan a través de porcentajes, frecuencias y medidas como la moda o la mediana en el caso de las variables ordinales.
 
-Por su parte, las variables cuantitativas representan cantidades numéricas derivadas de procesos de conteo o medición, lo que permite aplicar medidas de tendencia central y dispersión, tales como la media, la varianza, la desviación estándar y el coeficiente de variación. En este sentido, identificar correctamente el tipo de variable facilita una interpretación adecuada de la información y garantiza la aplicación de técnicas estadísticas coherentes con la naturaleza de los datos [@armitage2002statistical].
+Las variables cuantitativas, en cambio, son valores numéricos que provienen de procesos de conteo o medición. Estas variables posibilitan el uso de medidas de tendencia central y dispersión, como la varianza, la media, la desviación estándar y el coeficiente de variación. En esta línea, si se identifica apropiadamente el tipo de variable, se logra una interpretación correcta de la información y se asegura que las técnicas estadísticas aplicadas sean congruentes con la naturaleza de los datos.
 
-![Fuente: autores](img/variablesmedidas.jpg)
+[@armitage2002statistical].
+
+![Figura 2. Fuente: autores](img/variablesmedidas.jpg)
 
 ## **Escalas de medición**
 
 Las **escalas de medición** representan el nivel de información que poseen los datos y constituyen un elemento fundamental en estadística, ya que determinan las operaciones matemáticas y los análisis que pueden realizarse sobre las variables.
 
-Como se observa en la figura, las escalas nominal y ordinal se emplean principalmente en variables cualitativas, mientras que las escalas de intervalo y razón se asocian con variables cuantitativas. A medida que aumenta el nivel de medición, también incrementa la precisión estadística y la complejidad de los métodos analíticos que pueden aplicarse. Por ello, la correcta identificación de la escala permite seleccionar adecuadamente medidas descriptivas, pruebas estadísticas y representaciones gráficas acordes con la naturaleza de los datos.
+Como se observa en la figura 3, las escalas nominal y ordinal se emplean principalmente en variables cualitativas, mientras que las escalas de intervalo y razón se asocian con variables cuantitativas. A medida que aumenta el nivel de medición, también incrementa la precisión estadística y la complejidad de los métodos analíticos que pueden aplicarse. Por ello, la correcta identificación de la escala permite seleccionar adecuadamente medidas descriptivas, pruebas estadísticas y representaciones gráficas acordes con la naturaleza de los datos.
 
-![Fuente: autores](img/escalas.jpg)
+![Figura 3. Fuente: autores](img/escalas.jpg)
 
-Las escalas de medición permiten clasificar las variables según el tipo de información que proporcionan. La escala nominal organiza datos en categorías sin orden, por lo que suele analizarse mediante frecuencias y porcentajes. La escala ordinal incorpora jerarquía entre categorías, permitiendo el uso de medidas como mediana, rangos y percentiles. Por su parte, la escala de intervalo presenta distancias iguales entre valores, aunque sin un cero absoluto, lo que posibilita análisis como correlaciones y desviaciones estándar. Finalmente, la escala de razón posee todas las propiedades anteriores y un cero real, permitiendo realizar operaciones matemáticas completas y análisis estadísticos más avanzados. La figura resume las principales características, ejemplos, medidas estadísticas y representaciones gráficas asociadas a cada escala.
+Las escalas de medición permiten clasificar las variables según el tipo de información que proporcionan.
+
+-   La **escala nominal** organiza datos en categorías sin orden, por lo que suele analizarse mediante frecuencias y porcentajes.
+
+-   La **escala ordinal** incorpora jerarquía entre categorías, permitiendo el uso de medidas como mediana, rangos y percentiles.
+
+-   Por su parte, la **escala de intervalo** presenta distancias iguales entre valores, aunque sin un cero absoluto, lo que posibilita análisis como correlaciones y desviaciones estándar.
+
+-   Finalmente, la **escala de razón** posee todas las propiedades anteriores y un cero real, permitiendo realizar operaciones matemáticas completas y análisis estadísticos más avanzados. La figura resume las principales características, ejemplos, medidas estadísticas y representaciones gráficas asociadas a cada escala.
 
 La selección de las técnicas estadísticas depende directamente de la escala de medición de las variables. Como se presenta en la figura, las variables medidas en escala nominal suelen representarse mediante gráficos de barras o pastel y analizarse con frecuencias y moda.
 
 Las escalas ordinales permiten incorporar análisis basados en orden y posición, como percentiles o cuartiles. En contraste, las escalas de intervalo y razón posibilitan el cálculo de medidas paramétricas como media, varianza, desviación estándar y análisis de regresión. En consecuencia, conocer la escala de medición garantiza la aplicación de procedimientos estadísticos válidos y una interpretación adecuada de los resultados obtenidos.
 
-La estadística descriptiva permite transformar datos brutos en información significativa mediante el uso de tablas, representaciones gráficas y medidas resumen. Este proceso facilita la organización, interpretación y comprensión de los fenómenos analizados, constituyéndose en una herramienta fundamental para la toma de decisiones basadas en evidencia. Asimismo, la correcta identificación del tipo de variable y de la escala de medición resulta esencial para seleccionar las técnicas estadísticas apropiadas. Un error frecuente consiste en analizar variables ordinales como si fueran cuantitativas continuas o asumir que los datos siguen distribuciones normales sin verificar los supuestos requeridos, lo cual puede afectar la validez de los resultados y conducir a interpretaciones erróneas.
+## Base de datos de trabajo
 
-```{r}
+Este libro empleará dos bases de datos, con fines pedagógicos y prácticos. La primera es una base de datos del sector acuícola que se adquiere gracias a la información proporcionada por el Departamento Administrativo Nacional de Estadística (DANE). Esta base posibilitará llevar a cabo tareas vinculadas con la clasificación de variables, la organización de datos, las tablas de frecuencia y el análisis descriptivo en escenarios reales económicos y productivos.
 
-#| message: false
-#| warning: false
+La segunda base corresponde a una base de datos antropométrica construida con información de estudiantes universitarios. Esta abarca variables vinculadas con el peso, la altura, la longitud de las extremidades y el índice de masa corporal, así como otras medidas físicas. Esto posibilita tratar asuntos de visualización, análisis bivariado, correlación y medidas descriptivas a través de situaciones aplicadas a ergonomía, salud y caracterización poblacional.
 
+El empleo de bases de datos reales tiene como objetivo potenciar el aprendizaje a partir de la experiencia, fomentando que el alumno no solamente asimile conceptos estadísticos, sino que además adquiera capacidades para analizar información, tomar decisiones y usar herramientas de análisis de datos con R en entornos próximos a su realidad laboral.
+
+#### bd Acuicultura
+
+```{r, message=FALSE, warning=FALSE}
+# ==========================================
+# CARGA Y EXPLORACIÓN DE LA BASE DE DATOS
+# ==========================================
+
+# Librerías
 library(readr)
 library(dplyr)
 
-# Cargar base de datos de Acuicultura
+# Cargar base de datos de acuicultura
 acuicultura <- read_csv(
-  "C:/R-Proyectos/estadistica-experiencial/data/S07D_Acuicultura.csv")
-
-#acuicultura <- read_csv("D:/estadistica-experiencial/data/S07D_Acuicultura.csv")
+  "data/S07D_Acuicultura.csv"
+)
 
 # Visualizar primeras filas
 head(acuicultura)
 
-# Mostrar nombres de variables
+# Número de filas y columnas
+dim(acuicultura)
+
+# Nombres de las variables
 names(acuicultura)
 
-# Explorar estructura de la base
-glimpse(acuicultura)
+# Estructura general de la base
+str(acuicultura)
 
-# Ver la base completa en RStudio
-View(acuicultura)
+# Abrir base completa en RStudio
+# View(acuicultura)
 ```
 
-```{r}
-#| message: false
-#| warning: false
+### ¿Qué estamos haciendo?
+
+Antes de realizar cualquier análisis estadístico, es fundamental explorar la base de datos para comprender su estructura, contenido y tipo de información disponible. Esta etapa permite identificar: número de observaciones; cantidad de variables; nombres de las columnas; tipos de datos (numéricos, categóricos o texto); posibles datos faltantes y características generales de la información.
+
+La función `head()` muestra las primeras filas de la base de datos, permitiendo visualizar cómo se encuentran organizadas las observaciones. Por su parte, `dim()` indica el número de filas y columnas, mientras que `names()` permite identificar el nombre de cada variable.
+
+La función `glimpse()` ofrece una visión rápida de la estructura de la base, mostrando el tipo de dato de cada variable y algunos ejemplos de sus valores. Finalmente, `summary()` genera un resumen descriptivo básico de las variables cuantitativas y categóricas.
+
+### Reflexión del estudiante
+
+¿Cuántas variables contiene la base de datos? \
+¿Qué tipos de variables identifica?\
+¿Existen variables cuantitativas y cualitativas? \
+¿Cuál variable considera más importante para el análisis? \
+¿Observa posibles datos faltantes?
+
+## **Diccionario de datos**
+
+```{r setup-datos, message=FALSE, warning=FALSE}
 
 library(readr)
 library(dplyr)
@@ -83,9 +118,6 @@ library(janitor)
 
 # Cargar base
 acuicultura <- read_csv("data/S07D_Acuicultura.csv")
-
-# Ver nombres de variables
-names(acuicultura)
 
 # Crear estructura inicial del diccionario
 diccionario <- tibble(
@@ -98,6 +130,8 @@ diccionario <- tibble(
 # Ver diccionario
 diccionario
 ```
+
+**Interpretación:** La base de datos contiene 3447 observaciones y 14 variables relacionadas con información del sector acuícola. Se identifican variables de tipo categórico (`chr`) y numérico (`dbl`), lo que permitirá desarrollar análisis descriptivos tanto para variables cualitativas como cuantitativas. La exploración inicial facilita comprender la estructura de la información antes de aplicar técnicas estadísticas más avanzadas.
 
 Ver diccionario de variables en sitio web del DANE [Dicccionario_S07D_Acuicultura](https://microdatos.dane.gov.co/index.php/catalog/513/data-dictionary/F4?file_name=S07D(Acuicultura))
 
@@ -113,8 +147,6 @@ write_xlsx(diccionario,
 Está instrucción permite ver el libro en quarto.
 
 ```{r}
-#| message: false
-#| warning: false
 library(gt)
 
 diccionario_acuicultura <- tibble(
@@ -144,15 +176,15 @@ diccionario_acuicultura |>
   gt()
 ```
 
-## Actividad experiencial: 
+## Actividad experiencial
 
-## Explorando una base de datos del DANE
+### Explorando una base de datos del DANE
 
 **Contexto de la actividad:** En estadística aplicada, antes de realizar cualquier análisis es fundamental comprender las características de las variables contenidas en una base de datos. Para ello, se utilizará una base oficial del Departamento Administrativo Nacional de Estadística (DANE) correspondiente al módulo de acuicultura. Los estudiantes actuarán como analistas de datos, explorando información real utilizada en estudios productivos y socioeconómicos.
 
-Fuente oficial:
+**Objetivo de aprendizaje:** Al finalizar esta actividad, el estudiante será capaz de explorar una base de datos real, identificar tipos de variables y escalas de medición, seleccionar representaciones gráficas adecuadas e interpretar información estadística básica utilizando R.
 
-[DANE – Diccionario S07D Acuicultura](https://microdatos.dane.gov.co/index.php/catalog/513/data-dictionary/F4?file_name=S07D(Acuicultura)&utm_source=chatgpt.com)
+Fuente oficial: [DANE – Diccionario S07D Acuicultura](https://microdatos.dane.gov.co/index.php/catalog/513/data-dictionary/F4?file_name=S07D(Acuicultura)&utm_source=chatgpt.com)
 
 **Desarrollo de la actividad**
 
@@ -160,43 +192,24 @@ Fuente oficial:
 
 **Instrucciones**
 
-1.  Cargar la base de datos en R.
-
-2.  Revisar los nombres de las variables.
-
-3.  Consultar el diccionario oficial del DANE.
-
-4.  Identificar:
-
-```         
--   significado de cada variable,
-
--   tipo de variable,
-
--   escala de medición,
-
--   unidad de medida,
-
--   posible representación gráfica,
-
--   medidas estadísticas aplicables.
-```
+Cargar la base de datos en R.\
+Revisar los nombres de las variables.\
+Consultar el diccionario oficial del DANE.\
+Identificar el significado de cada variable, tipo de variable, escala de medición, unidad de medida, posible representación gráfica y medidas estadísticas aplicables.
 
 ```{r}
 library(readr)
 library(dplyr)
 
-# Cargar base de datos
+## Cargar base de datos
 acuicultura <- read_csv(
   "data/S07D_Acuicultura.csv"
 )
 
-# Explorar estructura
-names(acuicultura)
-
-glimpse(acuicultura)
-
-head(acuicultura)
+## Explorar estructura emplee los siguientes comandos de R
+# names(acuicultura)
+# glimpse(acuicultura)
+# head(acuicultura)
 ```
 
 **Parte 2. Completar la tabla de clasificación**
@@ -223,29 +236,33 @@ head(acuicultura)
 
 **Responda las siguientes preguntas:**
 
-1.  ¿Qué variables son cualitativas y cuáles cuantitativas?
+-   ¿Qué variables son cualitativas y cuáles cuantitativas?
 
-2.  ¿Qué variables corresponden a procesos de conteo?
+-   ¿Qué variables corresponden a procesos de conteo?
 
-3.  ¿Qué variables corresponden a procesos de medición?
+-   ¿Qué variables corresponden a procesos de medición?
 
-4.  ¿Cuál variable podría analizarse mediante:
+-   ¿Cuál variable podría analizarse mediante: histogramas, diagramas de barras, boxplots, entre otros.
 
-```         
--    histogramas?
+-   ¿Qué variable considera más importante para analizar la producción acuícola y por qué?
 
--    diagramas de barras?
+-   ¿Qué variable considera más relevante para evaluar productividad acuícola?
 
--   boxplots?
-```
+<!-- -->
 
-5.  ¿Qué variable considera más importante para analizar la producción acuícola y por qué?
+-    ¿Qué variables podrían utilizarse para construir indicadores económicos?
+
+<!-- -->
+
+-    ¿Qué problemas podrían surgir si una variable se clasifica incorrectamente?
+
+<!-- -->
+
+-    ¿Qué variables podrían presentar valores atípicos?
 
 Ejemplo de una variable estudiada Curva de densidad de la producción acuícola.
 
 ```{r}
-#| message: false
-#| warning: false
 library(ggplot2)
 
 ggplot(
@@ -269,3 +286,39 @@ ggplot(
 
   theme_minimal()
 ```
+
+**Interpretación:** La distribución de la producción acuícola presenta una marcada asimetría positiva, razón por la cual se utilizó una transformación logarítmica para facilitar la visualización de la densidad de los datos. Este comportamiento es frecuente en variables productivas y económicas, donde pocas observaciones concentran valores muy altos mientras la mayoría presenta valores moderados o bajos.Inter
+
+## Flujo general del análisis de datos
+
+::: callout-note
+Importar datos \
+↓ \
+Explorar datos\
+↓ \
+Clasificar variables\
+↓\
+Visualizar información\
+↓\
+Interpretar resultados\
+↓\
+Tomar decisiones
+:::
+
+## Mini reto analítico
+
+Imagine que usted trabaja en una entidad gubernamental encargada de monitorear la producción acuícola del país. Con base en la información disponible:
+
+-    ¿qué variable utilizaría para estimar productividad?
+
+-    ¿qué tipo de gráfico presentaría a un directivo?
+
+-    ¿qué indicador resumiría mejor la información?
+
+-    ¿qué riesgos tendría interpretar incorrectamente los datos?
+
+::: callout-tip
+## Conclusion
+
+De acuerdo con lo anterior la estadística descriptiva permite transformar datos brutos en información significativa mediante el uso de tablas, representaciones gráficas y medidas resumen. Este proceso facilita la organización, interpretación y comprensión de los fenómenos analizados, constituyéndose en una herramienta fundamental para la toma de decisiones basadas en evidencia. Asimismo, la correcta identificación del tipo de variable y de la escala de medición resulta esencial para seleccionar las técnicas estadísticas apropiadas. Un error frecuente consiste en analizar variables ordinales como si fueran cuantitativas continuas o asumir que los datos siguen distribuciones normales sin verificar los supuestos requeridos, lo cual puede afectar la validez de los resultados y conducir a interpretaciones erróneas.
+:::

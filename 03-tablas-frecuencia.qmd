@@ -2,8 +2,6 @@
 title: "Organización de datos y tablas estadísticas"
 ---
 
-# Tablas de datos
-
 En este capítulo se presentan los fundamentos para la organización y presentación de la información mediante diferentes tipos de tablas estadísticas. Estas herramientas permiten resumir, ordenar y estructurar los datos de manera que faciliten su análisis e interpretación. Las tablas constituyen un recurso esencial en la estadística descriptiva, ya que permiten transformar datos individuales en información significativa.
 
 ## Datos simples
@@ -250,7 +248,7 @@ tabla_freq %>%
   )
 ```
 
-# Organización de datos en contextos reales
+## Organización de datos en contextos reales
 
 En estadística aplicada, las tablas de frecuencia permiten transformar grandes volúmenes de datos en información interpretable. A través de ellas es posible identificar patrones, concentraciones, categorías predominantes y características generales de una población.
 
@@ -264,7 +262,7 @@ El objetivo no será únicamente construir tablas estadísticas, sino interpreta
 
 Usted hace parte de un equipo de analítica académica encargado de caracterizar físicamente a un grupo de estudiantes para apoyar estudios de ergonomía, salud ocupacional y diseño de espacios educativos. A partir de la base de datos: identifique patrones, organice la información, construya tablas estadísticas, e interprete los resultados.
 
-#### 1. Exploración inicial
+#### Exploración inicial
 
 ```{r}
 #| message: false
@@ -285,7 +283,7 @@ glimpse(datos)
 ```
 
 ::: callout-important
-#### 2. Preguntas para el estudiante
+#### Preguntas para el estudiante
 
 1.  ¿Qué variables son cualitativas?
 2.  ¿Qué variables son cuantitativas?
@@ -294,9 +292,9 @@ glimpse(datos)
 5.  ¿Qué información sería relevante para caracterizar a los estudiantes?
 :::
 
-#### 3. Tablas de frecuencia cualitativas
+#### Tablas de frecuencia cualitativas
 
-### **Ejemplo: Género**
+### Ejemplo: Género
 
 La variable `Genero` corresponde a una variable cualitativa nominal, ya que clasifica a los individuos en categorías mutuamente excluyentes sin un orden natural. Para este tipo de variables, las tablas de frecuencia permiten identificar la proporción y distribución de las categorías observadas.
 
@@ -305,8 +303,6 @@ La variable `Genero` corresponde a una variable cualitativa nominal, ya que clas
 En bases de datos reales es común encontrar valores faltantes (NA). Antes de realizar análisis estadísticos, es importante identificar y evaluar la presencia de datos ausentes, ya que estos pueden afectar la interpretación de los resultados y la validez de los análisis.
 
 ```{r}
-#\| message: false 
-#\| warning: false
 library(readxl)
 library(dplyr)
 datos <- read_excel("C:/R-Proyectos/estadistica-experiencial/data/bd_antropometricas.xlsx")
@@ -333,7 +329,7 @@ freq(
 
 ------------------------------------------------------------------------
 
-#### 4. Preguntas de análisis
+#### Preguntas de análisis
 
 1.  ¿Qué género presenta mayor frecuencia?
 2.  ¿La distribución parece equilibrada?
@@ -343,9 +339,6 @@ freq(
 ------------------------------------------------------------------------
 
 ```{r}
-#| message: false
-#| warning: false
-
 library(readxl)
 library(dplyr)
 library(knitr)
@@ -380,14 +373,11 @@ kable(
 )
 ```
 
-### Ejemplo: Peso corporal
+## Ejemplo: Peso corporal
 
 La variable `Peso_Kg` corresponde a una variable cuantitativa continua obtenida mediante procesos de medición. Debido a que puede asumir múltiples valores dentro de un intervalo, resulta necesario organizar la información mediante intervalos de clase.
 
 ```{r}
-#| message: false
-#| warning: false
-
 library(readxl)
 library(dplyr)
 library(summarytools)
@@ -409,7 +399,7 @@ head(tabla_peso, 10)
 
 ```
 
-# Actividad experiencial: Organización de datos y tablas estadísticas
+## Actividad experiencial: Organización de datos y tablas estadísticas
 
 Un grupo de diseñadores y especialistas en ergonomía universitaria necesita analizar las características antropométricas de los estudiantes con el fin de adaptar el mobiliario de las aulas, mejorar la comodidad durante las jornadas académicas y reducir posibles riesgos asociados a malas posturas.
 
@@ -417,7 +407,7 @@ Para ello, se utilizará la base de datos `bd_antropometricas.xlsx`, la cual con
 
 El objetivo de esta actividad es transformar datos individuales en información organizada mediante tablas estadísticas y representaciones gráficas que permitan apoyar la toma de decisiones.
 
-# Objetivos de aprendizaje
+### Objetivos de aprendizaje
 
 Al finalizar la actividad, el estudiante estará en capacidad de:
 
@@ -433,16 +423,13 @@ Al finalizar la actividad, el estudiante estará en capacidad de:
 
 -   Relacionar la estadística descriptiva con problemas reales de análisis de datos.
 
-# Desarrollo de la actividad
+## Desarrollo de la actividad
 
 ### Parte 1. Exploración inicial de los datos
 
 Cargue la base de datos y explore las variables disponibles.
 
 ```{r}
-#| message: false
-#| warning: false
-
 library(readxl)
 library(dplyr)
 
@@ -466,7 +453,7 @@ glimpse(datos)
 Complete la siguiente tabla para las variables seleccionadas:
 
 | Variable | Tipo de variable | Escala de medición | Unidad de medida | Herramienta estadística sugerida |
-|----|----|----|----|----|
+|---------------|---------------|---------------|---------------|---------------|
 | Genero |  |  |  |  |
 | Grupo |  |  |  |  |
 | Peso_Kg |  |  |  |  |
@@ -478,7 +465,7 @@ Complete la siguiente tabla para las variables seleccionadas:
 
 La variable `Peso_Kg` corresponde a una variable cuantitativa continua obtenida mediante procesos de medición. Debido a que puede asumir múltiples valores dentro de un intervalo, resulta conveniente organizar la información mediante tablas agrupadas y representaciones gráficas.
 
-### Situación problema
+## Situación problema
 
 Los diseñadores requieren conocer:
 

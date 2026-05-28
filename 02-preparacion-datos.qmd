@@ -2,9 +2,27 @@
 title: "Preparación de datos"
 ---
 
-La preparación de datos constituye una etapa crítica dentro del análisis estadístico, ya que implica el proceso sistemático de depuración, organización, clasificación y transformación de la información recolectada, con el fin de convertirla en un insumo adecuado para su análisis [@kleinbaum2012survival; @wickham2017r].
+La preparación de datos es la etapa inicial del análisis estadístico en la que se revisa, organiza, limpia y transforma la información disponible antes de aplicar técnicas descriptivas o inferenciales. Su propósito es garantizar que los datos sean coherentes, completos y adecuados para responder una pregunta de análisis[@kleinbaum2012survival; @wickham2017r, @hair2019multivariate].
 
-En esta fase, el estudiante - el investigador debe garantizar la calidad de los datos mediante procesos de validación y verificación, conocidos como crítica de datos, cuyo objetivo es identificar y corregir errores, inconsistencias u omisiones generadas durante la recolección de la información [@hair2019multivariate].
+Al finalizar este capítulo, el estudiante estará en capacidad de importar bases de datos en R, explorar su estructura, identificar valores faltantes, reconocer inconsistencias, recodificar variables y preparar una base limpia para el análisis estadístico.
+
+::: callout-important
+## Flujo general de preparación
+
+Importar datos\
+↓\
+Explorar la estructura\
+↓\
+Identificar inconsistencias\
+↓\
+Revisar valores faltantes\
+↓\
+Detectar valores atípicos\
+↓\
+Recodificar variables\
+↓\
+Guardar base preparada
+:::
 
 ## Carga de datos en R
 
@@ -12,7 +30,7 @@ Para iniciar el trabajo en R, el primer paso fundamental consiste en definir el 
 
 ::: {#tbl-variables tbl-cap="Métodos de carga de datos en R"}
 | Método | Característica | Ejemplo |
-|----|----|----|
+|------------------------|------------------------|------------------------|
 | Archivos de texto y CSV | Uso de funciones como `read.csv()` o `read.csv2()`, especificando encabezados y codificación | Importación de archivos `.csv` |
 | Interfaces gráficas (GUI) | Herramientas como R Commander permiten importar datos sin necesidad de programación | Importación desde Excel, SPSS, STATA |
 | Minería de datos | Paquetes como `rattle` permiten cargar datos mediante interfaces visuales configurables | Definición de separadores y decimales |
@@ -24,7 +42,7 @@ La limpieza de datos consiste en detectar, corregir o eliminar inconsistencias q
 
 ::: {#tbl-preparacion-datos tbl-cap="Aspectos clave en la preparación de datos"}
 | Proceso | Subproceso | Descripción | Herramienta / Ejemplo |
-|----|----|----|----|
+|------------------|------------------|------------------|------------------|
 | **Limpieza de datos** | Valores extremos (Outliers) | Identificación y tratamiento de datos atípicos que pueden distorsionar resultados. Se recomienda corregir o eliminar errores evidentes. | Diagramas de caja (*boxplot*) [@tukey1977eda] |
 |  | Consistencia de totales | Verificación de coherencia entre frecuencias, totales y porcentajes acumulados. | Validación de sumas [@agresti2018statistical] |
 |  | Filtrado de datos | Selección de subconjuntos de datos según criterios específicos para análisis focalizado. | Filtrado en R (`subset`, `filter`) |
@@ -38,4 +56,4 @@ La limpieza de datos consiste en detectar, corregir o eliminar inconsistencias q
 |  | Tratamiento de etiquetas | Conversión de códigos numéricos a etiquetas descriptivas. | `factor()` en R |
 :::
 
-La preparación de datos es una fase fundamental que garantiza la calidad y confiabilidad del análisis estadístico. Un manejo adecuado de la limpieza, los valores faltantes y la recodificación permite transformar datos brutos en información estructurada y útil, fortaleciendo la validez de los resultados y la toma de decisiones basada en evidencia (Wickham & Grolemund, 2017; Hair et al., 2019).
+La preparación de datos es una etapa esencial para garantizar la calidad del análisis estadístico. Antes de calcular indicadores o construir gráficos, es necesario comprender la estructura de la base, revisar inconsistencias, identificar valores faltantes y transformar las variables cuando sea necesario. Un análisis confiable comienza con datos bien preparados .

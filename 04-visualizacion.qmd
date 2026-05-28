@@ -24,9 +24,6 @@ str(datos)
 El gráfico de pastel es una representación estadística utilizada para mostrar la distribución porcentual de una variable cualitativa. Cada sector del círculo representa una categoría y su tamaño es proporcional a la frecuencia relativa o porcentaje que dicha categoría aporta al total de observaciones.
 
 ```{r}
-#| message: false
-#| warning: false
-
 library(readxl)
 library(dplyr)
 library(ggplot2)
@@ -83,9 +80,6 @@ El gráfico de barras se utiliza principalmente para representar variables cuali
 Por ejemplo, si se desea visualizar la distribución de una variable como el género o la clase, puede emplearse un gráfico de barras.
 
 ```{r}
-#| message: false
-#| warning: false
-
 library(readxl)
 library(dplyr)
 library(ggplot2)
@@ -113,9 +107,6 @@ datos %>%
 ```
 
 ```{r}
-#| message: false
-#| warning: false
-
 library(readxl)
 library(dplyr)
 library(ggplot2)
@@ -178,9 +169,6 @@ Este tipo de gráfico es útil para identificar la forma de la distribución, la
 ### Ejemplo con funciones básicas de R
 
 ```{r}
-#| message: false
-#| warning: false
-
 library(readr)
 library(dplyr)
 
@@ -208,10 +196,6 @@ El diagrama de caja y bigotes, o *boxplot*, es un gráfico que resume la distrib
 ### Ejemplo con funciones básicas de R
 
 ```{r}
-#| message: false
-#| warning: false
-
-# Librerías
 library(readr)
 library(ggplot2)
 

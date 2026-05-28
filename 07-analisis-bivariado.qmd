@@ -50,7 +50,7 @@ regresión múltiple, el análisis multivariado y los modelos predictivos
 utilizados actualmente en ciencia de datos, inteligencia artificial y
 analítica aplicada.
 
-## **Tipos de análisis bivariado**
+## Tipos de análisis bivariado
 
 El tipo de análisis bivariado que puede realizarse depende de la
 naturaleza de las variables estudiadas. En estadística, las variables
@@ -80,7 +80,7 @@ La siguiente tabla resume las principales combinaciones posibles en el
 análisis bivariado:
 
 | Tipo de variable 1 | Tipo de variable 2 | Objetivo principal | Técnicas utilizadas |
-|----|----|----|----|
+|------------------|------------------|------------------|------------------|
 | C uantitativa | C uantitativa | Evaluar asociación o predicción | Correlación, regresión, dispersión |
 | Categórica | Categórica | Analizar asociación entre categorías | Tablas de contingencia |
 | C uantitativa | Categórica | Comparar grupos | Boxplot, medias, comparación gráfica |
@@ -124,9 +124,6 @@ reproducibles en R.
 ### Carga de datos en R
 
 ```{r}
-#| message: false
-#| warning: false
-
 library(readxl)
 library(dplyr)
 
@@ -144,6 +141,7 @@ names(datos)
 
 str(datos)
 ```
+
 
 ## Diagrama de dispersión
 
@@ -170,10 +168,6 @@ corporal. El objetivo consiste en explorar visualmente si existe
 asociación entre ambas variables mediante un diagrama de dispersión.
 
 ```{r}
-#| message: false
-#| warning: false
-
-# Librerías
 library(readxl)
 library(ggplot2)
 
@@ -278,10 +272,6 @@ paramétricas, como la correlación de Pearson y la regresión lineal,
 asumen normalidad en los datos.
 
 ```{r}
-#| message: false
-#| warning: false
-
-# Librerías
 library(readxl)
 library(dplyr)
 library(purrr)
@@ -380,10 +370,6 @@ En el siguiente ejemplo se calcula la correlación entre altura y peso
 corporal utilizando la base de datos antropométrica.
 
 ```{r}
-#| message: false
-#| warning: false
-
-# Librerías
 library(readxl)
 library(ggplot2)
 
@@ -535,10 +521,6 @@ paramétrica de asociación.
 ![Fuente: autores](img/corspearman.jpg)
 
 ```{r}
-#| message: false
-#| warning: false
-
-# Librerías
 library(readxl)
 library(ggplot2)
 library(dplyr)
@@ -637,9 +619,6 @@ correlación lineal y de la regresión.
 Ejercicio en R
 
 ```{r}
-#| message: false
-#| warning: false
-
 library(readxl)
 
 # Cargar base de datos
@@ -728,9 +707,6 @@ En el siguiente ejemplo se construye una tabla de contingencia entre
 género y grupo académico utilizando la base antropométrica.
 
 ```{r}
-#| message: false
-#| warning: false
-
 library(readxl)
 library(dplyr)
 library(janitor)

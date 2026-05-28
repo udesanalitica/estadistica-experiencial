@@ -179,13 +179,11 @@ La mayor frecuencia de observaciones se concentra entre aproximadamente **35 y 6
 
 La moda se ubica en el intervalo de mayor frecuencia, representando el peso más común dentro de la muestra.
 
-# Ejercicio experiencial propuesto
+## Ejercicio experiencial propuesto
 
 ## Actividad: Explorando las características antropométricas
 
-### Objetivo
-
-Analizar diferentes variables antropométricas mediante histogramas y medidas de tendencia central para identificar patrones de distribución, variabilidad y posibles valores atípicos.
+**Objetivo:** Analizar diferentes variables antropométricas mediante histogramas y medidas de tendencia central para identificar patrones de distribución, variabilidad y posibles valores atípicos.
 
 | Variable             | Interpretación                |
 |----------------------|-------------------------------|
@@ -197,7 +195,7 @@ Analizar diferentes variables antropométricas mediante histogramas y medidas de
 
 ## Actividad práctica
 
-## Parte 1. Construcción del gráfico
+### Construcción del gráfico
 
 Construya un histograma para cada una de las siguientes variables:
 
@@ -211,7 +209,7 @@ Incluya mediante líneas verticales de diferentes colores.
 
 -   Media, Mediana, Moda
 
-## Parte 2. Interpretación
+### Interpretación
 
 Para cada gráfico responda:
 

@@ -4,6 +4,9 @@ project:
   preview:
     port: 4200
     browser: true
+    
+lang: es
+toc-title: "Tabla de contenido"
 
 book:
   title: "Estadística Experiencial Aplicada"
@@ -35,7 +38,7 @@ book:
     - 05-tendencia-central.qmd
     - 06-posicion.qmd
     - 07-analisis-bivariado.qmd
-    - references.qmd
+    - referencias.qmd
 
 bibliography: references.bib
 csl: apa.csl
@@ -57,10 +60,10 @@ format:
     number-sections: true
     mainfont: "Times New Roman"
     geometry:
-    - top=2.54cm
-    - bottom=2.54cm
-    - left=2.54cm
-    - right=2.54cm
+    - top=2.2cm
+    - bottom=2.5cm
+    - left=2.5cm
+    - right=2.5cm
 
   epub:
     cover-image: cover.png
@@ -72,5 +75,7 @@ website:
 
 execute:
   freeze: auto
+  warning: false
+  message: false
 
 editor: visual

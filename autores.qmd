@@ -1,25 +1,21 @@
-# Autores
+---
+title: "Autores"
+---
 
-::: callout-tip
 ![](img/autores/FJL.jpg){width="100"}
 
-## Francisco Javier León
+### Francisco Javier León
 
-Bacteriólogo y laboratorista clínico, con formación avanzada como magíster en estadística aplicada, Magíster en ciencias básicas biomédicas y especialista en educación con nuevas tecnologías. Está vinculado a la Universidad de Santander (UDES) desde 2007, donde ha sido docente en la Facultad de Ciencias Exactas, Naturales y Agropecuarias. Actualmente, se desempeña como Coordinador de Analítica Académica, adscrito a la Vicerrectoría de Enseñanza. Es investigador júnior reconocido por MinCiencias en la convocatoria 957 de 2024 y miembro del grupo de investigación CIBAS.
-:::
+Bacteriólogo y laboratorista clínico, magíster en estadística aplicada, magíster en ciencias básicas biomédicas y especialista en educación con nuevas tecnologías. Desde 2007, está relacionado con la Universidad de Santander (UDES), en la que ha trabajado como profesor en la Facultad de Ciencias Exactas, Naturales y Agropecuarias. Actualmente, trabaja como Coordinador de Analítica Académica en Planeación Institucional. Es un miembro de CIBAS y un investigador junior premiado por MinCiencias en la convocatoria 957 del año 2024.
 
-::: callout-tip
 ![](img/autores/MOPP.jpg){width="100"}
 
-## Miguel Oswaldo Pérez Pulido
+### Miguel Oswaldo Pérez Pulido
 
-Licenciado en matemáticas y magíster en estadística. Actualmente se desempeña como Director de Analítica Académica, adscrito a la Vicerrectoría de Enseñanza. Está vinculado a la Universidad de Santander (UDES) desde 2011, donde ha sido docente en programas de pregrado y posgrado de la Facultad de Ciencias Exactas, Naturales y Agropecuarias. Es investigador asociado reconocido por MinCiencias en la convocatoria 957 de 2024 y miembro del grupo de investigación CIBAS.
-:::
+Licenciado en matemáticas y magíster en estadística. Actualmente se desempeña como Director de Planeación Institucional. Está vinculado a la Universidad de Santander (UDES) desde 2011, donde ha sido docente en programas de pregrado y posgrado de la Facultad de Ciencias Exactas, Naturales y Agropecuarias. Es investigador asociado reconocido por MinCiencias en la convocatoria 957 de 2024 y miembro del grupo de investigación CIBAS.
 
-::: callout-tip
 ![](img/autores/LAPGjpg.jpg){width="100"}
 
-## Leonardo Andrés Pinto Guarguati
+### Leonardo Andrés Pinto Guarguati
 
-Economista de la Universidad Santo Tomás de Bucaramanga, especialista en Evaluación y Gerencia de Proyectos de la Universidad Industrial de Santander y estudiante de la Maestría en Evaluación y Gerencia de Proyectos de la misma. Con experiencia en docencia universitaria, análisis de mercados y coordinación de proyectos de Ciencia, Tecnología e innovación CTeI.
-:::
+Economista, especialista en Evaluación y Gerencia de Proyectos, y estudiante de la Maestría en Evaluación y Gerencia de Proyectos (Universidad Industrial de Santander). Con experiencia en docencia universitaria, análisis de mercados y coordinación de proyectos de Ciencia, Tecnología e innovación - CTeI.
