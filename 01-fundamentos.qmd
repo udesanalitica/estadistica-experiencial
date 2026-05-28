@@ -2,8 +2,6 @@
 title: "Introducción a la estadística descriptiva"
 ---
 
-## Introducción
-
 Actualmente los datos se han convertido en un activo fundamental para la toma de decisiones en las empresas, la sociedad, la cademémica entre otros y es por eso que la **estadística descriptiva constituye el primer paso para transformar información en conocimiento útil** [@seoane2007estadistica]. Su aplicación permite un mejor entendimiento del mundo que nos rodea, ya que prácticamente cada aspecto de nuestra existencia es una fuente potencial de datos [@obando2021graficos]. Este capítulo introduce los conceptos básicos necesarios para comprender, organizar y analizar datos, utilizando un enfoque experiencial basado en ejemplos reales y herramientas computacionales como R.
 
 ## ¿Qué es la estadística descriptiva?
@@ -24,13 +22,15 @@ Las variables cualitativas describen categorías o atributos y pueden ser nomina
 
 ![La figura es una adaptación gráfica realizada por los autores en Napkin a partir del esquema presentado por Derek Rowntree (1981) en Statistics Without Tears. La modificación respeta los criterios de uso justo para fines académicos.](img/variables.jpg)
 
-### Importancia de la identificación de variables estadísticas y escalas de medición
+## Importancia de la identificación de variables estadísticas y escalas de medición
 
 La clasificación de las variables constituye un aspecto esencial en el análisis estadístico, ya que de ella depende la selección de los métodos, procedimientos y representaciones gráficas más adecuados para el tratamiento de los datos. Como se muestra en la figura, las variables cualitativas describen atributos o categorías y suelen analizarse mediante frecuencias, porcentajes y medidas como la moda o la mediana en el caso de variables ordinales.
 
 Por su parte, las variables cuantitativas representan cantidades numéricas derivadas de procesos de conteo o medición, lo que permite aplicar medidas de tendencia central y dispersión, tales como la media, la varianza, la desviación estándar y el coeficiente de variación. En este sentido, identificar correctamente el tipo de variable facilita una interpretación adecuada de la información y garantiza la aplicación de técnicas estadísticas coherentes con la naturaleza de los datos [@armitage2002statistical].
 
 ![Fuente: autores](img/variablesmedidas.jpg)
+
+## **Escalas de medición**
 
 Las **escalas de medición** representan el nivel de información que poseen los datos y constituyen un elemento fundamental en estadística, ya que determinan las operaciones matemáticas y los análisis que pueden realizarse sobre las variables.
 
@@ -99,7 +99,7 @@ diccionario <- tibble(
 diccionario
 ```
 
-### Ver diccionario de variables en sitio web del DANE [Dicccionario_S07D_Acuicultura](https://microdatos.dane.gov.co/index.php/catalog/513/data-dictionary/F4?file_name=S07D(Acuicultura))
+Ver diccionario de variables en sitio web del DANE [Dicccionario_S07D_Acuicultura](https://microdatos.dane.gov.co/index.php/catalog/513/data-dictionary/F4?file_name=S07D(Acuicultura))
 
 Para exportar el diccionario
 
@@ -144,27 +144,21 @@ diccionario_acuicultura |>
   gt()
 ```
 
-## Actividad experiencial: Explorando una base de datos del DANE
+## Actividad experiencial: 
 
-### **Identificación y clasificación de variables estadísticas utilizando datos reales de acuicultura del DANE**
+## Explorando una base de datos del DANE
 
-Reconocer y clasificar variables estadísticas presentes en una base de datos del DANE, identificando su naturaleza, escala de medición y posibles análisis estadísticos asociados.
-
-## Contexto de la actividad
-
-En estadística aplicada, antes de realizar cualquier análisis es fundamental comprender las características de las variables contenidas en una base de datos. Para ello, se utilizará una base oficial del Departamento Administrativo Nacional de Estadística (DANE) correspondiente al módulo de acuicultura.
-
-Los estudiantes actuarán como analistas de datos, explorando información real utilizada en estudios productivos y socioeconómicos.
+**Contexto de la actividad:** En estadística aplicada, antes de realizar cualquier análisis es fundamental comprender las características de las variables contenidas en una base de datos. Para ello, se utilizará una base oficial del Departamento Administrativo Nacional de Estadística (DANE) correspondiente al módulo de acuicultura. Los estudiantes actuarán como analistas de datos, explorando información real utilizada en estudios productivos y socioeconómicos.
 
 Fuente oficial:
 
 [DANE – Diccionario S07D Acuicultura](https://microdatos.dane.gov.co/index.php/catalog/513/data-dictionary/F4?file_name=S07D(Acuicultura)&utm_source=chatgpt.com)
 
-# Desarrollo de la actividad
+**Desarrollo de la actividad**
 
-## Parte 1. Exploración de la base de datos
+**Parte 1. Exploración de la base de datos**
 
-### Instrucciones
+**Instrucciones**
 
 1.  Cargar la base de datos en R.
 
@@ -205,20 +199,12 @@ glimpse(acuicultura)
 head(acuicultura)
 ```
 
-## Parte 2. Completar la tabla de clasificación
+**Parte 2. Completar la tabla de clasificación**
 
-### Instrucciones para el estudiante
-
-Complete la siguiente tabla utilizando:
-
--   la exploración en R,
-
--   el diccionario del DANE,
-
--   los conceptos vistos en clase sobre variables y escalas de medición.
+**Instrucciones para el estudiante:** Complete la siguiente tabla utilizando la exploración en R, el diccionario del DANE, los conceptos vistos en clase sobre variables y escalas de medición.
 
 | Variable | Descripción | Tipo de variable | Escala de medición | Unidad de medida | Ejemplo de gráfico | Medidas estadísticas sugeridas |
-|----|----|----|----|----|----|----|
+|-----------|-----------|-----------|-----------|-----------|-----------|-----------|
 | `TIPO_REG` |  |  |  |  |  |  |
 | `PAIS` |  |  |  |  |  |  |
 | `P_DEPTO` |  |  |  |  |  |  |
@@ -233,9 +219,9 @@ Complete la siguiente tabla utilizando:
 | `P_S7P99` |  |  |  |  |  |  |
 | `P_S7P100` |  |  |  |  |  |  |
 
-## Parte 3. Interpretación estadística
+**Parte 3. Interpretación estadística**
 
-Responda las siguientes preguntas:
+**Responda las siguientes preguntas:**
 
 1.  ¿Qué variables son cualitativas y cuáles cuantitativas?
 

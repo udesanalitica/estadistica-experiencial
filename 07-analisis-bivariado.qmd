@@ -80,7 +80,7 @@ La siguiente tabla resume las principales combinaciones posibles en el
 análisis bivariado:
 
 | Tipo de variable 1 | Tipo de variable 2 | Objetivo principal | Técnicas utilizadas |
-|------------------|------------------|------------------|------------------|
+|----|----|----|----|
 | C uantitativa | C uantitativa | Evaluar asociación o predicción | Correlación, regresión, dispersión |
 | Categórica | Categórica | Analizar asociación entre categorías | Tablas de contingencia |
 | C uantitativa | Categórica | Comparar grupos | Boxplot, medias, comparación gráfica |
@@ -880,8 +880,8 @@ Parte 1 — Exploración visual
 Preguntas
 
 ¿Qué tipo de relación observa en el diagrama? positiva, negativa, nula,
-urvilínea. \
-¿La relación parece fuerte o débil? \
+urvilínea.\
+¿La relación parece fuerte o débil?\
 ¿Existen valores atípicos?\
 ¿Se observan diferencias entre hombres y mujeres?
 
@@ -891,8 +891,8 @@ Calcule: correlación de Pearson y correlación de Spearman.
 
 Preguntas
 
-¿Los coeficientes son similares? \
-¿Cuál considera más apropiado según la distribución de los datos? \
+¿Los coeficientes son similares?\
+¿Cuál considera más apropiado según la distribución de los datos?\
 ¿Puede afirmarse causalidad?
 
 Parte 3 — Interpretación aplicada
