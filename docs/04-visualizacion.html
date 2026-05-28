@@ -252,7 +252,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#ejemplo-con-funciones-básicas-de-r-1" id="toc-ejemplo-con-funciones-básicas-de-r-1" class="nav-link" data-scroll-target="#ejemplo-con-funciones-básicas-de-r-1"><span class="header-section-number">6.5.1</span> Ejemplo con funciones básicas de R</a></li>
   <li><a href="#ejemplo-peso-y-género-con-ggplot2" id="toc-ejemplo-peso-y-género-con-ggplot2" class="nav-link" data-scroll-target="#ejemplo-peso-y-género-con-ggplot2"><span class="header-section-number">6.5.2</span> Ejemplo peso y género con <code>ggplot2</code></a></li>
   </ul></li>
-  <li><a href="#interpretación-básica-de-los-gráficos" id="toc-interpretación-básica-de-los-gráficos" class="nav-link" data-scroll-target="#interpretación-básica-de-los-gráficos"><span class="header-section-number">6.6</span> Interpretación básica de los gráficos</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/udesanalitica/estadistica-experiencial/edit/main/04-visualizacion.qmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/udesanalitica/estadistica-experiencial/issues/new" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li><li><a href="https://github.com/udesanalitica/estadistica-experiencial/blob/main/04-visualizacion.qmd" class="toc-action"><i class="bi empty"></i>Ver el código</a></li></ul></div></nav>
     </div>
@@ -278,7 +277,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>La visualización de datos es una etapa fundamental en la estadística descriptiva, ya que permite representar la información de forma clara, resumida e interpretable. Los gráficos facilitan la identificación de patrones, tendencias, valores atípicos y diferencias entre grupos, apoyando así la comprensión de los datos y la toma de decisiones.</p>
+<p>La visualización de datos es una etapa fundamental en la estadística descriptiva, ya que permite representar la información de forma clara, resumida e interpretable. Los gráficos facilitan la identificación de patrones, tendencias, valores atípicos y diferencias entre grupos, apoyando así la comprensión de los datos y la toma de decisiones (<a href="#fig-resumengraficos" class="quarto-xref">Figura&nbsp;<span>6.1</span></a>).</p>
+<div id="fig-resumengraficos" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-resumengraficos-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/clipboard-1799741670.png" id="fig-resumengraficos" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-resumengraficos-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;6.1
+</figcaption>
+</figure>
+</div>
 <p>En este capítulo se presentan algunos de los gráficos más utilizados en el análisis descriptivo: gráficos de barras, histogramas y diagramas de caja (<em>boxplot</em>), así como su construcción en R.</p>
 <section id="gráficos-en-r" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="gráficos-en-r"><span class="header-section-number">6.1</span> Gráficos en R</h2>
@@ -520,11 +529,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="boxplot" class="level2" data-number="6.5">
 <h2 data-number="6.5" class="anchored" data-anchor-id="boxplot"><span class="header-section-number">6.5</span> Boxplot</h2>
-<p>El diagrama de caja y bigotes, o <em>boxplot</em>, es un gráfico que resume la distribución de una variable cuantitativa a partir de los cuartiles, la mediana y los valores extremos (Figura 5). Es especialmente útil para detectar asimetrías y observaciones atípicas. El boxplot se basa en el resumen de cinco números:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/boxplot.jpg" class="img-fluid figure-img"></p>
-<figcaption>Figura 5. Fuente: autores</figcaption>
+<p>El diagrama de caja y bigotes, o <em>boxplot</em>, es un gráfico que resume la distribución de una variable cuantitativa a partir de los cuartiles, la mediana y los valores extremos (<a href="#fig-boxplot" class="quarto-xref">Figura&nbsp;<span>6.2</span></a>). Es especialmente útil para detectar asimetrías y observaciones atípicas. El boxplot se basa en el resumen de cinco números:</p>
+<div id="fig-boxplot" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-boxplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/boxplot.jpg" id="fig-boxplot" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-boxplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;6.2
+</figcaption>
 </figure>
 </div>
 <section id="ejemplo-con-funciones-básicas-de-r-1" class="level3" data-number="6.5.1">
@@ -598,19 +611,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p><strong>Interpretación:</strong> el boxplot evidencia diferencias en la distribución del peso corporal según el género. En los hombres (M) se observa una mediana de peso superior y una mayor dispersión de los datos en comparación con las mujeres (F), lo que indica una variabilidad más amplia en los valores registrados.</p>
 <p>Asimismo, en ambos grupos se identifican valores atípicos representados por puntos fuera de los bigotes del diagrama, correspondientes a individuos con pesos considerablemente superiores al comportamiento general de la muestra. La amplitud de las cajas sugiere que el 50% central de los pesos se encuentra más concentrado en las mujeres, mientras que en los hombres existe una mayor heterogeneidad.</p>
-<p>Este tipo de representación gráfica permite comparar simultáneamente medidas de tendencia central, dispersión y posibles valores extremos entre categorías (Figura 6).</p>
-</section>
-</section>
-<section id="interpretación-básica-de-los-gráficos" class="level2" data-number="6.6">
-<h2 data-number="6.6" class="anchored" data-anchor-id="interpretación-básica-de-los-gráficos"><span class="header-section-number">6.6</span> Interpretación básica de los gráficos</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/resumengraficos.jpg" class="img-fluid figure-img"></p>
-<figcaption>Figura 6. Fuente: autores</figcaption>
-</figure>
-</div>
+<p>Este tipo de representación gráfica permite comparar simultáneamente medidas de tendencia central, dispersión y posibles valores extremos entre categorías.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
