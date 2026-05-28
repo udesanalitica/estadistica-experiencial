@@ -230,7 +230,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./03-tablas-frecuencia.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Organización de datos y tablas estadísticas</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Organización e interpretación de datos estadísticos</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -453,11 +453,11 @@ window.Quarto = {
 <section id="diagrama-de-dispersión" class="level2" data-number="9.3">
 <h2 data-number="9.3" class="anchored" data-anchor-id="diagrama-de-dispersión"><span class="header-section-number">9.3</span> Diagrama de dispersión</h2>
 <p>El diagrama de dispersión, también conocido como nube de puntos, es una representación gráfica utilizada para explorar la relación entre dos variables cuantitativas. Cada punto del gráfico representa una observación y su posición en el plano cartesiano depende de los valores registrados para las variables <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span>.</p>
-<p>Esta herramienta constituye generalmente el primer paso del análisis bivariado, ya que permite identificar visualmente patrones de asociación, tendencias, agrupamientos y posibles valores atípicos antes de aplicar medidas numéricas de correlación o modelos de regresión. A partir de un diagrama de dispersión pueden identificarse diferentes comportamientos entre las variables:</p>
+<p>Esta herramienta constituye generalmente el primer paso del análisis bivariado, ya que permite identificar visualmente patrones de asociación, tendencias, agrupamientos y posibles valores atípicos antes de aplicar medidas numéricas de correlación o modelos de regresión (Figura 8). A partir de un diagrama de dispersión pueden identificarse diferentes comportamientos entre las variables:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/dispersion.jpg" class="img-fluid figure-img"></p>
-<figcaption>Fuente: Autores</figcaption>
+<figcaption>Figura 8. Fuente: Autores</figcaption>
 </figure>
 </div>
 <section id="ejemplo-en-r" class="level4" data-number="9.3.0.1">
@@ -624,8 +624,7 @@ W...10        Long_Pie_cm 0.9914 0.134404 Sí presenta normalidad</code></pre>
 <p>Asimismo, el comportamiento normal de estas variables es coherente con muchas mediciones biológicas y antropométricas, donde las características físicas de una población suelen distribuirse alrededor de un valor promedio central.</p>
 <section id="correlación-de-pearson" class="level3" data-number="9.5.1">
 <h3 data-number="9.5.1" class="anchored" data-anchor-id="correlación-de-pearson"><span class="header-section-number">9.5.1</span> Correlación de Pearson</h3>
-<p>La correlación es una medida estadística utilizada para cuantificar la fuerza y la dirección de la relación entre dos variables cuantitativas. A diferencia del diagrama de dispersión, que permite explorar visualmente el comportamiento conjunto de las variables, la correlación resume dicha relación mediante un valor numérico.</p>
-<p>El coeficiente de correlación de Pearson se calcula como:</p>
+<p>La correlación es una medida estadística utilizada para cuantificar la fuerza y la dirección de la relación entre dos variables cuantitativas. A diferencia del diagrama de dispersión, que permite explorar visualmente el comportamiento conjunto de las variables, la correlación resume dicha relación mediante un valor numérico (Figura 9). El coeficiente de correlación de Pearson se calcula como:</p>
 <p><span class="math display">\[
 r = \frac{\sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y})}
 {\sqrt{\sum_{i=1}^{n}(x_i-\bar{x})^2 \sum_{i=1}^{n}(y_i-\bar{y})^2}}
@@ -634,7 +633,7 @@ r = \frac{\sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y})}
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/correlacion.jpg" class="img-fluid figure-img"></p>
-<figcaption>Fuente: autores</figcaption>
+<figcaption>Figura 9. Fuente: autores</figcaption>
 </figure>
 </div>
 <section id="ejemplo-en-r-1" class="level4" data-number="9.5.1.1">
@@ -746,12 +745,12 @@ r = \frac{\sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y})}
 <p>En términos prácticos, estos resultados sugieren que las variables antropométricas analizadas no cumplen completamente el supuesto de normalidad requerido por algunas técnicas paramétricas. Por esta razón, en determinados contextos podría ser recomendable complementar el análisis utilizando métodos no paramétricos, como la correlación de Spearman, especialmente si existen valores extremos o distribuciones asimétricas.</p>
 <section id="correlación-de-spearman" class="level3" data-number="9.6.1">
 <h3 data-number="9.6.1" class="anchored" data-anchor-id="correlación-de-spearman"><span class="header-section-number">9.6.1</span> Correlación de Spearman</h3>
-<p>La correlación de Spearman es una medida estadística utilizada para evaluar la asociación entre dos variables ordinales o cuantitativas cuando no se cumplen los supuestos de normalidad o linealidad requeridos por la correlación de Pearson.</p>
+<p>La correlación de Spearman es una medida estadística utilizada para evaluar la asociación entre dos variables ordinales o cuantitativas cuando no se cumplen los supuestos de normalidad o linealidad requeridos por la correlación de Pearson (Figura 10).</p>
 <p>A diferencia de Pearson, Spearman no trabaja directamente con los valores originales de las variables, sino con sus rangos o posiciones dentro de la distribución. Por esta razón, se considera una medida no paramétrica de asociación.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/corspearman.jpg" class="img-fluid figure-img"></p>
-<figcaption>Fuente: autores</figcaption>
+<figcaption>Figura 10. Fuente: autores</figcaption>
 </figure>
 </div>
 <div class="cell">
@@ -852,12 +851,12 @@ r = \frac{\sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y})}
 </section>
 <section id="covarianza" class="level3" data-number="9.6.2">
 <h3 data-number="9.6.2" class="anchored" data-anchor-id="covarianza"><span class="header-section-number">9.6.2</span> Covarianza</h3>
-<p>La covarianza es una medida estadística utilizada para evaluar cómo varían conjuntamente dos variables cuantitativas respecto a sus medias. Esta medida permite identificar si ambas variables tienden a aumentar simultáneamente, disminuir conjuntamente o comportarse de manera independiente.</p>
+<p>La covarianza es una medida estadística utilizada para evaluar cómo varían conjuntamente dos variables cuantitativas respecto a sus medias. Esta medida permite identificar si ambas variables tienden a aumentar simultáneamente, disminuir conjuntamente o comportarse de manera independiente (Figura 11).</p>
 <p>La covarianza constituye uno de los fundamentos matemáticos de la correlación lineal y de la regresión.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/covarianza.png" class="img-fluid figure-img"></p>
-<figcaption>Fuente: autores</figcaption>
+<figcaption>Figura 11. Fuente: autores</figcaption>
 </figure>
 </div>
 <p>Ejercicio en R</p>
@@ -1161,21 +1160,21 @@ r = \frac{\sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y})}
 </section>
 <section id="actividades-del-estudiante" class="level3" data-number="9.10.2">
 <h3 data-number="9.10.2" class="anchored" data-anchor-id="actividades-del-estudiante"><span class="header-section-number">9.10.2</span> Actividades del estudiante</h3>
-<p>Parte 1 — Exploración visual</p>
-<p>Preguntas</p>
+<p><strong>Parte 1 — Exploración visual</strong></p>
+<p><strong>Preguntas</strong></p>
 <p>¿Qué tipo de relación observa en el diagrama? positiva, negativa, nula, urvilínea.<br>
 ¿La relación parece fuerte o débil?<br>
 ¿Existen valores atípicos?<br>
 ¿Se observan diferencias entre hombres y mujeres?</p>
-<p>Parte 2 — Correlación</p>
+<p><strong>Parte 2 — Correlación</strong></p>
 <p>Calcule: correlación de Pearson y correlación de Spearman.</p>
-<p>Preguntas</p>
+<p><strong>Preguntas</strong></p>
 <p>¿Los coeficientes son similares?<br>
 ¿Cuál considera más apropiado según la distribución de los datos?<br>
 ¿Puede afirmarse causalidad?</p>
-<p>Parte 3 — Interpretación aplicada</p>
+<p><strong>Parte 3 — Interpretación aplicada</strong></p>
 <p>Un investigador afirma que “Los estudiantes más altos necesariamente pesan más”.</p>
-<p>Preguntas críticas</p>
+<p><strong>Preguntas críticas</strong></p>
 <p>¿La correlación encontrada permite afirmar eso?</p>
 <p>¿Qué limitaciones tiene el análisis?</p>
 <p>¿Qué otras variables podrían influir?</p>
