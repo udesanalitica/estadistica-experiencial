@@ -314,16 +314,16 @@ div.csl-indent {
 </header>
 
 
-<p>Actualmente los datos se han convertido en un activo fundamental para la toma de decisiones en las empresas, la sociedad, la cademémica entre otros y es por eso que la <strong>estadística descriptiva constituye el primer paso para transformar información en conocimiento útil</strong> <span class="citation" data-cites="seoane2007estadistica">(<a href="#ref-seoane2007estadistica" role="doc-biblioref">Seoane et&nbsp;al., 2007</a>)</span>. Su aplicación permite un mejor entendimiento del mundo que nos rodea, ya que prácticamente cada aspecto de nuestra existencia es una fuente potencial de datos <span class="citation" data-cites="obando2021graficos">(<a href="#ref-obando2021graficos" role="doc-biblioref">Obando, 2021</a>)</span>. Este capítulo introduce los conceptos básicos necesarios para comprender, organizar y analizar datos, utilizando un enfoque experiencial basado en ejemplos reales y herramientas computacionales como R.</p>
+<p>Actualmente los datos se han convertido en un activo fundamental para la toma de decisiones en las empresas, la sociedad, la cademémica entre otros y es por eso que la <strong>estadística descriptiva constituye el primer paso para transformar información en conocimiento útil</strong> <span class="citation" data-cites="seoane2007estadistica">(<a href="referencias.html#ref-seoane2007estadistica" role="doc-biblioref">Seoane et&nbsp;al., 2007</a>)</span>. Su aplicación permite un mejor entendimiento del mundo que nos rodea, ya que prácticamente cada aspecto de nuestra existencia es una fuente potencial de datos <span class="citation" data-cites="obando2021graficos">(<a href="referencias.html#ref-obando2021graficos" role="doc-biblioref">Obando, 2021</a>)</span>. Este capítulo introduce los conceptos básicos necesarios para comprender, organizar y analizar datos, utilizando un enfoque experiencial basado en ejemplos reales y herramientas computacionales como R.</p>
 <section id="qué-es-la-estadística-descriptiva" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="qué-es-la-estadística-descriptiva"><span class="header-section-number">3.1</span> ¿Qué es la estadística descriptiva?</h2>
 <p>La <strong>estadística descriptiva</strong> es la rama de la estadística encargada de recolectar, organizar, resumir y presentar datos de manera clara y comprensible .</p>
-<p>A diferencia de la estadística inferencial, que busca demostrar asociaciones o hacer comparaciones para extrapolar resultados de una muestra a una población, la descriptiva se limita a <strong>sintetizar la información contenida en los datos recogidos</strong> sin realizar inferencias más allá de la información disponible <span class="citation" data-cites="posada2016elementos bonita2008epidemiologia">(<a href="#ref-bonita2008epidemiologia" role="doc-biblioref">Bonita et&nbsp;al., 2008</a>; <a href="#ref-posada2016elementos" role="doc-biblioref">Posada, 2016</a>)</span>.</p>
-<p>Su propósito fundamental es facilitar la comprensión de grandes volúmenes de información mediante el uso de <strong>tablas, representaciones gráficas y medidas resumen</strong> (como la media o la desviación estándar), permitiendo “hacerse una idea” de la naturaleza de un conjunto de datos sin tener que analizar cada uno de ellos individualmente <span class="citation" data-cites="posada2016elementos rey2007introduccion spiegel2009estadistica">(<a href="#ref-posada2016elementos" role="doc-biblioref">Posada, 2016</a>; <a href="#ref-rey2007introduccion" role="doc-biblioref">Rey, 2007</a>; <a href="#ref-spiegel2009estadistica" role="doc-biblioref">Spiegel &amp; Stephens, 2009</a>)</span>.</p>
+<p>A diferencia de la estadística inferencial, que busca demostrar asociaciones o hacer comparaciones para extrapolar resultados de una muestra a una población, la descriptiva se limita a <strong>sintetizar la información contenida en los datos recogidos</strong> sin realizar inferencias más allá de la información disponible <span class="citation" data-cites="posada2016elementos bonita2008epidemiologia">(<a href="referencias.html#ref-bonita2008epidemiologia" role="doc-biblioref">Bonita et&nbsp;al., 2008</a>; <a href="referencias.html#ref-posada2016elementos" role="doc-biblioref">Posada, 2016</a>)</span>.</p>
+<p>Su propósito fundamental es facilitar la comprensión de grandes volúmenes de información mediante el uso de <strong>tablas, representaciones gráficas y medidas resumen</strong> (como la media o la desviación estándar), permitiendo “hacerse una idea” de la naturaleza de un conjunto de datos sin tener que analizar cada uno de ellos individualmente <span class="citation" data-cites="posada2016elementos rey2007introduccion spiegel2009estadistica">(<a href="referencias.html#ref-posada2016elementos" role="doc-biblioref">Posada, 2016</a>; <a href="referencias.html#ref-rey2007introduccion" role="doc-biblioref">Rey, 2007</a>; <a href="referencias.html#ref-spiegel2009estadistica" role="doc-biblioref">Spiegel &amp; Stephens, 2009</a>)</span>.</p>
 </section>
 <section id="fases-del-análisis-de-datos" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="fases-del-análisis-de-datos"><span class="header-section-number">3.2</span> Fases del análisis de datos</h2>
-<p>Todo el proces del análisis estadístico se muestra en la <a href="#fig-procesodatos" class="quarto-xref">Figura&nbsp;<span class="quarto-unresolved-ref">fig-procesodatos</span></a>. Se parte de una pregunta de investigación que orienta el proceso y define la información necesaria para responderla. A continuación, se realiza la recopilación de los datos mediante observación, medición, encuestas o fuentes secundarias. Una vez obtenida la información, es necesario efectuar la depuración de los datos para identificar errores, inconsistencias y valores faltantes que puedan afectar los resultados. Posteriormente, se desarrolla el análisis estadístico utilizando técnicas descriptivas o inferenciales que permitan extraer información relevante. Los resultados obtenidos deben ser interpretados en función del contexto del estudio y de la pregunta de investigación planteada inicialmente. Por último, la visualización de los datos mediante tablas, gráficos e infografías facilita la comunicación de los hallazgos y contribuye a la toma de decisiones basada en evidencia.</p>
+<p>Todo el proces del análisis estadístico se muestra en la <a href="#fig-procesodatos" class="quarto-xref">Figura&nbsp;<span>3.1</span></a>. Se parte de una <strong>pregunta de investigación</strong> que orienta el proceso y define la información necesaria para responderla. A continuación, se realiza la <strong>recopilación de los datos</strong> mediante observación, medición, encuestas o fuentes secundarias. Una vez obtenida la información, es necesario efectuar la <strong>depuración de los datos</strong> para identificar errores, inconsistencias y valores faltantes que puedan afectar los resultados. Posteriormente, se desarrolla el <strong>análisis estadístico</strong> utilizando técnicas descriptivas o inferenciales que permitan extraer información relevante. Los resultados obtenidos deben ser <strong>interpretados</strong> en función del contexto del estudio y de la pregunta de investigación planteada inicialmente. Por último, la <strong>visualización de los datos</strong> mediante tablas, gráficos e infografías facilita la comunicación de los hallazgos y contribuye a la toma de decisiones basada en evidencia.</p>
 <div id="fig-procesodatos" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-procesodatos-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -337,7 +337,7 @@ Figura&nbsp;3.1
 </section>
 <section id="tipos-de-variables" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="tipos-de-variables"><span class="header-section-number">3.3</span> Tipos de variables</h2>
-<p>Las <strong>variables</strong> son los <strong>atributos, cualidades</strong> o <strong>características</strong> que pueden ser observadas, clasificadas o medidas en las personas, objetos o fenómenos de una población o muestra. En estadística, su identificación es esencial porque posibilita la descripción, el análisis y la interpretación de la información recopilada. Las variables se dividen en cualitativas y cuantitativas, tal como se muestra en la <a href="#fig-variables" class="quarto-xref">Figura&nbsp;<span class="quarto-unresolved-ref">fig-variables</span></a>.</p>
+<p>Las <strong>variables</strong> son los <strong>atributos, cualidades</strong> o <strong>características</strong> que pueden ser observadas, clasificadas o medidas en las personas, objetos o fenómenos de una población o muestra. En estadística, su identificación es esencial porque posibilita la descripción, el análisis y la interpretación de la información recopilada. Las variables se dividen en cualitativas y cuantitativas, tal como se muestra en la <a href="#fig-variables" class="quarto-xref">Figura&nbsp;<span>3.2</span></a>.</p>
 <p>Las variables cualitativas, que son nominales u ordinales, describen atributos o categorías; por otro lado, las variables cuantitativas, que se dividen en discretas y continuas dependiendo si surgen de procesos de conteo o de medición, ilustran cantidades numéricas. Esta clasificación es esencial porque determina el tipo de análisis estadístico, representación gráfica y medidas descriptivas que pueden aplicarse a los datos.</p>
 <div id="fig-variables" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -352,9 +352,9 @@ Figura&nbsp;3.2
 </section>
 <section id="importancia-de-la-identificación-de-variables-estadísticas-y-escalas-de-medición" class="level2" data-number="3.4">
 <h2 data-number="3.4" class="anchored" data-anchor-id="importancia-de-la-identificación-de-variables-estadísticas-y-escalas-de-medición"><span class="header-section-number">3.4</span> Importancia de la identificación de variables estadísticas y escalas de medición</h2>
-<p>Una parte fundamental del análisis estadístico es la clasificación de las variables, porque a partir de esta se determina qué métodos, procedimientos y representaciones gráficas son los más idóneos para tratar los datos. Las variables cualitativas, como se ilustra en la <a href="#fig-variablesmedidas" class="quarto-xref">Figura&nbsp;<span class="quarto-unresolved-ref">fig-variablesmedidas</span></a>, delinean categorías o características y habitualmente se examinan a través de porcentajes, frecuencias y medidas como la moda o la mediana en el caso de las variables ordinales.</p>
+<p>Una parte fundamental del análisis estadístico es la clasificación de las variables, porque a partir de esta se determina qué métodos, procedimientos y representaciones gráficas son los más idóneos para tratar los datos. Las variables cualitativas, como se ilustra en la <a href="#fig-variablesmedidas" class="quarto-xref">Figura&nbsp;<span>3.3</span></a>, delinean categorías o características y habitualmente se examinan a través de porcentajes, frecuencias y medidas como la moda o la mediana en el caso de las variables ordinales.</p>
 <p>Las variables cuantitativas, en cambio, son valores numéricos que provienen de procesos de conteo o medición. Estas variables posibilitan el uso de medidas de tendencia central y dispersión, como la varianza, la media, la desviación estándar y el coeficiente de variación. En esta línea, si se identifica apropiadamente el tipo de variable, se logra una interpretación correcta de la información y se asegura que las técnicas estadísticas aplicadas sean congruentes con la naturaleza de los datos.</p>
-<p><span class="citation" data-cites="armitage2002statistical">(<a href="#ref-armitage2002statistical" role="doc-biblioref">Armitage et&nbsp;al., 2002</a>)</span>.</p>
+<p><span class="citation" data-cites="armitage2002statistical">(<a href="referencias.html#ref-armitage2002statistical" role="doc-biblioref">Armitage et&nbsp;al., 2002</a>)</span>.</p>
 <div id="fig-variablesmedidas" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-variablesmedidas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -369,7 +369,7 @@ Figura&nbsp;3.3
 <section id="escalas-de-medición" class="level2" data-number="3.5">
 <h2 data-number="3.5" class="anchored" data-anchor-id="escalas-de-medición"><span class="header-section-number">3.5</span> Escalas de medición</h2>
 <p>Las <strong>escalas de medición</strong> representan el nivel de información que poseen los datos y constituyen un elemento fundamental en estadística, ya que determinan las operaciones matemáticas y los análisis que pueden realizarse sobre las variables.</p>
-<p>Como se observa en la <a href="#fig-escalas" class="quarto-xref">Figura&nbsp;<span class="quarto-unresolved-ref">fig-escalas</span></a>, las escalas nominal y ordinal se emplean principalmente en variables cualitativas, mientras que las escalas de intervalo y razón se asocian con variables cuantitativas. A medida que aumenta el nivel de medición, también incrementa la precisión estadística y la complejidad de los métodos analíticos que pueden aplicarse. Por ello, la correcta identificación de la escala permite seleccionar adecuadamente medidas descriptivas, pruebas estadísticas y representaciones gráficas acordes con la naturaleza de los datos.</p>
+<p>Como se observa en la <a href="#fig-escalas" class="quarto-xref">Figura&nbsp;<span>3.4</span></a>, las escalas nominal y ordinal se emplean principalmente en variables cualitativas, mientras que las escalas de intervalo y razón se asocian con variables cuantitativas. A medida que aumenta el nivel de medición, también incrementa la precisión estadística y la complejidad de los métodos analíticos que pueden aplicarse. Por ello, la correcta identificación de la escala permite seleccionar adecuadamente medidas descriptivas, pruebas estadísticas y representaciones gráficas acordes con la naturaleza de los datos.</p>
 <div id="fig-escalas" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-escalas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -596,23 +596,23 @@ Material complementario
 <span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a>diccionario_acuicultura <span class="sc">|&gt;</span></span>
 <span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="xjsyztrtnb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#xjsyztrtnb table {
+<div id="qdgvsvgvjs" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#qdgvsvgvjs table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#xjsyztrtnb thead, #xjsyztrtnb tbody, #xjsyztrtnb tfoot, #xjsyztrtnb tr, #xjsyztrtnb td, #xjsyztrtnb th {
+#qdgvsvgvjs thead, #qdgvsvgvjs tbody, #qdgvsvgvjs tfoot, #qdgvsvgvjs tr, #qdgvsvgvjs td, #qdgvsvgvjs th {
   border-style: none;
 }
 
-#xjsyztrtnb p {
+#qdgvsvgvjs p {
   margin: 0;
   padding: 0;
 }
 
-#xjsyztrtnb .gt_table {
+#qdgvsvgvjs .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -638,12 +638,12 @@ Material complementario
   border-left-color: #D3D3D3;
 }
 
-#xjsyztrtnb .gt_caption {
+#qdgvsvgvjs .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#xjsyztrtnb .gt_title {
+#qdgvsvgvjs .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -655,7 +655,7 @@ Material complementario
   border-bottom-width: 0;
 }
 
-#xjsyztrtnb .gt_subtitle {
+#qdgvsvgvjs .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -667,7 +667,7 @@ Material complementario
   border-top-width: 0;
 }
 
-#xjsyztrtnb .gt_heading {
+#qdgvsvgvjs .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -679,13 +679,13 @@ Material complementario
   border-right-color: #D3D3D3;
 }
 
-#xjsyztrtnb .gt_bottom_border {
+#qdgvsvgvjs .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#xjsyztrtnb .gt_col_headings {
+#qdgvsvgvjs .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -700,7 +700,7 @@ Material complementario
   border-right-color: #D3D3D3;
 }
 
-#xjsyztrtnb .gt_col_heading {
+#qdgvsvgvjs .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -720,7 +720,7 @@ Material complementario
   overflow-x: hidden;
 }
 
-#xjsyztrtnb .gt_column_spanner_outer {
+#qdgvsvgvjs .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -732,15 +732,15 @@ Material complementario
   padding-right: 4px;
 }
 
-#xjsyztrtnb .gt_column_spanner_outer:first-child {
+#qdgvsvgvjs .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#xjsyztrtnb .gt_column_spanner_outer:last-child {
+#qdgvsvgvjs .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#xjsyztrtnb .gt_column_spanner {
+#qdgvsvgvjs .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -752,11 +752,11 @@ Material complementario
   width: 100%;
 }
 
-#xjsyztrtnb .gt_spanner_row {
+#qdgvsvgvjs .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#xjsyztrtnb .gt_group_heading {
+#qdgvsvgvjs .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -782,7 +782,7 @@ Material complementario
   text-align: left;
 }
 
-#xjsyztrtnb .gt_empty_group_heading {
+#qdgvsvgvjs .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -797,15 +797,15 @@ Material complementario
   vertical-align: middle;
 }
 
-#xjsyztrtnb .gt_from_md > :first-child {
+#qdgvsvgvjs .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#xjsyztrtnb .gt_from_md > :last-child {
+#qdgvsvgvjs .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#xjsyztrtnb .gt_row {
+#qdgvsvgvjs .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -824,7 +824,7 @@ Material complementario
   overflow-x: hidden;
 }
 
-#xjsyztrtnb .gt_stub {
+#qdgvsvgvjs .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -837,7 +837,7 @@ Material complementario
   padding-right: 5px;
 }
 
-#xjsyztrtnb .gt_stub_row_group {
+#qdgvsvgvjs .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -851,15 +851,15 @@ Material complementario
   vertical-align: top;
 }
 
-#xjsyztrtnb .gt_row_group_first td {
+#qdgvsvgvjs .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#xjsyztrtnb .gt_row_group_first th {
+#qdgvsvgvjs .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#xjsyztrtnb .gt_summary_row {
+#qdgvsvgvjs .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -869,16 +869,16 @@ Material complementario
   padding-right: 5px;
 }
 
-#xjsyztrtnb .gt_first_summary_row {
+#qdgvsvgvjs .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#xjsyztrtnb .gt_first_summary_row.thick {
+#qdgvsvgvjs .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#xjsyztrtnb .gt_last_summary_row {
+#qdgvsvgvjs .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -888,7 +888,7 @@ Material complementario
   border-bottom-color: #D3D3D3;
 }
 
-#xjsyztrtnb .gt_grand_summary_row {
+#qdgvsvgvjs .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -898,7 +898,7 @@ Material complementario
   padding-right: 5px;
 }
 
-#xjsyztrtnb .gt_first_grand_summary_row {
+#qdgvsvgvjs .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -908,7 +908,7 @@ Material complementario
   border-top-color: #D3D3D3;
 }
 
-#xjsyztrtnb .gt_last_grand_summary_row_top {
+#qdgvsvgvjs .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -918,11 +918,11 @@ Material complementario
   border-bottom-color: #D3D3D3;
 }
 
-#xjsyztrtnb .gt_striped {
+#qdgvsvgvjs .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#xjsyztrtnb .gt_table_body {
+#qdgvsvgvjs .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -931,7 +931,7 @@ Material complementario
   border-bottom-color: #D3D3D3;
 }
 
-#xjsyztrtnb .gt_footnotes {
+#qdgvsvgvjs .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -945,7 +945,7 @@ Material complementario
   border-right-color: #D3D3D3;
 }
 
-#xjsyztrtnb .gt_footnote {
+#qdgvsvgvjs .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -954,7 +954,7 @@ Material complementario
   padding-right: 5px;
 }
 
-#xjsyztrtnb .gt_sourcenotes {
+#qdgvsvgvjs .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -968,7 +968,7 @@ Material complementario
   border-right-color: #D3D3D3;
 }
 
-#xjsyztrtnb .gt_sourcenote {
+#qdgvsvgvjs .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -976,72 +976,72 @@ Material complementario
   padding-right: 5px;
 }
 
-#xjsyztrtnb .gt_left {
+#qdgvsvgvjs .gt_left {
   text-align: left;
 }
 
-#xjsyztrtnb .gt_center {
+#qdgvsvgvjs .gt_center {
   text-align: center;
 }
 
-#xjsyztrtnb .gt_right {
+#qdgvsvgvjs .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#xjsyztrtnb .gt_font_normal {
+#qdgvsvgvjs .gt_font_normal {
   font-weight: normal;
 }
 
-#xjsyztrtnb .gt_font_bold {
+#qdgvsvgvjs .gt_font_bold {
   font-weight: bold;
 }
 
-#xjsyztrtnb .gt_font_italic {
+#qdgvsvgvjs .gt_font_italic {
   font-style: italic;
 }
 
-#xjsyztrtnb .gt_super {
+#qdgvsvgvjs .gt_super {
   font-size: 65%;
 }
 
-#xjsyztrtnb .gt_footnote_marks {
+#qdgvsvgvjs .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#xjsyztrtnb .gt_asterisk {
+#qdgvsvgvjs .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#xjsyztrtnb .gt_indent_1 {
+#qdgvsvgvjs .gt_indent_1 {
   text-indent: 5px;
 }
 
-#xjsyztrtnb .gt_indent_2 {
+#qdgvsvgvjs .gt_indent_2 {
   text-indent: 10px;
 }
 
-#xjsyztrtnb .gt_indent_3 {
+#qdgvsvgvjs .gt_indent_3 {
   text-indent: 15px;
 }
 
-#xjsyztrtnb .gt_indent_4 {
+#qdgvsvgvjs .gt_indent_4 {
   text-indent: 20px;
 }
 
-#xjsyztrtnb .gt_indent_5 {
+#qdgvsvgvjs .gt_indent_5 {
   text-indent: 25px;
 }
 
-#xjsyztrtnb .katex-display {
+#qdgvsvgvjs .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#xjsyztrtnb div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#qdgvsvgvjs div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1368,7 +1368,7 @@ Conclusión
 </div>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
 <div id="ref-armitage2002statistical" class="csl-entry" role="listitem">
 Armitage, P., Berry, G., &amp; Mattews, J. N. S. (2002). <em>Statistical methods in medical research</em>. Blackwell Science.
 </div>
