@@ -1,0 +1,21 @@
+{
+  "hash": "3129e36d8fc9febf57fdbfe5d7ce5733",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Reproducibilidad y Quarto\"\n---\n\nLa reproducibilidad implica que otra persona pueda ejecutar un análisis con los mismos datos y código y comprender cómo se obtuvieron los resultados. En este proyecto se promueven tres prácticas básicas: **rutas relativas**, **código visible** y **documentos ejecutables con Quarto**.\n\n## Rutas relativas al proyecto\n\nLos ejemplos del libro utilizan rutas como:\n\n```r\ndatos <- readxl::read_excel(\"data/bd_antropometricas.xlsx\")\n```\n\nen lugar de rutas vinculadas a un computador particular. La configuración del proyecto establece el directorio raíz como directorio de ejecución común.\n\n::: callout-important\n## Evitar rutas locales\n\nUna instrucción como `C:/.../data/archivo.xlsx` funciona únicamente si otra persona reproduce exactamente esa estructura de carpetas. Las rutas relativas permiten mover o clonar el proyecto sin reescribir cada ejemplo.\n:::\n\n## Ejemplo ejecutable\n\nEl siguiente bloque se puede ejecutar directamente desde este capítulo porque **carga los datos antes de analizarlos**. No depende de objetos creados en otros capítulos.\n\n\n::: {.cell}\n\n```{.r .cell-code}\ndatos_repro <- utils::read.csv(\"data/S07D_Acuicultura.csv\")\nsummary(datos_repro[c(\"P_S7P97\", \"P_S7P100\")])\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n    P_S7P97          P_S7P100        \n Min.   : 0.000   Min.   :      0.0  \n 1st Qu.: 1.000   1st Qu.:      0.6  \n Median : 1.000   Median :     70.0  \n Mean   : 1.622   Mean   :   1696.7  \n 3rd Qu.: 2.000   3rd Qu.:    300.0  \n Max.   :12.000   Max.   :1350000.0  \n```\n\n\n:::\n:::\n\n\n## Del análisis al informe reproducible\n\nQuarto permite combinar texto, código y resultados dentro de un mismo documento. Una plantilla mínima puede verse así:\n\n````markdown\n---\ntitle: \"Mi primer análisis estadístico\"\nformat: html\n---\n\n## Carga y resumen de los datos\n\n\n::: {.cell}\n\n```{.r .cell-code}\ndatos <- readxl::read_excel(\"data/bd_antropometricas.xlsx\")\nsummary(datos)\n```\n:::\n\n\n## Interpretación\n\nDescribe aquí qué muestran las medidas obtenidas y qué significan en el contexto del problema.\n````\n\nEn la plantilla anterior se utiliza `eval: false` únicamente porque el código se presenta como **ejemplo de estructura** dentro de esta página. En un archivo `.qmd` creado por el estudiante puede retirarse esa opción para ejecutar el análisis normalmente.\n\nAl renderizar el documento, Quarto integra el texto, el código ejecutado y sus resultados en una salida HTML, PDF u otro formato compatible.\n\n## Práctica sugerida\n\n1. Selecciona uno de los conjuntos de datos utilizados en el libro.\n2. Formula una pregunta descriptiva.\n3. Importa los datos utilizando una ruta relativa.\n4. Incluye una tabla o medida estadística.\n5. Construye una visualización.\n6. Escribe una interpretación breve.\n7. Renderiza el análisis como documento HTML con Quarto.\n\nEl objetivo de esta actividad es que el análisis pueda ser revisado, modificado y vuelto a ejecutar sin depender de pasos manuales ocultos.\n",
+    "supporting": [
+      "reproducibilidad_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {
+      "knitr": [
+        "{\"type\":\"list\",\"attributes\":{},\"value\":[]}"
+      ]
+    },
+    "preserve": null,
+    "postProcess": false
+  }
+}

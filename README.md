@@ -68,7 +68,7 @@ Desde la raíz del proyecto:
 quarto render
 ```
 
-Los archivos de datos se referencian mediante rutas relativas, por ejemplo `data/archivo.csv`, para evitar dependencias de rutas personales.
+Los archivos de datos se referencian mediante rutas relativas, por ejemplo `data/archivo.csv`, para evitar dependencias de rutas personales. La procedencia, el crédito y las condiciones de uso de cada conjunto se documentan en [`data/README.md`](data/README.md).
 
 ---
 

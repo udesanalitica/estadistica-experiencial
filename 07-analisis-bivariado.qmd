@@ -627,7 +627,7 @@ ggplot(
     
     color = "Género",
     
-    caption = "Fuente: Base antropométrica Prof. Miguel Pérez"
+    caption = "Fuente: Base de datos antropométrica, Miguel Oswaldo Pérez Pulido (UDES)"
   ) +
   
   theme_minimal(base_size = 12)
@@ -765,7 +765,7 @@ ggplot(
     
     color = "Género",
     
-    caption = "Fuente: Base antropométrica"
+    caption = "Fuente: Base de datos antropométrica, Miguel Oswaldo Pérez Pulido (UDES)"
   ) +
   
   theme_minimal(base_size = 12) +
@@ -851,7 +851,7 @@ ggplot(
     
     color = "Género",
     
-    caption = "Fuente: Base antropométrica prof. Miguel Pérez"
+    caption = "Fuente: Base de datos antropométrica, Miguel Oswaldo Pérez Pulido (UDES)"
   ) +
   
   theme_minimal(base_size = 12) +

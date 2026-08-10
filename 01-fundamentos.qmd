@@ -62,15 +62,27 @@ Las escalas ordinales permiten incorporar análisis basados en orden y posición
 
 Este libro empleará dos bases de datos, con fines pedagógicos y prácticos.
 
-### bd S07D_Acuicultura.csv
+### Base S07D (Acuicultura) — DANE
 
-La primera base de datos utilizada en este libro corresponde al **Tercer Censo Nacional Agropecuario (CNA) de Colombia, realizado en 2014**, específicamente a la subbase del **sector acuícola**, cuya información fue suministrada por el **Departamento Administrativo Nacional de Estadística (DANE)**. Esta fuente constituye un insumo oficial de carácter nacional que permite trabajar con datos reales asociados a la actividad productiva acuícola del país. Ver diccionario de variables en sitio web del DANE [Diccionario_S07D_Acuicultura](https://microdatos.dane.gov.co/index.php/catalog/513/data-dictionary/F4?file_name=S07D(Acuicultura))
+::: callout-note
+## Crédito y procedencia de los datos
 
-### bd medidas antropométricas
+La base utilizada corresponde al archivo **S07D (Acuicultura)** del **Tercer Censo Nacional Agropecuario (3er CNA), 2014**, producido por el **Departamento Administrativo Nacional de Estadística (DANE), Colombia** [@dane2014cna]. El archivo documenta información de la actividad acuícola en las unidades productoras agropecuarias (UPA), incluyendo especies cultivadas, número de cosechas, animales por cosecha, peso promedio y producción.
 
-La segunda base de datos corresponde a un conjunto de información antropométrica recopilada en estudiantes universitarios durante actividades académicas de la asignatura **Estadística Descriptiva y Probabilidad**, orientadas por el profesor **Miguel Oswaldo Pérez Pulido**. Esta base incluye variables relacionadas con el peso corporal, la estatura, la longitud de diferentes segmentos corporales, el índice de masa corporal (IMC) y otras medidas antropométricas de interés.
+Para los ejercicios del libro se utiliza una copia de trabajo del conjunto de datos con fines educativos. La versión incorporada conserva las **13 variables documentadas para S07D (Acuicultura)** y elimina únicamente una columna auxiliar de índice generada durante una exportación previa. El diccionario oficial puede consultarse en el [Catálogo de Microdatos del DANE](https://microdatos.dane.gov.co/index.php/catalog/513/data-dictionary/F4?file_name=S07D(Acuicultura)).
+:::
 
-Esta base de datos fue construida a partir del **Taller de Clase No. 2: Práctica sobre Medidas Antropométricas**, desarrollado en el marco de la asignatura **Estadística Descriptiva y Probabilidad**, constituyéndose en un recurso didáctico para el aprendizaje experiencial de la estadística mediante el análisis de datos obtenidos por los propios estudiantes.
+### Base de medidas antropométricas — UDES
+
+::: callout-note
+## Crédito y procedencia de los datos
+
+La segunda base corresponde a información antropométrica recopilada con fines académicos en actividades de la asignatura **Estadística Descriptiva y Probabilidad**, orientadas por el profesor **Miguel Oswaldo Pérez Pulido** en la **Universidad de Santander (UDES)**. Incluye variables relacionadas con peso corporal, estatura, longitud de segmentos corporales, índice de masa corporal (IMC) y otras medidas antropométricas de interés.
+
+La base fue construida a partir del **Taller de Clase No. 2: Práctica sobre Medidas Antropométricas** y se emplea como recurso didáctico para el aprendizaje experiencial de la estadística mediante el análisis de datos obtenidos durante la actividad académica.
+
+**Crédito de la base:** Miguel Oswaldo Pérez Pulido, Universidad de Santander (UDES).
+:::
 
 ::: callout-tip
 ## Material complementario
@@ -155,7 +167,7 @@ diccionario <- tibble(
 diccionario
 ```
 
-**Interpretación:** La base de datos contiene 3447 observaciones y 14 variables relacionadas con información del sector acuícola. Se identifican variables de tipo categórico (`chr`) y numérico (`dbl`), lo que permitirá desarrollar análisis descriptivos tanto para variables cualitativas como cuantitativas. La exploración inicial facilita comprender la estructura de la información antes de aplicar técnicas estadísticas más avanzadas.
+**Interpretación:** La base de datos contiene 3447 observaciones y 13 variables relacionadas con información del sector acuícola. Se identifican variables de tipo categórico (`chr`) y numérico (`dbl`), lo que permitirá desarrollar análisis descriptivos tanto para variables cualitativas como cuantitativas. La exploración inicial facilita comprender la estructura de la información antes de aplicar técnicas estadísticas más avanzadas.
 
 Para exportar el diccionario
 
@@ -206,7 +218,7 @@ diccionario_acuicultura |>
 
 **Objetivo de aprendizaje:** Al finalizar esta actividad, el estudiante será capaz de explorar una base de datos real, identificar tipos de variables y escalas de medición, seleccionar representaciones gráficas adecuadas e interpretar información estadística básica utilizando R.
 
-Fuente oficial: [DANE – Diccionario S07D Acuicultura](https://microdatos.dane.gov.co/index.php/catalog/513/data-dictionary/F4?file_name=S07D(Acuicultura))
+Fuente: Departamento Administrativo Nacional de Estadística (DANE), *Tercer Censo Nacional Agropecuario (3er CNA), 2014*, archivo S07D (Acuicultura) [@dane2014cna]. [Consultar diccionario oficial](https://microdatos.dane.gov.co/index.php/catalog/513/data-dictionary/F4?file_name=S07D(Acuicultura)).
 
 ### **Desarrollo de la actividad**
 
@@ -239,7 +251,7 @@ acuicultura <- read_csv(
 **Instrucciones para el estudiante:** Complete la siguiente tabla utilizando la exploración en R, el diccionario del DANE, los conceptos vistos en clase sobre variables y escalas de medición.
 
 | Variable | Descripción | Tipo de variable | Escala de medición | Unidad de medida | Ejemplo de gráfico | Medidas estadísticas sugeridas |
-|-----------|-----------|-----------|-----------|-----------|-----------|-----------|
+|----|----|----|----|----|----|----|
 | `TIPO_REG` |  |  |  |  |  |  |
 | `PAIS` |  |  |  |  |  |  |
 | `P_DEPTO` |  |  |  |  |  |  |

@@ -1,0 +1,21 @@
+Archivos ajustados para reemplazar en el proyecto Estadística Experiencial Aplicada.
+
+Reemplace respetando las mismas rutas:
+- 01-fundamentos.qmd
+- 03-tablas-frecuencia.qmd
+- 07-analisis-bivariado.qmd
+- references.bib
+- README.md
+- data/README.md
+- data/S07D_Acuicultura.csv
+- data/diccionario_acuicultura.xlsx
+
+Cambios principales:
+1. Crédito formal de la base antropométrica a Miguel Oswaldo Pérez Pulido (UDES).
+2. Identificación académica de S07D (Acuicultura), Tercer Censo Nacional Agropecuario 2014, DANE.
+3. Referencia bibliográfica DANE agregada a references.bib.
+4. Eliminación de columna auxiliar Unnamed: 0 del CSV DANE.
+5. Eliminación de fila auxiliar ...1 del diccionario resumido.
+6. Dimensiones actualizadas a 3.447 x 13 y 13 x 4.
+7. Fuentes de figuras antropométricas unificadas.
+8. Corrección de carga de la base de acuicultura en 03-tablas-frecuencia.qmd.

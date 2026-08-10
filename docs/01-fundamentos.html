@@ -297,8 +297,8 @@ div.csl-indent {
   <li><a href="#escalas-de-medición" id="toc-escalas-de-medición" class="nav-link" data-scroll-target="#escalas-de-medición"><span class="header-section-number">5.5</span> Escalas de medición</a></li>
   <li><a href="#base-de-datos-de-trabajo" id="toc-base-de-datos-de-trabajo" class="nav-link" data-scroll-target="#base-de-datos-de-trabajo"><span class="header-section-number">5.6</span> Base de datos de trabajo</a>
   <ul class="collapse">
-  <li><a href="#bd-s07d_acuicultura.csv" id="toc-bd-s07d_acuicultura.csv" class="nav-link" data-scroll-target="#bd-s07d_acuicultura.csv"><span class="header-section-number">5.6.1</span> bd S07D_Acuicultura.csv</a></li>
-  <li><a href="#bd-medidas-antropométricas" id="toc-bd-medidas-antropométricas" class="nav-link" data-scroll-target="#bd-medidas-antropométricas"><span class="header-section-number">5.6.2</span> bd medidas antropométricas</a></li>
+  <li><a href="#base-s07d-acuicultura-dane" id="toc-base-s07d-acuicultura-dane" class="nav-link" data-scroll-target="#base-s07d-acuicultura-dane"><span class="header-section-number">5.6.1</span> Base S07D (Acuicultura) — DANE</a></li>
+  <li><a href="#base-de-medidas-antropométricas-udes" id="toc-base-de-medidas-antropométricas-udes" class="nav-link" data-scroll-target="#base-de-medidas-antropométricas-udes"><span class="header-section-number">5.6.2</span> Base de medidas antropométricas — UDES</a></li>
   </ul></li>
   <li><a href="#trabajando-con-las-bases-de-datos" id="toc-trabajando-con-las-bases-de-datos" class="nav-link" data-scroll-target="#trabajando-con-las-bases-de-datos"><span class="header-section-number">5.7</span> Trabajando con las bases de datos</a></li>
   <li><a href="#bd-acuicultura" id="toc-bd-acuicultura" class="nav-link" data-scroll-target="#bd-acuicultura"><span class="header-section-number">5.8</span> bd Acuicultura</a>
@@ -338,16 +338,16 @@ div.csl-indent {
 </header>
 
 
-<p>Actualmente los datos se han convertido en un activo fundamental para la toma de decisiones en las empresas, la sociedad, la academia, entre otros ámbitos y es por eso que la <strong>estadística descriptiva constituye el primer paso para transformar información en conocimiento útil</strong> <span class="citation" data-cites="seoane2007estadistica">(<a href="#ref-seoane2007estadistica" role="doc-biblioref">Seoane et&nbsp;al., 2007</a>)</span>. Su aplicación permite un mejor entendimiento del mundo que nos rodea, ya que prácticamente cada aspecto de nuestra existencia es una fuente potencial de datos <span class="citation" data-cites="obando2021graficos">(<a href="#ref-obando2021graficos" role="doc-biblioref">Obando, 2021</a>)</span>. Este capítulo introduce los conceptos básicos necesarios para comprender, organizar y analizar datos, utilizando un enfoque experiencial basado en ejemplos reales y herramientas computacionales como R.</p>
+<p>Actualmente los datos se han convertido en un activo fundamental para la toma de decisiones en las empresas, la sociedad, la academia, entre otros ámbitos y es por eso que la <strong>estadística descriptiva constituye el primer paso para transformar información en conocimiento útil</strong> <span class="citation" data-cites="seoane2007estadistica">(<a href="referencias.html#ref-seoane2007estadistica" role="doc-biblioref">Seoane et&nbsp;al., 2007</a>)</span>. Su aplicación permite un mejor entendimiento del mundo que nos rodea, ya que prácticamente cada aspecto de nuestra existencia es una fuente potencial de datos <span class="citation" data-cites="obando2021graficos">(<a href="referencias.html#ref-obando2021graficos" role="doc-biblioref">Obando, 2021</a>)</span>. Este capítulo introduce los conceptos básicos necesarios para comprender, organizar y analizar datos, utilizando un enfoque experiencial basado en ejemplos reales y herramientas computacionales como R.</p>
 <section id="qué-es-la-estadística-descriptiva" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="qué-es-la-estadística-descriptiva"><span class="header-section-number">5.1</span> ¿Qué es la estadística descriptiva?</h2>
 <p>La <strong>estadística descriptiva</strong> es la rama de la estadística encargada de recolectar, organizar, resumir y presentar datos de manera clara y comprensible.</p>
-<p>A diferencia de la estadística inferencial, que busca demostrar asociaciones o hacer comparaciones para extrapolar resultados de una muestra a una población, la descriptiva se limita a <strong>sintetizar la información contenida en los datos recogidos</strong> sin realizar inferencias más allá de la información disponible <span class="citation" data-cites="posada2016elementos bonita2008epidemiologia">(<a href="#ref-bonita2008epidemiologia" role="doc-biblioref">Bonita et&nbsp;al., 2008</a>; <a href="#ref-posada2016elementos" role="doc-biblioref">Posada, 2016</a>)</span>.</p>
-<p>Su propósito fundamental es facilitar la comprensión de grandes volúmenes de información mediante el uso de <strong>tablas, representaciones gráficas y medidas resumen</strong> (como la media o la desviación estándar), permitiendo “hacerse una idea” de la naturaleza de un conjunto de datos sin tener que analizar cada uno de ellos individualmente <span class="citation" data-cites="posada2016elementos rey2007introduccion spiegel2009estadistica">(<a href="#ref-posada2016elementos" role="doc-biblioref">Posada, 2016</a>; <a href="#ref-rey2007introduccion" role="doc-biblioref">Rey, 2007</a>; <a href="#ref-spiegel2009estadistica" role="doc-biblioref">Spiegel &amp; Stephens, 2009</a>)</span>.</p>
+<p>A diferencia de la estadística inferencial, que busca demostrar asociaciones o hacer comparaciones para extrapolar resultados de una muestra a una población, la descriptiva se limita a <strong>sintetizar la información contenida en los datos recogidos</strong> sin realizar inferencias más allá de la información disponible <span class="citation" data-cites="posada2016elementos bonita2008epidemiologia">(<a href="referencias.html#ref-bonita2008epidemiologia" role="doc-biblioref">Bonita et&nbsp;al., 2008</a>; <a href="referencias.html#ref-posada2016elementos" role="doc-biblioref">Posada, 2016</a>)</span>.</p>
+<p>Su propósito fundamental es facilitar la comprensión de grandes volúmenes de información mediante el uso de <strong>tablas, representaciones gráficas y medidas resumen</strong> (como la media o la desviación estándar), permitiendo “hacerse una idea” de la naturaleza de un conjunto de datos sin tener que analizar cada uno de ellos individualmente <span class="citation" data-cites="posada2016elementos rey2007introduccion spiegel2009estadistica">(<a href="referencias.html#ref-posada2016elementos" role="doc-biblioref">Posada, 2016</a>; <a href="referencias.html#ref-rey2007introduccion" role="doc-biblioref">Rey, 2007</a>; <a href="referencias.html#ref-spiegel2009estadistica" role="doc-biblioref">Spiegel &amp; Stephens, 2009</a>)</span>.</p>
 </section>
 <section id="fases-del-análisis-de-datos" class="level2" data-number="5.2">
 <h2 data-number="5.2" class="anchored" data-anchor-id="fases-del-análisis-de-datos"><span class="header-section-number">5.2</span> Fases del análisis de datos</h2>
-<p>Todo el proceso del análisis estadístico se muestra en la <a href="#fig-procesodatos" class="quarto-xref">Figura&nbsp;<span class="quarto-unresolved-ref">fig-procesodatos</span></a>. Se parte de una <strong>pregunta de investigación</strong> que orienta el proceso y define la información necesaria para responderla. A continuación, se realiza la <strong>recopilación de los datos</strong> mediante observación, medición, encuestas o fuentes secundarias. Una vez obtenida la información, es necesario efectuar la <strong>depuración de los datos</strong> para identificar errores, inconsistencias y valores faltantes que puedan afectar los resultados. Posteriormente, se desarrolla el <strong>análisis estadístico</strong> utilizando técnicas descriptivas o inferenciales que permitan extraer información relevante. Los resultados obtenidos deben ser <strong>interpretados</strong> en función del contexto del estudio y de la pregunta de investigación planteada inicialmente. Por último, la <strong>visualización de los datos</strong> mediante tablas, gráficos e infografías facilita la comunicación de los hallazgos y contribuye a la toma de decisiones basada en evidencia.</p>
+<p>Todo el proceso del análisis estadístico se muestra en la <a href="#fig-procesodatos" class="quarto-xref">Figura&nbsp;<span>5.1</span></a>. Se parte de una <strong>pregunta de investigación</strong> que orienta el proceso y define la información necesaria para responderla. A continuación, se realiza la <strong>recopilación de los datos</strong> mediante observación, medición, encuestas o fuentes secundarias. Una vez obtenida la información, es necesario efectuar la <strong>depuración de los datos</strong> para identificar errores, inconsistencias y valores faltantes que puedan afectar los resultados. Posteriormente, se desarrolla el <strong>análisis estadístico</strong> utilizando técnicas descriptivas o inferenciales que permitan extraer información relevante. Los resultados obtenidos deben ser <strong>interpretados</strong> en función del contexto del estudio y de la pregunta de investigación planteada inicialmente. Por último, la <strong>visualización de los datos</strong> mediante tablas, gráficos e infografías facilita la comunicación de los hallazgos y contribuye a la toma de decisiones basada en evidencia.</p>
 <div id="fig-procesodatos" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-procesodatos-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -361,7 +361,7 @@ Figura&nbsp;5.1: Proceso de análisis estadístico: pregunta de investigación, 
 </section>
 <section id="tipos-de-variables" class="level2" data-number="5.3">
 <h2 data-number="5.3" class="anchored" data-anchor-id="tipos-de-variables"><span class="header-section-number">5.3</span> Tipos de variables</h2>
-<p>Las <strong>variables</strong> son los <strong>atributos, cualidades</strong> o <strong>características</strong> que pueden ser observadas, clasificadas o medidas en las personas, objetos o fenómenos de una población o muestra. En estadística, su identificación es esencial porque posibilita la descripción, el análisis y la interpretación de la información recopilada. Las variables se dividen en cualitativas y cuantitativas, tal como se muestra en la <a href="#fig-variables" class="quarto-xref">Figura&nbsp;<span class="quarto-unresolved-ref">fig-variables</span></a>.</p>
+<p>Las <strong>variables</strong> son los <strong>atributos, cualidades</strong> o <strong>características</strong> que pueden ser observadas, clasificadas o medidas en las personas, objetos o fenómenos de una población o muestra. En estadística, su identificación es esencial porque posibilita la descripción, el análisis y la interpretación de la información recopilada. Las variables se dividen en cualitativas y cuantitativas, tal como se muestra en la <a href="#fig-variables" class="quarto-xref">Figura&nbsp;<span>5.2</span></a>.</p>
 <p>Las variables cualitativas, que son nominales u ordinales, describen atributos o categorías; por otro lado, las variables cuantitativas, que se dividen en discretas y continuas dependiendo si surgen de procesos de conteo o de medición, ilustran cantidades numéricas. Esta clasificación es esencial porque determina el tipo de análisis estadístico, representación gráfica y medidas descriptivas que pueden aplicarse a los datos.</p>
 <div id="fig-variables" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -376,9 +376,9 @@ Figura&nbsp;5.2: Clasificación de las variables estadísticas en cualitativas y
 </section>
 <section id="importancia-de-la-identificación-de-variables-estadísticas-y-escalas-de-medición" class="level2" data-number="5.4">
 <h2 data-number="5.4" class="anchored" data-anchor-id="importancia-de-la-identificación-de-variables-estadísticas-y-escalas-de-medición"><span class="header-section-number">5.4</span> Importancia de la identificación de variables estadísticas y escalas de medición</h2>
-<p>Una parte fundamental del análisis estadístico es la clasificación de las variables, porque a partir de esta se determina qué métodos, procedimientos y representaciones gráficas son los más idóneos para tratar los datos. Las variables cualitativas, como se ilustra en la <a href="#fig-variablesmedidas" class="quarto-xref">Figura&nbsp;<span class="quarto-unresolved-ref">fig-variablesmedidas</span></a>, delinean categorías o características y habitualmente se examinan a través de porcentajes, frecuencias y medidas como la moda o la mediana en el caso de las variables ordinales.</p>
+<p>Una parte fundamental del análisis estadístico es la clasificación de las variables, porque a partir de esta se determina qué métodos, procedimientos y representaciones gráficas son los más idóneos para tratar los datos. Las variables cualitativas, como se ilustra en la <a href="#fig-variablesmedidas" class="quarto-xref">Figura&nbsp;<span>5.3</span></a>, delinean categorías o características y habitualmente se examinan a través de porcentajes, frecuencias y medidas como la moda o la mediana en el caso de las variables ordinales.</p>
 <p>Las variables cuantitativas, en cambio, son valores numéricos que provienen de procesos de conteo o medición. Estas variables posibilitan el uso de medidas de tendencia central y dispersión, como la varianza, la media, la desviación estándar y el coeficiente de variación. En esta línea, si se identifica apropiadamente el tipo de variable, se logra una interpretación correcta de la información y se asegura que las técnicas estadísticas aplicadas sean congruentes con la naturaleza de los datos.</p>
-<p><span class="citation" data-cites="armitage2002statistical">(<a href="#ref-armitage2002statistical" role="doc-biblioref">Armitage et&nbsp;al., 2002</a>)</span>.</p>
+<p><span class="citation" data-cites="armitage2002statistical">(<a href="referencias.html#ref-armitage2002statistical" role="doc-biblioref">Armitage et&nbsp;al., 2002</a>)</span>.</p>
 <div id="fig-variablesmedidas" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-variablesmedidas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -393,7 +393,7 @@ Figura&nbsp;5.3: Relación entre tipos de variables, escalas de medición y medi
 <section id="escalas-de-medición" class="level2" data-number="5.5">
 <h2 data-number="5.5" class="anchored" data-anchor-id="escalas-de-medición"><span class="header-section-number">5.5</span> Escalas de medición</h2>
 <p>Las <strong>escalas de medición</strong> representan el nivel de información que poseen los datos y constituyen un elemento fundamental en estadística, ya que determinan las operaciones matemáticas y los análisis que pueden realizarse sobre las variables.</p>
-<p>Como se observa en la <a href="#fig-escalas" class="quarto-xref">Figura&nbsp;<span class="quarto-unresolved-ref">fig-escalas</span></a>, las escalas nominal y ordinal se emplean principalmente en variables cualitativas, mientras que las escalas de intervalo y razón se asocian con variables cuantitativas. A medida que aumenta el nivel de medición, también incrementa la precisión estadística y la complejidad de los métodos analíticos que pueden aplicarse. Por ello, la correcta identificación de la escala permite seleccionar adecuadamente medidas descriptivas, pruebas estadísticas y representaciones gráficas acordes con la naturaleza de los datos.</p>
+<p>Como se observa en la <a href="#fig-escalas" class="quarto-xref">Figura&nbsp;<span>5.4</span></a>, las escalas nominal y ordinal se emplean principalmente en variables cualitativas, mientras que las escalas de intervalo y razón se asocian con variables cuantitativas. A medida que aumenta el nivel de medición, también incrementa la precisión estadística y la complejidad de los métodos analíticos que pueden aplicarse. Por ello, la correcta identificación de la escala permite seleccionar adecuadamente medidas descriptivas, pruebas estadísticas y representaciones gráficas acordes con la naturaleza de los datos.</p>
 <div id="fig-escalas" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-escalas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -417,14 +417,40 @@ Figura&nbsp;5.4: Resumen comparativo de las escalas nominal, ordinal, de interva
 <section id="base-de-datos-de-trabajo" class="level2" data-number="5.6">
 <h2 data-number="5.6" class="anchored" data-anchor-id="base-de-datos-de-trabajo"><span class="header-section-number">5.6</span> Base de datos de trabajo</h2>
 <p>Este libro empleará dos bases de datos, con fines pedagógicos y prácticos.</p>
-<section id="bd-s07d_acuicultura.csv" class="level3" data-number="5.6.1">
-<h3 data-number="5.6.1" class="anchored" data-anchor-id="bd-s07d_acuicultura.csv"><span class="header-section-number">5.6.1</span> bd S07D_Acuicultura.csv</h3>
-<p>La primera base de datos utilizada en este libro corresponde al <strong>Tercer Censo Nacional Agropecuario (CNA) de Colombia, realizado en 2014</strong>, específicamente a la subbase del <strong>sector acuícola</strong>, cuya información fue suministrada por el <strong>Departamento Administrativo Nacional de Estadística (DANE)</strong>. Esta fuente constituye un insumo oficial de carácter nacional que permite trabajar con datos reales asociados a la actividad productiva acuícola del país. Ver diccionario de variables en sitio web del DANE <a href="https://microdatos.dane.gov.co/index.php/catalog/513/data-dictionary/F4?file_name=S07D(Acuicultura)">Diccionario_S07D_Acuicultura</a></p>
+<section id="base-s07d-acuicultura-dane" class="level3" data-number="5.6.1">
+<h3 data-number="5.6.1" class="anchored" data-anchor-id="base-s07d-acuicultura-dane"><span class="header-section-number">5.6.1</span> Base S07D (Acuicultura) — DANE</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Crédito y procedencia de los datos
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>La base utilizada corresponde al archivo <strong>S07D (Acuicultura)</strong> del <strong>Tercer Censo Nacional Agropecuario (3er CNA), 2014</strong>, producido por el <strong>Departamento Administrativo Nacional de Estadística (DANE), Colombia</strong> <span class="citation" data-cites="dane2014cna">(<a href="referencias.html#ref-dane2014cna" role="doc-biblioref">Departamento Administrativo Nacional de Estadística (DANE), 2014</a>)</span>. El archivo documenta información de la actividad acuícola en las unidades productoras agropecuarias (UPA), incluyendo especies cultivadas, número de cosechas, animales por cosecha, peso promedio y producción.</p>
+<p>Para los ejercicios del libro se utiliza una copia de trabajo del conjunto de datos con fines educativos. La versión incorporada conserva las <strong>13 variables documentadas para S07D (Acuicultura)</strong> y elimina únicamente una columna auxiliar de índice generada durante una exportación previa. El diccionario oficial puede consultarse en el <a href="https://microdatos.dane.gov.co/index.php/catalog/513/data-dictionary/F4?file_name=S07D(Acuicultura)">Catálogo de Microdatos del DANE</a>.</p>
+</div>
+</div>
 </section>
-<section id="bd-medidas-antropométricas" class="level3" data-number="5.6.2">
-<h3 data-number="5.6.2" class="anchored" data-anchor-id="bd-medidas-antropométricas"><span class="header-section-number">5.6.2</span> bd medidas antropométricas</h3>
-<p>La segunda base de datos corresponde a un conjunto de información antropométrica recopilada en estudiantes universitarios durante actividades académicas de la asignatura <strong>Estadística Descriptiva y Probabilidad</strong>, orientadas por el profesor <strong>Miguel Oswaldo Pérez Pulido</strong>. Esta base incluye variables relacionadas con el peso corporal, la estatura, la longitud de diferentes segmentos corporales, el índice de masa corporal (IMC) y otras medidas antropométricas de interés.</p>
-<p>Esta base de datos fue construida a partir del <strong>Taller de Clase No.&nbsp;2: Práctica sobre Medidas Antropométricas</strong>, desarrollado en el marco de la asignatura <strong>Estadística Descriptiva y Probabilidad</strong>, constituyéndose en un recurso didáctico para el aprendizaje experiencial de la estadística mediante el análisis de datos obtenidos por los propios estudiantes.</p>
+<section id="base-de-medidas-antropométricas-udes" class="level3" data-number="5.6.2">
+<h3 data-number="5.6.2" class="anchored" data-anchor-id="base-de-medidas-antropométricas-udes"><span class="header-section-number">5.6.2</span> Base de medidas antropométricas — UDES</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Crédito y procedencia de los datos
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>La segunda base corresponde a información antropométrica recopilada con fines académicos en actividades de la asignatura <strong>Estadística Descriptiva y Probabilidad</strong>, orientadas por el profesor <strong>Miguel Oswaldo Pérez Pulido</strong> en la <strong>Universidad de Santander (UDES)</strong>. Incluye variables relacionadas con peso corporal, estatura, longitud de segmentos corporales, índice de masa corporal (IMC) y otras medidas antropométricas de interés.</p>
+<p>La base fue construida a partir del <strong>Taller de Clase No.&nbsp;2: Práctica sobre Medidas Antropométricas</strong> y se emplea como recurso didáctico para el aprendizaje experiencial de la estadística mediante el análisis de datos obtenidos durante la actividad académica.</p>
+<p><strong>Crédito de la base:</strong> Miguel Oswaldo Pérez Pulido, Universidad de Santander (UDES).</p>
+</div>
+</div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -464,41 +490,40 @@ Material complementario
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualizar primeras filas</span></span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(acuicultura)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 14
-   ...1 TIPO_REG  PAIS P_DEPTO P_MUNIC UC_UO    ENCUESTA  COD_VEREDA P_S7PNUMPEZ
-  &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt;          &lt;dbl&gt;       &lt;dbl&gt;
-1     1        7   170      68   68001 00310001 022537951   68001007           1
-2     2        7   170      68   68001 00420001 022303666   68001009           1
-3     3        7   170      68   68001 00690001 022317829   68001027           2
-4     4        7   170      68   68001 00900001 022318620   68001002           1
-5     5        7   170      68   68001 00920001 022736078   68001009           1
-6     6        7   170      68   68001 00970001 022317801   68001024           1
-# ℹ 5 more variables: P_S7P96 &lt;dbl&gt;, P_S7P97 &lt;dbl&gt;, P_S7P98 &lt;dbl&gt;,
-#   P_S7P99 &lt;dbl&gt;, P_S7P100 &lt;dbl&gt;</code></pre>
+<pre><code># A tibble: 6 × 13
+  TIPO_REG  PAIS P_DEPTO P_MUNIC  UC_UO ENCUESTA COD_VEREDA P_S7PNUMPEZ  P_S7P96
+     &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;    &lt;dbl&gt;
+1        7   170      68   68001 310001 22537951   68001007           1 41190400
+2        7   170      68   68001 420001 22303666   68001009           1 41190300
+3        7   170      68   68001 690001 22317829   68001027           2 41191000
+4        7   170      68   68001 900001 22318620   68001002           1 41190400
+5        7   170      68   68001 920001 22736078   68001009           1 41190300
+6        7   170      68   68001 970001 22317801   68001024           1 41190400
+# ℹ 4 more variables: P_S7P97 &lt;dbl&gt;, P_S7P98 &lt;dbl&gt;, P_S7P99 &lt;dbl&gt;,
+#   P_S7P100 &lt;dbl&gt;</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Número de filas y columnas</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(acuicultura)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 3447   14</code></pre>
+<pre><code>[1] 3447   13</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Nombres de las variables</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(acuicultura)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] "...1"        "TIPO_REG"    "PAIS"        "P_DEPTO"     "P_MUNIC"    
- [6] "UC_UO"       "ENCUESTA"    "COD_VEREDA"  "P_S7PNUMPEZ" "P_S7P96"    
-[11] "P_S7P97"     "P_S7P98"     "P_S7P99"     "P_S7P100"   </code></pre>
+<pre><code> [1] "TIPO_REG"    "PAIS"        "P_DEPTO"     "P_MUNIC"     "UC_UO"      
+ [6] "ENCUESTA"    "COD_VEREDA"  "P_S7PNUMPEZ" "P_S7P96"     "P_S7P97"    
+[11] "P_S7P98"     "P_S7P99"     "P_S7P100"   </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Estructura general de la base</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(acuicultura)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>spc_tbl_ [3,447 × 14] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
- $ ...1       : num [1:3447] 1 2 3 4 5 6 7 8 9 10 ...
+<pre><code>spc_tbl_ [3,447 × 13] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
  $ TIPO_REG   : num [1:3447] 7 7 7 7 7 7 7 7 7 7 ...
  $ PAIS       : num [1:3447] 170 170 170 170 170 170 170 170 170 170 ...
  $ P_DEPTO    : num [1:3447] 68 68 68 68 68 68 68 68 68 68 ...
  $ P_MUNIC    : num [1:3447] 68001 68001 68001 68001 68001 ...
- $ UC_UO      : chr [1:3447] "00310001" "00420001" "00690001" "00900001" ...
- $ ENCUESTA   : chr [1:3447] "022537951" "022303666" "022317829" "022318620" ...
+ $ UC_UO      : num [1:3447] 310001 420001 690001 900001 920001 ...
+ $ ENCUESTA   : num [1:3447] 22537951 22303666 22317829 22318620 22736078 ...
  $ COD_VEREDA : num [1:3447] 6.8e+07 6.8e+07 6.8e+07 6.8e+07 6.8e+07 ...
  $ P_S7PNUMPEZ: num [1:3447] 1 1 2 1 1 1 1 2 1 18 ...
  $ P_S7P96    : num [1:3447] 41190400 41190300 41191000 41190400 41190300 ...
@@ -508,13 +533,12 @@ Material complementario
  $ P_S7P100   : num [1:3447] 0.25 0 1.5 0.25 0.8 ...
  - attr(*, "spec")=
   .. cols(
-  ..   ...1 = col_double(),
   ..   TIPO_REG = col_double(),
   ..   PAIS = col_double(),
   ..   P_DEPTO = col_double(),
   ..   P_MUNIC = col_double(),
-  ..   UC_UO = col_character(),
-  ..   ENCUESTA = col_character(),
+  ..   UC_UO = col_double(),
+  ..   ENCUESTA = col_double(),
   ..   COD_VEREDA = col_double(),
   ..   P_S7PNUMPEZ = col_double(),
   ..   P_S7P96 = col_double(),
@@ -563,26 +587,25 @@ Material complementario
 <span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Ver diccionario</span></span>
 <span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>diccionario</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 14 × 4
+<pre><code># A tibble: 13 × 4
    variable    tipo_dato valores_unicos missing
    &lt;chr&gt;       &lt;chr&gt;              &lt;int&gt;   &lt;int&gt;
- 1 ...1        numeric             3447       0
- 2 TIPO_REG    numeric                1       0
- 3 PAIS        numeric                1       0
- 4 P_DEPTO     numeric                1       0
- 5 P_MUNIC     numeric               84       0
- 6 UC_UO       character            662       0
- 7 ENCUESTA    character           2590       0
- 8 COD_VEREDA  numeric              870       0
- 9 P_S7PNUMPEZ numeric               11       4
-10 P_S7P96     numeric               27       4
-11 P_S7P97     numeric               13       0
-12 P_S7P98     numeric              125       0
-13 P_S7P99     numeric              113       0
-14 P_S7P100    numeric              370       0</code></pre>
+ 1 TIPO_REG    numeric                1       0
+ 2 PAIS        numeric                1       0
+ 3 P_DEPTO     numeric                1       0
+ 4 P_MUNIC     numeric               84       0
+ 5 UC_UO       numeric              662       0
+ 6 ENCUESTA    numeric             2590       0
+ 7 COD_VEREDA  numeric              870       0
+ 8 P_S7PNUMPEZ numeric               11       4
+ 9 P_S7P96     numeric               27       4
+10 P_S7P97     numeric               13       0
+11 P_S7P98     numeric              125       0
+12 P_S7P99     numeric              113       0
+13 P_S7P100    numeric              370       0</code></pre>
 </div>
 </div>
-<p><strong>Interpretación:</strong> La base de datos contiene 3447 observaciones y 14 variables relacionadas con información del sector acuícola. Se identifican variables de tipo categórico (<code>chr</code>) y numérico (<code>dbl</code>), lo que permitirá desarrollar análisis descriptivos tanto para variables cualitativas como cuantitativas. La exploración inicial facilita comprender la estructura de la información antes de aplicar técnicas estadísticas más avanzadas.</p>
+<p><strong>Interpretación:</strong> La base de datos contiene 3447 observaciones y 13 variables relacionadas con información del sector acuícola. Se identifican variables de tipo categórico (<code>chr</code>) y numérico (<code>dbl</code>), lo que permitirá desarrollar análisis descriptivos tanto para variables cualitativas como cuantitativas. La exploración inicial facilita comprender la estructura de la información antes de aplicar técnicas estadísticas más avanzadas.</p>
 <p>Para exportar el diccionario</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(writexl)</span>
@@ -620,23 +643,23 @@ Material complementario
 <span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a>diccionario_acuicultura <span class="sc">|&gt;</span></span>
 <span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="cnzefdignj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#cnzefdignj table {
+<div id="phczytmqbl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#phczytmqbl table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#cnzefdignj thead, #cnzefdignj tbody, #cnzefdignj tfoot, #cnzefdignj tr, #cnzefdignj td, #cnzefdignj th {
+#phczytmqbl thead, #phczytmqbl tbody, #phczytmqbl tfoot, #phczytmqbl tr, #phczytmqbl td, #phczytmqbl th {
   border-style: none;
 }
 
-#cnzefdignj p {
+#phczytmqbl p {
   margin: 0;
   padding: 0;
 }
 
-#cnzefdignj .gt_table {
+#phczytmqbl .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -662,12 +685,12 @@ Material complementario
   border-left-color: #D3D3D3;
 }
 
-#cnzefdignj .gt_caption {
+#phczytmqbl .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#cnzefdignj .gt_title {
+#phczytmqbl .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -679,7 +702,7 @@ Material complementario
   border-bottom-width: 0;
 }
 
-#cnzefdignj .gt_subtitle {
+#phczytmqbl .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -691,7 +714,7 @@ Material complementario
   border-top-width: 0;
 }
 
-#cnzefdignj .gt_heading {
+#phczytmqbl .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -703,13 +726,13 @@ Material complementario
   border-right-color: #D3D3D3;
 }
 
-#cnzefdignj .gt_bottom_border {
+#phczytmqbl .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#cnzefdignj .gt_col_headings {
+#phczytmqbl .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -724,7 +747,7 @@ Material complementario
   border-right-color: #D3D3D3;
 }
 
-#cnzefdignj .gt_col_heading {
+#phczytmqbl .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -744,7 +767,7 @@ Material complementario
   overflow-x: hidden;
 }
 
-#cnzefdignj .gt_column_spanner_outer {
+#phczytmqbl .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -756,15 +779,15 @@ Material complementario
   padding-right: 4px;
 }
 
-#cnzefdignj .gt_column_spanner_outer:first-child {
+#phczytmqbl .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#cnzefdignj .gt_column_spanner_outer:last-child {
+#phczytmqbl .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#cnzefdignj .gt_column_spanner {
+#phczytmqbl .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -776,11 +799,11 @@ Material complementario
   width: 100%;
 }
 
-#cnzefdignj .gt_spanner_row {
+#phczytmqbl .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#cnzefdignj .gt_group_heading {
+#phczytmqbl .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -806,7 +829,7 @@ Material complementario
   text-align: left;
 }
 
-#cnzefdignj .gt_empty_group_heading {
+#phczytmqbl .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -821,15 +844,15 @@ Material complementario
   vertical-align: middle;
 }
 
-#cnzefdignj .gt_from_md > :first-child {
+#phczytmqbl .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#cnzefdignj .gt_from_md > :last-child {
+#phczytmqbl .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#cnzefdignj .gt_row {
+#phczytmqbl .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -848,7 +871,7 @@ Material complementario
   overflow-x: hidden;
 }
 
-#cnzefdignj .gt_stub {
+#phczytmqbl .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -861,7 +884,7 @@ Material complementario
   padding-right: 5px;
 }
 
-#cnzefdignj .gt_stub_row_group {
+#phczytmqbl .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -875,15 +898,15 @@ Material complementario
   vertical-align: top;
 }
 
-#cnzefdignj .gt_row_group_first td {
+#phczytmqbl .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#cnzefdignj .gt_row_group_first th {
+#phczytmqbl .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#cnzefdignj .gt_summary_row {
+#phczytmqbl .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -893,16 +916,16 @@ Material complementario
   padding-right: 5px;
 }
 
-#cnzefdignj .gt_first_summary_row {
+#phczytmqbl .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#cnzefdignj .gt_first_summary_row.thick {
+#phczytmqbl .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#cnzefdignj .gt_last_summary_row {
+#phczytmqbl .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -912,7 +935,7 @@ Material complementario
   border-bottom-color: #D3D3D3;
 }
 
-#cnzefdignj .gt_grand_summary_row {
+#phczytmqbl .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -922,7 +945,7 @@ Material complementario
   padding-right: 5px;
 }
 
-#cnzefdignj .gt_first_grand_summary_row {
+#phczytmqbl .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -932,7 +955,7 @@ Material complementario
   border-top-color: #D3D3D3;
 }
 
-#cnzefdignj .gt_last_grand_summary_row_top {
+#phczytmqbl .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -942,11 +965,11 @@ Material complementario
   border-bottom-color: #D3D3D3;
 }
 
-#cnzefdignj .gt_striped {
+#phczytmqbl .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#cnzefdignj .gt_table_body {
+#phczytmqbl .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -955,7 +978,7 @@ Material complementario
   border-bottom-color: #D3D3D3;
 }
 
-#cnzefdignj .gt_footnotes {
+#phczytmqbl .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -969,7 +992,7 @@ Material complementario
   border-right-color: #D3D3D3;
 }
 
-#cnzefdignj .gt_footnote {
+#phczytmqbl .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -978,7 +1001,7 @@ Material complementario
   padding-right: 5px;
 }
 
-#cnzefdignj .gt_sourcenotes {
+#phczytmqbl .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -992,7 +1015,7 @@ Material complementario
   border-right-color: #D3D3D3;
 }
 
-#cnzefdignj .gt_sourcenote {
+#phczytmqbl .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1000,72 +1023,72 @@ Material complementario
   padding-right: 5px;
 }
 
-#cnzefdignj .gt_left {
+#phczytmqbl .gt_left {
   text-align: left;
 }
 
-#cnzefdignj .gt_center {
+#phczytmqbl .gt_center {
   text-align: center;
 }
 
-#cnzefdignj .gt_right {
+#phczytmqbl .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#cnzefdignj .gt_font_normal {
+#phczytmqbl .gt_font_normal {
   font-weight: normal;
 }
 
-#cnzefdignj .gt_font_bold {
+#phczytmqbl .gt_font_bold {
   font-weight: bold;
 }
 
-#cnzefdignj .gt_font_italic {
+#phczytmqbl .gt_font_italic {
   font-style: italic;
 }
 
-#cnzefdignj .gt_super {
+#phczytmqbl .gt_super {
   font-size: 65%;
 }
 
-#cnzefdignj .gt_footnote_marks {
+#phczytmqbl .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#cnzefdignj .gt_asterisk {
+#phczytmqbl .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#cnzefdignj .gt_indent_1 {
+#phczytmqbl .gt_indent_1 {
   text-indent: 5px;
 }
 
-#cnzefdignj .gt_indent_2 {
+#phczytmqbl .gt_indent_2 {
   text-indent: 10px;
 }
 
-#cnzefdignj .gt_indent_3 {
+#phczytmqbl .gt_indent_3 {
   text-indent: 15px;
 }
 
-#cnzefdignj .gt_indent_4 {
+#phczytmqbl .gt_indent_4 {
   text-indent: 20px;
 }
 
-#cnzefdignj .gt_indent_5 {
+#phczytmqbl .gt_indent_5 {
   text-indent: 25px;
 }
 
-#cnzefdignj .katex-display {
+#phczytmqbl .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#cnzefdignj div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#phczytmqbl div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1144,7 +1167,7 @@ Material complementario
 <h3 data-number="5.9.1" class="anchored" data-anchor-id="explorando-una-base-de-datos-del-dane"><span class="header-section-number">5.9.1</span> Explorando una base de datos del DANE</h3>
 <p><strong>Contexto de la actividad:</strong> En estadística aplicada, antes de realizar cualquier análisis es fundamental comprender las características de las variables contenidas en una base de datos. Para ello, se utilizará una base oficial del Departamento Administrativo Nacional de Estadística (DANE) correspondiente al módulo de acuicultura. Los estudiantes actuarán como analistas de datos, explorando información real utilizada en estudios productivos y socioeconómicos.</p>
 <p><strong>Objetivo de aprendizaje:</strong> Al finalizar esta actividad, el estudiante será capaz de explorar una base de datos real, identificar tipos de variables y escalas de medición, seleccionar representaciones gráficas adecuadas e interpretar información estadística básica utilizando R.</p>
-<p>Fuente oficial: <a href="https://microdatos.dane.gov.co/index.php/catalog/513/data-dictionary/F4?file_name=S07D(Acuicultura)">DANE – Diccionario S07D Acuicultura</a></p>
+<p>Fuente: Departamento Administrativo Nacional de Estadística (DANE), <em>Tercer Censo Nacional Agropecuario (3er CNA), 2014</em>, archivo S07D (Acuicultura) <span class="citation" data-cites="dane2014cna">(<a href="referencias.html#ref-dane2014cna" role="doc-biblioref">Departamento Administrativo Nacional de Estadística (DANE), 2014</a>)</span>. <a href="https://microdatos.dane.gov.co/index.php/catalog/513/data-dictionary/F4?file_name=S07D(Acuicultura)">Consultar diccionario oficial</a>.</p>
 </section>
 <section id="desarrollo-de-la-actividad" class="level3" data-number="5.9.2">
 <h3 data-number="5.9.2" class="anchored" data-anchor-id="desarrollo-de-la-actividad"><span class="header-section-number">5.9.2</span> <strong>Desarrollo de la actividad</strong></h3>
@@ -1392,12 +1415,15 @@ Conclusión
 </div>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
 <div id="ref-armitage2002statistical" class="csl-entry" role="listitem">
 Armitage, P., Berry, G., &amp; Mattews, J. N. S. (2002). <em>Statistical methods in medical research</em>. Blackwell Science.
 </div>
 <div id="ref-bonita2008epidemiologia" class="csl-entry" role="listitem">
 Bonita, R., Beaglehole, R., &amp; Kjellström, T. (2008). <em>Epidemiología básica</em>. Organización Panamericana de la Salud.
+</div>
+<div id="ref-dane2014cna" class="csl-entry" role="listitem">
+Departamento Administrativo Nacional de Estadística (DANE). (2014). <em>Tercer Censo Nacional Agropecuario - 2014 - 3er CNA: S07D (Acuicultura)</em>. Conjunto de datos. Catálogo de Microdatos del DANE. <a href="https://microdatos.dane.gov.co/index.php/catalog/513/data-dictionary/F4?file_name=S07D(Acuicultura)">https://microdatos.dane.gov.co/index.php/catalog/513/data-dictionary/F4?file_name=S07D(Acuicultura)</a>
 </div>
 <div id="ref-obando2021graficos" class="csl-entry" role="listitem">
 Obando, L. (2021). <em>Gráficos estadísticos y análisis de datos con R</em>. Editorial Académica.

@@ -126,8 +126,7 @@ library(readr)
 library(kableExtra)
 
 # Cargar base de datos de Acuicultura
-library(readxl)
-datos <- read_excel("data/bd_antropometricas.xlsx")
+acuicultura <- read_csv("data/S07D_Acuicultura.csv")
 
 # Tabla de frecuencia
 tabla_frecuencia <- acuicultura %>%
