@@ -1,9 +1,132 @@
-# Prefacio {.unnumbered}
+---
+title: "Prefacio"
+---
 
-La estadística constituye una herramienta fundamental para comprender, interpretar y transformar la realidad a partir de los datos. En un contexto caracterizado por el crecimiento exponencial de la información, el análisis estadístico se ha consolidado como una competencia esencial en múltiples disciplinas, especialmente en escenarios académicos, científicos, sociales y organizacionales.
+# Estadística Experiencial Aplicada {.unnumbered}
 
-Este libro surge como una propuesta orientada al aprendizaje experiencial de la estadística descriptiva mediante el uso del lenguaje [R]{style="color:#276DC3;font-weight:bold;"} y el entorno de publicación científica Quarto. Su propósito principal es acercar al estudiante a situaciones reales de análisis de datos, promoviendo no solo el cálculo de medidas estadísticas, sino también la interpretación crítica de la información y la toma de decisiones basadas en evidencia.
+## Aprendizaje práctico de la estadística descriptiva con R {.unnumbered}
 
-A lo largo de los capítulos se integran ejemplos aplicados, visualizaciones estadísticas, actividades experienciales y bases de datos reales provenientes de contextos académicos y oficiales, permitiendo que el lector comprenda cómo la estadística trasciende los ejercicios mecánicos y se convierte en una herramienta para explorar fenómenos del mundo real.
+Aprender estadística implica mucho más que aplicar fórmulas. Supone **formular preguntas, comprender los datos, elegir procedimientos adecuados, representar la información, interpretar resultados y comunicar hallazgos con claridad**.
 
-El uso de [R]{style="color:#276DC3;font-weight:bold;"} permite desarrollar habilidades contemporáneas asociadas al análisis reproducible, la programación estadística y la ciencia de datos, fortaleciendo competencias analíticas cada vez más demandadas en la educación superior y en el ámbito profesional.
+**Estadística Experiencial Aplicada** nace con ese propósito: ofrecer un recurso educativo en español que articule los fundamentos de la estadística descriptiva con el uso progresivo de **R**, conjuntos de datos, visualizaciones y actividades prácticas.
+
+El libro está dirigido a estudiantes y docentes de educación superior que buscan aproximarse al análisis de datos desde una perspectiva aplicada. No se requiere experiencia previa en programación: R se introduce gradualmente como una herramienta para explorar, organizar, analizar y comunicar información.
+
+::: {.callout-tip title="Una experiencia de aprendizaje basada en datos"}
+Cada tema busca conectar cinco elementos:
+
+**pregunta → datos → análisis → visualización → interpretación**
+
+El código no se presenta como un fin en sí mismo, sino como una herramienta para comprender los conceptos estadísticos y documentar el proceso de análisis.
+:::
+
+## ¿Qué encontrará en este libro? {.unnumbered}
+
+A lo largo del recurso se integran:
+
+-   fundamentos de estadística descriptiva explicados desde situaciones aplicadas;
+-   preparación, organización y exploración de datos con R;
+-   tablas, medidas descriptivas y visualizaciones;
+-   actividades para aplicar los conceptos con conjuntos de datos;
+-   ejemplos de código que pueden ejecutarse y modificarse;
+-   orientaciones para interpretar resultados y comunicar hallazgos;
+-   una introducción a prácticas de análisis reproducible con R y Quarto.
+
+Para comenzar, consulte [Cómo usar este libro](como-usar.qmd).
+
+## Aprender haciendo {.unnumbered}
+
+La propuesta adopta un enfoque experiencial: los conceptos se trabajan mediante la interacción directa con datos, código y representaciones gráficas. La intención es que el lector pueda observar qué ocurre cuando cambia una variable, modifica una instrucción, compara resultados o emplea una representación diferente.
+
+Este enfoque busca fortalecer de manera conjunta la **alfabetización estadística**, la **alfabetización de datos** y las habilidades iniciales de programación necesarias para desenvolverse en entornos contemporáneos de análisis.
+
+::: {.callout-note title="R y Quarto en el proceso de aprendizaje"}
+**R** se utiliza para organizar, analizar y visualizar los datos. **Quarto** permite integrar código, resultados, texto y figuras en documentos reproducibles.
+
+El propósito no es convertir este libro en un curso completo de Quarto, sino mostrar cómo una práctica estadística puede documentarse de manera transparente y volver a ejecutarse. Consulte [Reproducibilidad y Quarto](reproducibilidad.qmd).
+:::
+
+## Estado actual del recurso {.unnumbered}
+
+Este libro se encuentra **en desarrollo y revisión continua**. La versión actual consolida su estructura pedagógica, los contenidos introductorios de estadística descriptiva, los ejemplos en R y los mecanismos básicos de reproducibilidad y participación.
+
+A la fecha, el recurso **todavía no ha sido implementado formalmente con estudiantes o docentes**. Por esta razón, no se presentan resultados de aprendizaje, satisfacción, percepción o impacto que aún no han sido obtenidos.
+
+La siguiente etapa contempla una implementación piloto que permita documentar la experiencia de uso, identificar dificultades, recoger retroalimentación y orientar nuevas mejoras pedagógicas y técnicas.
+
+::: {.callout-important title="Transparencia sobre la evidencia de uso"}
+Los resultados de una futura implementación se incorporarán únicamente cuando exista evidencia recogida mediante un proceso definido. Esta versión distingue explícitamente entre las características actuales del recurso y los resultados de uso que todavía están por evaluarse.
+:::
+
+## Un proyecto abierto y reproducible {.unnumbered}
+
+El proyecto se desarrolla con **R, Quarto y GitHub**. Los archivos fuente, el código y los recursos necesarios para reproducir los ejemplos se organizan dentro del proyecto, evitando depender de rutas locales específicas de un computador.
+
+La reproducibilidad se entiende también como una práctica educativa: el lector puede examinar el código, ejecutarlo, modificarlo y contrastar los resultados obtenidos.
+
+El proyecto incorpora progresivamente criterios de:
+
+-   rutas y estructura de archivos reproducibles;
+-   documentación de los conjuntos de datos utilizados;
+-   accesibilidad de figuras e imágenes;
+-   consistencia en el uso de herramientas gráficas;
+-   identificación de dependencias de R;
+-   mecanismos para reportar errores y proponer mejoras.
+
+## Participar y contribuir {.unnumbered}
+
+**Estadística Experiencial Aplicada** se concibe como un recurso que puede mejorar con la revisión y participación de su comunidad de usuarios.
+
+Son bienvenidos los reportes de errores, sugerencias pedagógicas, mejoras de accesibilidad, propuestas de ejercicios y contribuciones que fortalezcan la reproducibilidad del material.
+
+Las contribuciones deben respetar criterios de autoría, protección de datos, derechos de uso de imágenes y trazabilidad de las fuentes.
+
+Consulte [Cómo contribuir](contribuir.qmd) para conocer el procedimiento y los criterios del proyecto.
+
+## Autores {.unnumbered}
+
+**Francisco Javier León**\
+**Miguel Oswaldo Pérez Pulido**\
+**Leonardo Andrés Pinto Guarguatí**
+
+Universidad de Santander (UDES)\
+Bucaramanga, Colombia
+
+Para conocer la información académica de los autores, consulte la sección [Autores](autores.qmd).
+
+::: {.callout-note title="Cómo citar este recurso"}
+León, F. J., Pérez Pulido, M. O., & Pinto Guarguatí, L. A. (2026). *Estadística Experiencial Aplicada: aprendizaje práctico de la estadística descriptiva con R*. Universidad de Santander (UDES). <https://udesanalitica.github.io/estadistica-experiencial/>
+:::
+
+```` bibtex
+```bibtex
+@book{leonPerezPinto2026,
+  author    = {León, Francisco Javier and Pérez Pulido, Miguel Oswaldo and Pinto Guarguatí, Leonardo Andrés},
+  title     = {Estadística Experiencial Aplicada: aprendizaje práctico de la estadística descriptiva con R},
+  publisher = {Universidad de Santander (UDES)},
+  address   = {Bucaramanga, Colombia},
+  year      = {2026},
+  url       = {https://udesanalitica.github.io/estadistica-experiencial/},
+  language  = {es}
+}
+```
+````
+
+## Información editorial y derechos {.unnumbered}
+
+**© 2026 Universidad de Santander (UDES).** La Universidad de Santander es titular de los derechos patrimoniales de la obra, sin perjuicio de los derechos morales que corresponden a sus autores.
+
+**Autores:** Francisco Javier León, Miguel Oswaldo Pérez Pulido y Leonardo Andrés Pinto Guarguatí.
+
+Este material es de **acceso gratuito** y se encuentra en proceso de consolidación editorial. Se propone que los contenidos textuales y las figuras producidas específicamente para el proyecto se publiquen bajo **Creative Commons Atribución 4.0 Internacional (CC BY 4.0)** y que el código fuente se distribuya bajo **licencia MIT**.
+
+La formalización institucional de este esquema de licenciamiento se encuentra pendiente. Hasta que dicho proceso concluya, la reutilización o adaptación del contenido deberá atender las autorizaciones aplicables de la Universidad de Santander.
+
+Los conjuntos de datos utilizados en los ejemplos conservan las condiciones de uso, atribución y redistribución correspondientes a su procedencia y documentación.
+
+**Universidad de Santander (UDES)**\
+Calle 70 N.º 55-210\
+Bucaramanga, Santander, Colombia\
+<https://www.udes.edu.co/>
+
+Para información ampliada sobre derechos, apertura y reutilización, consulte [Derechos, apertura y reutilización](licencia.qmd).

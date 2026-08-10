@@ -1,0 +1,38 @@
+---
+title: "Cómo contribuir"
+---
+
+**Estadística Experiencial Aplicada** es un recurso en desarrollo. Las contribuciones pueden ayudar a mejorar su precisión estadística, claridad pedagógica, reproducibilidad y accesibilidad.
+
+## Formas de participar
+
+- **Reportar un problema:** errores conceptuales, enlaces rotos, código que no ejecuta o dificultades de accesibilidad.
+- **Proponer una mejora:** ejercicios, explicaciones alternativas o mejoras en la documentación.
+- **Revisar reproducibilidad:** identificar pasos que dependan de configuraciones locales o paquetes no documentados.
+- **Mejorar accesibilidad:** proponer textos alternativos, estructura semántica o formas más claras de presentar tablas y gráficos.
+- **Enviar un cambio:** realizar una modificación en una rama y proponerla mediante un *Pull Request*.
+
+## Criterios básicos
+
+Antes de proponer un cambio, verifique que:
+
+1. el código pueda ejecutarse desde la raíz del proyecto;
+2. se utilicen rutas relativas;
+3. la fuente y las condiciones de uso de los datos estén documentadas;
+4. no se incorporen datos personales, confidenciales o reservados;
+5. las imágenes informativas cuenten con texto alternativo;
+6. el análisis diferencie claramente resultado e interpretación.
+
+## Datos e imágenes
+
+Los nuevos datos deben poder compartirse legítimamente y conservar su atribución cuando corresponda. Las imágenes deben ser propias, generadas por el proyecto o contar con derechos suficientes para su reutilización.
+
+Citar una figura de otra fuente no equivale, por sí solo, a contar con permiso para redistribuirla.
+
+## Guía completa
+
+Las instrucciones técnicas, criterios para datos e imágenes y condiciones de contribución están disponibles en [`CONTRIBUTING.md`](CONTRIBUTING.md).
+
+También puedes utilizar los *Issues* del repositorio para reportar problemas:
+
+<https://github.com/udesanalitica/estadistica-experiencial/issues>

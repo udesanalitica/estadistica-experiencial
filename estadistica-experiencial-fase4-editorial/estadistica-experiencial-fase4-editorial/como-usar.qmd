@@ -1,0 +1,39 @@
+---
+title: "Cómo usar este libro"
+---
+
+Este recurso está organizado para que el aprendizaje de la estadística ocurra mediante la interacción con **problemas, datos, código e interpretación**. La intención no es aprender R de manera aislada, sino utilizarlo como herramienta para comprender y comunicar resultados estadísticos.
+
+## Ruta de aprendizaje
+
+1. **Problema o situación.** Se parte de una pregunta o contexto que requiere analizar datos.
+2. **Concepto estadístico.** Se introduce la idea necesaria para responder la pregunta.
+3. **Código en R.** El procedimiento se implementa paso a paso con código que puede reutilizarse.
+4. **Visualización o resultado.** Se examinan tablas, medidas o gráficos obtenidos.
+5. **Interpretación.** Se explica el significado estadístico del resultado en su contexto.
+6. **Actividad experiencial.** El lector aplica el procedimiento con datos y toma decisiones a partir de la evidencia.
+
+::: callout-tip
+## Para estudiantes
+
+No es necesario memorizar cada instrucción de R. Se recomienda ejecutar los ejemplos, modificar valores, observar qué cambia y registrar la interpretación de los resultados.
+:::
+
+::: callout-note
+## Para docentes
+
+Los capítulos pueden utilizarse de manera secuencial o seleccionarse según los resultados de aprendizaje del curso. Los ejemplos pueden adaptarse a otros conjuntos de datos conservando la misma lógica de análisis.
+:::
+
+## Qué encontrarás en los capítulos
+
+- fundamentos y tipos de variables;
+- preparación y organización de datos;
+- tablas de frecuencia;
+- visualización;
+- medidas de tendencia central y dispersión;
+- medidas de posición y forma;
+- análisis bivariado; y
+- una aproximación crítica al uso de inteligencia artificial como apoyo al aprendizaje.
+
+Al finalizar, la sección [Reproducibilidad](reproducibilidad.qmd) muestra cómo integrar código, resultados e interpretación en un documento Quarto.
