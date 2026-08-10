@@ -5,23 +5,25 @@ project:
   preview:
     port: 4200
     browser: true
-    
-    
+
 lang: es
 toc-title: "Tabla de contenido"
-cover-image: cover.png
 
 book:
   title: "Estadística Experiencial Aplicada"
   subtitle: "Aprendizaje práctico de la estadística descriptiva con R"
+
   author:
     - "Francisco Javier León"
     - "Miguel Oswaldo Pérez Pulido"
     - "Leonardo Andrés Pinto Guarguatí"
+
   date: "2026-03-24"
-  
+
+  cover-image: cover.png
 
   site-url: "https://udesanalitica.github.io/estadistica-experiencial/"
+
   repo-url: "https://github.com/udesanalitica/estadistica-experiencial"
   repo-branch: main
   repo-actions: [edit, issue, source]
@@ -29,6 +31,10 @@ book:
   page-navigation: true
   search: true
   downloads: [pdf, epub]
+
+  page-footer:
+    left: "© 2026 Universidad de Santander (UDES) · Acceso gratuito · Licenciamiento en formalización"
+    right: "Publicado con Quarto y GitHub Pages"
 
   chapters:
     - index.qmd
@@ -68,19 +74,13 @@ format:
     number-sections: true
     mainfont: "Times New Roman"
     geometry:
-    - top=2.2cm
-    - bottom=2.5cm
-    - left=2.5cm
-    - right=2.5cm
+      - top=2.2cm
+      - bottom=2.5cm
+      - left=2.5cm
+      - right=2.5cm
 
   epub:
     cover-image: cover.png
-
-website:
-  base-url: "/estadistica-experiencial/"
-  page-footer:
-    left: "© 2026 Universidad de Santander (UDES) · Acceso gratuito · Licenciamiento en formalización"
-    right: "Publicado con Quarto y GitHub Pages"
 
 execute:
   freeze: auto
