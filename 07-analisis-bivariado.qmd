@@ -1,59 +1,75 @@
 ---
-title: "Análisis bivariado"
+title: "Análisis de asociación entre variables"
 editor: 
   markdown: 
     wrap: 72
 ---
 
-En los capítulos anteriores se estudiaron las características de una
-sola variable a la vez, analizando aspectos como la tendencia central,
-la dispersión, la posición y la forma de los datos. Sin embargo, en los
-problemas reales rara vez las variables actúan de manera aislada. En la
-práctica, los fenómenos sociales, económicos, educativos, biológicos y
-administrativos suelen depender de la interacción entre múltiples
-variables.
+En los capítulos anteriores se estudiaron las características de las
+variables de manera individual, considerando aspectos como la tendencia
+central, la dispersión, la posición y la forma de las distribuciones. Sin
+embargo, en los problemas reales las variables rara vez se comportan de
+manera aislada. Con frecuencia, el interés estadístico consiste en
+comprender **cómo dos o más características se relacionan, varían
+conjuntamente o permiten explicar el comportamiento de un fenómeno**.
 
-Por ejemplo, en educación puede surgir la pregunta de si un mayor número
-de horas de estudio se relaciona con mejores calificaciones; en salud,
-si existe asociación entre el índice de masa corporal y la presión
-arterial; o en economía, si el nivel de ingresos influye sobre el gasto
-familiar. Todas estas situaciones requieren estudiar simultáneamente dos
-variables y comprender cómo se comportan conjuntamente.
+Por ejemplo, en un estudio antropométrico puede resultar de interés
+establecer si la **altura corporal se relaciona con el peso**, si
+determinadas medidas corporales presentan patrones conjuntos, si existen
+diferencias entre grupos o si algunas características pueden contribuir a
+explicar el comportamiento de otra variable. Este tipo de preguntas
+requiere pasar de la descripción individual de los datos al estudio de las
+**relaciones y asociaciones entre variables**.
 
-El análisis bivariado corresponde precisamente al conjunto de técnicas
-estadísticas utilizadas para explorar, describir, cuantificar e
-interpretar la relación entre dos variables medidas sobre las mismas
-unidades de análisis. A diferencia del análisis univariado, cuyo
-propósito es describir individualmente una variable, el análisis
-bivariado busca identificar patrones de asociación, dependencia o
-predicción entre variables.
+El **análisis de asociación** reúne herramientas estadísticas orientadas a
+explorar, describir, cuantificar e interpretar estas relaciones. Cuando el
+estudio se concentra específicamente en dos variables se habla de
+**análisis bivariado**. Dependiendo de la naturaleza de las variables y del
+propósito del análisis, pueden estudiarse relaciones entre variables
+cuantitativas, asociaciones entre variables categóricas, diferencias entre
+grupos o relaciones de tipo explicativo y predictivo.
 
-Dependiendo de la naturaleza de las variables involucradas, el análisis
-bivariado puede abordar diferentes situaciones: relaciones entre
-variables cuantitativas; asociaciones entre variables categóricas;
-comparación de una variable cuantitativa entre categorías.
+Es importante distinguir que **asociación no significa causalidad**.
+Identificar que dos variables presentan un patrón conjunto no implica que
+una sea necesariamente la causa de la otra. La interpretación debe
+realizarse considerando el contexto del estudio, el diseño mediante el
+cual se obtuvieron los datos y las posibles variables adicionales
+involucradas.
 
-En este capítulo se desarrollan las principales herramientas del
-análisis bivariado, incluyendo: diagramas de dispersión, covarianza,
-correlación de Pearson, correlación de Spearman, tablas de contingencia,
-y regresión lineal simple.
+En este capítulo se desarrollarán herramientas como los **diagramas de
+dispersión, la covarianza, la correlación de Pearson, la correlación de
+Spearman, las tablas de contingencia y los modelos de regresión lineal**.
+Estas técnicas permiten estudiar la dirección, intensidad y estructura de
+las relaciones observadas, así como construir modelos básicos para
+describir o explicar el comportamiento conjunto de las variables.
 
-Cada técnica será presentada desde una perspectiva teórica y
-posteriormente aplicada mediante ejemplos desarrollados en R utilizando
-un mismo conjunto de datos, con el propósito de facilitar la comprensión
-progresiva del análisis estadístico y fortalecer el aprendizaje
-experiencial. Es importante destacar que el análisis bivariado
-constituye la base de técnicas estadísticas más avanzadas, como la
-regresión múltiple, el análisis multivariado y los modelos predictivos
-utilizados actualmente en ciencia de datos, inteligencia artificial y
-analítica aplicada.
+El capítulo utilizará una **base de datos antropométrica de estudiantes
+universitarios**, que contiene variables cuantitativas y categóricas
+relacionadas con características corporales. A partir de estos datos se
+desarrollarán ejemplos reproducibles en R que permitirán conectar
+progresivamente la representación gráfica, las medidas de asociación y los
+modelos estadísticos.
 
-## Tipos de análisis bivariado
+El enfoque será fundamentalmente experiencial: cada concepto será
+acompañado por su interpretación, representación gráfica y aplicación
+computacional. De esta manera, el estudiante podrá avanzar desde una
+pregunta sobre la relación entre variables hasta la selección de la
+técnica estadística apropiada, su implementación en R y la interpretación
+de los resultados.
 
-El tipo de análisis bivariado que puede realizarse depende de la
-naturaleza de las variables estudiadas. En estadística, las variables
-pueden ser cuantitativas o categóricas, y cada combinación requiere
-herramientas específicas de exploración, visualización e interpretación.
+Este análisis constituye además una transición hacia métodos estadísticos
+de mayor complejidad. La comprensión de las relaciones entre variables
+proporciona fundamentos para estudiar posteriormente modelos de regresión
+múltiple, técnicas multivariadas y procedimientos utilizados en analítica
+de datos y modelamiento estadístico.
+
+## Tipos de análisis de asociación según la naturaleza de las variables
+
+La técnica estadística apropiada para estudiar una asociación depende
+tanto de la **naturaleza de las variables** como del **objetivo del
+análisis**. Antes de calcular cualquier medida o ajustar un modelo, es
+necesario identificar si las variables son cuantitativas o categóricas y
+determinar qué tipo de relación se desea explorar.
 
 Cuando ambas variables son cuantitativas, el interés suele centrarse en
 evaluar si existe asociación, dependencia o relación funcional entre
@@ -74,45 +90,58 @@ comportamiento de la variable numérica entre diferentes grupos o
 categorías. Por ejemplo, comparar las calificaciones promedio entre
 hombres y mujeres, o analizar diferencias salariales entre regiones.
 
-La siguiente tabla resume las principales combinaciones posibles en el
-análisis bivariado:
+La siguiente tabla resume las principales situaciones que pueden
+presentarse en el análisis de asociación:
 
-| Tipo de variable 1 | Tipo de variable 2 | Objetivo principal | Técnicas utilizadas |
-|----|----|----|----|
-| Cuantitativa | Cuantitativa | Evaluar asociación o predicción | Correlación, regresión, dispersión |
-| Categórica | Categórica | Analizar asociación entre categorías | Tablas de contingencia |
-| Cuantitativa | Categórica | Comparar grupos | Boxplot, medias, comparación gráfica |
+| Variables involucradas | Pregunta principal | Herramientas iniciales |
+|---|---|---|
+| Cuantitativa -- Cuantitativa | ¿Existe relación?, ¿en qué dirección y con qué intensidad? | Dispersión, covarianza, Pearson, Spearman, regresión |
+| Categórica -- Categórica | ¿Las categorías presentan asociación? | Tablas de contingencia y medidas o pruebas de asociación |
+| Cuantitativa -- Categórica | ¿La distribución de la variable cuantitativa cambia entre grupos? | Boxplot, estadísticos por grupo y comparación |
+| Una respuesta y varias explicativas | ¿Varias variables contribuyen conjuntamente a explicar una respuesta? | Regresión lineal múltiple |
 
 Comprender el tipo de variables involucradas constituye un paso
 fundamental antes de seleccionar cualquier técnica estadística, ya que
 una elección incorrecta puede conducir a interpretaciones inadecuadas o
 resultados inconsistentes.
 
-En este capítulo se abordarán ejemplos correspondientes a cada una de
-estas situaciones, integrando representaciones gráficas, medidas
-estadísticas y modelos básicos de análisis bivariado mediante
-implementaciones desarrolladas en R.
+En este capítulo se abordarán ejemplos correspondientes a varias de
+estas situaciones, integrando representaciones gráficas, medidas de
+asociación y modelos estadísticos básicos mediante implementaciones
+desarrolladas en R.
+
+## Ruta conceptual del capítulo
+
+El recorrido propuesto sigue una secuencia progresiva:
+
+**explorar visualmente → cuantificar la variación conjunta → estandarizar
+la asociación → modelar la relación → estudiar asociaciones entre
+categorías**.
+
+Esta secuencia permite comprender no solo cómo calcular cada estadístico,
+sino también qué pregunta responde, bajo qué condiciones puede utilizarse
+y cómo interpretar sus resultados dentro del contexto del problema.
 
 ## Conjunto de datos de trabajo
 
 A lo largo de este capítulo se utilizará un mismo conjunto de datos con
-el propósito de ilustrar las diferentes técnicas de análisis bivariado
-de manera integrada y progresiva. El uso de un único dataset facilita la
-comparación de resultados y permite comprender cómo distintas
-herramientas estadísticas pueden analizar una misma realidad desde
-perspectivas complementarias.
+el propósito de ilustrar las diferentes técnicas de análisis de
+asociación de manera integrada y progresiva. El uso de una misma base
+facilita la comparación de resultados y permite comprender cómo distintas
+herramientas estadísticas pueden estudiar una realidad desde perspectivas
+complementarias.
 
-La base de datos contiene información correspondiente a estudiantes
-universitarios e incluye variables cuantitativas y categóricas, entre
-ellas:
+La base contiene información antropométrica correspondiente a estudiantes
+universitarios e incluye variables cuantitativas y categóricas. Entre las
+variables utilizadas en los ejemplos del capítulo se encuentran la
+**altura**, el **peso corporal**, el **índice de masa corporal (IMC)**, la
+**longitud de la pierna**, la **longitud del pie**, la **longitud de la
+mano** y el **género**, además de variables derivadas de clasificación
+antropométrica presentes en el conjunto de datos.
 
-horas de estudio semanales, calificación final, horas de sueño, y
-género.
-
-Estas variables permiten desarrollar ejemplos relacionados con:
-
-relaciones entre variables cuantitativas, asociaciones entre variables
-categóricas, y comparación de grupos.
+Estas variables permiten desarrollar ejemplos de relaciones entre
+variables cuantitativas, asociaciones entre variables categóricas,
+comparaciones entre grupos y modelos de regresión.
 
 En términos pedagógicos, este enfoque favorece el aprendizaje
 experiencial, ya que el estudiante puede observar cómo los conceptos
@@ -382,7 +411,7 @@ incorpora dos o más predictores para explicar conjuntamente el
 comportamiento de la variable respuesta.
 
 | Modelo | Número de variables explicativas | Forma general |
-|----|---:|----|
+|------------------------|-----------------------:|------------------------|
 | Regresión lineal simple | 1 | $Y = \beta_0 + \beta_1X + \varepsilon$ |
 | Regresión lineal múltiple | 2 o más | $Y = \beta_0 + \beta_1X_1 + \cdots + \beta_kX_k + \varepsilon$ |
 
@@ -515,16 +544,16 @@ boxplot(
 
 ## Estructura general para seleccionar la técnica adecuada
 
-En el análisis bivariado, la selección de la técnica estadística depende
-principalmente del tipo de variables que se desean analizar y de los
-supuestos que cumplen los datos (@fig-dosvariables). Por esta razón,
+En el análisis de asociación, la selección de la técnica estadística
+depende principalmente del tipo de variables que se desean analizar, del
+objetivo del estudio y de los supuestos que cumplen los datos
+(@fig-dosvariables). Por esta razón,
 antes de aplicar cualquier procedimiento es necesario identificar si las
 variables son cuantitativas o categóricas, revisar su distribución,
 explorar la forma de la relación y verificar la presencia de valores
 atípicos.
 
-![Esquema del análisis bivariado según la combinación de tipos de
-variables.](img/dosvariables.png){#fig-dosvariables}
+![Esquema para la selección de técnicas de análisis de asociación según la naturaleza de las variables.](img/dosvariables.png){#fig-dosvariables}
 
 ## Cuando se cumplen los supuestos
 
@@ -881,7 +910,7 @@ ggplot(
   )
 ```
 
-## Otras medidas de asociación
+## Otras herramientas para explorar la asociación
 
 ### Diagrama de dispersión
 
@@ -891,10 +920,11 @@ variables cuantitativas. Cada punto del gráfico representa una
 observación y su posición en el plano cartesiano depende de los valores
 registrados para las variables $X$ y $Y$.
 
-Esta herramienta constituye generalmente el primer paso del análisis
-bivariado, ya que permite identificar visualmente patrones de
-asociación, tendencias, agrupamientos y posibles valores atípicos antes
-de aplicar medidas numéricas de correlación o modelos de regresión
+Esta herramienta constituye generalmente el primer paso del análisis de
+asociación entre variables cuantitativas, ya que permite identificar
+visualmente patrones, tendencias, agrupamientos y posibles valores
+atípicos antes de aplicar medidas numéricas de correlación o modelos de
+regresión
 (@fig-dispersion). A partir de un diagrama de dispersión pueden
 identificarse diferentes comportamientos entre las variables:
 
@@ -1014,7 +1044,7 @@ punto respecto a las medias de $X$ y $Y$ permite interpretar el signo de
 esa contribución:
 
 | Cuadrante respecto a $\bar{x}$ y $\bar{y}$ | Signos | Contribución al producto |
-|----|----|----|
+|------------------------|------------------------|------------------------|
 | Superior derecho (I) | $(+)(+)$ | Positiva |
 | Superior izquierdo (II) | $(-)(+)$ | Negativa |
 | Inferior izquierdo (III) | $(-)(-)$ | Positiva |
@@ -1337,7 +1367,7 @@ el comportamiento de los datos.
 **Preguntas**
 
 ¿Qué tipo de relación observa en el diagrama? positiva, negativa, nula,
-urvilínea.\
+curvilínea.\
 ¿La relación parece fuerte o débil?\
 ¿Existen valores atípicos?\
 ¿Se observan diferencias entre hombres y mujeres?
