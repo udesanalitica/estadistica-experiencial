@@ -1,0 +1,2010 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.33">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>10&nbsp; Análisis de asociación entre variables – Estadística Experiencial Aplicada</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./08-ia.html" rel="next">
+<link href="./06-posicion.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-806c95bdecf85540f7beab145150c922.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Sin resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./07-analisis-bivariado.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Análisis de asociación entre variables</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Estadística Experiencial Aplicada</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/udesanalitica/estadistica-experiencial" title="Ejecutar el código" class="quarto-navigation-tool px-1" aria-label="Ejecutar el código"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Descargar" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Descargar"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Estadística-Experiencial-Aplicada.pdf">
+              <i class="bi bi-file-pdf pe-1"></i>
+            Descargar PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Estadística-Experiencial-Aplicada.epub">
+              <i class="bi bi-journal pe-1"></i>
+            Descargar ePub
+            </a>
+          </li>
+      </ul>
+    </div>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Buscar"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Prefacio</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introducción</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./autores.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Autores</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-fundamentos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Introducción a la estadística descriptiva</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-preparacion-datos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Preparación de datos</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-tablas-frecuencia.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Organización e interpretación de datos estadísticos</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-visualizacion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Visualización de datos</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-tendencia-central.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Medidas de tendencia central y dispersión</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-posicion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Medidas de posición y forma</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-analisis-bivariado.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Análisis de asociación entre variables</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-ia.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Declaración sobre el uso de herramientas de inteligencia artificial</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./licencia.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Derechos, apertura y reutilización</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./reproducibilidad.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Reproducibilidad y Quarto</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./como-usar.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Cómo usar este libro</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./contribuir.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Cómo contribuir</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./referencias.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Referencias</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Tabla de contenido</h2>
+   
+  <ul>
+  <li><a href="#tipos-de-análisis-de-asociación-según-la-naturaleza-de-las-variables" id="toc-tipos-de-análisis-de-asociación-según-la-naturaleza-de-las-variables" class="nav-link active" data-scroll-target="#tipos-de-análisis-de-asociación-según-la-naturaleza-de-las-variables"><span class="header-section-number">10.1</span> Tipos de análisis de asociación según la naturaleza de las variables</a></li>
+  <li><a href="#ruta-conceptual-del-capítulo" id="toc-ruta-conceptual-del-capítulo" class="nav-link" data-scroll-target="#ruta-conceptual-del-capítulo"><span class="header-section-number">10.2</span> Ruta conceptual del capítulo</a></li>
+  <li><a href="#conjunto-de-datos-de-trabajo" id="toc-conjunto-de-datos-de-trabajo" class="nav-link" data-scroll-target="#conjunto-de-datos-de-trabajo"><span class="header-section-number">10.3</span> Conjunto de datos de trabajo</a></li>
+  <li><a href="#carga-de-datos-en-r" id="toc-carga-de-datos-en-r" class="nav-link" data-scroll-target="#carga-de-datos-en-r"><span class="header-section-number">10.4</span> Carga de datos en R</a></li>
+  <li><a href="#exploración-inicial-de-variables" id="toc-exploración-inicial-de-variables" class="nav-link" data-scroll-target="#exploración-inicial-de-variables"><span class="header-section-number">10.5</span> Exploración inicial de variables</a></li>
+  <li><a href="#evaluación-de-supuestos" id="toc-evaluación-de-supuestos" class="nav-link" data-scroll-target="#evaluación-de-supuestos"><span class="header-section-number">10.6</span> Evaluación de supuestos</a>
+  <ul class="collapse">
+  <li><a href="#variables-cuantitativas-continuas" id="toc-variables-cuantitativas-continuas" class="nav-link" data-scroll-target="#variables-cuantitativas-continuas"><span class="header-section-number">10.6.1</span> Variables cuantitativas continuas</a></li>
+  <li><a href="#prueba-de-normalidad-shapiro-wilk" id="toc-prueba-de-normalidad-shapiro-wilk" class="nav-link" data-scroll-target="#prueba-de-normalidad-shapiro-wilk"><span class="header-section-number">10.6.2</span> Prueba de normalidad Shapiro-Wilk</a></li>
+  <li><a href="#independencia-de-las-observaciones" id="toc-independencia-de-las-observaciones" class="nav-link" data-scroll-target="#independencia-de-las-observaciones"><span class="header-section-number">10.6.3</span> Independencia de las observaciones</a></li>
+  <li><a href="#relación-lineal" id="toc-relación-lineal" class="nav-link" data-scroll-target="#relación-lineal"><span class="header-section-number">10.6.4</span> Relación lineal</a></li>
+  <li><a href="#regresión-lineal-simple" id="toc-regresión-lineal-simple" class="nav-link" data-scroll-target="#regresión-lineal-simple"><span class="header-section-number">10.6.5</span> Regresión lineal simple</a></li>
+  <li><a href="#regresión-lineal-múltiple" id="toc-regresión-lineal-múltiple" class="nav-link" data-scroll-target="#regresión-lineal-múltiple"><span class="header-section-number">10.6.6</span> Regresión lineal múltiple</a></li>
+  <li><a href="#homocedasticidad" id="toc-homocedasticidad" class="nav-link" data-scroll-target="#homocedasticidad"><span class="header-section-number">10.6.7</span> Homocedasticidad</a></li>
+  <li><a href="#ausencia-de-valores-atípicos-extremos" id="toc-ausencia-de-valores-atípicos-extremos" class="nav-link" data-scroll-target="#ausencia-de-valores-atípicos-extremos"><span class="header-section-number">10.6.8</span> Ausencia de valores atípicos extremos</a></li>
+  </ul></li>
+  <li><a href="#estructura-general-para-seleccionar-la-técnica-adecuada" id="toc-estructura-general-para-seleccionar-la-técnica-adecuada" class="nav-link" data-scroll-target="#estructura-general-para-seleccionar-la-técnica-adecuada"><span class="header-section-number">10.7</span> Estructura general para seleccionar la técnica adecuada</a></li>
+  <li><a href="#cuando-se-cumplen-los-supuestos" id="toc-cuando-se-cumplen-los-supuestos" class="nav-link" data-scroll-target="#cuando-se-cumplen-los-supuestos"><span class="header-section-number">10.8</span> Cuando se cumplen los supuestos</a>
+  <ul class="collapse">
+  <li><a href="#correlación-de-pearson" id="toc-correlación-de-pearson" class="nav-link" data-scroll-target="#correlación-de-pearson"><span class="header-section-number">10.8.1</span> Correlación de Pearson</a></li>
+  </ul></li>
+  <li><a href="#cuando-no-se-cumplen-los-supuestos" id="toc-cuando-no-se-cumplen-los-supuestos" class="nav-link" data-scroll-target="#cuando-no-se-cumplen-los-supuestos"><span class="header-section-number">10.9</span> Cuando no se cumplen los supuestos</a>
+  <ul class="collapse">
+  <li><a href="#correlación-de-spearman" id="toc-correlación-de-spearman" class="nav-link" data-scroll-target="#correlación-de-spearman"><span class="header-section-number">10.9.1</span> Correlación de Spearman</a></li>
+  </ul></li>
+  <li><a href="#otras-herramientas-para-explorar-la-asociación" id="toc-otras-herramientas-para-explorar-la-asociación" class="nav-link" data-scroll-target="#otras-herramientas-para-explorar-la-asociación"><span class="header-section-number">10.10</span> Otras herramientas para explorar la asociación</a>
+  <ul class="collapse">
+  <li><a href="#diagrama-de-dispersión" id="toc-diagrama-de-dispersión" class="nav-link" data-scroll-target="#diagrama-de-dispersión"><span class="header-section-number">10.10.1</span> Diagrama de dispersión</a></li>
+  <li><a href="#covarianza" id="toc-covarianza" class="nav-link" data-scroll-target="#covarianza"><span class="header-section-number">10.10.2</span> Covarianza</a></li>
+  <li><a href="#tablas-de-contingencia" id="toc-tablas-de-contingencia" class="nav-link" data-scroll-target="#tablas-de-contingencia"><span class="header-section-number">10.10.3</span> Tablas de contingencia</a></li>
+  <li><a href="#interpretación" id="toc-interpretación" class="nav-link" data-scroll-target="#interpretación"><span class="header-section-number">10.10.4</span> Interpretación</a></li>
+  <li><a href="#ejercicio-contextual" id="toc-ejercicio-contextual" class="nav-link" data-scroll-target="#ejercicio-contextual"><span class="header-section-number">10.10.5</span> Ejercicio contextual</a></li>
+  <li><a href="#ejemplo-en-r-3" id="toc-ejemplo-en-r-3" class="nav-link" data-scroll-target="#ejemplo-en-r-3"><span class="header-section-number">10.10.6</span> Ejemplo en R</a></li>
+  </ul></li>
+  <li><a href="#integración-y-aplicación" id="toc-integración-y-aplicación" class="nav-link" data-scroll-target="#integración-y-aplicación"><span class="header-section-number">10.11</span> Integración y aplicación</a>
+  <ul class="collapse">
+  <li><a href="#estructura-general-para-seleccionar-la-técnica-adecuada-1" id="toc-estructura-general-para-seleccionar-la-técnica-adecuada-1" class="nav-link" data-scroll-target="#estructura-general-para-seleccionar-la-técnica-adecuada-1"><span class="header-section-number">10.11.1</span> Estructura general para seleccionar la técnica adecuada</a></li>
+  <li><a href="#laboratorio-experiencial" id="toc-laboratorio-experiencial" class="nav-link" data-scroll-target="#laboratorio-experiencial"><span class="header-section-number">10.11.2</span> Laboratorio experiencial</a></li>
+  <li><a href="#actividades-del-estudiante" id="toc-actividades-del-estudiante" class="nav-link" data-scroll-target="#actividades-del-estudiante"><span class="header-section-number">10.11.3</span> Actividades del estudiante</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/udesanalitica/estadistica-experiencial/edit/main/07-analisis-bivariado.qmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/udesanalitica/estadistica-experiencial/issues/new" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li><li><a href="https://github.com/udesanalitica/estadistica-experiencial/blob/main/07-analisis-bivariado.qmd" class="toc-action"><i class="bi empty"></i>Ver el código</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Análisis de asociación entre variables</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>En los capítulos anteriores se estudiaron las características de las variables de manera individual, considerando aspectos como la tendencia central, la dispersión, la posición y la forma de las distribuciones. Sin embargo, en los problemas reales las variables rara vez se comportan de manera aislada. Con frecuencia, el interés estadístico consiste en comprender <strong>cómo dos o más características se relacionan, varían conjuntamente o permiten explicar el comportamiento de un fenómeno</strong>.</p>
+<p>Por ejemplo, en un estudio antropométrico puede resultar de interés establecer si la <strong>altura corporal se relaciona con el peso</strong>, si determinadas medidas corporales presentan patrones conjuntos, si existen diferencias entre grupos o si algunas características pueden contribuir a explicar el comportamiento de otra variable. Este tipo de preguntas requiere pasar de la descripción individual de los datos al estudio de las <strong>relaciones y asociaciones entre variables</strong>.</p>
+<p>El <strong>análisis de asociación</strong> reúne herramientas estadísticas orientadas a explorar, describir, cuantificar e interpretar estas relaciones. Cuando el estudio se concentra específicamente en dos variables se habla de <strong>análisis bivariado</strong>. Dependiendo de la naturaleza de las variables y del propósito del análisis, pueden estudiarse relaciones entre variables cuantitativas, asociaciones entre variables categóricas, diferencias entre grupos o relaciones de tipo explicativo y predictivo.</p>
+<p>Es importante distinguir que <strong>asociación no significa causalidad</strong>. Identificar que dos variables presentan un patrón conjunto no implica que una sea necesariamente la causa de la otra. La interpretación debe realizarse considerando el contexto del estudio, el diseño mediante el cual se obtuvieron los datos y las posibles variables adicionales involucradas.</p>
+<p>En este capítulo se desarrollarán herramientas como los <strong>diagramas de dispersión, la covarianza, la correlación de Pearson, la correlación de Spearman, las tablas de contingencia y los modelos de regresión lineal</strong>. Estas técnicas permiten estudiar la dirección, intensidad y estructura de las relaciones observadas, así como construir modelos básicos para describir o explicar el comportamiento conjunto de las variables.</p>
+<p>El capítulo utilizará una <strong>base de datos antropométrica de estudiantes universitarios</strong>, que contiene variables cuantitativas y categóricas relacionadas con características corporales. A partir de estos datos se desarrollarán ejemplos reproducibles en R que permitirán conectar progresivamente la representación gráfica, las medidas de asociación y los modelos estadísticos.</p>
+<p>El enfoque será fundamentalmente experiencial: cada concepto será acompañado por su interpretación, representación gráfica y aplicación computacional. De esta manera, el estudiante podrá avanzar desde una pregunta sobre la relación entre variables hasta la selección de la técnica estadística apropiada, su implementación en R y la interpretación de los resultados.</p>
+<p>Este análisis constituye además una transición hacia métodos estadísticos de mayor complejidad. La comprensión de las relaciones entre variables proporciona fundamentos para estudiar posteriormente modelos de regresión múltiple, técnicas multivariadas y procedimientos utilizados en analítica de datos y modelamiento estadístico.</p>
+<section id="tipos-de-análisis-de-asociación-según-la-naturaleza-de-las-variables" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="tipos-de-análisis-de-asociación-según-la-naturaleza-de-las-variables"><span class="header-section-number">10.1</span> Tipos de análisis de asociación según la naturaleza de las variables</h2>
+<p>La técnica estadística apropiada para estudiar una asociación depende tanto de la <strong>naturaleza de las variables</strong> como del <strong>objetivo del análisis</strong>. Antes de calcular cualquier medida o ajustar un modelo, es necesario identificar si las variables son cuantitativas o categóricas y determinar qué tipo de relación se desea explorar.</p>
+<p>Cuando ambas variables son cuantitativas, el interés suele centrarse en evaluar si existe asociación, dependencia o relación funcional entre ellas. En estos casos se utilizan herramientas como diagramas de dispersión, covarianza, correlación y regresión lineal. Por ejemplo, puede analizarse la relación entre horas de estudio y calificación final, o entre peso corporal y estatura.</p>
+<p>Si ambas variables son categóricas, el objetivo principal consiste en estudiar asociaciones entre categorías o grupos. Para ello se emplean tablas de contingencia y medidas de asociación categórica. Un ejemplo frecuente corresponde al análisis de la relación entre género y nivel de satisfacción académica.</p>
+<p>También existen situaciones donde una variable es cuantitativa y la otra categórica. En estos casos, el interés radica en comparar el comportamiento de la variable numérica entre diferentes grupos o categorías. Por ejemplo, comparar las calificaciones promedio entre hombres y mujeres, o analizar diferencias salariales entre regiones.</p>
+<p>La siguiente tabla resume las principales situaciones que pueden presentarse en el análisis de asociación:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variables involucradas</th>
+<th>Pregunta principal</th>
+<th>Herramientas iniciales</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Cuantitativa – Cuantitativa</td>
+<td>¿Existe relación?, ¿en qué dirección y con qué intensidad?</td>
+<td>Dispersión, covarianza, Pearson, Spearman, regresión</td>
+</tr>
+<tr class="even">
+<td>Categórica – Categórica</td>
+<td>¿Las categorías presentan asociación?</td>
+<td>Tablas de contingencia y medidas o pruebas de asociación</td>
+</tr>
+<tr class="odd">
+<td>Cuantitativa – Categórica</td>
+<td>¿La distribución de la variable cuantitativa cambia entre grupos?</td>
+<td>Boxplot, estadísticos por grupo y comparación</td>
+</tr>
+<tr class="even">
+<td>Una respuesta y varias explicativas</td>
+<td>¿Varias variables contribuyen conjuntamente a explicar una respuesta?</td>
+<td>Regresión lineal múltiple</td>
+</tr>
+</tbody>
+</table>
+<p>Comprender el tipo de variables involucradas constituye un paso fundamental antes de seleccionar cualquier técnica estadística, ya que una elección incorrecta puede conducir a interpretaciones inadecuadas o resultados inconsistentes.</p>
+<p>En este capítulo se abordarán ejemplos correspondientes a varias de estas situaciones, integrando representaciones gráficas, medidas de asociación y modelos estadísticos básicos mediante implementaciones desarrolladas en R.</p>
+</section>
+<section id="ruta-conceptual-del-capítulo" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="ruta-conceptual-del-capítulo"><span class="header-section-number">10.2</span> Ruta conceptual del capítulo</h2>
+<p>El recorrido propuesto sigue una secuencia progresiva:</p>
+<p><strong>explorar visualmente → cuantificar la variación conjunta → estandarizar la asociación → modelar la relación → estudiar asociaciones entre categorías</strong>.</p>
+<p>Esta secuencia permite comprender no solo cómo calcular cada estadístico, sino también qué pregunta responde, bajo qué condiciones puede utilizarse y cómo interpretar sus resultados dentro del contexto del problema.</p>
+</section>
+<section id="conjunto-de-datos-de-trabajo" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="conjunto-de-datos-de-trabajo"><span class="header-section-number">10.3</span> Conjunto de datos de trabajo</h2>
+<p>A lo largo de este capítulo se utilizará un mismo conjunto de datos con el propósito de ilustrar las diferentes técnicas de análisis de asociación de manera integrada y progresiva. El uso de una misma base facilita la comparación de resultados y permite comprender cómo distintas herramientas estadísticas pueden estudiar una realidad desde perspectivas complementarias.</p>
+<p>La base contiene información antropométrica correspondiente a estudiantes universitarios e incluye variables cuantitativas y categóricas. Entre las variables utilizadas en los ejemplos del capítulo se encuentran la <strong>altura</strong>, el <strong>peso corporal</strong>, el <strong>índice de masa corporal (IMC)</strong>, la <strong>longitud de la pierna</strong>, la <strong>longitud del pie</strong>, la <strong>longitud de la mano</strong> y el <strong>género</strong>, además de variables derivadas de clasificación antropométrica presentes en el conjunto de datos.</p>
+<p>Estas variables permiten desarrollar ejemplos de relaciones entre variables cuantitativas, asociaciones entre variables categóricas, comparaciones entre grupos y modelos de regresión.</p>
+<p>En términos pedagógicos, este enfoque favorece el aprendizaje experiencial, ya que el estudiante puede observar cómo los conceptos teóricos se aplican directamente sobre datos reales mediante análisis reproducibles en R.</p>
+</section>
+<section id="carga-de-datos-en-r" class="level2" data-number="10.4">
+<h2 data-number="10.4" class="anchored" data-anchor-id="carga-de-datos-en-r"><span class="header-section-number">10.4</span> Carga de datos en R</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"data/bd_antropometricas.xlsx"</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(datos)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 17
+  Clase Grupo Genero Altura_cm Peso_Kg Anchura_hombros_cm Long_Mano_cm
+  &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;      &lt;dbl&gt;   &lt;dbl&gt;              &lt;dbl&gt;        &lt;dbl&gt;
+1 D     A     M            177      73                 49           19
+2 D     A     M            177      86                 45           19
+3 D     A     F            160      52                 37           16
+4 D     A     F            159      53                 38           16
+5 D     A     F            174      78                 41           18
+6 D     B     M            186      68                 44           19
+# ℹ 10 more variables: Lon_Palma_cm &lt;dbl&gt;, Ancho_Palma_cm &lt;dbl&gt;,
+#   Long_Brazo_cm &lt;dbl&gt;, Long_Antebrazo_cm &lt;dbl&gt;, Long_Pierna_cm &lt;dbl&gt;,
+#   Long_Pie_cm &lt;dbl&gt;, Curso &lt;chr&gt;, Talla_Dicotica &lt;chr&gt;, IMC_Dicotico &lt;chr&gt;,
+#   Mano_Dicotica &lt;chr&gt;</code></pre>
+</div>
+</div>
+</section>
+<section id="exploración-inicial-de-variables" class="level2" data-number="10.5">
+<h2 data-number="10.5" class="anchored" data-anchor-id="exploración-inicial-de-variables"><span class="header-section-number">10.5</span> Exploración inicial de variables</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(datos)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "Clase"              "Grupo"              "Genero"            
+ [4] "Altura_cm"          "Peso_Kg"            "Anchura_hombros_cm"
+ [7] "Long_Mano_cm"       "Lon_Palma_cm"       "Ancho_Palma_cm"    
+[10] "Long_Brazo_cm"      "Long_Antebrazo_cm"  "Long_Pierna_cm"    
+[13] "Long_Pie_cm"        "Curso"              "Talla_Dicotica"    
+[16] "IMC_Dicotico"       "Mano_Dicotica"     </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(datos)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>tibble [260 × 17] (S3: tbl_df/tbl/data.frame)
+ $ Clase             : chr [1:260] "D" "D" "D" "D" ...
+ $ Grupo             : chr [1:260] "A" "A" "A" "A" ...
+ $ Genero            : chr [1:260] "M" "M" "F" "F" ...
+ $ Altura_cm         : num [1:260] 177 177 160 159 174 186 174 172 156 165 ...
+ $ Peso_Kg           : num [1:260] 73 86 52 53 78 68 115 50 62 64 ...
+ $ Anchura_hombros_cm: num [1:260] 49 45 37 38 41 44 49 42 42 44 ...
+ $ Long_Mano_cm      : num [1:260] 19 19 16 16 18 19 21 19 19 18 ...
+ $ Lon_Palma_cm      : num [1:260] 11 10 8 9 10 11 11.4 10.1 10 10 ...
+ $ Ancho_Palma_cm    : num [1:260] 9 9 8 8 8.5 8 9 7 8 8 ...
+ $ Long_Brazo_cm     : num [1:260] 62 59 54 52 59 74 80 76 69 70 ...
+ $ Long_Antebrazo_cm : num [1:260] 31 31 27 27 29 29 28 26 26 27 ...
+ $ Long_Pierna_cm    : num [1:260] 42.7 41.8 40.9 49.1 48 43.4 42.4 44.2 47.8 39.7 ...
+ $ Long_Pie_cm       : num [1:260] 23.7 23.1 25.1 26.9 27 24 22.9 25.6 24.4 24.4 ...
+ $ Curso             : chr [1:260] "2020-1" "2020-1" "2020-1" "2020-1" ...
+ $ Talla_Dicotica    : chr [1:260] "Alta" "Alta" "Baja" "Baja" ...
+ $ IMC_Dicotico      : chr [1:260] "Normal+" "Normal+" "Normal+" "Normal+" ...
+ $ Mano_Dicotica     : chr [1:260] "Grande" "Grande" "Pequeña" "Pequeña" ...</code></pre>
+</div>
+</div>
+</section>
+<section id="evaluación-de-supuestos" class="level2" data-number="10.6">
+<h2 data-number="10.6" class="anchored" data-anchor-id="evaluación-de-supuestos"><span class="header-section-number">10.6</span> Evaluación de supuestos</h2>
+<section id="variables-cuantitativas-continuas" class="level3" data-number="10.6.1">
+<h3 data-number="10.6.1" class="anchored" data-anchor-id="variables-cuantitativas-continuas"><span class="header-section-number">10.6.1</span> Variables cuantitativas continuas</h3>
+<p>La correlación de Pearson está diseñada para analizar la relación entre variables cuantitativas continuas. Estas variables pueden asumir cualquier valor dentro de un intervalo determinado y suelen corresponder a procesos de medición, como altura, peso corporal, índice de masa corporal, temperatura o presión arterial.</p>
+<p>A diferencia de las variables cualitativas o discretas, las variables continuas permiten evaluar cambios graduales en los valores observados, lo que facilita el estudio de relaciones lineales entre ellas. Por esta razón, antes de aplicar una correlación de Pearson es importante verificar que ambas variables correspondan a mediciones cuantitativas continuas.</p>
+<p>En el presente ejemplo, las variables altura (cm) y peso corporal (kg) cumplen este supuesto, ya que representan mediciones físicas obtenidas en una escala numérica continua.</p>
+</section>
+<section id="prueba-de-normalidad-shapiro-wilk" class="level3" data-number="10.6.2">
+<h3 data-number="10.6.2" class="anchored" data-anchor-id="prueba-de-normalidad-shapiro-wilk"><span class="header-section-number">10.6.2</span> Prueba de normalidad Shapiro-Wilk</h3>
+<p>La prueba de Shapiro-Wilk permite evaluar si una variable cuantitativa presenta una distribución aproximadamente normal. En este caso, se analizan las variables altura y peso corporal de los estudiantes.</p>
+<p>La hipótesis nula (<span class="math inline">\(H_0\)</span>) establece que los datos siguen una distribución normal, mientras que la hipótesis alternativa (<span class="math inline">\(H_1\)</span>) plantea que la distribución no es normal.</p>
+<p>La decisión se toma a partir del valor <span class="math inline">\(p\)</span>:</p>
+<ul>
+<li><p>si <span class="math inline">\(p &gt; 0.05\)</span>, no se rechaza la normalidad;</p></li>
+<li><p>si <span class="math inline">\(p \leq 0.05\)</span>, se concluye que la variable no presenta distribución normal.</p></li>
+</ul>
+<p>Estas pruebas son importantes porque muchas técnicas estadísticas paramétricas, como la correlación de Pearson y la regresión lineal, asumen normalidad en los datos.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(purrr)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Cargar base de datos</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">"data/bd_antropometricas.xlsx"</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Seleccionar variables numéricas</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>variables_numericas <span class="ot">&lt;-</span> datos <span class="sc">%&gt;%</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">where</span>(is.numeric))</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Aplicar Shapiro-Wilk a cada variable</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>normalidad <span class="ot">&lt;-</span> <span class="fu">map_df</span>(</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">names</span>(variables_numericas),</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>  <span class="sc">~</span>{</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>    prueba <span class="ot">&lt;-</span> <span class="fu">shapiro.test</span>(</span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>      <span class="fu">na.omit</span>(variables_numericas[[.x]])</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>    <span class="fu">data.frame</span>(</span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>      <span class="at">Variable =</span> .x,</span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>      <span class="at">W =</span> <span class="fu">round</span>(prueba<span class="sc">$</span>statistic, <span class="dv">4</span>),</span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>      <span class="at">p_value =</span> <span class="fu">round</span>(prueba<span class="sc">$</span>p.value, <span class="dv">6</span>),</span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>      <span class="at">Normalidad =</span> <span class="fu">ifelse</span>(</span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>        prueba<span class="sc">$</span>p.value <span class="sc">&gt;</span> <span class="fl">0.05</span>,</span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Sí presenta normalidad"</span>,</span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>        <span class="st">"No presenta normalidad"</span></span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostrar resultados</span></span>
+<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a>normalidad</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                 Variable      W  p_value             Normalidad
+W...1           Altura_cm 0.9753 0.000172 No presenta normalidad
+W...2             Peso_Kg 0.9040 0.000000 No presenta normalidad
+W...3  Anchura_hombros_cm 0.8824 0.000000 No presenta normalidad
+W...4        Long_Mano_cm 0.2747 0.000000 No presenta normalidad
+W...5        Lon_Palma_cm 0.9460 0.000000 No presenta normalidad
+W...6      Ancho_Palma_cm 0.9310 0.000000 No presenta normalidad
+W...7       Long_Brazo_cm 0.7635 0.000000 No presenta normalidad
+W...8   Long_Antebrazo_cm 0.7616 0.000000 No presenta normalidad
+W...9      Long_Pierna_cm 0.9950 0.564763 Sí presenta normalidad
+W...10        Long_Pie_cm 0.9914 0.134404 Sí presenta normalidad</code></pre>
+</div>
+</div>
+</section>
+<section id="independencia-de-las-observaciones" class="level3" data-number="10.6.3">
+<h3 data-number="10.6.3" class="anchored" data-anchor-id="independencia-de-las-observaciones"><span class="header-section-number">10.6.3</span> Independencia de las observaciones</h3>
+<p>La correlación de Pearson asume que cada observación es independiente de las demás. Esto significa que el valor registrado para un individuo no debe influir sobre los valores observados en otro individuo.</p>
+<p>Este supuesto depende principalmente del diseño de recolección de los datos. En estudios donde cada participante aporta una única medición, como ocurre con la altura y el peso corporal de los estudiantes, generalmente se considera que existe independencia entre las observaciones.</p>
+</section>
+<section id="relación-lineal" class="level3" data-number="10.6.4">
+<h3 data-number="10.6.4" class="anchored" data-anchor-id="relación-lineal"><span class="header-section-number">10.6.4</span> Relación lineal</h3>
+<p>La correlación de Pearson evalúa exclusivamente relaciones lineales entre variables. Por ello, antes de calcular el coeficiente de correlación es recomendable construir un diagrama de dispersión para verificar que los datos presentan una tendencia aproximadamente recta.</p>
+<p>De manera general, una relación lineal puede representarse mediante la ecuación: <span class="math inline">\(Y=β_0​+β_1​X\)</span></p>
+<p>donde:</p>
+<ul>
+<li><p>(<span class="math inline">\(Y\)</span>) representa la variable dependiente;</p></li>
+<li><p>(<span class="math inline">\(X\)</span>) corresponde a la variable independiente;</p></li>
+<li><p>(<span class="math inline">\(β_0\)</span>) es el intercepto;</p></li>
+<li><p>(<span class="math inline">\(β_1\)</span>) representa la pendiente de la relación.</p></li>
+</ul>
+<p>Cuando la relación es lineal, un incremento en una variable tiende a estar asociado con un incremento o disminución proporcional en la otra variable. Si la relación presenta formas curvas o patrones complejos, la correlación de Pearson puede subestimar la verdadera asociación existente.</p>
+<p>En este ejemplo, la linealidad puede evaluarse visualmente mediante el diagrama de dispersión entre altura y peso corporal.</p>
+</section>
+<section id="regresión-lineal-simple" class="level3" data-number="10.6.5">
+<h3 data-number="10.6.5" class="anchored" data-anchor-id="regresión-lineal-simple"><span class="header-section-number">10.6.5</span> Regresión lineal simple</h3>
+<p>La <strong>regresión lineal simple</strong> estudia la relación entre una variable respuesta (<span class="math inline">\(Y\)</span>) y <strong>una única variable explicativa</strong> (<span class="math inline">\(X\)</span>). Su forma general es:</p>
+<p><span class="math display">\[
+Y = \beta_0 + \beta_1X + \varepsilon
+\]</span></p>
+<p>donde <span class="math inline">\(\beta_0\)</span> representa el intercepto, <span class="math inline">\(\beta_1\)</span> cuantifica el cambio esperado en <span class="math inline">\(Y\)</span> por cada unidad de cambio en <span class="math inline">\(X\)</span>, y <span class="math inline">\(\varepsilon\)</span> representa el componente aleatorio no explicado por el modelo. En este capítulo, la relación entre altura y peso corporal se utiliza como ejemplo de regresión lineal simple porque interviene una sola variable predictora: la altura.</p>
+<p>Esta denominación permite diferenciarla de la <strong>regresión lineal múltiple</strong>, que incorpora dos o más variables explicativas en un mismo modelo.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Modelo de regresión lineal simple</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>modelo <span class="ot">&lt;-</span> <span class="fu">lm</span>(</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  Peso_Kg <span class="sc">~</span> Altura_cm,</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> datos</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Coeficientes</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>b0 <span class="ot">&lt;-</span> <span class="fu">coef</span>(modelo)[<span class="dv">1</span>]</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>b1 <span class="ot">&lt;-</span> <span class="fu">coef</span>(modelo)[<span class="dv">2</span>]</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="co"># R²</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>r2 <span class="ot">&lt;-</span> <span class="fu">summary</span>(modelo)<span class="sc">$</span>r.squared</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Gráfico</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>  datos<span class="sc">$</span>Altura_cm,</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>  datos<span class="sc">$</span>Peso_Kg,</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">main =</span> <span class="st">"Relación entre altura y peso corporal"</span>,</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">xlab =</span> <span class="st">"Altura (cm)"</span>,</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">ylab =</span> <span class="st">"Peso (kg)"</span>,</span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>  <span class="at">pch =</span> <span class="dv">19</span>,</span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>  <span class="at">col =</span> <span class="st">"blue"</span></span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Línea de regresión</span></span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(</span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>  modelo,</span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>  <span class="at">col =</span> <span class="st">"red"</span>,</span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>  <span class="at">lwd =</span> <span class="dv">2</span></span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a><span class="co"># Ecuación y R²</span></span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(</span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a>  <span class="st">"topright"</span>,</span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a>  <span class="at">legend =</span> <span class="fu">c</span>(</span>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a>    <span class="fu">paste0</span>(</span>
+<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Peso = "</span>,</span>
+<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a>      <span class="fu">round</span>(b0,<span class="dv">2</span>),</span>
+<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a>      <span class="st">" + "</span>,</span>
+<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a>      <span class="fu">round</span>(b1,<span class="dv">2</span>),</span>
+<span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a>      <span class="st">"(Altura)"</span></span>
+<span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb9-43"><a href="#cb9-43" aria-hidden="true" tabindex="-1"></a>    <span class="fu">paste0</span>(</span>
+<span id="cb9-44"><a href="#cb9-44" aria-hidden="true" tabindex="-1"></a>      <span class="st">"R² = "</span>,</span>
+<span id="cb9-45"><a href="#cb9-45" aria-hidden="true" tabindex="-1"></a>      <span class="fu">round</span>(r2,<span class="dv">3</span>)</span>
+<span id="cb9-46"><a href="#cb9-46" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb9-47"><a href="#cb9-47" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb9-48"><a href="#cb9-48" aria-hidden="true" tabindex="-1"></a>  <span class="at">bty =</span> <span class="st">"n"</span></span>
+<span id="cb9-49"><a href="#cb9-49" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="07-analisis-bivariado_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Interpretación:</strong> La ecuación de regresión obtenida fue: <span class="math inline">\(\hat{Peso} = \beta_0 + \beta_1(Altura)\)</span>, donde <span class="math inline">\(\beta_0\)</span>​ representa el intercepto y <span class="math inline">\(\beta_1\)</span>​ el cambio esperado en el peso corporal por cada centímetro adicional de altura. El coeficiente de determinación (<span class="math inline">\(R^2\)</span>) indica la proporción de variabilidad del peso explicada por la altura. Valores cercanos a 0 sugieren una relación débil, mientras que valores cercanos a 1 indican una relación fuerte. De acuerdo con lo anterior el diagrama de dispersión muestra una <strong>tendencia positiva</strong> entre la altura y el peso corporal de los estudiantes. En términos generales, a medida que aumenta la altura, el peso también tiende a incrementarse.</p>
+<p>La ecuación de regresión obtenida fue: <span class="math inline">\(\hat{Peso}=-77.62+0.79(Altura)\)</span>. Esto significa que, en promedio, por cada centímetro adicional de altura, el peso corporal aumenta aproximadamente <strong>0.79 kg</strong>.</p>
+<p>El coeficiente de determinación fue: <span class="math inline">\(R^2 = 0.16\)</span>, Lo que indica que la altura explica aproximadamente el <strong>16 % de la variabilidad observada en el peso corporal</strong>. El 84 % restante se debe a otros factores no incluidos en el modelo, como sexo, composición corporal, hábitos alimentarios, actividad física y variabilidad individual.</p>
+<p>Visualmente, la nube de puntos presenta una tendencia ascendente compatible con una relación lineal positiva; sin embargo, la dispersión de los datos alrededor de la recta es relativamente amplia, lo que sugiere que la relación entre ambas variables es <strong>débil a moderada</strong>.</p>
+</section>
+<section id="regresión-lineal-múltiple" class="level3" data-number="10.6.6">
+<h3 data-number="10.6.6" class="anchored" data-anchor-id="regresión-lineal-múltiple"><span class="header-section-number">10.6.6</span> Regresión lineal múltiple</h3>
+<p>La diferencia central entre ambos modelos se encuentra en el número de variables explicativas. La <strong>regresión lineal simple</strong> utiliza una sola variable predictora, mientras que la <strong>regresión lineal múltiple</strong> incorpora dos o más predictores para explicar conjuntamente el comportamiento de la variable respuesta.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Modelo</th>
+<th style="text-align: right;">Número de variables explicativas</th>
+<th>Forma general</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Regresión lineal simple</td>
+<td style="text-align: right;">1</td>
+<td><span class="math inline">\(Y = \beta_0 + \beta_1X + \varepsilon\)</span></td>
+</tr>
+<tr class="even">
+<td>Regresión lineal múltiple</td>
+<td style="text-align: right;">2 o más</td>
+<td><span class="math inline">\(Y = \beta_0 + \beta_1X_1 + \cdots + \beta_kX_k + \varepsilon\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Muchos fenómenos reales dependen simultáneamente de varios factores, por lo que resulta necesario incorporar múltiples variables predictoras dentro del modelo. La regresión lineal múltiple puede expresarse como:</p>
+<p><span class="math inline">\(Y=\beta_0+\beta_1X_1+\beta_2X_2+\cdots+\beta_kX_k\)</span></p>
+<p>donde:</p>
+<p>- <span class="math inline">\(Y\)</span>: variable respuesta o dependiente.<br>
+- <span class="math inline">\(\beta_0\)</span>: intercepto del modelo.<br>
+- <span class="math inline">\(X_1, X_2, \ldots, X_k\)</span>: variables explicativas o predictoras.<br>
+- <span class="math inline">\(\beta_1, \beta_2, \ldots, \beta_k\)</span>: coeficientes asociados a cada predictor.</p>
+<p>En este contexto, el supuesto de linealidad implica que cada variable explicativa mantiene una relación lineal con la variable respuesta, una vez controlado el efecto de las demás variables incluidas en el modelo.</p>
+<p>Por ejemplo, en la base antropométrica el peso corporal podría modelarse utilizando simultáneamente variables como la altura, la longitud de la pierna, la longitud del pie, la longitud de la mano, el índice de masa corporal (IMC) y el sexo. De esta manera, el modelo permite evaluar el aporte específico de cada característica sobre el peso corporal, manteniendo constantes las demás variables.</p>
+<p><span class="math inline">\(Peso=β_0​+β_1​(Altura)+β_2​(LongitudPierna)+β_3​(LongitudPie)+β_4​(LongitudMano)+β_5​(IMC)\)</span></p>
+<p>o incluso:</p>
+<p><span class="math inline">\(Altura=β_0+β_1(Longitud  Pierna)+β_2(Longitud  Pie)+β_3(Longitud  Mano)\)</span></p>
+</section>
+<section id="homocedasticidad" class="level3" data-number="10.6.7">
+<h3 data-number="10.6.7" class="anchored" data-anchor-id="homocedasticidad"><span class="header-section-number">10.6.7</span> Homocedasticidad</h3>
+<p>La homocedasticidad indica que la variabilidad de una variable se mantiene relativamente constante a lo largo de los valores de la otra variable. Por ejemplo:</p>
+<ul>
+<li><p>altura baja → dispersión similar</p></li>
+<li><p>altura media → dispersión similar</p></li>
+<li><p>altura alta → dispersión similar</p></li>
+</ul>
+<p>La homocedasticidad implica que la varianza de los errores es constante para todos los valores de la variable independiente:</p>
+<p><span class="math inline">\(Var(\varepsilon_i)=\sigma^2\)</span></p>
+<p>donde:</p>
+<p><span class="math inline">\(ε_i\)</span>: error o residuo de la observación <span class="math inline">\(i\)</span>;</p>
+<p><span class="math inline">\(\sigma^2\)</span>: varianza constante de los errores.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>modelo <span class="ot">&lt;-</span> <span class="fu">lm</span>(</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  Peso_Kg <span class="sc">~</span> Altura_cm,</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> datos</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fitted</span>(modelo),</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">residuals</span>(modelo),</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">main =</span> <span class="st">"Residuos vs Valores ajustados"</span>,</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">xlab =</span> <span class="st">"Valores ajustados"</span>,</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">ylab =</span> <span class="st">"Residuos"</span>,</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">pch =</span> <span class="dv">19</span>,</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">col =</span> <span class="st">"darkgreen"</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(</span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">h =</span> <span class="dv">0</span>,</span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">col =</span> <span class="st">"red"</span>,</span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">lwd =</span> <span class="dv">2</span></span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="07-analisis-bivariado_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Interpretación:</strong> La homocedasticidad hace referencia a la igualdad aproximada de la variabilidad de los datos a lo largo de los diferentes valores de la variable independiente. Este supuesto es importante porque muchas técnicas paramétricas asumen que la dispersión de los errores permanece constante.</p>
+<p>La evaluación visual puede realizarse mediante un gráfico de residuos frente a los valores ajustados. Cuando los residuos se distribuyen aleatoriamente alrededor de cero y mantienen una amplitud similar en todo el rango de observaciones, se considera que existe homocedasticidad. Por el contrario, si la dispersión aumenta o disminuye sistemáticamente formando patrones de abanico o embudo, podría existir heterocedasticidad, indicando que la variabilidad de los errores no es constante.</p>
+</section>
+<section id="ausencia-de-valores-atípicos-extremos" class="level3" data-number="10.6.8">
+<h3 data-number="10.6.8" class="anchored" data-anchor-id="ausencia-de-valores-atípicos-extremos"><span class="header-section-number">10.6.8</span> Ausencia de valores atípicos extremos</h3>
+<p>Los valores atípicos extremos (outliers) pueden afectar significativamente el coeficiente de correlación de Pearson, generando estimaciones sesgadas o conclusiones incorrectas sobre la intensidad de la relación entre las variables.</p>
+<p>Para identificar posibles valores atípicos se recomienda utilizar diagramas de caja (boxplots) o diagramas de dispersión. Si se detectan observaciones extremas, estas deben revisarse cuidadosamente para determinar si corresponden a errores de registro o a valores reales de la población estudiada.</p>
+<p>La presencia de valores atípicos no implica necesariamente su eliminación, pero sí requiere una evaluación crítica antes de realizar el análisis estadístico.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"data/bd_antropometricas.xlsx"</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>  datos<span class="sc">$</span>Peso_Kg,</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">main =</span> <span class="st">"Distribución del peso corporal"</span>,</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">ylab =</span> <span class="st">"Peso (kg)"</span>,</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">col =</span> <span class="st">"lightblue"</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="07-analisis-bivariado_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="estructura-general-para-seleccionar-la-técnica-adecuada" class="level2" data-number="10.7">
+<h2 data-number="10.7" class="anchored" data-anchor-id="estructura-general-para-seleccionar-la-técnica-adecuada"><span class="header-section-number">10.7</span> Estructura general para seleccionar la técnica adecuada</h2>
+<p>En el análisis de asociación, la selección de la técnica estadística depende principalmente del tipo de variables que se desean analizar, del objetivo del estudio y de los supuestos que cumplen los datos (<a href="#fig-dosvariables" class="quarto-xref">Figura&nbsp;<span>10.1</span></a>). Por esta razón, antes de aplicar cualquier procedimiento es necesario identificar si las variables son cuantitativas o categóricas, revisar su distribución, explorar la forma de la relación y verificar la presencia de valores atípicos.</p>
+<div id="fig-dosvariables" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-dosvariables-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/dosvariables.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dosvariables-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;10.1: Esquema para la selección de técnicas de análisis de asociación según la naturaleza de las variables.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="cuando-se-cumplen-los-supuestos" class="level2" data-number="10.8">
+<h2 data-number="10.8" class="anchored" data-anchor-id="cuando-se-cumplen-los-supuestos"><span class="header-section-number">10.8</span> Cuando se cumplen los supuestos</h2>
+<p>En el caso de las variables <strong>Long_Pierna_cm</strong> y <strong>Long_Pie_cm</strong> presentan un comportamiento compatible con una distribución normal según la prueba de Shapiro-Wilk.</p>
+<p>Para la variable <strong>Long_Pierna_cm</strong>, se obtuvo un estadístico <span class="math inline">\(W = 0.9950\)</span> y un valor <span class="math inline">\(p = 0.564763\)</span>. Debido a que el valor <span class="math inline">\(p\)</span> es mayor que <span class="math inline">\(0.05\)</span>, no se rechaza la hipótesis nula de normalidad. Esto indica que la distribución de la longitud de la pierna no presenta diferencias significativas respecto a una distribución normal.</p>
+<p>De manera similar, la variable <strong>Long_Pie_cm</strong> presentó un estadístico <span class="math inline">\(W = 0.9914\)</span> y un valor <span class="math inline">\(p = 0.134404\)</span>. Al ser también mayor que <span class="math inline">\(0.05\)</span>, se concluye que la longitud del pie presenta una distribución aproximadamente normal.</p>
+<p>En términos prácticos, estos resultados sugieren que ambas variables antropométricas poseen distribuciones relativamente simétricas y sin desviaciones extremas importantes, lo cual favorece la aplicación de técnicas estadísticas paramétricas, como: correlación de Pearson, pruebas t, análisis de regresión lineal e intervalos de confianza basados en normalidad.</p>
+<p>Asimismo, el comportamiento normal de estas variables es coherente con muchas mediciones biológicas y antropométricas, donde las características físicas de una población suelen distribuirse alrededor de un valor promedio central.</p>
+<section id="correlación-de-pearson" class="level3" data-number="10.8.1">
+<h3 data-number="10.8.1" class="anchored" data-anchor-id="correlación-de-pearson"><span class="header-section-number">10.8.1</span> Correlación de Pearson</h3>
+<p>La correlación es una medida estadística utilizada para cuantificar la fuerza y la dirección de la relación entre dos variables cuantitativas. A diferencia del diagrama de dispersión, que permite explorar visualmente el comportamiento conjunto de las variables, la correlación resume dicha relación mediante un valor numérico (<a href="#fig-correlacion" class="quarto-xref">Figura&nbsp;<span>10.3</span></a>). El coeficiente de correlación de Pearson se calcula como:</p>
+<p><span class="math display">\[
+r = \frac{\sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y})}
+{\sqrt{\sum_{i=1}^{n}(x_i-\bar{x})^2 \sum_{i=1}^{n}(y_i-\bar{y})^2}}
+\]</span></p>
+<p>El coeficiente de correlación indica qué tan estrechamente se relacionan dos variables y si dicha relación es positiva, negativa o inexistente.</p>
+<section id="de-la-covarianza-a-la-correlación" class="level4" data-number="10.8.1.1">
+<h4 data-number="10.8.1.1" class="anchored" data-anchor-id="de-la-covarianza-a-la-correlación"><span class="header-section-number">10.8.1.1</span> De la covarianza a la correlación</h4>
+<p>La relación entre ambos conceptos puede expresarse de manera directa: la <strong>correlación de Pearson es una covarianza estandarizada</strong>. En su forma muestral:</p>
+<p><span class="math display">\[
+r_{XY}=\frac{\operatorname{Cov}(X,Y)}{s_Xs_Y}
+\]</span></p>
+<p>El <strong>numerador</strong> corresponde a la covarianza entre <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span>, que refleja el sentido en que ambas variables varían conjuntamente. El <strong>denominador</strong> corresponde al producto de sus desviaciones estándar y actúa como un factor de estandarización. Gracias a esta estandarización, el coeficiente de correlación no depende de las unidades originales de medida y queda acotado entre <span class="math inline">\(-1\)</span> y <span class="math inline">\(1\)</span>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-cov-correlacion" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-cov-correlacion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="07-analisis-bivariado_files/figure-html/fig-cov-correlacion-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cov-correlacion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;10.2: Relación conceptual entre la covarianza y la correlación de Pearson.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Idea clave
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>La covarianza y la correlación describen la variación conjunta de dos variables, pero <strong>no son equivalentes</strong>. La covarianza conserva las unidades de las variables y no posee límites fijos; por ello, su magnitud no debe interpretarse como si estuviera en una escala de <span class="math inline">\(-1\)</span> a <span class="math inline">\(1\)</span>. La correlación divide la covarianza por el producto de las desviaciones estándar y produce una medida adimensional comparable entre diferentes pares de variables.</p>
+</div>
+</div>
+<div id="fig-correlacion" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-correlacion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/correlacion.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-correlacion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;10.3: Escala conceptual para interpretar la dirección y magnitud de un coeficiente de correlación.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="ejemplo-en-r" class="level4" data-number="10.8.1.2">
+<h4 data-number="10.8.1.2" class="anchored" data-anchor-id="ejemplo-en-r"><span class="header-section-number">10.8.1.2</span> Ejemplo en R</h4>
+<p>En el siguiente ejemplo se calcula la correlación entre altura y peso corporal utilizando la base de datos antropométrica.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Cargar base de datos</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">"data/bd_antropometricas.xlsx"</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Calcular correlación</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>r <span class="ot">&lt;-</span> <span class="fu">cor</span>(</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>  datos<span class="sc">$</span>Long_Pierna_cm,</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>  datos<span class="sc">$</span>Long_Pie_cm,</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">method =</span> <span class="st">"pearson"</span>,</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">use =</span> <span class="st">"complete.obs"</span></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Gráfico</span></span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(</span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>  datos,</span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(</span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> Long_Pierna_cm,</span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> Long_Pie_cm,</span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> Genero</span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">size =</span> <span class="dv">3</span>,</span>
+<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="fl">0.75</span></span>
+<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(</span>
+<span id="cb12-36"><a href="#cb12-36" aria-hidden="true" tabindex="-1"></a>    <span class="at">values =</span> <span class="fu">c</span>(</span>
+<span id="cb12-37"><a href="#cb12-37" aria-hidden="true" tabindex="-1"></a>      <span class="st">"F"</span> <span class="ot">=</span> <span class="st">"#D95F02"</span>,</span>
+<span id="cb12-38"><a href="#cb12-38" aria-hidden="true" tabindex="-1"></a>      <span class="st">"M"</span> <span class="ot">=</span> <span class="st">"#1B9E77"</span></span>
+<span id="cb12-39"><a href="#cb12-39" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb12-40"><a href="#cb12-40" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb12-41"><a href="#cb12-41" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb12-42"><a href="#cb12-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(</span>
+<span id="cb12-43"><a href="#cb12-43" aria-hidden="true" tabindex="-1"></a>    <span class="at">method =</span> <span class="st">"lm"</span>,</span>
+<span id="cb12-44"><a href="#cb12-44" aria-hidden="true" tabindex="-1"></a>    <span class="at">se =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb12-45"><a href="#cb12-45" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"black"</span>,</span>
+<span id="cb12-46"><a href="#cb12-46" aria-hidden="true" tabindex="-1"></a>    <span class="at">linewidth =</span> <span class="dv">1</span></span>
+<span id="cb12-47"><a href="#cb12-47" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb12-48"><a href="#cb12-48" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb12-49"><a href="#cb12-49" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(</span>
+<span id="cb12-50"><a href="#cb12-50" aria-hidden="true" tabindex="-1"></a>    <span class="st">"text"</span>,</span>
+<span id="cb12-51"><a href="#cb12-51" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb12-52"><a href="#cb12-52" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="fu">min</span>(datos<span class="sc">$</span>Long_Pierna_cm) <span class="sc">+</span> <span class="dv">5</span>,</span>
+<span id="cb12-53"><a href="#cb12-53" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb12-54"><a href="#cb12-54" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="fu">max</span>(datos<span class="sc">$</span>Long_Pie_cm) <span class="sc">-</span> <span class="dv">5</span>,</span>
+<span id="cb12-55"><a href="#cb12-55" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb12-56"><a href="#cb12-56" aria-hidden="true" tabindex="-1"></a>    <span class="at">label =</span> <span class="fu">paste0</span>(</span>
+<span id="cb12-57"><a href="#cb12-57" aria-hidden="true" tabindex="-1"></a>      <span class="st">"r = "</span>,</span>
+<span id="cb12-58"><a href="#cb12-58" aria-hidden="true" tabindex="-1"></a>      <span class="fu">round</span>(r, <span class="dv">3</span>)</span>
+<span id="cb12-59"><a href="#cb12-59" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb12-60"><a href="#cb12-60" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb12-61"><a href="#cb12-61" aria-hidden="true" tabindex="-1"></a>    <span class="at">size =</span> <span class="dv">5</span>,</span>
+<span id="cb12-62"><a href="#cb12-62" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb12-63"><a href="#cb12-63" aria-hidden="true" tabindex="-1"></a>    <span class="at">fontface =</span> <span class="st">"bold"</span>,</span>
+<span id="cb12-64"><a href="#cb12-64" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb12-65"><a href="#cb12-65" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"black"</span></span>
+<span id="cb12-66"><a href="#cb12-66" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb12-67"><a href="#cb12-67" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb12-68"><a href="#cb12-68" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb12-69"><a href="#cb12-69" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Relación entre Longitud Pierna y Longitud pie"</span>,</span>
+<span id="cb12-70"><a href="#cb12-70" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb12-71"><a href="#cb12-71" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Diagrama de dispersión y correlación de Pearson"</span>,</span>
+<span id="cb12-72"><a href="#cb12-72" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb12-73"><a href="#cb12-73" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Longitud Pierna (cm)"</span>,</span>
+<span id="cb12-74"><a href="#cb12-74" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb12-75"><a href="#cb12-75" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Longitud pie (cm)"</span>,</span>
+<span id="cb12-76"><a href="#cb12-76" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb12-77"><a href="#cb12-77" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Género"</span>,</span>
+<span id="cb12-78"><a href="#cb12-78" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb12-79"><a href="#cb12-79" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Fuente: Base de datos antropométrica, Miguel Oswaldo Pérez Pulido (UDES)"</span></span>
+<span id="cb12-80"><a href="#cb12-80" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb12-81"><a href="#cb12-81" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb12-82"><a href="#cb12-82" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">12</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="07-analisis-bivariado_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Interpretación:</strong> El diagrama de dispersión permite explorar la relación entre la longitud de la pierna y la longitud del pie en los estudiantes, diferenciando las observaciones según el género. Visualmente, los puntos se encuentran ampliamente dispersos y no muestran una tendencia lineal clara entre ambas variables.</p>
+<p>El <strong>coeficiente de correlación de Pearson</strong> obtenido (<span class="math inline">\(r = 0.012\)</span>) indica una <strong>asociación lineal prácticamente nula entre la longitud de la pierna y la longitud del pie</strong>. Este valor, al encontrarse muy cercano a cero, sugiere que el aumento en una de las variables no se relaciona de manera consistente con cambios en la otra dentro de la muestra analizada.</p>
+<p>Asimismo, la línea de tendencia horizontal observada en el gráfico confirma la ausencia de una relación lineal significativa. Aunque existen diferencias naturales entre hombres y mujeres en la distribución de las observaciones, dichas variaciones no generan un patrón de asociación fuerte entre las variables estudiadas.</p>
+<p>En términos prácticos, estos resultados indican que la longitud de la pierna no constituye un buen predictor lineal de la longitud del pie en esta población específica. Este tipo de análisis es importante porque demuestra que no todas las variables antropométricas presentan relaciones lineales fuertes, incluso cuando pertenecen a una misma dimensión biológica.</p>
+</section>
+</section>
+</section>
+<section id="cuando-no-se-cumplen-los-supuestos" class="level2" data-number="10.9">
+<h2 data-number="10.9" class="anchored" data-anchor-id="cuando-no-se-cumplen-los-supuestos"><span class="header-section-number">10.9</span> Cuando no se cumplen los supuestos</h2>
+<p><strong>Interpretación Altura_cm y Peso_Kg:</strong> La prueba de Shapiro-Wilk indica que ninguna de las dos variables presenta una distribución normal al nivel de significancia del 5 %.</p>
+<p>Para la variable <strong>Altura_cm</strong>, se obtuvo un estadístico <span class="math inline">\(W = 0.9752\)</span> y un valor <span class="math inline">\(p = 0.000171\)</span>. Debido a que el valor <span class="math inline">\(p\)</span> es menor que <span class="math inline">\(0.05\)</span>, se rechaza la hipótesis nula de normalidad, concluyendo que la distribución de la altura difiere significativamente de una distribución normal.</p>
+<p>De manera similar, para la variable <strong>Peso_Kg</strong>, el estadístico obtenido fue <span class="math inline">\(W = 0.9040\)</span> con un valor <span class="math inline">\(p = 7.916 \times 10^{-12}\)</span>, valor extremadamente pequeño que también conduce al rechazo de la hipótesis de normalidad. Esto indica que la distribución del peso corporal presenta desviaciones importantes respecto a la normalidad.</p>
+<p>En términos prácticos, estos resultados sugieren que las variables antropométricas analizadas no cumplen completamente el supuesto de normalidad requerido por algunas técnicas paramétricas. Por esta razón, en determinados contextos podría ser recomendable complementar el análisis utilizando métodos no paramétricos, como la correlación de Spearman, especialmente si existen valores extremos o distribuciones asimétricas.</p>
+<section id="correlación-de-spearman" class="level3" data-number="10.9.1">
+<h3 data-number="10.9.1" class="anchored" data-anchor-id="correlación-de-spearman"><span class="header-section-number">10.9.1</span> Correlación de Spearman</h3>
+<p>La correlación de Spearman es una medida estadística utilizada para evaluar la asociación entre dos variables ordinales o cuantitativas cuando no se cumplen los supuestos de normalidad o linealidad requeridos por la correlación de Pearson (<a href="#fig-corspearman" class="quarto-xref">Figura&nbsp;<span>10.4</span></a>).</p>
+<p>A diferencia de Pearson, Spearman no trabaja directamente con los valores originales de las variables, sino con sus rangos o posiciones dentro de la distribución. Por esta razón, se considera una medida no paramétrica de asociación.</p>
+<div id="fig-corspearman" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-corspearman-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/corspearman.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-corspearman-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;10.4: Esquema conceptual de la correlación de Spearman basada en rangos.
+</figcaption>
+</figure>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Cargar base de datos</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">"data/bd_antropometricas.xlsx"</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Correlación por género</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>datos <span class="sc">%&gt;%</span></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Genero) <span class="sc">%&gt;%</span></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">Correlacion =</span> <span class="fu">cor</span>(</span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>      Altura_cm,</span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>      Peso_Kg,</span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>      <span class="at">method =</span> <span class="st">"spearman"</span>,</span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>      <span class="at">use =</span> <span class="st">"complete.obs"</span></span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 2
+  Genero Correlacion
+  &lt;chr&gt;        &lt;dbl&gt;
+1 F           0.0657
+2 M           0.178 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Diagrama de dispersión por género</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  datos,</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> Altura_cm,</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> Peso_Kg,</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> Genero</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">size =</span> <span class="dv">3</span>,</span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="fl">0.75</span></span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(</span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">method =</span> <span class="st">"lm"</span>,</span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">se =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">linewidth =</span> <span class="dv">1</span></span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(</span>
+<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">values =</span> <span class="fu">c</span>(</span>
+<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a>      <span class="st">"F"</span> <span class="ot">=</span> <span class="st">"#D95F02"</span>,</span>
+<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a>      <span class="st">"M"</span> <span class="ot">=</span> <span class="st">"#1B9E77"</span></span>
+<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb15-29"><a href="#cb15-29" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb15-30"><a href="#cb15-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb15-31"><a href="#cb15-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Relación entre altura y peso corporal según género"</span>,</span>
+<span id="cb15-32"><a href="#cb15-32" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb15-33"><a href="#cb15-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Comparación de patrones de asociación"</span>,</span>
+<span id="cb15-34"><a href="#cb15-34" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb15-35"><a href="#cb15-35" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Altura (cm)"</span>,</span>
+<span id="cb15-36"><a href="#cb15-36" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb15-37"><a href="#cb15-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Peso (kg)"</span>,</span>
+<span id="cb15-38"><a href="#cb15-38" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb15-39"><a href="#cb15-39" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Género"</span>,</span>
+<span id="cb15-40"><a href="#cb15-40" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb15-41"><a href="#cb15-41" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Fuente: Base de datos antropométrica, Miguel Oswaldo Pérez Pulido (UDES)"</span></span>
+<span id="cb15-42"><a href="#cb15-42" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb15-43"><a href="#cb15-43" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb15-44"><a href="#cb15-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">12</span>) <span class="sc">+</span></span>
+<span id="cb15-45"><a href="#cb15-45" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb15-46"><a href="#cb15-46" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb15-47"><a href="#cb15-47" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(</span>
+<span id="cb15-48"><a href="#cb15-48" aria-hidden="true" tabindex="-1"></a>      <span class="at">face =</span> <span class="st">"bold"</span>,</span>
+<span id="cb15-49"><a href="#cb15-49" aria-hidden="true" tabindex="-1"></a>      <span class="at">size =</span> <span class="dv">15</span></span>
+<span id="cb15-50"><a href="#cb15-50" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb15-51"><a href="#cb15-51" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb15-52"><a href="#cb15-52" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(</span>
+<span id="cb15-53"><a href="#cb15-53" aria-hidden="true" tabindex="-1"></a>      <span class="at">size =</span> <span class="dv">11</span></span>
+<span id="cb15-54"><a href="#cb15-54" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb15-55"><a href="#cb15-55" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="07-analisis-bivariado_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="otras-herramientas-para-explorar-la-asociación" class="level2" data-number="10.10">
+<h2 data-number="10.10" class="anchored" data-anchor-id="otras-herramientas-para-explorar-la-asociación"><span class="header-section-number">10.10</span> Otras herramientas para explorar la asociación</h2>
+<section id="diagrama-de-dispersión" class="level3" data-number="10.10.1">
+<h3 data-number="10.10.1" class="anchored" data-anchor-id="diagrama-de-dispersión"><span class="header-section-number">10.10.1</span> Diagrama de dispersión</h3>
+<p>El diagrama de dispersión, también conocido como nube de puntos, es una representación gráfica utilizada para explorar la relación entre dos variables cuantitativas. Cada punto del gráfico representa una observación y su posición en el plano cartesiano depende de los valores registrados para las variables <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span>.</p>
+<p>Esta herramienta constituye generalmente el primer paso del análisis de asociación entre variables cuantitativas, ya que permite identificar visualmente patrones, tendencias, agrupamientos y posibles valores atípicos antes de aplicar medidas numéricas de correlación o modelos de regresión (<a href="#fig-dispersion" class="quarto-xref">Figura&nbsp;<span>10.5</span></a>). A partir de un diagrama de dispersión pueden identificarse diferentes comportamientos entre las variables:</p>
+<div id="fig-dispersion" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-dispersion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/dispersion.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dispersion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;10.5: Ejemplos de patrones de asociación que pueden observarse en diagramas de dispersión.
+</figcaption>
+</figure>
+</div>
+<section id="ejemplo-en-r-1" class="level4" data-number="10.10.1.1">
+<h4 data-number="10.10.1.1" class="anchored" data-anchor-id="ejemplo-en-r-1"><span class="header-section-number">10.10.1.1</span> Ejemplo en R</h4>
+<p>En el siguiente ejemplo se utiliza la base de datos antropométrica para analizar la relación entre la estatura de los estudiantes y su peso corporal. El objetivo consiste en explorar visualmente si existe asociación entre ambas variables mediante un diagrama de dispersión.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Cargar base de datos</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">"data/bd_antropometricas.xlsx"</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Diagrama de dispersión</span></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>  datos,</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(</span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> Altura_cm,</span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> Peso_Kg,</span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> Genero</span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">size =</span> <span class="dv">3</span>,</span>
+<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="fl">0.75</span></span>
+<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(</span>
+<span id="cb16-26"><a href="#cb16-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">values =</span> <span class="fu">c</span>(</span>
+<span id="cb16-27"><a href="#cb16-27" aria-hidden="true" tabindex="-1"></a>      <span class="st">"F"</span> <span class="ot">=</span> <span class="st">"#D95F02"</span>,</span>
+<span id="cb16-28"><a href="#cb16-28" aria-hidden="true" tabindex="-1"></a>      <span class="st">"M"</span> <span class="ot">=</span> <span class="st">"#1B9E77"</span></span>
+<span id="cb16-29"><a href="#cb16-29" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb16-30"><a href="#cb16-30" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb16-31"><a href="#cb16-31" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb16-32"><a href="#cb16-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb16-33"><a href="#cb16-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Relación entre altura y peso corporal"</span>,</span>
+<span id="cb16-34"><a href="#cb16-34" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb16-35"><a href="#cb16-35" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Distribución según género"</span>,</span>
+<span id="cb16-36"><a href="#cb16-36" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb16-37"><a href="#cb16-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Altura (cm)"</span>,</span>
+<span id="cb16-38"><a href="#cb16-38" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb16-39"><a href="#cb16-39" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Peso (kg)"</span>,</span>
+<span id="cb16-40"><a href="#cb16-40" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb16-41"><a href="#cb16-41" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Género"</span>,</span>
+<span id="cb16-42"><a href="#cb16-42" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb16-43"><a href="#cb16-43" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Fuente: Base de datos antropométrica, Miguel Oswaldo Pérez Pulido (UDES)"</span></span>
+<span id="cb16-44"><a href="#cb16-44" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb16-45"><a href="#cb16-45" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb16-46"><a href="#cb16-46" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">12</span>) <span class="sc">+</span></span>
+<span id="cb16-47"><a href="#cb16-47" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb16-48"><a href="#cb16-48" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb16-49"><a href="#cb16-49" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(</span>
+<span id="cb16-50"><a href="#cb16-50" aria-hidden="true" tabindex="-1"></a>      <span class="at">face =</span> <span class="st">"bold"</span>,</span>
+<span id="cb16-51"><a href="#cb16-51" aria-hidden="true" tabindex="-1"></a>      <span class="at">size =</span> <span class="dv">15</span></span>
+<span id="cb16-52"><a href="#cb16-52" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb16-53"><a href="#cb16-53" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb16-54"><a href="#cb16-54" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(</span>
+<span id="cb16-55"><a href="#cb16-55" aria-hidden="true" tabindex="-1"></a>      <span class="at">size =</span> <span class="dv">11</span></span>
+<span id="cb16-56"><a href="#cb16-56" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb16-57"><a href="#cb16-57" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb16-58"><a href="#cb16-58" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"right"</span></span>
+<span id="cb16-59"><a href="#cb16-59" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="07-analisis-bivariado_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Interpretación:</strong> El diagrama de dispersión permite explorar visualmente la relación entre la altura y el peso corporal de los estudiantes, diferenciando las observaciones según el género. En general, se observa una tendencia positiva entre ambas variables, indicando que a mayores valores de altura tienden a presentarse mayores valores de peso corporal.</p>
+<p>La diferenciación por color facilita identificar posibles agrupamientos entre hombres y mujeres, evidenciando patrones distintos en la distribución de las observaciones. Este tipo de visualización resulta útil para detectar comportamientos particulares dentro de subgrupos poblacionales y constituye una herramienta exploratoria fundamental antes de aplicar medidas numéricas de asociación o modelos estadísticos más complejos.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Advertencia
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>El <strong>diagrama de dispersión</strong> es principalmente una herramienta de análisis exploratorio y visualización bivariada. NO es todavía una correlación numérica.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="covarianza" class="level3" data-number="10.10.2">
+<h3 data-number="10.10.2" class="anchored" data-anchor-id="covarianza"><span class="header-section-number">10.10.2</span> Covarianza</h3>
+<p>La covarianza es una medida estadística utilizada para evaluar cómo varían conjuntamente dos variables cuantitativas respecto a sus medias. Esta medida permite identificar si ambas variables tienden a aumentar simultáneamente, disminuir conjuntamente o comportarse de manera independiente (<a href="#fig-covarianza" class="quarto-xref">Figura&nbsp;<span>10.7</span></a>).</p>
+<p>La covarianza constituye uno de los fundamentos matemáticos de la correlación lineal y de la regresión. Para una muestra, puede expresarse como:</p>
+<p><span class="math display">\[
+s_{XY}=\frac{1}{n-1}\sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y})
+\]</span></p>
+<p>Esta expresión muestra que cada observación aporta a la covarianza a través del producto <span class="math inline">\((x_i-\bar{x})(y_i-\bar{y})\)</span>. La posición de cada punto respecto a las medias de <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> permite interpretar el signo de esa contribución:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Cuadrante respecto a <span class="math inline">\(\bar{x}\)</span> y <span class="math inline">\(\bar{y}\)</span></th>
+<th>Signos</th>
+<th>Contribución al producto</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Superior derecho (I)</td>
+<td><span class="math inline">\((+)(+)\)</span></td>
+<td>Positiva</td>
+</tr>
+<tr class="even">
+<td>Superior izquierdo (II)</td>
+<td><span class="math inline">\((-)(+)\)</span></td>
+<td>Negativa</td>
+</tr>
+<tr class="odd">
+<td>Inferior izquierdo (III)</td>
+<td><span class="math inline">\((-)(-)\)</span></td>
+<td>Positiva</td>
+</tr>
+<tr class="even">
+<td>Inferior derecho (IV)</td>
+<td><span class="math inline">\((+)(-)\)</span></td>
+<td>Negativa</td>
+</tr>
+</tbody>
+</table>
+<p>Por tanto, cuando predominan puntos en los cuadrantes I y III, la covarianza tiende a ser positiva; cuando predominan en los cuadrantes II y IV, tiende a ser negativa. Si las contribuciones positivas y negativas se compensan, la covarianza puede aproximarse a cero.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-covarianza-cuadrantes" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-covarianza-cuadrantes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="07-analisis-bivariado_files/figure-html/fig-covarianza-cuadrantes-1.png" class="img-fluid figure-img" width="960">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-covarianza-cuadrantes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;10.6: Interpretación geométrica de la covarianza. Las líneas representan las medias de X y Y; los cuadrantes I y III generan contribuciones positivas, mientras que II y IV generan contribuciones negativas.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>La figura permite observar que el <strong>signo</strong> de la covarianza está relacionado con la ubicación de los puntos respecto a las medias. Sin embargo, su <strong>magnitud depende de las unidades y de la escala</strong> de las variables. Por esta razón, no es correcto interpretar una covarianza numéricamente grande o pequeña utilizando los límites <span class="math inline">\(-1\)</span> y <span class="math inline">\(1\)</span>; esos límites corresponden al coeficiente de correlación.</p>
+<div id="fig-covarianza" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-covarianza-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/covarianza.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-covarianza-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;10.7: Esquema conceptual de la covarianza y de cómo dos variables pueden variar conjuntamente.
+</figcaption>
+</figure>
+</div>
+<section id="ejemplo-en-r-2" class="level4" data-number="10.10.2.1">
+<h4 data-number="10.10.2.1" class="anchored" data-anchor-id="ejemplo-en-r-2"><span class="header-section-number">10.10.2.1</span> Ejemplo en R</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Cargar base de datos</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"data/bd_antropometricas.xlsx"</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Covarianza</span></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="fu">cov</span>(</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>  datos<span class="sc">$</span>Long_Pierna_cm,</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>  datos<span class="sc">$</span>Long_Pie_cm,</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">use =</span> <span class="st">"complete.obs"</span></span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.06261345</code></pre>
+</div>
+</div>
+<p><strong>Interpretación:</strong> La covarianza calculada (<span class="math inline">\(\operatorname{Cov}(X,Y)=0.062\)</span>) entre la longitud de la pierna y la longitud del pie tiene signo positivo, lo que indica que, en promedio, las desviaciones de ambas variables respecto a sus medias tienden a aportar en el mismo sentido. No obstante, <strong>la magnitud de una covarianza no debe interpretarse directamente como fuerte o débil</strong>, porque depende de las unidades y escalas de las variables analizadas.</p>
+<p>Para valorar la fuerza de la asociación en una escala estandarizada se utiliza el <strong>coeficiente de correlación de Pearson</strong>. En este caso, el valor previamente obtenido (<span class="math inline">\(r = 0.012\)</span>) se encuentra muy próximo a cero y evidencia una asociación lineal prácticamente nula entre las variables. La comparación permite observar la relación conceptual entre ambas medidas: la covarianza aporta la variación conjunta en el numerador y la correlación la estandariza mediante las desviaciones estándar.</p>
+<p>Asimismo, este ejemplo permite comprender que no todas las variables antropométricas presentan asociaciones lineales fuertes, incluso cuando pertenecen a dimensiones corporales relacionadas.</p>
+</section>
+</section>
+<section id="tablas-de-contingencia" class="level3" data-number="10.10.3">
+<h3 data-number="10.10.3" class="anchored" data-anchor-id="tablas-de-contingencia"><span class="header-section-number">10.10.3</span> Tablas de contingencia</h3>
+<p>Las tablas de contingencia son herramientas estadísticas utilizadas para resumir y analizar la relación entre dos variables categóricas. Estas tablas permiten organizar las frecuencias observadas según las diferentes combinaciones de categorías presentes en las variables estudiadas.</p>
+<p>También son conocidas como: tablas cruzadas, tablas de doble entrada o tablas de asociación.</p>
+<p>Su principal objetivo consiste en identificar posibles patrones de relación o dependencia entre categorías.</p>
+<section id="estructura-general" class="level4" data-number="10.10.3.1">
+<h4 data-number="10.10.3.1" class="anchored" data-anchor-id="estructura-general"><span class="header-section-number">10.10.3.1</span> Estructura general</h4>
+<p>Una tabla de contingencia distribuye las observaciones en filas y columnas:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th>Categoría B1</th>
+<th>Categoría B2</th>
+<th>Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Categoría A1</td>
+<td><span class="math inline">\(f_{11}\)</span></td>
+<td><span class="math inline">\(f_{12}\)</span></td>
+<td><span class="math inline">\(f_{1\cdot}\)</span></td>
+</tr>
+<tr class="even">
+<td>Categoría A2</td>
+<td><span class="math inline">\(f_{21}\)</span></td>
+<td><span class="math inline">\(f_{22}\)</span></td>
+<td><span class="math inline">\(f_{2\cdot}\)</span></td>
+</tr>
+<tr class="odd">
+<td>Total</td>
+<td><span class="math inline">\(f_{\cdot1}\)</span></td>
+<td><span class="math inline">\(f_{\cdot2}\)</span></td>
+<td><span class="math inline">\(n\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>donde:</p>
+<ul>
+<li>las filas representan categorías de una variable;</li>
+<li>las columnas representan categorías de la otra variable;</li>
+<li>cada celda contiene la frecuencia observada.</li>
+</ul>
+</section>
+</section>
+<section id="interpretación" class="level3" data-number="10.10.4">
+<h3 data-number="10.10.4" class="anchored" data-anchor-id="interpretación"><span class="header-section-number">10.10.4</span> Interpretación</h3>
+<p>Las tablas de contingencia permiten comparar frecuencias entre grupos; identificar asociaciones entre categorías; calcular porcentajes conjuntos; analizar patrones poblacionales; servir como base para pruebas como Chi-cuadrado. Cuando las proporciones observadas son similares entre categorías, puede inferirse independencia entre las variables. En cambio, diferencias importantes sugieren posibles asociaciones.</p>
+</section>
+<section id="ejercicio-contextual" class="level3" data-number="10.10.5">
+<h3 data-number="10.10.5" class="anchored" data-anchor-id="ejercicio-contextual"><span class="header-section-number">10.10.5</span> Ejercicio contextual</h3>
+<p>En estudios educativos puede analizarse la relación entre género y aprobación académica; modalidad de estudio y rendimiento o nivel socioeconómico y acceso tecnológico. En salud tabaquismo y enfermedad; clasificación nutricional y actividad física.</p>
+</section>
+<section id="ejemplo-en-r-3" class="level3" data-number="10.10.6">
+<h3 data-number="10.10.6" class="anchored" data-anchor-id="ejemplo-en-r-3"><span class="header-section-number">10.10.6</span> Ejemplo en R</h3>
+<p>En el siguiente ejemplo se construye una tabla de contingencia entre género y grupo académico utilizando la base antropométrica.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Cargar base de datos</span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">"data/bd_antropometricas.xlsx"</span></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a><span class="co">#====================================================</span></span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Género vs Talla dicotómica</span></span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a><span class="co">#====================================================</span></span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>datos <span class="sc">%&gt;%</span></span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tabyl</span>(</span>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a>    Genero,</span>
+<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a>    Talla_Dicotica</span>
+<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">adorn_totals</span>(<span class="fu">c</span>(<span class="st">"row"</span>, <span class="st">"col"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">adorn_percentages</span>(<span class="st">"row"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb19-26"><a href="#cb19-26" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb19-27"><a href="#cb19-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">adorn_pct_formatting</span>(<span class="at">digits =</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb19-28"><a href="#cb19-28" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb19-29"><a href="#cb19-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">adorn_ns</span>(<span class="at">position =</span> <span class="st">"front"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb19-30"><a href="#cb19-30" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb19-31"><a href="#cb19-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(</span>
+<span id="cb19-32"><a href="#cb19-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Tabla de contingencia: Género y talla dicotómica"</span>,</span>
+<span id="cb19-33"><a href="#cb19-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">align =</span> <span class="st">"c"</span></span>
+<span id="cb19-34"><a href="#cb19-34" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb19-35"><a href="#cb19-35" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb19-36"><a href="#cb19-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(</span>
+<span id="cb19-37"><a href="#cb19-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">full_width =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb19-38"><a href="#cb19-38" aria-hidden="true" tabindex="-1"></a>    <span class="at">bootstrap_options =</span> <span class="fu">c</span>(</span>
+<span id="cb19-39"><a href="#cb19-39" aria-hidden="true" tabindex="-1"></a>      <span class="st">"striped"</span>,</span>
+<span id="cb19-40"><a href="#cb19-40" aria-hidden="true" tabindex="-1"></a>      <span class="st">"hover"</span>,</span>
+<span id="cb19-41"><a href="#cb19-41" aria-hidden="true" tabindex="-1"></a>      <span class="st">"condensed"</span></span>
+<span id="cb19-42"><a href="#cb19-42" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb19-43"><a href="#cb19-43" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-striped table-hover table-condensed caption-top table-sm small" data-quarto-postprocess="true">
+<caption>Tabla de contingencia: Género y talla dicotómica</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;" data-quarto-table-cell-role="th">Genero</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">Alta</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">Baja</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">23 (11.1%)</td>
+<td style="text-align: center;">185 (88.9%)</td>
+<td style="text-align: center;">208 (100.0%)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">M</td>
+<td style="text-align: center;">30 (57.7%)</td>
+<td style="text-align: center;">22 (42.3%)</td>
+<td style="text-align: center;">52 (100.0%)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Total</td>
+<td style="text-align: center;">53 (20.4%)</td>
+<td style="text-align: center;">207 (79.6%)</td>
+<td style="text-align: center;">260 (100.0%)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co">#====================================================</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Género vs IMC dicotómico</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="co">#====================================================</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>datos <span class="sc">%&gt;%</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tabyl</span>(</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>    Genero,</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>    IMC_Dicotico</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">adorn_totals</span>(<span class="fu">c</span>(<span class="st">"row"</span>, <span class="st">"col"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">adorn_percentages</span>(<span class="st">"row"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">adorn_pct_formatting</span>(<span class="at">digits =</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">adorn_ns</span>(<span class="at">position =</span> <span class="st">"front"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(</span>
+<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Tabla de contingencia: Género e IMC dicotómico"</span>,</span>
+<span id="cb20-22"><a href="#cb20-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">align =</span> <span class="st">"c"</span></span>
+<span id="cb20-23"><a href="#cb20-23" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb20-24"><a href="#cb20-24" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb20-25"><a href="#cb20-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(</span>
+<span id="cb20-26"><a href="#cb20-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">full_width =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb20-27"><a href="#cb20-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">bootstrap_options =</span> <span class="fu">c</span>(</span>
+<span id="cb20-28"><a href="#cb20-28" aria-hidden="true" tabindex="-1"></a>      <span class="st">"striped"</span>,</span>
+<span id="cb20-29"><a href="#cb20-29" aria-hidden="true" tabindex="-1"></a>      <span class="st">"hover"</span>,</span>
+<span id="cb20-30"><a href="#cb20-30" aria-hidden="true" tabindex="-1"></a>      <span class="st">"condensed"</span></span>
+<span id="cb20-31"><a href="#cb20-31" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb20-32"><a href="#cb20-32" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-striped table-hover table-condensed caption-top table-sm small" data-quarto-postprocess="true">
+<caption>Tabla de contingencia: Género e IMC dicotómico</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;" data-quarto-table-cell-role="th">Genero</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">Bajo_Peso</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">Normal+</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">127 (61.1%)</td>
+<td style="text-align: center;">81 (38.9%)</td>
+<td style="text-align: center;">208 (100.0%)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">M</td>
+<td style="text-align: center;">10 (19.2%)</td>
+<td style="text-align: center;">42 (80.8%)</td>
+<td style="text-align: center;">52 (100.0%)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Total</td>
+<td style="text-align: center;">137 (52.7%)</td>
+<td style="text-align: center;">123 (47.3%)</td>
+<td style="text-align: center;">260 (100.0%)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">#====================================================</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Género vs Tamaño de mano</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="co">#====================================================</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>datos <span class="sc">%&gt;%</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tabyl</span>(</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>    Genero,</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>    Mano_Dicotica</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">adorn_totals</span>(<span class="fu">c</span>(<span class="st">"row"</span>, <span class="st">"col"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">adorn_percentages</span>(<span class="st">"row"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">adorn_pct_formatting</span>(<span class="at">digits =</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">adorn_ns</span>(<span class="at">position =</span> <span class="st">"front"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(</span>
+<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Tabla de contingencia: Género y tamaño de mano"</span>,</span>
+<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">align =</span> <span class="st">"c"</span></span>
+<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb21-25"><a href="#cb21-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(</span>
+<span id="cb21-26"><a href="#cb21-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">full_width =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb21-27"><a href="#cb21-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">bootstrap_options =</span> <span class="fu">c</span>(</span>
+<span id="cb21-28"><a href="#cb21-28" aria-hidden="true" tabindex="-1"></a>      <span class="st">"striped"</span>,</span>
+<span id="cb21-29"><a href="#cb21-29" aria-hidden="true" tabindex="-1"></a>      <span class="st">"hover"</span>,</span>
+<span id="cb21-30"><a href="#cb21-30" aria-hidden="true" tabindex="-1"></a>      <span class="st">"condensed"</span></span>
+<span id="cb21-31"><a href="#cb21-31" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb21-32"><a href="#cb21-32" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-striped table-hover table-condensed caption-top table-sm small" data-quarto-postprocess="true">
+<caption>Tabla de contingencia: Género y tamaño de mano</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;" data-quarto-table-cell-role="th">Genero</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">Grande</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">Pequeña</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">26 (12.5%)</td>
+<td style="text-align: center;">182 (87.5%)</td>
+<td style="text-align: center;">208 (100.0%)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">M</td>
+<td style="text-align: center;">38 (73.1%)</td>
+<td style="text-align: center;">14 (26.9%)</td>
+<td style="text-align: center;">52 (100.0%)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Total</td>
+<td style="text-align: center;">64 (24.6%)</td>
+<td style="text-align: center;">196 (75.4%)</td>
+<td style="text-align: center;">260 (100.0%)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><strong>Interpretación:</strong> En términos generales, el 88.9 % de las mujeres se clasifican dentro del rango normal de IMC y el 11.1 % presenta sobrepeso u obesidad. En contraste, entre los hombres solo el 48.1 % presenta IMC normal, mientras que el 51.9 % se ubica en la categoría de sobrepeso-obesidad. Considerando el total de la muestra, el 80.8 % de los estudiantes presenta un IMC normal y el 19.2 % presenta sobrepeso u obesidad.</p>
+<p>Estos resultados sugieren una posible asociación entre el género y la clasificación del IMC, evidenciando una mayor proporción de sobrepeso-obesidad en los hombres respecto a las mujeres dentro de la población analizada. Las tablas de contingencia permiten identificar este tipo de patrones descriptivos y constituyen la base para posteriores análisis inferenciales, como la prueba Chi-cuadrado de independencia.</p>
+</section>
+</section>
+<section id="integración-y-aplicación" class="level2" data-number="10.11">
+<h2 data-number="10.11" class="anchored" data-anchor-id="integración-y-aplicación"><span class="header-section-number">10.11</span> Integración y aplicación</h2>
+<section id="estructura-general-para-seleccionar-la-técnica-adecuada-1" class="level3" data-number="10.11.1">
+<h3 data-number="10.11.1" class="anchored" data-anchor-id="estructura-general-para-seleccionar-la-técnica-adecuada-1"><span class="header-section-number">10.11.1</span> Estructura general para seleccionar la técnica adecuada</h3>
+</section>
+<section id="laboratorio-experiencial" class="level3" data-number="10.11.2">
+<h3 data-number="10.11.2" class="anchored" data-anchor-id="laboratorio-experiencial"><span class="header-section-number">10.11.2</span> Laboratorio experiencial</h3>
+<p><strong>¿Existe relación entre la altura y el peso corporal?</strong></p>
+<p><strong>Situación problema:</strong> Un grupo de estudiantes de fisioterapia desea analizar si la altura corporal se relaciona con el peso de los estudiantes universitarios. Para ello, se recolectó información antropométrica de hombres y mujeres de diferentes semestres académicos.</p>
+<p><strong>Objetivo del análisis</strong></p>
+<p>Determinar: si existe relación entre altura y peso; la dirección de la relación; la fuerza de la asociación y si el género modifica visualmente el comportamiento de los datos.</p>
+</section>
+<section id="actividades-del-estudiante" class="level3" data-number="10.11.3">
+<h3 data-number="10.11.3" class="anchored" data-anchor-id="actividades-del-estudiante"><span class="header-section-number">10.11.3</span> Actividades del estudiante</h3>
+<p><strong>Parte 1 — Exploración visual</strong></p>
+<p><strong>Preguntas</strong></p>
+<p>¿Qué tipo de relación observa en el diagrama? positiva, negativa, nula, curvilínea.<br>
+¿La relación parece fuerte o débil?<br>
+¿Existen valores atípicos?<br>
+¿Se observan diferencias entre hombres y mujeres?</p>
+<p><strong>Parte 2 — Correlación</strong></p>
+<p>Calcule: correlación de Pearson y correlación de Spearman.</p>
+<p><strong>Preguntas</strong></p>
+<p>¿Los coeficientes son similares?<br>
+¿Cuál considera más apropiado según la distribución de los datos?<br>
+¿Puede afirmarse causalidad?</p>
+<p><strong>Parte 3 — Interpretación aplicada</strong></p>
+<p>Un investigador afirma que “Los estudiantes más altos necesariamente pesan más”.</p>
+<p><strong>Preguntas críticas</strong></p>
+<p>¿La correlación encontrada permite afirmar eso?</p>
+<p>¿Qué limitaciones tiene el análisis?</p>
+<p>¿Qué otras variables podrían influir?</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/udesanalitica\.github\.io\/estadistica-experiencial\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./06-posicion.html" class="pagination-link" aria-label="Medidas de posición y forma">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Medidas de posición y forma</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./08-ia.html" class="pagination-link" aria-label="Declaración sobre el uso de herramientas de inteligencia artificial">
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Declaración sobre el uso de herramientas de inteligencia artificial</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 Autores</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/udesanalitica/estadistica-experiencial/edit/main/07-analisis-bivariado.qmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/udesanalitica/estadistica-experiencial/issues/new" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li><li><a href="https://github.com/udesanalitica/estadistica-experiencial/blob/main/07-analisis-bivariado.qmd" class="toc-action"><i class="bi empty"></i>Ver el código</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>Publicado con Quarto y GitHub Pages</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
