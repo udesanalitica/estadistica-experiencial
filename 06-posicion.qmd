@@ -184,7 +184,8 @@ Los percentiles son fundamentales en curvas de crecimiento infantil,
 evaluación médica, pruebas académicas, clasificación nutricional,
 análisis de desempeño, entre otras (@fig-posicion).
 
-![Resumen de medidas de posición como cuartiles, deciles y percentiles.](img/posicion.png){#fig-posicion}
+![Resumen de medidas de posición como cuartiles, deciles y
+percentiles.](img/posicion.png){#fig-posicion}
 
 ## Medidas de forma
 
@@ -214,7 +215,8 @@ la media.
 | Mesocúrtica  | Similar a distribución normal   |
 | Platicúrtica | Distribución achatada           |
 
-![Esquema de medidas de forma para describir asimetría y características de una distribución.](img/forma.png){#fig-forma}
+![Esquema de medidas de forma para describir asimetría y características
+de una distribución.](img/forma.png){#fig-forma}
 
 ## Actividad experiencial
 
