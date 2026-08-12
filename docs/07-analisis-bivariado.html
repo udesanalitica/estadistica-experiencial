@@ -313,9 +313,10 @@ window.Quarto = {
   <li><a href="#prueba-de-normalidad-shapiro-wilk" id="toc-prueba-de-normalidad-shapiro-wilk" class="nav-link" data-scroll-target="#prueba-de-normalidad-shapiro-wilk"><span class="header-section-number">11.5.2</span> Prueba de normalidad Shapiro-Wilk</a></li>
   <li><a href="#independencia-de-las-observaciones" id="toc-independencia-de-las-observaciones" class="nav-link" data-scroll-target="#independencia-de-las-observaciones"><span class="header-section-number">11.5.3</span> Independencia de las observaciones</a></li>
   <li><a href="#relación-lineal" id="toc-relación-lineal" class="nav-link" data-scroll-target="#relación-lineal"><span class="header-section-number">11.5.4</span> Relación lineal</a></li>
-  <li><a href="#regresión-lineal-múltiple" id="toc-regresión-lineal-múltiple" class="nav-link" data-scroll-target="#regresión-lineal-múltiple"><span class="header-section-number">11.5.5</span> Regresión lineal múltiple</a></li>
-  <li><a href="#homocedasticidad" id="toc-homocedasticidad" class="nav-link" data-scroll-target="#homocedasticidad"><span class="header-section-number">11.5.6</span> Homocedasticidad</a></li>
-  <li><a href="#ausencia-de-valores-atípicos-extremos" id="toc-ausencia-de-valores-atípicos-extremos" class="nav-link" data-scroll-target="#ausencia-de-valores-atípicos-extremos"><span class="header-section-number">11.5.7</span> Ausencia de valores atípicos extremos</a></li>
+  <li><a href="#regresión-lineal-simple" id="toc-regresión-lineal-simple" class="nav-link" data-scroll-target="#regresión-lineal-simple"><span class="header-section-number">11.5.5</span> Regresión lineal simple</a></li>
+  <li><a href="#regresión-lineal-múltiple" id="toc-regresión-lineal-múltiple" class="nav-link" data-scroll-target="#regresión-lineal-múltiple"><span class="header-section-number">11.5.6</span> Regresión lineal múltiple</a></li>
+  <li><a href="#homocedasticidad" id="toc-homocedasticidad" class="nav-link" data-scroll-target="#homocedasticidad"><span class="header-section-number">11.5.7</span> Homocedasticidad</a></li>
+  <li><a href="#ausencia-de-valores-atípicos-extremos" id="toc-ausencia-de-valores-atípicos-extremos" class="nav-link" data-scroll-target="#ausencia-de-valores-atípicos-extremos"><span class="header-section-number">11.5.8</span> Ausencia de valores atípicos extremos</a></li>
   </ul></li>
   <li><a href="#estructura-general-para-seleccionar-la-técnica-adecuada" id="toc-estructura-general-para-seleccionar-la-técnica-adecuada" class="nav-link" data-scroll-target="#estructura-general-para-seleccionar-la-técnica-adecuada"><span class="header-section-number">11.6</span> Estructura general para seleccionar la técnica adecuada</a></li>
   <li><a href="#cuando-se-cumplen-los-supuestos" id="toc-cuando-se-cumplen-los-supuestos" class="nav-link" data-scroll-target="#cuando-se-cumplen-los-supuestos"><span class="header-section-number">11.7</span> Cuando se cumplen los supuestos</a>
@@ -583,8 +584,17 @@ W...10        Long_Pie_cm 0.9914 0.134404 Sí presenta normalidad</code></pre>
 </ul>
 <p>Cuando la relación es lineal, un incremento en una variable tiende a estar asociado con un incremento o disminución proporcional en la otra variable. Si la relación presenta formas curvas o patrones complejos, la correlación de Pearson puede subestimar la verdadera asociación existente.</p>
 <p>En este ejemplo, la linealidad puede evaluarse visualmente mediante el diagrama de dispersión entre altura y peso corporal.</p>
+</section>
+<section id="regresión-lineal-simple" class="level3" data-number="11.5.5">
+<h3 data-number="11.5.5" class="anchored" data-anchor-id="regresión-lineal-simple"><span class="header-section-number">11.5.5</span> Regresión lineal simple</h3>
+<p>La <strong>regresión lineal simple</strong> estudia la relación entre una variable respuesta (<span class="math inline">\(Y\)</span>) y <strong>una única variable explicativa</strong> (<span class="math inline">\(X\)</span>). Su forma general es:</p>
+<p><span class="math display">\[
+Y = \beta_0 + \beta_1X + \varepsilon
+\]</span></p>
+<p>donde <span class="math inline">\(\beta_0\)</span> representa el intercepto, <span class="math inline">\(\beta_1\)</span> cuantifica el cambio esperado en <span class="math inline">\(Y\)</span> por cada unidad de cambio en <span class="math inline">\(X\)</span>, y <span class="math inline">\(\varepsilon\)</span> representa el componente aleatorio no explicado por el modelo. En este capítulo, la relación entre altura y peso corporal se utiliza como ejemplo de regresión lineal simple porque interviene una sola variable predictora: la altura.</p>
+<p>Esta denominación permite diferenciarla de la <strong>regresión lineal múltiple</strong>, que incorpora dos o más variables explicativas en un mismo modelo.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Modelo de regresión</span></span>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Modelo de regresión lineal simple</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>modelo <span class="ot">&lt;-</span> <span class="fu">lm</span>(</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  Peso_Kg <span class="sc">~</span> Altura_cm,</span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> datos</span>
@@ -646,9 +656,36 @@ W...10        Long_Pie_cm 0.9914 0.134404 Sí presenta normalidad</code></pre>
 <p>El coeficiente de determinación fue: <span class="math inline">\(R^2 = 0.16\)</span>, Lo que indica que la altura explica aproximadamente el <strong>16 % de la variabilidad observada en el peso corporal</strong>. El 84 % restante se debe a otros factores no incluidos en el modelo, como sexo, composición corporal, hábitos alimentarios, actividad física y variabilidad individual.</p>
 <p>Visualmente, la nube de puntos presenta una tendencia ascendente compatible con una relación lineal positiva; sin embargo, la dispersión de los datos alrededor de la recta es relativamente amplia, lo que sugiere que la relación entre ambas variables es <strong>débil a moderada</strong>.</p>
 </section>
-<section id="regresión-lineal-múltiple" class="level3" data-number="11.5.5">
-<h3 data-number="11.5.5" class="anchored" data-anchor-id="regresión-lineal-múltiple"><span class="header-section-number">11.5.5</span> Regresión lineal múltiple</h3>
-<p>En la regresión lineal simple se analiza la relación entre una variable respuesta (<span class="math inline">\(Y\)</span>) y una única variable explicativa (<span class="math inline">\(X\)</span>). Sin embargo, muchos fenómenos reales dependen simultáneamente de varios factores, por lo que resulta necesario incorporar múltiples variables predictoras dentro del modelo. La regresión lineal múltiple puede expresarse como:</p>
+<section id="regresión-lineal-múltiple" class="level3" data-number="11.5.6">
+<h3 data-number="11.5.6" class="anchored" data-anchor-id="regresión-lineal-múltiple"><span class="header-section-number">11.5.6</span> Regresión lineal múltiple</h3>
+<p>La diferencia central entre ambos modelos se encuentra en el número de variables explicativas. La <strong>regresión lineal simple</strong> utiliza una sola variable predictora, mientras que la <strong>regresión lineal múltiple</strong> incorpora dos o más predictores para explicar conjuntamente el comportamiento de la variable respuesta.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Modelo</th>
+<th style="text-align: right;">Número de variables explicativas</th>
+<th>Forma general</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Regresión lineal simple</td>
+<td style="text-align: right;">1</td>
+<td><span class="math inline">\(Y = \beta_0 + \beta_1X + \varepsilon\)</span></td>
+</tr>
+<tr class="even">
+<td>Regresión lineal múltiple</td>
+<td style="text-align: right;">2 o más</td>
+<td><span class="math inline">\(Y = \beta_0 + \beta_1X_1 + \cdots + \beta_kX_k + \varepsilon\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Muchos fenómenos reales dependen simultáneamente de varios factores, por lo que resulta necesario incorporar múltiples variables predictoras dentro del modelo. La regresión lineal múltiple puede expresarse como:</p>
 <p><span class="math inline">\(Y=\beta_0+\beta_1X_1+\beta_2X_2+\cdots+\beta_kX_k\)</span></p>
 <p>donde:</p>
 <p>- <span class="math inline">\(Y\)</span>: variable respuesta o dependiente.<br>
@@ -661,8 +698,8 @@ W...10        Long_Pie_cm 0.9914 0.134404 Sí presenta normalidad</code></pre>
 <p>o incluso:</p>
 <p><span class="math inline">\(Altura=β_0+β_1(Longitud  Pierna)+β_2(Longitud  Pie)+β_3(Longitud  Mano)\)</span></p>
 </section>
-<section id="homocedasticidad" class="level3" data-number="11.5.6">
-<h3 data-number="11.5.6" class="anchored" data-anchor-id="homocedasticidad"><span class="header-section-number">11.5.6</span> Homocedasticidad</h3>
+<section id="homocedasticidad" class="level3" data-number="11.5.7">
+<h3 data-number="11.5.7" class="anchored" data-anchor-id="homocedasticidad"><span class="header-section-number">11.5.7</span> Homocedasticidad</h3>
 <p>La homocedasticidad indica que la variabilidad de una variable se mantiene relativamente constante a lo largo de los valores de la otra variable. Por ejemplo:</p>
 <ul>
 <li><p>altura baja → dispersión similar</p></li>
@@ -706,8 +743,8 @@ W...10        Long_Pie_cm 0.9914 0.134404 Sí presenta normalidad</code></pre>
 <p><strong>Interpretación:</strong> La homocedasticidad hace referencia a la igualdad aproximada de la variabilidad de los datos a lo largo de los diferentes valores de la variable independiente. Este supuesto es importante porque muchas técnicas paramétricas asumen que la dispersión de los errores permanece constante.</p>
 <p>La evaluación visual puede realizarse mediante un gráfico de residuos frente a los valores ajustados. Cuando los residuos se distribuyen aleatoriamente alrededor de cero y mantienen una amplitud similar en todo el rango de observaciones, se considera que existe homocedasticidad. Por el contrario, si la dispersión aumenta o disminuye sistemáticamente formando patrones de abanico o embudo, podría existir heterocedasticidad, indicando que la variabilidad de los errores no es constante.</p>
 </section>
-<section id="ausencia-de-valores-atípicos-extremos" class="level3" data-number="11.5.7">
-<h3 data-number="11.5.7" class="anchored" data-anchor-id="ausencia-de-valores-atípicos-extremos"><span class="header-section-number">11.5.7</span> Ausencia de valores atípicos extremos</h3>
+<section id="ausencia-de-valores-atípicos-extremos" class="level3" data-number="11.5.8">
+<h3 data-number="11.5.8" class="anchored" data-anchor-id="ausencia-de-valores-atípicos-extremos"><span class="header-section-number">11.5.8</span> Ausencia de valores atípicos extremos</h3>
 <p>Los valores atípicos extremos (outliers) pueden afectar significativamente el coeficiente de correlación de Pearson, generando estimaciones sesgadas o conclusiones incorrectas sobre la intensidad de la relación entre las variables.</p>
 <p>Para identificar posibles valores atípicos se recomienda utilizar diagramas de caja (boxplots) o diagramas de dispersión. Si se detectan observaciones extremas, estas deben revisarse cuidadosamente para determinar si corresponden a errores de registro o a valores reales de la población estudiada.</p>
 <p>La presencia de valores atípicos no implica necesariamente su eliminación, pero sí requiere una evaluación crítica antes de realizar el análisis estadístico.</p>
@@ -757,24 +794,59 @@ Figura&nbsp;11.1: Esquema del análisis bivariado según la combinación de tipo
 <p>Asimismo, el comportamiento normal de estas variables es coherente con muchas mediciones biológicas y antropométricas, donde las características físicas de una población suelen distribuirse alrededor de un valor promedio central.</p>
 <section id="correlación-de-pearson" class="level3" data-number="11.7.1">
 <h3 data-number="11.7.1" class="anchored" data-anchor-id="correlación-de-pearson"><span class="header-section-number">11.7.1</span> Correlación de Pearson</h3>
-<p>La correlación es una medida estadística utilizada para cuantificar la fuerza y la dirección de la relación entre dos variables cuantitativas. A diferencia del diagrama de dispersión, que permite explorar visualmente el comportamiento conjunto de las variables, la correlación resume dicha relación mediante un valor numérico (<a href="#fig-correlacion" class="quarto-xref">Figura&nbsp;<span>11.2</span></a>). El coeficiente de correlación de Pearson se calcula como:</p>
+<p>La correlación es una medida estadística utilizada para cuantificar la fuerza y la dirección de la relación entre dos variables cuantitativas. A diferencia del diagrama de dispersión, que permite explorar visualmente el comportamiento conjunto de las variables, la correlación resume dicha relación mediante un valor numérico (<a href="#fig-correlacion" class="quarto-xref">Figura&nbsp;<span>11.3</span></a>). El coeficiente de correlación de Pearson se calcula como:</p>
 <p><span class="math display">\[
 r = \frac{\sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y})}
 {\sqrt{\sum_{i=1}^{n}(x_i-\bar{x})^2 \sum_{i=1}^{n}(y_i-\bar{y})^2}}
 \]</span></p>
 <p>El coeficiente de correlación indica qué tan estrechamente se relacionan dos variables y si dicha relación es positiva, negativa o inexistente.</p>
+<section id="de-la-covarianza-a-la-correlación" class="level4" data-number="11.7.1.1">
+<h4 data-number="11.7.1.1" class="anchored" data-anchor-id="de-la-covarianza-a-la-correlación"><span class="header-section-number">11.7.1.1</span> De la covarianza a la correlación</h4>
+<p>La relación entre ambos conceptos puede expresarse de manera directa: la <strong>correlación de Pearson es una covarianza estandarizada</strong>. En su forma muestral:</p>
+<p><span class="math display">\[
+r_{XY}=\frac{\operatorname{Cov}(X,Y)}{s_Xs_Y}
+\]</span></p>
+<p>El <strong>numerador</strong> corresponde a la covarianza entre <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span>, que refleja el sentido en que ambas variables varían conjuntamente. El <strong>denominador</strong> corresponde al producto de sus desviaciones estándar y actúa como un factor de estandarización. Gracias a esta estandarización, el coeficiente de correlación no depende de las unidades originales de medida y queda acotado entre <span class="math inline">\(-1\)</span> y <span class="math inline">\(1\)</span>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-cov-correlacion" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-cov-correlacion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="07-analisis-bivariado_files/figure-html/fig-cov-correlacion-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cov-correlacion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;11.2: Relación conceptual entre la covarianza y la correlación de Pearson.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Idea clave
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>La covarianza y la correlación describen la variación conjunta de dos variables, pero <strong>no son equivalentes</strong>. La covarianza conserva las unidades de las variables y no posee límites fijos; por ello, su magnitud no debe interpretarse como si estuviera en una escala de <span class="math inline">\(-1\)</span> a <span class="math inline">\(1\)</span>. La correlación divide la covarianza por el producto de las desviaciones estándar y produce una medida adimensional comparable entre diferentes pares de variables.</p>
+</div>
+</div>
 <div id="fig-correlacion" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-correlacion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/correlacion.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-correlacion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;11.2: Escala conceptual para interpretar la dirección y magnitud de un coeficiente de correlación.
+Figura&nbsp;11.3: Escala conceptual para interpretar la dirección y magnitud de un coeficiente de correlación.
 </figcaption>
 </figure>
 </div>
-<section id="ejemplo-en-r" class="level4" data-number="11.7.1.1">
-<h4 data-number="11.7.1.1" class="anchored" data-anchor-id="ejemplo-en-r"><span class="header-section-number">11.7.1.1</span> Ejemplo en R</h4>
+</section>
+<section id="ejemplo-en-r" class="level4" data-number="11.7.1.2">
+<h4 data-number="11.7.1.2" class="anchored" data-anchor-id="ejemplo-en-r"><span class="header-section-number">11.7.1.2</span> Ejemplo en R</h4>
 <p>En el siguiente ejemplo se calcula la correlación entre altura y peso corporal utilizando la base de datos antropométrica.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
@@ -882,7 +954,7 @@ Figura&nbsp;11.2: Escala conceptual para interpretar la dirección y magnitud de
 <p>En términos prácticos, estos resultados sugieren que las variables antropométricas analizadas no cumplen completamente el supuesto de normalidad requerido por algunas técnicas paramétricas. Por esta razón, en determinados contextos podría ser recomendable complementar el análisis utilizando métodos no paramétricos, como la correlación de Spearman, especialmente si existen valores extremos o distribuciones asimétricas.</p>
 <section id="correlación-de-spearman" class="level3" data-number="11.8.1">
 <h3 data-number="11.8.1" class="anchored" data-anchor-id="correlación-de-spearman"><span class="header-section-number">11.8.1</span> Correlación de Spearman</h3>
-<p>La correlación de Spearman es una medida estadística utilizada para evaluar la asociación entre dos variables ordinales o cuantitativas cuando no se cumplen los supuestos de normalidad o linealidad requeridos por la correlación de Pearson (<a href="#fig-corspearman" class="quarto-xref">Figura&nbsp;<span>11.3</span></a>).</p>
+<p>La correlación de Spearman es una medida estadística utilizada para evaluar la asociación entre dos variables ordinales o cuantitativas cuando no se cumplen los supuestos de normalidad o linealidad requeridos por la correlación de Pearson (<a href="#fig-corspearman" class="quarto-xref">Figura&nbsp;<span>11.4</span></a>).</p>
 <p>A diferencia de Pearson, Spearman no trabaja directamente con los valores originales de las variables, sino con sus rangos o posiciones dentro de la distribución. Por esta razón, se considera una medida no paramétrica de asociación.</p>
 <div id="fig-corspearman" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -890,7 +962,7 @@ Figura&nbsp;11.2: Escala conceptual para interpretar la dirección y magnitud de
 <img src="img/corspearman.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-corspearman-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;11.3: Esquema conceptual de la correlación de Spearman basada en rangos.
+Figura&nbsp;11.4: Esquema conceptual de la correlación de Spearman basada en rangos.
 </figcaption>
 </figure>
 </div>
@@ -996,14 +1068,14 @@ Figura&nbsp;11.3: Esquema conceptual de la correlación de Spearman basada en ra
 <section id="diagrama-de-dispersión" class="level3" data-number="11.9.1">
 <h3 data-number="11.9.1" class="anchored" data-anchor-id="diagrama-de-dispersión"><span class="header-section-number">11.9.1</span> Diagrama de dispersión</h3>
 <p>El diagrama de dispersión, también conocido como nube de puntos, es una representación gráfica utilizada para explorar la relación entre dos variables cuantitativas. Cada punto del gráfico representa una observación y su posición en el plano cartesiano depende de los valores registrados para las variables <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span>.</p>
-<p>Esta herramienta constituye generalmente el primer paso del análisis bivariado, ya que permite identificar visualmente patrones de asociación, tendencias, agrupamientos y posibles valores atípicos antes de aplicar medidas numéricas de correlación o modelos de regresión (<a href="#fig-dispersion" class="quarto-xref">Figura&nbsp;<span>11.4</span></a>). A partir de un diagrama de dispersión pueden identificarse diferentes comportamientos entre las variables:</p>
+<p>Esta herramienta constituye generalmente el primer paso del análisis bivariado, ya que permite identificar visualmente patrones de asociación, tendencias, agrupamientos y posibles valores atípicos antes de aplicar medidas numéricas de correlación o modelos de regresión (<a href="#fig-dispersion" class="quarto-xref">Figura&nbsp;<span>11.5</span></a>). A partir de un diagrama de dispersión pueden identificarse diferentes comportamientos entre las variables:</p>
 <div id="fig-dispersion" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-dispersion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/dispersion.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dispersion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;11.4: Ejemplos de patrones de asociación que pueden observarse en diagramas de dispersión.
+Figura&nbsp;11.5: Ejemplos de patrones de asociación que pueden observarse en diagramas de dispersión.
 </figcaption>
 </figure>
 </div>
@@ -1097,15 +1169,71 @@ Advertencia
 </section>
 <section id="covarianza" class="level3" data-number="11.9.2">
 <h3 data-number="11.9.2" class="anchored" data-anchor-id="covarianza"><span class="header-section-number">11.9.2</span> Covarianza</h3>
-<p>La covarianza es una medida estadística utilizada para evaluar cómo varían conjuntamente dos variables cuantitativas respecto a sus medias. Esta medida permite identificar si ambas variables tienden a aumentar simultáneamente, disminuir conjuntamente o comportarse de manera independiente (<a href="#fig-covarianza" class="quarto-xref">Figura&nbsp;<span>11.5</span></a>).</p>
-<p>La covarianza constituye uno de los fundamentos matemáticos de la correlación lineal y de la regresión.</p>
+<p>La covarianza es una medida estadística utilizada para evaluar cómo varían conjuntamente dos variables cuantitativas respecto a sus medias. Esta medida permite identificar si ambas variables tienden a aumentar simultáneamente, disminuir conjuntamente o comportarse de manera independiente (<a href="#fig-covarianza" class="quarto-xref">Figura&nbsp;<span>11.7</span></a>).</p>
+<p>La covarianza constituye uno de los fundamentos matemáticos de la correlación lineal y de la regresión. Para una muestra, puede expresarse como:</p>
+<p><span class="math display">\[
+s_{XY}=\frac{1}{n-1}\sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y})
+\]</span></p>
+<p>Esta expresión muestra que cada observación aporta a la covarianza a través del producto <span class="math inline">\((x_i-\bar{x})(y_i-\bar{y})\)</span>. La posición de cada punto respecto a las medias de <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> permite interpretar el signo de esa contribución:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Cuadrante respecto a <span class="math inline">\(\bar{x}\)</span> y <span class="math inline">\(\bar{y}\)</span></th>
+<th>Signos</th>
+<th>Contribución al producto</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Superior derecho (I)</td>
+<td><span class="math inline">\((+)(+)\)</span></td>
+<td>Positiva</td>
+</tr>
+<tr class="even">
+<td>Superior izquierdo (II)</td>
+<td><span class="math inline">\((-)(+)\)</span></td>
+<td>Negativa</td>
+</tr>
+<tr class="odd">
+<td>Inferior izquierdo (III)</td>
+<td><span class="math inline">\((-)(-)\)</span></td>
+<td>Positiva</td>
+</tr>
+<tr class="even">
+<td>Inferior derecho (IV)</td>
+<td><span class="math inline">\((+)(-)\)</span></td>
+<td>Negativa</td>
+</tr>
+</tbody>
+</table>
+<p>Por tanto, cuando predominan puntos en los cuadrantes I y III, la covarianza tiende a ser positiva; cuando predominan en los cuadrantes II y IV, tiende a ser negativa. Si las contribuciones positivas y negativas se compensan, la covarianza puede aproximarse a cero.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-covarianza-cuadrantes" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-covarianza-cuadrantes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="07-analisis-bivariado_files/figure-html/fig-covarianza-cuadrantes-1.png" class="img-fluid figure-img" width="960">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-covarianza-cuadrantes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;11.6: Interpretación geométrica de la covarianza. Las líneas representan las medias de X y Y; los cuadrantes I y III generan contribuciones positivas, mientras que II y IV generan contribuciones negativas.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>La figura permite observar que el <strong>signo</strong> de la covarianza está relacionado con la ubicación de los puntos respecto a las medias. Sin embargo, su <strong>magnitud depende de las unidades y de la escala</strong> de las variables. Por esta razón, no es correcto interpretar una covarianza numéricamente grande o pequeña utilizando los límites <span class="math inline">\(-1\)</span> y <span class="math inline">\(1\)</span>; esos límites corresponden al coeficiente de correlación.</p>
 <div id="fig-covarianza" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-covarianza-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/covarianza.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-covarianza-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;11.5: Esquema conceptual de la covarianza y de cómo dos variables pueden variar conjuntamente.
+Figura&nbsp;11.7: Esquema conceptual de la covarianza y de cómo dos variables pueden variar conjuntamente.
 </figcaption>
 </figure>
 </div>
@@ -1130,8 +1258,8 @@ Figura&nbsp;11.5: Esquema conceptual de la covarianza y de cómo dos variables p
 <pre><code>[1] 0.06261345</code></pre>
 </div>
 </div>
-<p><strong>Interpretación:</strong> La covarianza calculada (<span class="math inline">\(r = 0.062\)</span>) entre la longitud de la pierna y la longitud del pie presenta un valor cercano a cero, indicando que ambas variables no muestran una variación conjunta importante dentro de la muestra analizada.</p>
-<p>Este resultado coincide con el <strong>análisis de correlación de Pearson</strong> previamente realizado (<span class="math inline">\(r = 0.012\)</span>), donde también se evidenció una relación lineal prácticamente nula entre las variables. En términos prácticos, los cambios en la longitud de la pierna no se asocian de manera consistente con cambios en la longitud del pie en los estudiantes evaluados.</p>
+<p><strong>Interpretación:</strong> La covarianza calculada (<span class="math inline">\(\operatorname{Cov}(X,Y)=0.062\)</span>) entre la longitud de la pierna y la longitud del pie tiene signo positivo, lo que indica que, en promedio, las desviaciones de ambas variables respecto a sus medias tienden a aportar en el mismo sentido. No obstante, <strong>la magnitud de una covarianza no debe interpretarse directamente como fuerte o débil</strong>, porque depende de las unidades y escalas de las variables analizadas.</p>
+<p>Para valorar la fuerza de la asociación en una escala estandarizada se utiliza el <strong>coeficiente de correlación de Pearson</strong>. En este caso, el valor previamente obtenido (<span class="math inline">\(r = 0.012\)</span>) se encuentra muy próximo a cero y evidencia una asociación lineal prácticamente nula entre las variables. La comparación permite observar la relación conceptual entre ambas medidas: la covarianza aporta la variación conjunta en el numerador y la correlación la estandariza mediante las desviaciones estándar.</p>
 <p>Asimismo, este ejemplo permite comprender que no todas las variables antropométricas presentan asociaciones lineales fuertes, incluso cuando pertenecen a dimensiones corporales relacionadas.</p>
 </section>
 </section>

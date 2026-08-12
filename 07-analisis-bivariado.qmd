@@ -78,7 +78,7 @@ La siguiente tabla resume las principales combinaciones posibles en el
 análisis bivariado:
 
 | Tipo de variable 1 | Tipo de variable 2 | Objetivo principal | Técnicas utilizadas |
-|------------------|------------------|------------------|------------------|
+|----|----|----|----|
 | Cuantitativa | Cuantitativa | Evaluar asociación o predicción | Correlación, regresión, dispersión |
 | Categórica | Categórica | Analizar asociación entre categorías | Tablas de contingencia |
 | Cuantitativa | Categórica | Comparar grupos | Boxplot, medias, comparación gráfica |
@@ -273,9 +273,30 @@ existente.
 En este ejemplo, la linealidad puede evaluarse visualmente mediante el
 diagrama de dispersión entre altura y peso corporal.
 
+### Regresión lineal simple
+
+La **regresión lineal simple** estudia la relación entre una variable
+respuesta ($Y$) y **una única variable explicativa** ($X$). Su forma
+general es:
+
+$$
+Y = \beta_0 + \beta_1X + \varepsilon
+$$
+
+donde $\beta_0$ representa el intercepto, $\beta_1$ cuantifica el cambio
+esperado en $Y$ por cada unidad de cambio en $X$, y $\varepsilon$
+representa el componente aleatorio no explicado por el modelo. En este
+capítulo, la relación entre altura y peso corporal se utiliza como
+ejemplo de regresión lineal simple porque interviene una sola variable
+predictora: la altura.
+
+Esta denominación permite diferenciarla de la **regresión lineal
+múltiple**, que incorpora dos o más variables explicativas en un mismo
+modelo.
+
 ```{r}
 
-# Modelo de regresión
+# Modelo de regresión lineal simple
 modelo <- lm(
   Peso_Kg ~ Altura_cm,
   data = datos
@@ -354,9 +375,18 @@ sugiere que la relación entre ambas variables es **débil a moderada**.
 
 ### Regresión lineal múltiple
 
-En la regresión lineal simple se analiza la relación entre una variable
-respuesta ($Y$) y una única variable explicativa ($X$). Sin embargo,
-muchos fenómenos reales dependen simultáneamente de varios factores, por
+La diferencia central entre ambos modelos se encuentra en el número de
+variables explicativas. La **regresión lineal simple** utiliza una sola
+variable predictora, mientras que la **regresión lineal múltiple**
+incorpora dos o más predictores para explicar conjuntamente el
+comportamiento de la variable respuesta.
+
+| Modelo | Número de variables explicativas | Forma general |
+|----|---:|----|
+| Regresión lineal simple | 1 | $Y = \beta_0 + \beta_1X + \varepsilon$ |
+| Regresión lineal múltiple | 2 o más | $Y = \beta_0 + \beta_1X_1 + \cdots + \beta_kX_k + \varepsilon$ |
+
+Muchos fenómenos reales dependen simultáneamente de varios factores, por
 lo que resulta necesario incorporar múltiples variables predictoras
 dentro del modelo. La regresión lineal múltiple puede expresarse como:
 
@@ -493,7 +523,8 @@ variables son cuantitativas o categóricas, revisar su distribución,
 explorar la forma de la relación y verificar la presencia de valores
 atípicos.
 
-![Esquema del análisis bivariado según la combinación de tipos de variables.](img/dosvariables.png){#fig-dosvariables}
+![Esquema del análisis bivariado según la combinación de tipos de
+variables.](img/dosvariables.png){#fig-dosvariables}
 
 ## Cuando se cumplen los supuestos
 
@@ -541,7 +572,74 @@ $$
 El coeficiente de correlación indica qué tan estrechamente se relacionan
 dos variables y si dicha relación es positiva, negativa o inexistente.
 
-![Escala conceptual para interpretar la dirección y magnitud de un coeficiente de correlación.](img/correlacion.png){#fig-correlacion}
+#### De la covarianza a la correlación
+
+La relación entre ambos conceptos puede expresarse de manera directa: la
+**correlación de Pearson es una covarianza estandarizada**. En su forma
+muestral:
+
+$$
+r_{XY}=\frac{\operatorname{Cov}(X,Y)}{s_Xs_Y}
+$$
+
+El **numerador** corresponde a la covarianza entre $X$ y $Y$, que
+refleja el sentido en que ambas variables varían conjuntamente. El
+**denominador** corresponde al producto de sus desviaciones estándar y
+actúa como un factor de estandarización. Gracias a esta estandarización,
+el coeficiente de correlación no depende de las unidades originales de
+medida y queda acotado entre $-1$ y $1$.
+
+```{r}
+#| label: fig-cov-correlacion
+#| fig-cap: "Relación conceptual entre la covarianza y la correlación de Pearson."
+#| echo: false
+#| message: false
+#| warning: false
+
+par(mar = c(1, 1, 3, 1))
+plot.new()
+plot.window(xlim = c(0, 10), ylim = c(0, 10))
+
+text(
+  5, 9,
+  "Correlación de Pearson = covarianza estandarizada",
+  font = 2, cex = 1.2
+)
+
+text(2.1, 5.9, "r(X,Y) =", cex = 1.5)
+text(5.0, 6.7, "Cov(X,Y)", cex = 1.4, font = 2)
+segments(3.7, 6.05, 6.3, 6.05, lwd = 2)
+text(5.0, 5.25, "sX × sY", cex = 1.35)
+
+arrows(5.0, 8.0, 5.0, 7.15, length = 0.08, lwd = 1.5)
+text(5.0, 8.45, "Numerador: covarianza", font = 2, cex = 1.0)
+
+arrows(8.0, 4.1, 6.2, 5.15, length = 0.08, lwd = 1.5)
+text(8.0, 3.45, "Denominador:
+estandariza por la escala", cex = 0.95)
+
+text(
+  5, 1.5,
+  "La covarianza conserva las unidades; la correlación no tiene unidades y está entre -1 y 1.",
+  cex = 0.9
+)
+box()
+```
+
+::: callout-note
+## Idea clave
+
+La covarianza y la correlación describen la variación conjunta de dos
+variables, pero **no son equivalentes**. La covarianza conserva las
+unidades de las variables y no posee límites fijos; por ello, su
+magnitud no debe interpretarse como si estuviera en una escala de $-1$ a
+$1$. La correlación divide la covarianza por el producto de las
+desviaciones estándar y produce una medida adimensional comparable entre
+diferentes pares de variables.
+:::
+
+![Escala conceptual para interpretar la dirección y magnitud de un
+coeficiente de correlación.](img/correlacion.png){#fig-correlacion}
 
 #### Ejemplo en R
 
@@ -697,7 +795,8 @@ valores originales de las variables, sino con sus rangos o posiciones
 dentro de la distribución. Por esta razón, se considera una medida no
 paramétrica de asociación.
 
-![Esquema conceptual de la correlación de Spearman basada en rangos.](img/corspearman.png){#fig-corspearman}
+![Esquema conceptual de la correlación de Spearman basada en
+rangos.](img/corspearman.png){#fig-corspearman}
 
 ```{r}
 library(readxl)
@@ -799,7 +898,8 @@ de aplicar medidas numéricas de correlación o modelos de regresión
 (@fig-dispersion). A partir de un diagrama de dispersión pueden
 identificarse diferentes comportamientos entre las variables:
 
-![Ejemplos de patrones de asociación que pueden observarse en diagramas de dispersión.](img/dispersion.png){#fig-dispersion}
+![Ejemplos de patrones de asociación que pueden observarse en diagramas
+de dispersión.](img/dispersion.png){#fig-dispersion}
 
 #### Ejemplo en R
 
@@ -901,9 +1001,94 @@ simultáneamente, disminuir conjuntamente o comportarse de manera
 independiente (@fig-covarianza).
 
 La covarianza constituye uno de los fundamentos matemáticos de la
-correlación lineal y de la regresión.
+correlación lineal y de la regresión. Para una muestra, puede expresarse
+como:
 
-![Esquema conceptual de la covarianza y de cómo dos variables pueden variar conjuntamente.](img/covarianza.png){#fig-covarianza}
+$$
+s_{XY}=\frac{1}{n-1}\sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y})
+$$
+
+Esta expresión muestra que cada observación aporta a la covarianza a
+través del producto $(x_i-\bar{x})(y_i-\bar{y})$. La posición de cada
+punto respecto a las medias de $X$ y $Y$ permite interpretar el signo de
+esa contribución:
+
+| Cuadrante respecto a $\bar{x}$ y $\bar{y}$ | Signos | Contribución al producto |
+|----|----|----|
+| Superior derecho (I) | $(+)(+)$ | Positiva |
+| Superior izquierdo (II) | $(-)(+)$ | Negativa |
+| Inferior izquierdo (III) | $(-)(-)$ | Positiva |
+| Inferior derecho (IV) | $(+)(-)$ | Negativa |
+
+Por tanto, cuando predominan puntos en los cuadrantes I y III, la
+covarianza tiende a ser positiva; cuando predominan en los cuadrantes II
+y IV, tiende a ser negativa. Si las contribuciones positivas y negativas
+se compensan, la covarianza puede aproximarse a cero.
+
+```{r}
+#| label: fig-covarianza-cuadrantes
+#| fig-cap: "Interpretación geométrica de la covarianza. Las líneas representan las medias de X y Y; los cuadrantes I y III generan contribuciones positivas, mientras que II y IV generan contribuciones negativas."
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-width: 10
+#| fig-height: 4
+
+set.seed(2026)
+
+generar_panel <- function(tipo = c("positiva", "nula", "negativa"), n = 70) {
+  tipo <- match.arg(tipo)
+  x <- rnorm(n)
+  if (tipo == "positiva") {
+    y <- 0.85 * x + rnorm(n, sd = 0.45)
+  } else if (tipo == "negativa") {
+    y <- -0.85 * x + rnorm(n, sd = 0.45)
+  } else {
+    y <- rnorm(n)
+  }
+  data.frame(
+    x = x - mean(x),
+    y = y - mean(y)
+  )
+}
+
+paneles <- list(
+  "Covarianza positiva" = generar_panel("positiva"),
+  "Covarianza cercana a cero" = generar_panel("nula"),
+  "Covarianza negativa" = generar_panel("negativa")
+)
+
+par(mfrow = c(1, 3), mar = c(4, 4, 3, 1))
+
+for (titulo in names(paneles)) {
+  d <- paneles[[titulo]]
+  plot(
+    d$x, d$y,
+    pch = 19, cex = 0.7,
+    xlab = expression(X - bar(X)),
+    ylab = expression(Y - bar(Y)),
+    main = titulo
+  )
+  abline(h = 0, v = 0, lty = 2)
+  usr <- par("usr")
+  text(usr[2] * 0.78, usr[4] * 0.82, "I", font = 2)
+  text(usr[1] * 0.78, usr[4] * 0.82, "II", font = 2)
+  text(usr[1] * 0.78, usr[3] * 0.82, "III", font = 2)
+  text(usr[2] * 0.78, usr[3] * 0.82, "IV", font = 2)
+}
+
+par(mfrow = c(1, 1))
+```
+
+La figura permite observar que el **signo** de la covarianza está
+relacionado con la ubicación de los puntos respecto a las medias. Sin
+embargo, su **magnitud depende de las unidades y de la escala** de las
+variables. Por esta razón, no es correcto interpretar una covarianza
+numéricamente grande o pequeña utilizando los límites $-1$ y $1$; esos
+límites corresponden al coeficiente de correlación.
+
+![Esquema conceptual de la covarianza y de cómo dos variables pueden
+variar conjuntamente.](img/covarianza.png){#fig-covarianza}
 
 #### Ejemplo en R
 
@@ -924,17 +1109,22 @@ cov(
 )
 ```
 
-**Interpretación:** La covarianza calculada ($r = 0.062$) entre la
-longitud de la pierna y la longitud del pie presenta un valor cercano a
-cero, indicando que ambas variables no muestran una variación conjunta
-importante dentro de la muestra analizada.
+**Interpretación:** La covarianza calculada
+($\operatorname{Cov}(X,Y)=0.062$) entre la longitud de la pierna y la
+longitud del pie tiene signo positivo, lo que indica que, en promedio,
+las desviaciones de ambas variables respecto a sus medias tienden a
+aportar en el mismo sentido. No obstante, **la magnitud de una
+covarianza no debe interpretarse directamente como fuerte o débil**,
+porque depende de las unidades y escalas de las variables analizadas.
 
-Este resultado coincide con el **análisis de correlación de Pearson**
-previamente realizado ($r = 0.012$), donde también se evidenció una
-relación lineal prácticamente nula entre las variables. En términos
-prácticos, los cambios en la longitud de la pierna no se asocian de
-manera consistente con cambios en la longitud del pie en los estudiantes
-evaluados.
+Para valorar la fuerza de la asociación en una escala estandarizada se
+utiliza el **coeficiente de correlación de Pearson**. En este caso, el
+valor previamente obtenido ($r = 0.012$) se encuentra muy próximo a cero
+y evidencia una asociación lineal prácticamente nula entre las
+variables. La comparación permite observar la relación conceptual entre
+ambas medidas: la covarianza aporta la variación conjunta en el
+numerador y la correlación la estandariza mediante las desviaciones
+estándar.
 
 Asimismo, este ejemplo permite comprender que no todas las variables
 antropométricas presentan asociaciones lineales fuertes, incluso cuando
